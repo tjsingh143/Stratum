@@ -181,3 +181,9 @@ implemented behavior they govern.
 This repository does not include a license file, and no reuse license is granted or
 implied. The reference datasets are not redistributed here; their sources, citations and
 redistribution caveats are listed in [reference/README.md](reference/README.md).
+
+## Review material
+
+[Project portfolio](https://drive.google.com/drive/folders/1EQ2aAESu1FGiKtMuqSR7MYFVn54Xh8mG) contains the project overview, architecture,
+code examples, testing notes, and supporting evidence. Portfolio measurements
+retain their stated snapshot and verification boundaries.
