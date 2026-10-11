@@ -65,6 +65,12 @@ adaptations change no assertion:
 Some test docstrings and one test helper name were also reworded. Without the reference data and outside a Git checkout, the suite reports 421 tests run, 0
 failures and 37 skipped.
 
+Those outcomes describe the recorded verification environment. A later Linux/Python
+3.12.14 audit found a last-digit S3 output mismatch while all scenario assertions matched;
+its unit-test run had one snapshot-equality failure and 36 reference-data skips. See
+[verification portability](REPRODUCIBILITY.md#verification-portability) for the complete
+audit outcome. Byte-identical regeneration across platforms is not established.
+
 ## Frozen simulation design and scoring
 
 The grid spans T1/T2/T3, upper replication of 2, 3 and 5, lower counts including 1, 2 and

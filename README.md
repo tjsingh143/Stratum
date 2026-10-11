@@ -81,6 +81,12 @@ the reference sources and numbers, the WP3 published reproduction and the commit
 reports; without that data those checks are reported as skipped, never as passed. See
 [REPRODUCIBILITY.md](REPRODUCIBILITY.md) for what this snapshot can and cannot regenerate.
 
+Stored-output equality is stricter than numerical agreement. The byte comparisons passed
+in the recorded Python 3.9.6 environment but are not certified across Python versions and
+platform math libraries. A Linux/Python 3.12.14 audit retained all 142 scenario assertion
+matches while exact S3 output comparisons failed on last-digit floating-point differences.
+See [verification portability](REPRODUCIBILITY.md#verification-portability).
+
 ## Data
 
 The data are **published textbook and NIST/SEMATECH datasets plus labeled synthetic

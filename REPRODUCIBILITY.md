@@ -34,6 +34,23 @@ table, the WP3 published reproduction and the 18 committed reports. Without that
 these checks print `SKIPPED`, and the unit tests that analyze the reference datasets are
 skipped too; nothing is reported as passed that was not run.
 
+## Verification portability
+
+Python 3.9+ is the runtime requirement; it is not a guarantee that stored floating-point
+outputs regenerate byte for byte on every interpreter and platform. Distribution routines
+use the platform's math library. Last-digit differences in probabilities and quantiles can
+also move a marker in a rendered diagnostic text plot. The strict checks retain these
+differences as failures rather than replacing the stored evidence or widening a tolerance.
+
+A fresh audit on Linux x86_64 with Python 3.12.14 and PyYAML 6.0.3 ran 421 unit tests:
+one stored-output equality test failed and 36 reference-data tests were skipped. All 142
+preregistered scenario assertions matched, but the separate scenario byte-comparison check
+failed for S3. Overall, `run_checks.py` reported six groups passed, two failed and five
+skipped. Its S3 probability for the whole-plot test was `0.2250449535046472`, compared with
+the stored `0.22504495350464732`. This audit does not replace the recorded successful
+Python 3.9.6 verification or establish byte-identical portability. Matching the interpreter
+version alone may not reproduce a different platform's math-library results.
+
 ## Reference data
 
 The published datasets are fetched and checksum-verified, not redistributed (see
