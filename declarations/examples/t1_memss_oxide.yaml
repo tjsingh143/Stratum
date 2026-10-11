@@ -1,0 +1,38 @@
+# T1 reference declaration: MEMSS Oxide (identical to SASmixed Semi2, nlme Oxide).
+# Canonical T1 reproduction without Source (D-014). Structure from
+# reference/r_outputs/structure.json: 8 lots x 3 wafers x 3 sites, 72 rows.
+stratum_declaration: 1
+claimed_template: T1
+description: >
+  MEMSS Oxide, a passive data collection study (Littell et al. 1996, p. 155, as quoted
+  in the MEMSS documentation). Published textbook data, not synthetic, not fab data.
+response:
+  column: Thickness
+  units: null               # the package documentation does not state units
+hierarchy:
+  - name: lot
+    id_column: Lot
+    count: 8
+  - name: wafer
+    id_column: Wafer
+    nested_in: lot
+    count_per_parent: 3
+    id_scope: parent        # "a unique identifier for each wafer within a lot"
+  - name: site
+    id_column: Site
+    nested_in: wafer
+    count_per_parent: 3
+    id_scope: parent
+    # exchangeable omitted: the documentation does not say whether sites 1-3 are
+    # fixed positions or interchangeable subsamples, so the default (false) applies.
+treatments: []
+nuisance_factors:
+  # Source is constant within lot (lots 1-4 = 1, lots 5-8 = 2). It was observed, not
+  # assigned, and is not part of the T1 model (D-006, D-014). It is recorded so later
+  # checks can report that it is confounded with lot identity.
+  - name: source
+    column: Source
+    recorded_at: lot
+    role: recorded
+    levels: ["1", "2"]
+comparisons: []

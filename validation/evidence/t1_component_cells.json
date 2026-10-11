@@ -1,0 +1,1502 @@
+{
+  "schema": "stratum-evidence/1",
+  "synthetic": true,
+  "source": {
+    "path": "validation/synthetic_wp6_summary.json",
+    "release": "Stratum v1.0.0",
+    "sha256": "11dcaadba2d3dc68b642a2391a75e66795734bb6ec427feacf78e28bbf1ac3fc",
+    "selection": "Every conforming T1 cell; selected outcome, component and metric fields, values unchanged."
+  },
+  "values": {
+    "T1-g2-w2-s5": {
+      "cell_id": "T1-g2-w2-s5",
+      "synthetic": true,
+      "attempts": 2000,
+      "classification": "conforming",
+      "condition": "conforming",
+      "template": "T1",
+      "decisions": {
+        "ANALYZE": 2000
+      },
+      "outcomes": {
+        "analyzed_boundary": 893,
+        "analyzed_interior": 1107
+      },
+      "components": {
+        "A": {
+          "bias": -9.491658628037671,
+          "bias_mcse": 13.66831392510097,
+          "coverage": {
+            "count": 1164,
+            "mcse_empirical": 0.011028961873177366,
+            "mcse_nominal": 0.004873397172404485,
+            "n": 2000,
+            "rate": 0.582
+          },
+          "endpoint_overflow": 32,
+          "estimates_available": 2000,
+          "negative": {
+            "count": 725,
+            "mcse_empirical": 0.010749273231246845,
+            "mcse_nominal": null,
+            "n": 2000,
+            "rate": 0.3625
+          },
+          "no_estimate": 0,
+          "no_interval": 725
+        },
+        "B": {
+          "bias": -3.4300929294586093,
+          "bias_mcse": 5.353449783163856,
+          "coverage": {
+            "count": 1746,
+            "mcse_empirical": 0.007445501997850783,
+            "mcse_nominal": 0.004873397172404485,
+            "n": 2000,
+            "rate": 0.873
+          },
+          "endpoint_overflow": 20,
+          "estimates_available": 2000,
+          "negative": {
+            "count": 187,
+            "mcse_empirical": 0.006509905913298594,
+            "mcse_nominal": null,
+            "n": 2000,
+            "rate": 0.0935
+          },
+          "no_estimate": 0,
+          "no_interval": 187
+        },
+        "residual": {
+          "bias": -0.11486387838256036,
+          "bias_mcse": 0.94860301466795,
+          "coverage": {
+            "count": 1901,
+            "mcse_empirical": 0.004850244839180801,
+            "mcse_nominal": 0.004873397172404485,
+            "n": 2000,
+            "rate": 0.9505
+          },
+          "endpoint_overflow": 0,
+          "estimates_available": 2000,
+          "negative": {
+            "count": 0,
+            "mcse_empirical": 0.0,
+            "mcse_nominal": null,
+            "n": 2000,
+            "rate": 0.0
+          },
+          "no_estimate": 0,
+          "no_interval": 0
+        }
+      },
+      "metrics": {
+        "vc_interval_coverage_run": {
+          "count": 1164,
+          "mcse_empirical": 0.011028961873177366,
+          "mcse_nominal": 0.004873397172404485,
+          "n": 2000,
+          "rate": 0.582,
+          "unavailable": 725,
+          "unavailable_by_outcome": {
+            "analyzed_boundary": 725
+          },
+          "unavailable_reason": "refused/failed attempt, or no interval/test produced; see counts and fit ledger"
+        },
+        "vc_interval_coverage_site": {
+          "count": 1901,
+          "mcse_empirical": 0.004850244839180801,
+          "mcse_nominal": 0.004873397172404485,
+          "n": 2000,
+          "rate": 0.9505,
+          "unavailable": 0,
+          "unavailable_by_outcome": {},
+          "unavailable_reason": "refused/failed attempt, or no interval/test produced; see counts and fit ledger"
+        },
+        "vc_interval_coverage_wafer": {
+          "count": 1746,
+          "mcse_empirical": 0.007445501997850783,
+          "mcse_nominal": 0.004873397172404485,
+          "n": 2000,
+          "rate": 0.873,
+          "unavailable": 187,
+          "unavailable_by_outcome": {
+            "analyzed_boundary": 187
+          },
+          "unavailable_reason": "refused/failed attempt, or no interval/test produced; see counts and fit ledger"
+        }
+      },
+      "boundary_fits": 893,
+      "degenerate_fits": 0,
+      "failures": [],
+      "mismatches": [],
+      "ledger_sha256": "c81dba404ef1e6bae8763801f3cf1186d08d02d30e8845437b465b6aff0a20a4"
+    },
+    "T1-g2-w2-s9": {
+      "cell_id": "T1-g2-w2-s9",
+      "synthetic": true,
+      "attempts": 2000,
+      "classification": "conforming",
+      "condition": "conforming",
+      "template": "T1",
+      "decisions": {
+        "ANALYZE": 2000
+      },
+      "outcomes": {
+        "analyzed_boundary": 764,
+        "analyzed_interior": 1236
+      },
+      "components": {
+        "A": {
+          "bias": 21.903424650167228,
+          "bias_mcse": 14.46001281838647,
+          "coverage": {
+            "count": 1218,
+            "mcse_empirical": 0.010911438951852316,
+            "mcse_nominal": 0.004873397172404485,
+            "n": 2000,
+            "rate": 0.609
+          },
+          "endpoint_overflow": 42,
+          "estimates_available": 2000,
+          "negative": {
+            "count": 660,
+            "mcse_empirical": 0.01051427600931229,
+            "mcse_nominal": null,
+            "n": 2000,
+            "rate": 0.33
+          },
+          "no_estimate": 0,
+          "no_interval": 660
+        },
+        "B": {
+          "bias": -0.7251883827146807,
+          "bias_mcse": 5.403868606747357,
+          "coverage": {
+            "count": 1823,
+            "mcse_empirical": 0.006350895606133045,
+            "mcse_nominal": 0.004873397172404485,
+            "n": 2000,
+            "rate": 0.9115
+          },
+          "endpoint_overflow": 9,
+          "estimates_available": 2000,
+          "negative": {
+            "count": 115,
+            "mcse_empirical": 0.005205465877325487,
+            "mcse_nominal": null,
+            "n": 2000,
+            "rate": 0.0575
+          },
+          "no_estimate": 0,
+          "no_interval": 115
+        },
+        "residual": {
+          "bias": 0.4168712115101936,
+          "bias_mcse": 0.687305351291695,
+          "coverage": {
+            "count": 1892,
+            "mcse_empirical": 0.005053909377897473,
+            "mcse_nominal": 0.004873397172404485,
+            "n": 2000,
+            "rate": 0.946
+          },
+          "endpoint_overflow": 0,
+          "estimates_available": 2000,
+          "negative": {
+            "count": 0,
+            "mcse_empirical": 0.0,
+            "mcse_nominal": null,
+            "n": 2000,
+            "rate": 0.0
+          },
+          "no_estimate": 0,
+          "no_interval": 0
+        }
+      },
+      "metrics": {
+        "vc_interval_coverage_run": {
+          "count": 1218,
+          "mcse_empirical": 0.010911438951852316,
+          "mcse_nominal": 0.004873397172404485,
+          "n": 2000,
+          "rate": 0.609,
+          "unavailable": 660,
+          "unavailable_by_outcome": {
+            "analyzed_boundary": 660
+          },
+          "unavailable_reason": "refused/failed attempt, or no interval/test produced; see counts and fit ledger"
+        },
+        "vc_interval_coverage_site": {
+          "count": 1892,
+          "mcse_empirical": 0.005053909377897473,
+          "mcse_nominal": 0.004873397172404485,
+          "n": 2000,
+          "rate": 0.946,
+          "unavailable": 0,
+          "unavailable_by_outcome": {},
+          "unavailable_reason": "refused/failed attempt, or no interval/test produced; see counts and fit ledger"
+        },
+        "vc_interval_coverage_wafer": {
+          "count": 1823,
+          "mcse_empirical": 0.006350895606133045,
+          "mcse_nominal": 0.004873397172404485,
+          "n": 2000,
+          "rate": 0.9115,
+          "unavailable": 115,
+          "unavailable_by_outcome": {
+            "analyzed_boundary": 115
+          },
+          "unavailable_reason": "refused/failed attempt, or no interval/test produced; see counts and fit ledger"
+        }
+      },
+      "boundary_fits": 764,
+      "degenerate_fits": 0,
+      "failures": [],
+      "mismatches": [],
+      "ledger_sha256": "465c858b7fb443b32b1d816f2f4c7fc76e2cf30a297c0328f87459a5f9b1da66"
+    },
+    "T1-g2-w4-s5": {
+      "cell_id": "T1-g2-w4-s5",
+      "synthetic": true,
+      "attempts": 2000,
+      "classification": "conforming",
+      "condition": "conforming",
+      "template": "T1",
+      "decisions": {
+        "ANALYZE": 2000
+      },
+      "outcomes": {
+        "analyzed_boundary": 625,
+        "analyzed_interior": 1375
+      },
+      "components": {
+        "A": {
+          "bias": -2.556576697181006,
+          "bias_mcse": 12.381392445204757,
+          "coverage": {
+            "count": 1282,
+            "mcse_empirical": 0.01072657913782395,
+            "mcse_nominal": 0.004873397172404485,
+            "n": 2000,
+            "rate": 0.641
+          },
+          "endpoint_overflow": 33,
+          "estimates_available": 2000,
+          "negative": {
+            "count": 621,
+            "mcse_empirical": 0.010346249320405922,
+            "mcse_nominal": null,
+            "n": 2000,
+            "rate": 0.3105
+          },
+          "no_estimate": 0,
+          "no_interval": 621
+        },
+        "B": {
+          "bias": -0.9430767081221538,
+          "bias_mcse": 3.1136672620366177,
+          "coverage": {
+            "count": 1950,
+            "mcse_empirical": 0.003491060010942237,
+            "mcse_nominal": 0.004873397172404485,
+            "n": 2000,
+            "rate": 0.975
+          },
+          "endpoint_overflow": 1,
+          "estimates_available": 2000,
+          "negative": {
+            "count": 4,
+            "mcse_empirical": 0.0009989994994993741,
+            "mcse_nominal": null,
+            "n": 2000,
+            "rate": 0.002
+          },
+          "no_estimate": 0,
+          "no_interval": 4
+        },
+        "residual": {
+          "bias": -0.14877918319282266,
+          "bias_mcse": 0.6543356253672988,
+          "coverage": {
+            "count": 1909,
+            "mcse_empirical": 0.004659922209651143,
+            "mcse_nominal": 0.004873397172404485,
+            "n": 2000,
+            "rate": 0.9545
+          },
+          "endpoint_overflow": 0,
+          "estimates_available": 2000,
+          "negative": {
+            "count": 0,
+            "mcse_empirical": 0.0,
+            "mcse_nominal": null,
+            "n": 2000,
+            "rate": 0.0
+          },
+          "no_estimate": 0,
+          "no_interval": 0
+        }
+      },
+      "metrics": {
+        "vc_interval_coverage_run": {
+          "count": 1282,
+          "mcse_empirical": 0.01072657913782395,
+          "mcse_nominal": 0.004873397172404485,
+          "n": 2000,
+          "rate": 0.641,
+          "unavailable": 621,
+          "unavailable_by_outcome": {
+            "analyzed_boundary": 621
+          },
+          "unavailable_reason": "refused/failed attempt, or no interval/test produced; see counts and fit ledger"
+        },
+        "vc_interval_coverage_site": {
+          "count": 1909,
+          "mcse_empirical": 0.004659922209651143,
+          "mcse_nominal": 0.004873397172404485,
+          "n": 2000,
+          "rate": 0.9545,
+          "unavailable": 0,
+          "unavailable_by_outcome": {},
+          "unavailable_reason": "refused/failed attempt, or no interval/test produced; see counts and fit ledger"
+        },
+        "vc_interval_coverage_wafer": {
+          "count": 1950,
+          "mcse_empirical": 0.003491060010942237,
+          "mcse_nominal": 0.004873397172404485,
+          "n": 2000,
+          "rate": 0.975,
+          "unavailable": 4,
+          "unavailable_by_outcome": {
+            "analyzed_boundary": 4
+          },
+          "unavailable_reason": "refused/failed attempt, or no interval/test produced; see counts and fit ledger"
+        }
+      },
+      "boundary_fits": 625,
+      "degenerate_fits": 0,
+      "failures": [],
+      "mismatches": [],
+      "ledger_sha256": "49b202f21e2f2da3b0f53f0a80cb65e885403e5cbce0effc17c56d0c73eb849c"
+    },
+    "T1-g2-w4-s9": {
+      "cell_id": "T1-g2-w4-s9",
+      "synthetic": true,
+      "attempts": 2000,
+      "classification": "conforming",
+      "condition": "conforming",
+      "template": "T1",
+      "decisions": {
+        "ANALYZE": 2000
+      },
+      "outcomes": {
+        "analyzed_boundary": 589,
+        "analyzed_interior": 1411
+      },
+      "components": {
+        "A": {
+          "bias": -3.24848542134761,
+          "bias_mcse": 11.4773840112933,
+          "coverage": {
+            "count": 1326,
+            "mcse_empirical": 0.01056955533596376,
+            "mcse_nominal": 0.004873397172404485,
+            "n": 2000,
+            "rate": 0.663
+          },
+          "endpoint_overflow": 26,
+          "estimates_available": 2000,
+          "negative": {
+            "count": 587,
+            "mcse_empirical": 0.010182282406219148,
+            "mcse_nominal": null,
+            "n": 2000,
+            "rate": 0.2935
+          },
+          "no_estimate": 0,
+          "no_interval": 587
+        },
+        "B": {
+          "bias": 1.5103776197526881,
+          "bias_mcse": 3.1308160239176885,
+          "coverage": {
+            "count": 1941,
+            "mcse_empirical": 0.0037835003634200943,
+            "mcse_nominal": 0.004873397172404485,
+            "n": 2000,
+            "rate": 0.9705
+          },
+          "endpoint_overflow": 0,
+          "estimates_available": 2000,
+          "negative": {
+            "count": 2,
+            "mcse_empirical": 0.0007067531393633848,
+            "mcse_nominal": null,
+            "n": 2000,
+            "rate": 0.001
+          },
+          "no_estimate": 0,
+          "no_interval": 2
+        },
+        "residual": {
+          "bias": -0.3751297870607351,
+          "bias_mcse": 0.48014251474615216,
+          "coverage": {
+            "count": 1904,
+            "mcse_empirical": 0.004779958158812692,
+            "mcse_nominal": 0.004873397172404485,
+            "n": 2000,
+            "rate": 0.952
+          },
+          "endpoint_overflow": 0,
+          "estimates_available": 2000,
+          "negative": {
+            "count": 0,
+            "mcse_empirical": 0.0,
+            "mcse_nominal": null,
+            "n": 2000,
+            "rate": 0.0
+          },
+          "no_estimate": 0,
+          "no_interval": 0
+        }
+      },
+      "metrics": {
+        "vc_interval_coverage_run": {
+          "count": 1326,
+          "mcse_empirical": 0.01056955533596376,
+          "mcse_nominal": 0.004873397172404485,
+          "n": 2000,
+          "rate": 0.663,
+          "unavailable": 587,
+          "unavailable_by_outcome": {
+            "analyzed_boundary": 587
+          },
+          "unavailable_reason": "refused/failed attempt, or no interval/test produced; see counts and fit ledger"
+        },
+        "vc_interval_coverage_site": {
+          "count": 1904,
+          "mcse_empirical": 0.004779958158812692,
+          "mcse_nominal": 0.004873397172404485,
+          "n": 2000,
+          "rate": 0.952,
+          "unavailable": 0,
+          "unavailable_by_outcome": {},
+          "unavailable_reason": "refused/failed attempt, or no interval/test produced; see counts and fit ledger"
+        },
+        "vc_interval_coverage_wafer": {
+          "count": 1941,
+          "mcse_empirical": 0.0037835003634200943,
+          "mcse_nominal": 0.004873397172404485,
+          "n": 2000,
+          "rate": 0.9705,
+          "unavailable": 2,
+          "unavailable_by_outcome": {
+            "analyzed_boundary": 2
+          },
+          "unavailable_reason": "refused/failed attempt, or no interval/test produced; see counts and fit ledger"
+        }
+      },
+      "boundary_fits": 589,
+      "degenerate_fits": 0,
+      "failures": [],
+      "mismatches": [],
+      "ledger_sha256": "2f776709b25bfcdaf3bd3d56f82cb53095f07a2c7f75d83d3838ad73b62c8909"
+    },
+    "T1-g3-w2-s5": {
+      "cell_id": "T1-g3-w2-s5",
+      "synthetic": true,
+      "attempts": 2000,
+      "classification": "conforming",
+      "condition": "conforming",
+      "template": "T1",
+      "decisions": {
+        "ANALYZE": 730,
+        "WARN": 1270
+      },
+      "outcomes": {
+        "analyzed_boundary": 516,
+        "analyzed_interior": 1484
+      },
+      "components": {
+        "A": {
+          "bias": 6.933626211987202,
+          "bias_mcse": 10.683794260777573,
+          "coverage": {
+            "count": 1422,
+            "mcse_empirical": 0.010136049526319415,
+            "mcse_nominal": 0.004873397172404485,
+            "n": 2000,
+            "rate": 0.711
+          },
+          "endpoint_overflow": 38,
+          "estimates_available": 2000,
+          "negative": {
+            "count": 452,
+            "mcse_empirical": 0.009352112060919715,
+            "mcse_nominal": null,
+            "n": 2000,
+            "rate": 0.226
+          },
+          "no_estimate": 0,
+          "no_interval": 452
+        },
+        "B": {
+          "bias": 0.735012527672339,
+          "bias_mcse": 4.381856896015672,
+          "coverage": {
+            "count": 1875,
+            "mcse_empirical": 0.005412658773652742,
+            "mcse_nominal": 0.004873397172404485,
+            "n": 2000,
+            "rate": 0.9375
+          },
+          "endpoint_overflow": 7,
+          "estimates_available": 2000,
+          "negative": {
+            "count": 66,
+            "mcse_empirical": 0.003994433626936364,
+            "mcse_nominal": null,
+            "n": 2000,
+            "rate": 0.033
+          },
+          "no_estimate": 0,
+          "no_interval": 66
+        },
+        "residual": {
+          "bias": -0.4376158683228718,
+          "bias_mcse": 0.7667650075236737,
+          "coverage": {
+            "count": 1914,
+            "mcse_empirical": 0.004536022486716751,
+            "mcse_nominal": 0.004873397172404485,
+            "n": 2000,
+            "rate": 0.957
+          },
+          "endpoint_overflow": 0,
+          "estimates_available": 2000,
+          "negative": {
+            "count": 0,
+            "mcse_empirical": 0.0,
+            "mcse_nominal": null,
+            "n": 2000,
+            "rate": 0.0
+          },
+          "no_estimate": 0,
+          "no_interval": 0
+        }
+      },
+      "metrics": {
+        "vc_interval_coverage_run": {
+          "count": 1422,
+          "mcse_empirical": 0.010136049526319415,
+          "mcse_nominal": 0.004873397172404485,
+          "n": 2000,
+          "rate": 0.711,
+          "unavailable": 452,
+          "unavailable_by_outcome": {
+            "analyzed_boundary": 452
+          },
+          "unavailable_reason": "refused/failed attempt, or no interval/test produced; see counts and fit ledger"
+        },
+        "vc_interval_coverage_site": {
+          "count": 1914,
+          "mcse_empirical": 0.004536022486716751,
+          "mcse_nominal": 0.004873397172404485,
+          "n": 2000,
+          "rate": 0.957,
+          "unavailable": 0,
+          "unavailable_by_outcome": {},
+          "unavailable_reason": "refused/failed attempt, or no interval/test produced; see counts and fit ledger"
+        },
+        "vc_interval_coverage_wafer": {
+          "count": 1875,
+          "mcse_empirical": 0.005412658773652742,
+          "mcse_nominal": 0.004873397172404485,
+          "n": 2000,
+          "rate": 0.9375,
+          "unavailable": 66,
+          "unavailable_by_outcome": {
+            "analyzed_boundary": 66
+          },
+          "unavailable_reason": "refused/failed attempt, or no interval/test produced; see counts and fit ledger"
+        }
+      },
+      "boundary_fits": 516,
+      "degenerate_fits": 0,
+      "failures": [],
+      "mismatches": [],
+      "ledger_sha256": "8ede35889d82cc87241aed9b1925272dff18ff1d96724cd090dfbc78f77b7d31"
+    },
+    "T1-g3-w2-s9": {
+      "cell_id": "T1-g3-w2-s9",
+      "synthetic": true,
+      "attempts": 2000,
+      "classification": "conforming",
+      "condition": "conforming",
+      "template": "T1",
+      "decisions": {
+        "ANALYZE": 731,
+        "WARN": 1269
+      },
+      "outcomes": {
+        "analyzed_boundary": 499,
+        "analyzed_interior": 1501
+      },
+      "components": {
+        "A": {
+          "bias": -6.2344751977686546,
+          "bias_mcse": 9.880817750707482,
+          "coverage": {
+            "count": 1421,
+            "mcse_empirical": 0.010141246225193431,
+            "mcse_nominal": 0.004873397172404485,
+            "n": 2000,
+            "rate": 0.7105
+          },
+          "endpoint_overflow": 29,
+          "estimates_available": 2000,
+          "negative": {
+            "count": 459,
+            "mcse_empirical": 0.0094029184299344,
+            "mcse_nominal": null,
+            "n": 2000,
+            "rate": 0.2295
+          },
+          "no_estimate": 0,
+          "no_interval": 459
+        },
+        "B": {
+          "bias": -5.116686941557353,
+          "bias_mcse": 4.294067105441353,
+          "coverage": {
+            "count": 1901,
+            "mcse_empirical": 0.004850244839180801,
+            "mcse_nominal": 0.004873397172404485,
+            "n": 2000,
+            "rate": 0.9505
+          },
+          "endpoint_overflow": 3,
+          "estimates_available": 2000,
+          "negative": {
+            "count": 40,
+            "mcse_empirical": 0.0031304951684997056,
+            "mcse_nominal": null,
+            "n": 2000,
+            "rate": 0.02
+          },
+          "no_estimate": 0,
+          "no_interval": 40
+        },
+        "residual": {
+          "bias": 0.37735499183990795,
+          "bias_mcse": 0.5706994467070075,
+          "coverage": {
+            "count": 1889,
+            "mcse_empirical": 0.005119558086397692,
+            "mcse_nominal": 0.004873397172404485,
+            "n": 2000,
+            "rate": 0.9445
+          },
+          "endpoint_overflow": 0,
+          "estimates_available": 2000,
+          "negative": {
+            "count": 0,
+            "mcse_empirical": 0.0,
+            "mcse_nominal": null,
+            "n": 2000,
+            "rate": 0.0
+          },
+          "no_estimate": 0,
+          "no_interval": 0
+        }
+      },
+      "metrics": {
+        "vc_interval_coverage_run": {
+          "count": 1421,
+          "mcse_empirical": 0.010141246225193431,
+          "mcse_nominal": 0.004873397172404485,
+          "n": 2000,
+          "rate": 0.7105,
+          "unavailable": 459,
+          "unavailable_by_outcome": {
+            "analyzed_boundary": 459
+          },
+          "unavailable_reason": "refused/failed attempt, or no interval/test produced; see counts and fit ledger"
+        },
+        "vc_interval_coverage_site": {
+          "count": 1889,
+          "mcse_empirical": 0.005119558086397692,
+          "mcse_nominal": 0.004873397172404485,
+          "n": 2000,
+          "rate": 0.9445,
+          "unavailable": 0,
+          "unavailable_by_outcome": {},
+          "unavailable_reason": "refused/failed attempt, or no interval/test produced; see counts and fit ledger"
+        },
+        "vc_interval_coverage_wafer": {
+          "count": 1901,
+          "mcse_empirical": 0.004850244839180801,
+          "mcse_nominal": 0.004873397172404485,
+          "n": 2000,
+          "rate": 0.9505,
+          "unavailable": 40,
+          "unavailable_by_outcome": {
+            "analyzed_boundary": 40
+          },
+          "unavailable_reason": "refused/failed attempt, or no interval/test produced; see counts and fit ledger"
+        }
+      },
+      "boundary_fits": 499,
+      "degenerate_fits": 0,
+      "failures": [],
+      "mismatches": [],
+      "ledger_sha256": "54d703b2cde50d160c77f9a1fc7ee67fb316af206d0b141cf79df8ae89531a0e"
+    },
+    "T1-g3-w4-s5": {
+      "cell_id": "T1-g3-w4-s5",
+      "synthetic": true,
+      "attempts": 2000,
+      "classification": "conforming",
+      "condition": "conforming",
+      "template": "T1",
+      "decisions": {
+        "ANALYZE": 755,
+        "WARN": 1245
+      },
+      "outcomes": {
+        "analyzed_boundary": 298,
+        "analyzed_interior": 1702
+      },
+      "components": {
+        "A": {
+          "bias": 6.337047548858003,
+          "bias_mcse": 8.119691418960986,
+          "coverage": {
+            "count": 1618,
+            "mcse_empirical": 0.008789738335126933,
+            "mcse_nominal": 0.004873397172404485,
+            "n": 2000,
+            "rate": 0.809
+          },
+          "endpoint_overflow": 26,
+          "estimates_available": 2000,
+          "negative": {
+            "count": 297,
+            "mcse_empirical": 0.007951344225978398,
+            "mcse_nominal": null,
+            "n": 2000,
+            "rate": 0.1485
+          },
+          "no_estimate": 0,
+          "no_interval": 297
+        },
+        "B": {
+          "bias": -2.666223397834736,
+          "bias_mcse": 2.5226467441535854,
+          "coverage": {
+            "count": 1957,
+            "mcse_empirical": 0.003243281517229114,
+            "mcse_nominal": 0.004873397172404485,
+            "n": 2000,
+            "rate": 0.9785
+          },
+          "endpoint_overflow": 0,
+          "estimates_available": 2000,
+          "negative": {
+            "count": 1,
+            "mcse_empirical": 0.0004998749843710925,
+            "mcse_nominal": null,
+            "n": 2000,
+            "rate": 0.0005
+          },
+          "no_estimate": 0,
+          "no_interval": 1
+        },
+        "residual": {
+          "bias": -0.8285609029401003,
+          "bias_mcse": 0.554360982150959,
+          "coverage": {
+            "count": 1897,
+            "mcse_empirical": 0.004942051699446293,
+            "mcse_nominal": 0.004873397172404485,
+            "n": 2000,
+            "rate": 0.9485
+          },
+          "endpoint_overflow": 0,
+          "estimates_available": 2000,
+          "negative": {
+            "count": 0,
+            "mcse_empirical": 0.0,
+            "mcse_nominal": null,
+            "n": 2000,
+            "rate": 0.0
+          },
+          "no_estimate": 0,
+          "no_interval": 0
+        }
+      },
+      "metrics": {
+        "vc_interval_coverage_run": {
+          "count": 1618,
+          "mcse_empirical": 0.008789738335126933,
+          "mcse_nominal": 0.004873397172404485,
+          "n": 2000,
+          "rate": 0.809,
+          "unavailable": 297,
+          "unavailable_by_outcome": {
+            "analyzed_boundary": 297
+          },
+          "unavailable_reason": "refused/failed attempt, or no interval/test produced; see counts and fit ledger"
+        },
+        "vc_interval_coverage_site": {
+          "count": 1897,
+          "mcse_empirical": 0.004942051699446293,
+          "mcse_nominal": 0.004873397172404485,
+          "n": 2000,
+          "rate": 0.9485,
+          "unavailable": 0,
+          "unavailable_by_outcome": {},
+          "unavailable_reason": "refused/failed attempt, or no interval/test produced; see counts and fit ledger"
+        },
+        "vc_interval_coverage_wafer": {
+          "count": 1957,
+          "mcse_empirical": 0.003243281517229114,
+          "mcse_nominal": 0.004873397172404485,
+          "n": 2000,
+          "rate": 0.9785,
+          "unavailable": 1,
+          "unavailable_by_outcome": {
+            "analyzed_boundary": 1
+          },
+          "unavailable_reason": "refused/failed attempt, or no interval/test produced; see counts and fit ledger"
+        }
+      },
+      "boundary_fits": 298,
+      "degenerate_fits": 0,
+      "failures": [],
+      "mismatches": [],
+      "ledger_sha256": "11b4dff04ac2e703fb31141b437b75a3cb512dfafb83ddd260bee56f3f3e7533"
+    },
+    "T1-g3-w4-s9": {
+      "cell_id": "T1-g3-w4-s9",
+      "synthetic": true,
+      "attempts": 2000,
+      "classification": "conforming",
+      "condition": "conforming",
+      "template": "T1",
+      "decisions": {
+        "ANALYZE": 772,
+        "WARN": 1228
+      },
+      "outcomes": {
+        "analyzed_boundary": 286,
+        "analyzed_interior": 1714
+      },
+      "components": {
+        "A": {
+          "bias": -5.140544770328679,
+          "bias_mcse": 8.178647796774722,
+          "coverage": {
+            "count": 1632,
+            "mcse_empirical": 0.008664409962599878,
+            "mcse_nominal": 0.004873397172404485,
+            "n": 2000,
+            "rate": 0.816
+          },
+          "endpoint_overflow": 26,
+          "estimates_available": 2000,
+          "negative": {
+            "count": 286,
+            "mcse_empirical": 0.007827866886962246,
+            "mcse_nominal": null,
+            "n": 2000,
+            "rate": 0.143
+          },
+          "no_estimate": 0,
+          "no_interval": 286
+        },
+        "B": {
+          "bias": -2.676389975934799,
+          "bias_mcse": 2.4254661072264985,
+          "coverage": {
+            "count": 1945,
+            "mcse_empirical": 0.003656757443418962,
+            "mcse_nominal": 0.004873397172404485,
+            "n": 2000,
+            "rate": 0.9725
+          },
+          "endpoint_overflow": 0,
+          "estimates_available": 2000,
+          "negative": {
+            "count": 0,
+            "mcse_empirical": 0.0,
+            "mcse_nominal": null,
+            "n": 2000,
+            "rate": 0.0
+          },
+          "no_estimate": 0,
+          "no_interval": 0
+        },
+        "residual": {
+          "bias": 0.15366179709086492,
+          "bias_mcse": 0.3971837575658771,
+          "coverage": {
+            "count": 1894,
+            "mcse_empirical": 0.005009540897128201,
+            "mcse_nominal": 0.004873397172404485,
+            "n": 2000,
+            "rate": 0.947
+          },
+          "endpoint_overflow": 0,
+          "estimates_available": 2000,
+          "negative": {
+            "count": 0,
+            "mcse_empirical": 0.0,
+            "mcse_nominal": null,
+            "n": 2000,
+            "rate": 0.0
+          },
+          "no_estimate": 0,
+          "no_interval": 0
+        }
+      },
+      "metrics": {
+        "vc_interval_coverage_run": {
+          "count": 1632,
+          "mcse_empirical": 0.008664409962599878,
+          "mcse_nominal": 0.004873397172404485,
+          "n": 2000,
+          "rate": 0.816,
+          "unavailable": 286,
+          "unavailable_by_outcome": {
+            "analyzed_boundary": 286
+          },
+          "unavailable_reason": "refused/failed attempt, or no interval/test produced; see counts and fit ledger"
+        },
+        "vc_interval_coverage_site": {
+          "count": 1894,
+          "mcse_empirical": 0.005009540897128201,
+          "mcse_nominal": 0.004873397172404485,
+          "n": 2000,
+          "rate": 0.947,
+          "unavailable": 0,
+          "unavailable_by_outcome": {},
+          "unavailable_reason": "refused/failed attempt, or no interval/test produced; see counts and fit ledger"
+        },
+        "vc_interval_coverage_wafer": {
+          "count": 1945,
+          "mcse_empirical": 0.003656757443418962,
+          "mcse_nominal": 0.004873397172404485,
+          "n": 2000,
+          "rate": 0.9725,
+          "unavailable": 0,
+          "unavailable_by_outcome": {},
+          "unavailable_reason": "refused/failed attempt, or no interval/test produced; see counts and fit ledger"
+        }
+      },
+      "boundary_fits": 286,
+      "degenerate_fits": 0,
+      "failures": [],
+      "mismatches": [],
+      "ledger_sha256": "770088acf5501b1c946862ebcdd9e66aa18ca95e2e590b6ae43ba1feaf17a2f8"
+    },
+    "T1-g5-w2-s5": {
+      "cell_id": "T1-g5-w2-s5",
+      "synthetic": true,
+      "attempts": 2000,
+      "classification": "conforming",
+      "condition": "conforming",
+      "template": "T1",
+      "decisions": {
+        "ANALYZE": 1403,
+        "WARN": 597
+      },
+      "outcomes": {
+        "analyzed_boundary": 263,
+        "analyzed_interior": 1737
+      },
+      "components": {
+        "A": {
+          "bias": 5.500111852039646,
+          "bias_mcse": 7.129567559234919,
+          "coverage": {
+            "count": 1645,
+            "mcse_empirical": 0.008543820866567839,
+            "mcse_nominal": 0.004873397172404485,
+            "n": 2000,
+            "rate": 0.8225
+          },
+          "endpoint_overflow": 32,
+          "estimates_available": 2000,
+          "negative": {
+            "count": 249,
+            "mcse_empirical": 0.007382403064043577,
+            "mcse_nominal": null,
+            "n": 2000,
+            "rate": 0.1245
+          },
+          "no_estimate": 0,
+          "no_interval": 249
+        },
+        "B": {
+          "bias": 2.96283593494556,
+          "bias_mcse": 3.6142098782477787,
+          "coverage": {
+            "count": 1922,
+            "mcse_empirical": 0.004328914413568374,
+            "mcse_nominal": 0.004873397172404485,
+            "n": 2000,
+            "rate": 0.961
+          },
+          "endpoint_overflow": 2,
+          "estimates_available": 2000,
+          "negative": {
+            "count": 14,
+            "mcse_empirical": 0.0018642692938521516,
+            "mcse_nominal": null,
+            "n": 2000,
+            "rate": 0.007
+          },
+          "no_estimate": 0,
+          "no_interval": 14
+        },
+        "residual": {
+          "bias": -0.03044009656601397,
+          "bias_mcse": 0.6236310345960748,
+          "coverage": {
+            "count": 1886,
+            "mcse_empirical": 0.005184158562389852,
+            "mcse_nominal": 0.004873397172404485,
+            "n": 2000,
+            "rate": 0.943
+          },
+          "endpoint_overflow": 0,
+          "estimates_available": 2000,
+          "negative": {
+            "count": 0,
+            "mcse_empirical": 0.0,
+            "mcse_nominal": null,
+            "n": 2000,
+            "rate": 0.0
+          },
+          "no_estimate": 0,
+          "no_interval": 0
+        }
+      },
+      "metrics": {
+        "vc_interval_coverage_run": {
+          "count": 1645,
+          "mcse_empirical": 0.008543820866567839,
+          "mcse_nominal": 0.004873397172404485,
+          "n": 2000,
+          "rate": 0.8225,
+          "unavailable": 249,
+          "unavailable_by_outcome": {
+            "analyzed_boundary": 249
+          },
+          "unavailable_reason": "refused/failed attempt, or no interval/test produced; see counts and fit ledger"
+        },
+        "vc_interval_coverage_site": {
+          "count": 1886,
+          "mcse_empirical": 0.005184158562389852,
+          "mcse_nominal": 0.004873397172404485,
+          "n": 2000,
+          "rate": 0.943,
+          "unavailable": 0,
+          "unavailable_by_outcome": {},
+          "unavailable_reason": "refused/failed attempt, or no interval/test produced; see counts and fit ledger"
+        },
+        "vc_interval_coverage_wafer": {
+          "count": 1922,
+          "mcse_empirical": 0.004328914413568374,
+          "mcse_nominal": 0.004873397172404485,
+          "n": 2000,
+          "rate": 0.961,
+          "unavailable": 14,
+          "unavailable_by_outcome": {
+            "analyzed_boundary": 14
+          },
+          "unavailable_reason": "refused/failed attempt, or no interval/test produced; see counts and fit ledger"
+        }
+      },
+      "boundary_fits": 263,
+      "degenerate_fits": 0,
+      "failures": [],
+      "mismatches": [],
+      "ledger_sha256": "cf931719053d5e97870b3648d9cd3a798dc712d40ebbe23ad21b950713b368ec"
+    },
+    "T1-g5-w2-s9": {
+      "cell_id": "T1-g5-w2-s9",
+      "synthetic": true,
+      "attempts": 2000,
+      "classification": "conforming",
+      "condition": "conforming",
+      "template": "T1",
+      "decisions": {
+        "ANALYZE": 1377,
+        "WARN": 623
+      },
+      "outcomes": {
+        "analyzed_boundary": 236,
+        "analyzed_interior": 1764
+      },
+      "components": {
+        "A": {
+          "bias": -5.268529338242517,
+          "bias_mcse": 6.97434313169443,
+          "coverage": {
+            "count": 1656,
+            "mcse_empirical": 0.0084384832760396,
+            "mcse_nominal": 0.004873397172404485,
+            "n": 2000,
+            "rate": 0.828
+          },
+          "endpoint_overflow": 25,
+          "estimates_available": 2000,
+          "negative": {
+            "count": 231,
+            "mcse_empirical": 0.007147018609182433,
+            "mcse_nominal": null,
+            "n": 2000,
+            "rate": 0.1155
+          },
+          "no_estimate": 0,
+          "no_interval": 231
+        },
+        "B": {
+          "bias": -2.826680477731039,
+          "bias_mcse": 3.2408755170680803,
+          "coverage": {
+            "count": 1953,
+            "mcse_empirical": 0.0033873108803297025,
+            "mcse_nominal": 0.004873397172404485,
+            "n": 2000,
+            "rate": 0.9765
+          },
+          "endpoint_overflow": 0,
+          "estimates_available": 2000,
+          "negative": {
+            "count": 5,
+            "mcse_empirical": 0.001116635571706365,
+            "mcse_nominal": null,
+            "n": 2000,
+            "rate": 0.0025
+          },
+          "no_estimate": 0,
+          "no_interval": 5
+        },
+        "residual": {
+          "bias": -0.21434065028835703,
+          "bias_mcse": 0.43105069891668274,
+          "coverage": {
+            "count": 1897,
+            "mcse_empirical": 0.004942051699446293,
+            "mcse_nominal": 0.004873397172404485,
+            "n": 2000,
+            "rate": 0.9485
+          },
+          "endpoint_overflow": 0,
+          "estimates_available": 2000,
+          "negative": {
+            "count": 0,
+            "mcse_empirical": 0.0,
+            "mcse_nominal": null,
+            "n": 2000,
+            "rate": 0.0
+          },
+          "no_estimate": 0,
+          "no_interval": 0
+        }
+      },
+      "metrics": {
+        "vc_interval_coverage_run": {
+          "count": 1656,
+          "mcse_empirical": 0.0084384832760396,
+          "mcse_nominal": 0.004873397172404485,
+          "n": 2000,
+          "rate": 0.828,
+          "unavailable": 231,
+          "unavailable_by_outcome": {
+            "analyzed_boundary": 231
+          },
+          "unavailable_reason": "refused/failed attempt, or no interval/test produced; see counts and fit ledger"
+        },
+        "vc_interval_coverage_site": {
+          "count": 1897,
+          "mcse_empirical": 0.004942051699446293,
+          "mcse_nominal": 0.004873397172404485,
+          "n": 2000,
+          "rate": 0.9485,
+          "unavailable": 0,
+          "unavailable_by_outcome": {},
+          "unavailable_reason": "refused/failed attempt, or no interval/test produced; see counts and fit ledger"
+        },
+        "vc_interval_coverage_wafer": {
+          "count": 1953,
+          "mcse_empirical": 0.0033873108803297025,
+          "mcse_nominal": 0.004873397172404485,
+          "n": 2000,
+          "rate": 0.9765,
+          "unavailable": 5,
+          "unavailable_by_outcome": {
+            "analyzed_boundary": 5
+          },
+          "unavailable_reason": "refused/failed attempt, or no interval/test produced; see counts and fit ledger"
+        }
+      },
+      "boundary_fits": 236,
+      "degenerate_fits": 0,
+      "failures": [],
+      "mismatches": [],
+      "ledger_sha256": "5303724f11f3ee4cbeca4615d2d37dd7995bf9884746cb77f0403ad1ba24f2b4"
+    },
+    "T1-g5-w4-s5": {
+      "cell_id": "T1-g5-w4-s5",
+      "synthetic": true,
+      "attempts": 2000,
+      "classification": "conforming",
+      "condition": "conforming",
+      "template": "T1",
+      "decisions": {
+        "ANALYZE": 1429,
+        "WARN": 571
+      },
+      "outcomes": {
+        "analyzed_boundary": 96,
+        "analyzed_interior": 1904
+      },
+      "components": {
+        "A": {
+          "bias": 10.714606566165081,
+          "bias_mcse": 5.9601153033294,
+          "coverage": {
+            "count": 1822,
+            "mcse_empirical": 0.006367063687446513,
+            "mcse_nominal": 0.004873397172404485,
+            "n": 2000,
+            "rate": 0.911
+          },
+          "endpoint_overflow": 7,
+          "estimates_available": 2000,
+          "negative": {
+            "count": 96,
+            "mcse_empirical": 0.0047799581588126895,
+            "mcse_nominal": null,
+            "n": 2000,
+            "rate": 0.048
+          },
+          "no_estimate": 0,
+          "no_interval": 96
+        },
+        "B": {
+          "bias": -1.2375312938188134,
+          "bias_mcse": 1.9588935881486826,
+          "coverage": {
+            "count": 1938,
+            "mcse_empirical": 0.003875499967746099,
+            "mcse_nominal": 0.004873397172404485,
+            "n": 2000,
+            "rate": 0.969
+          },
+          "endpoint_overflow": 0,
+          "estimates_available": 2000,
+          "negative": {
+            "count": 0,
+            "mcse_empirical": 0.0,
+            "mcse_nominal": null,
+            "n": 2000,
+            "rate": 0.0
+          },
+          "no_estimate": 0,
+          "no_interval": 0
+        },
+        "residual": {
+          "bias": -0.10313748540555938,
+          "bias_mcse": 0.4267914811153727,
+          "coverage": {
+            "count": 1897,
+            "mcse_empirical": 0.004942051699446293,
+            "mcse_nominal": 0.004873397172404485,
+            "n": 2000,
+            "rate": 0.9485
+          },
+          "endpoint_overflow": 0,
+          "estimates_available": 2000,
+          "negative": {
+            "count": 0,
+            "mcse_empirical": 0.0,
+            "mcse_nominal": null,
+            "n": 2000,
+            "rate": 0.0
+          },
+          "no_estimate": 0,
+          "no_interval": 0
+        }
+      },
+      "metrics": {
+        "vc_interval_coverage_run": {
+          "count": 1822,
+          "mcse_empirical": 0.006367063687446513,
+          "mcse_nominal": 0.004873397172404485,
+          "n": 2000,
+          "rate": 0.911,
+          "unavailable": 96,
+          "unavailable_by_outcome": {
+            "analyzed_boundary": 96
+          },
+          "unavailable_reason": "refused/failed attempt, or no interval/test produced; see counts and fit ledger"
+        },
+        "vc_interval_coverage_site": {
+          "count": 1897,
+          "mcse_empirical": 0.004942051699446293,
+          "mcse_nominal": 0.004873397172404485,
+          "n": 2000,
+          "rate": 0.9485,
+          "unavailable": 0,
+          "unavailable_by_outcome": {},
+          "unavailable_reason": "refused/failed attempt, or no interval/test produced; see counts and fit ledger"
+        },
+        "vc_interval_coverage_wafer": {
+          "count": 1938,
+          "mcse_empirical": 0.003875499967746099,
+          "mcse_nominal": 0.004873397172404485,
+          "n": 2000,
+          "rate": 0.969,
+          "unavailable": 0,
+          "unavailable_by_outcome": {},
+          "unavailable_reason": "refused/failed attempt, or no interval/test produced; see counts and fit ledger"
+        }
+      },
+      "boundary_fits": 96,
+      "degenerate_fits": 0,
+      "failures": [],
+      "mismatches": [],
+      "ledger_sha256": "04d69c4c749777f35a1c13bff7c9f5574232cefe40198f6b9f3636747784838e"
+    },
+    "T1-g5-w4-s9": {
+      "cell_id": "T1-g5-w4-s9",
+      "synthetic": true,
+      "attempts": 2000,
+      "classification": "conforming",
+      "condition": "conforming",
+      "template": "T1",
+      "decisions": {
+        "ANALYZE": 1404,
+        "WARN": 596
+      },
+      "outcomes": {
+        "analyzed_boundary": 92,
+        "analyzed_interior": 1908
+      },
+      "components": {
+        "A": {
+          "bias": 3.8445655626303203,
+          "bias_mcse": 6.054284088095402,
+          "coverage": {
+            "count": 1833,
+            "mcse_empirical": 0.006185780063985464,
+            "mcse_nominal": 0.004873397172404485,
+            "n": 2000,
+            "rate": 0.9165
+          },
+          "endpoint_overflow": 7,
+          "estimates_available": 2000,
+          "negative": {
+            "count": 92,
+            "mcse_empirical": 0.00468422885862764,
+            "mcse_nominal": null,
+            "n": 2000,
+            "rate": 0.046
+          },
+          "no_estimate": 0,
+          "no_interval": 92
+        },
+        "B": {
+          "bias": -3.9438545249705586,
+          "bias_mcse": 1.8983339506853496,
+          "coverage": {
+            "count": 1930,
+            "mcse_empirical": 0.00410944035119139,
+            "mcse_nominal": 0.004873397172404485,
+            "n": 2000,
+            "rate": 0.965
+          },
+          "endpoint_overflow": 0,
+          "estimates_available": 2000,
+          "negative": {
+            "count": 0,
+            "mcse_empirical": 0.0,
+            "mcse_nominal": null,
+            "n": 2000,
+            "rate": 0.0
+          },
+          "no_estimate": 0,
+          "no_interval": 0
+        },
+        "residual": {
+          "bias": 0.2855153962682028,
+          "bias_mcse": 0.3074001240072411,
+          "coverage": {
+            "count": 1897,
+            "mcse_empirical": 0.004942051699446293,
+            "mcse_nominal": 0.004873397172404485,
+            "n": 2000,
+            "rate": 0.9485
+          },
+          "endpoint_overflow": 0,
+          "estimates_available": 2000,
+          "negative": {
+            "count": 0,
+            "mcse_empirical": 0.0,
+            "mcse_nominal": null,
+            "n": 2000,
+            "rate": 0.0
+          },
+          "no_estimate": 0,
+          "no_interval": 0
+        }
+      },
+      "metrics": {
+        "vc_interval_coverage_run": {
+          "count": 1833,
+          "mcse_empirical": 0.006185780063985464,
+          "mcse_nominal": 0.004873397172404485,
+          "n": 2000,
+          "rate": 0.9165,
+          "unavailable": 92,
+          "unavailable_by_outcome": {
+            "analyzed_boundary": 92
+          },
+          "unavailable_reason": "refused/failed attempt, or no interval/test produced; see counts and fit ledger"
+        },
+        "vc_interval_coverage_site": {
+          "count": 1897,
+          "mcse_empirical": 0.004942051699446293,
+          "mcse_nominal": 0.004873397172404485,
+          "n": 2000,
+          "rate": 0.9485,
+          "unavailable": 0,
+          "unavailable_by_outcome": {},
+          "unavailable_reason": "refused/failed attempt, or no interval/test produced; see counts and fit ledger"
+        },
+        "vc_interval_coverage_wafer": {
+          "count": 1930,
+          "mcse_empirical": 0.00410944035119139,
+          "mcse_nominal": 0.004873397172404485,
+          "n": 2000,
+          "rate": 0.965,
+          "unavailable": 0,
+          "unavailable_by_outcome": {},
+          "unavailable_reason": "refused/failed attempt, or no interval/test produced; see counts and fit ledger"
+        }
+      },
+      "boundary_fits": 92,
+      "degenerate_fits": 0,
+      "failures": [],
+      "mismatches": [],
+      "ledger_sha256": "2fb816ab259925aac4156b689ca220b7b1a844dfbd237fa34b1f9488630ab224"
+    }
+  }
+}

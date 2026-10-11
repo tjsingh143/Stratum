@@ -1,0 +1,111 @@
+
+> source("r/common.R")
+
+> d <- read.csv(file.path(DERIVED, "lithography.csv"))
+
+> stopifnot(nrow(d) == 450)
+
+> d$cassette <- factor(d$cassette)
+
+> d$wafer <- factor(d$wafer)
+
+> d$site <- factor(d$site)
+
+> a <- nlevels(d$cassette)
+
+> b <- 3
+
+> n <- 5
+
+> fit_aov <- aov(width_raw ~ 1 + Error(cassette/wafer), 
++     data = d)
+
+> summary(fit_aov)
+
+Error: cassette
+          Df Sum Sq Mean Sq F value Pr(>F)
+Residuals 29  127.4   4.393               
+
+Error: cassette:wafer
+          Df Sum Sq Mean Sq F value Pr(>F)
+Residuals 60  25.52  0.4253               
+
+Error: Within
+           Df Sum Sq Mean Sq F value Pr(>F)
+Residuals 360  63.18  0.1755               
+
+> strata <- aov_strata(fit_aov)
+
+> ms <- setNames(strata$ms, c("cassette", "wafer", "site"))
+
+> mom <- c(cassette = unname(ms["cassette"] - ms["wafer"])/(b * 
++     n), wafer = unname(ms["wafer"] - ms["site"])/n, site = unname(ms["site"]))
+
+> mom
+  cassette      wafer       site 
+0.26452376 0.04997039 0.17549624 
+
+> fit_lmer <- lmer(width_raw ~ 1 + (1 | cassette/wafer), 
++     data = d, REML = TRUE)
+
+> summary(fit_lmer)
+Linear mixed model fit by REML. t-tests use Satterthwaite's method ['lmerModLmerTest']
+Formula: width_raw ~ 1 + (1 | cassette/wafer)
+   Data: d
+
+REML criterion at convergence: 645.5
+
+Scaled residuals: 
+     Min       1Q   Median       3Q      Max 
+-2.45850 -0.62363 -0.03559  0.57612  2.52347 
+
+Random effects:
+ Groups         Name        Variance Std.Dev.
+ wafer:cassette (Intercept) 0.04997  0.2235  
+ cassette       (Intercept) 0.26452  0.5143  
+ Residual                   0.17550  0.4189  
+Number of obs: 450, groups:  wafer:cassette, 90; cassette, 30
+
+Fixed effects:
+            Estimate Std. Error       df t value Pr(>|t|)    
+(Intercept)  2.53228    0.09881 28.99995   25.63   <2e-16 ***
+---
+Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
+
+> fit_lme <- nlme::lme(width_raw ~ 1, random = ~1 | 
++     cassette/wafer, data = d, method = "REML")
+
+> nlme::VarCorr(fit_lme)
+            Variance     StdDev   
+cassette =  pdLogChol(1)          
+(Intercept) 0.2645214    0.5143165
+wafer =     pdLogChol(1)          
+(Intercept) 0.0499709    0.2235417
+Residual    0.1754962    0.4189226
+
+> fit_site_fixed <- aov(width_raw ~ site + Error(cassette/wafer), 
++     data = d)
+
+> summary(fit_site_fixed)
+
+Error: cassette
+          Df Sum Sq Mean Sq F value Pr(>F)
+Residuals 29  127.4   4.393               
+
+Error: cassette:wafer
+          Df Sum Sq Mean Sq F value Pr(>F)
+Residuals 60  25.52  0.4253               
+
+Error: Within
+           Df Sum Sq Mean Sq F value Pr(>F)    
+site        4  47.17  11.792   262.2 <2e-16 ***
+Residuals 356  16.01   0.045                   
+---
+Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
+
+> write_result(list(dataset = "NIST lithography (LITHOGRA.DAT), raw width", 
++     design = list(a_cassettes = a, b_wafers_per_cassette = b, 
++         n_sites_per_wafer = n), aov_error_strata = strata, mom_variance_components = as.list(mom), 
++     lmer_reml = list(vc = lmer_vc(fit_lmer), singular = isSingular(fit_lmer)), 
++     nlme_reml = nlme_vc(fit_lme), supplementary_site_fixed = aov_strata(fit_site_fixed)), 
++     "lithography.json")

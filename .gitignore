@@ -1,0 +1,9 @@
+# Fetched reference sources and files derived from them are never vendored
+# (see reference/README.md). Regenerate with: python3 reference/fetch.py
+reference/_fetched/
+__pycache__/
+.DS_Store
+# Project-local Python environment
+.venv/
+# Local CLI output at the repository root (scenarios/*/output/ is committed)
+/output/

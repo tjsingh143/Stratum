@@ -1,0 +1,596 @@
+{
+  "scenario": "S1",
+  "name": "Chamber confounding",
+  "synthetic": true,
+  "preregistered_in": "scenarios/expectations.json (D-086)",
+  "assertions": 45,
+  "matched": 45,
+  "status": "MATCH",
+  "descriptive": {
+    "label": "descriptive only: raw means of every measurement per level of 'recipe', computed from the data file by scenarios/run.py; not an estimate Stratum supports, and it says nothing about uncertainty",
+    "factor": "recipe",
+    "means": {
+      "standard": 100.0,
+      "modified": 96.0
+    },
+    "measurements_per_level": {
+      "standard": 45,
+      "modified": 45
+    },
+    "raw_mean_difference": -4.0,
+    "difference_of": "modified - standard"
+  },
+  "checks": [
+    {
+      "path": [
+        "decision",
+        "evidence_decision"
+      ],
+      "op": "eq",
+      "value": "REFUSE",
+      "actual": "REFUSE",
+      "status": "MATCH"
+    },
+    {
+      "path": [
+        "decision",
+        "analyzed"
+      ],
+      "op": "eq",
+      "value": false,
+      "actual": false,
+      "status": "MATCH"
+    },
+    {
+      "path": [
+        "findings"
+      ],
+      "op": "field_set",
+      "value": [
+        "complete_confounding"
+      ],
+      "field": "code",
+      "actual": [
+        "complete_confounding"
+      ],
+      "status": "MATCH"
+    },
+    {
+      "path": [
+        "findings",
+        {
+          "code": "complete_confounding"
+        },
+        "message"
+      ],
+      "op": "contains",
+      "value": "More measurements below the 'run' level cannot restore that missing independent information",
+      "actual": "Comparison 'modified_vs_standard' is not estimable once 'chamber' is included: modified - standard cannot be separated from 'chamber' differences (design-matrix rank; table [[3, 0], [0, 3]]). The data contain no recipe comparison made within a level of 'chamber'. More measurements below the 'run' level cannot restore that missing independent information. A crossed, randomized assignment of recipe levels to chamber levels is needed.",
+      "status": "MATCH"
+    },
+    {
+      "path": [
+        "findings",
+        {
+          "code": "complete_confounding"
+        },
+        "explanation",
+        "status"
+      ],
+      "op": "eq",
+      "value": "written",
+      "actual": "written",
+      "status": "MATCH"
+    },
+    {
+      "path": [
+        "findings",
+        {
+          "code": "complete_confounding"
+        },
+        "explanation",
+        "text"
+      ],
+      "op": "contains",
+      "value": "Measuring more wafers or sites does not help",
+      "actual": "Every unit given one treatment level also shares a recorded nuisance level, such as a chamber, with no unit of the other treatment level; for example, all runs of one recipe were in one chamber and all runs of the other recipe in another. A treatment difference and a chamber difference would then produce exactly the same data, so no analysis can separate them. (For a numbered factor such as run order, the same happens when the treatment lines up exactly with a straight-line trend in it.) Measuring more wafers or sites does not help, because it adds no comparison of the treatments within a chamber. The design has to change so that every treatment level runs at every level of that factor, as in the reassignment suggestion when one is given.",
+      "status": "MATCH"
+    },
+    {
+      "path": [
+        "comparisons",
+        0,
+        "status"
+      ],
+      "op": "eq",
+      "value": "refused",
+      "actual": "refused",
+      "status": "MATCH"
+    },
+    {
+      "path": [
+        "comparisons",
+        0,
+        "estimates"
+      ],
+      "op": "len",
+      "value": 0,
+      "actual": 0,
+      "status": "MATCH"
+    },
+    {
+      "path": [
+        "comparisons",
+        0,
+        "independent_units",
+        "per_level"
+      ],
+      "op": "eq",
+      "value": {
+        "standard": 3,
+        "modified": 3
+      },
+      "actual": {
+        "standard": 3,
+        "modified": 3
+      },
+      "status": "MATCH"
+    },
+    {
+      "path": [
+        "analysis",
+        "anova"
+      ],
+      "op": "eq",
+      "value": {},
+      "actual": {},
+      "status": "MATCH"
+    },
+    {
+      "path": [
+        "analysis",
+        "variance_components"
+      ],
+      "op": "eq",
+      "value": {},
+      "actual": {},
+      "status": "MATCH"
+    },
+    {
+      "path": [
+        "caveats"
+      ],
+      "op": "len",
+      "value": 0,
+      "actual": 0,
+      "status": "MATCH"
+    },
+    {
+      "path": [
+        "stages",
+        {
+          "id": "S8"
+        },
+        "status"
+      ],
+      "op": "eq",
+      "value": "not_evaluated",
+      "actual": "not_evaluated",
+      "status": "MATCH"
+    },
+    {
+      "path": [
+        "allocation",
+        "status"
+      ],
+      "op": "eq",
+      "value": "not_applicable",
+      "actual": "not_applicable",
+      "status": "MATCH"
+    },
+    {
+      "path": [
+        "planning",
+        "eligible"
+      ],
+      "op": "eq",
+      "value": true,
+      "actual": true,
+      "status": "MATCH"
+    },
+    {
+      "path": [
+        "planning",
+        "mode"
+      ],
+      "op": "eq",
+      "value": "evidence",
+      "actual": "evidence",
+      "status": "MATCH"
+    },
+    {
+      "path": [
+        "reassignment",
+        "status"
+      ],
+      "op": "eq",
+      "value": "produced",
+      "actual": "produced",
+      "status": "MATCH"
+    },
+    {
+      "path": [
+        "reassignment",
+        "suggestions"
+      ],
+      "op": "len",
+      "value": 1,
+      "actual": 1,
+      "status": "MATCH"
+    },
+    {
+      "path": [
+        "reassignment",
+        "suggestions",
+        0,
+        "factor"
+      ],
+      "op": "eq",
+      "value": "chamber",
+      "actual": "chamber",
+      "status": "MATCH"
+    },
+    {
+      "path": [
+        "reassignment",
+        "suggestions",
+        0,
+        "factor_levels"
+      ],
+      "op": "eq",
+      "value": [
+        "A",
+        "B"
+      ],
+      "actual": [
+        "A",
+        "B"
+      ],
+      "status": "MATCH"
+    },
+    {
+      "path": [
+        "reassignment",
+        "suggestions",
+        0,
+        "declared_replicates_per_level"
+      ],
+      "op": "eq",
+      "value": 3,
+      "actual": 3,
+      "status": "MATCH"
+    },
+    {
+      "path": [
+        "reassignment",
+        "suggestions",
+        0,
+        "replicates_per_level"
+      ],
+      "op": "eq",
+      "value": 4,
+      "actual": 4,
+      "status": "MATCH"
+    },
+    {
+      "path": [
+        "reassignment",
+        "suggestions",
+        0,
+        "extra_units_per_level"
+      ],
+      "op": "eq",
+      "value": 1,
+      "actual": 1,
+      "status": "MATCH"
+    },
+    {
+      "path": [
+        "reassignment",
+        "suggestions",
+        0,
+        "units_per_cell"
+      ],
+      "op": "eq",
+      "value": 2,
+      "actual": 2,
+      "status": "MATCH"
+    },
+    {
+      "path": [
+        "reassignment",
+        "suggestions",
+        0,
+        "total_units"
+      ],
+      "op": "eq",
+      "value": 8,
+      "actual": 8,
+      "status": "MATCH"
+    },
+    {
+      "path": [
+        "reassignment",
+        "suggestions",
+        0,
+        "plan"
+      ],
+      "op": "len",
+      "value": 8,
+      "actual": 8,
+      "status": "MATCH"
+    },
+    {
+      "path": [
+        "reassignment",
+        "suggestions",
+        0,
+        "revised_match",
+        "matched"
+      ],
+      "op": "eq",
+      "value": true,
+      "actual": true,
+      "status": "MATCH"
+    },
+    {
+      "path": [
+        "reassignment",
+        "suggestions",
+        0,
+        "revised_match",
+        "template"
+      ],
+      "op": "eq",
+      "value": "T2",
+      "actual": "T2",
+      "status": "MATCH"
+    },
+    {
+      "path": [
+        "reassignment",
+        "suggestions",
+        0,
+        "layout_check",
+        "verified"
+      ],
+      "op": "eq",
+      "value": true,
+      "actual": true,
+      "status": "MATCH"
+    },
+    {
+      "path": [
+        "reassignment",
+        "suggestions",
+        0,
+        "estimates",
+        "num_df"
+      ],
+      "op": "eq",
+      "value": 1,
+      "actual": 1,
+      "status": "MATCH"
+    },
+    {
+      "path": [
+        "reassignment",
+        "suggestions",
+        0,
+        "estimates",
+        "den_df"
+      ],
+      "op": "eq",
+      "value": 5,
+      "actual": 5,
+      "status": "MATCH"
+    },
+    {
+      "path": [
+        "reassignment",
+        "suggestions",
+        0,
+        "precision",
+        "status"
+      ],
+      "op": "eq",
+      "value": "identified",
+      "actual": "identified",
+      "status": "MATCH"
+    },
+    {
+      "path": [
+        "reassignment",
+        "suggestions",
+        0,
+        "precision",
+        "m"
+      ],
+      "op": "eq",
+      "value": 15,
+      "actual": 15,
+      "status": "MATCH"
+    },
+    {
+      "path": [
+        "reassignment",
+        "suggestions",
+        0,
+        "precision",
+        "lambda_unit"
+      ],
+      "op": "approx",
+      "value": 15.0,
+      "actual": 15.0,
+      "status": "MATCH"
+    },
+    {
+      "path": [
+        "reassignment",
+        "suggestions",
+        0,
+        "precision",
+        "lambda_unit_df"
+      ],
+      "op": "eq",
+      "value": 4,
+      "actual": 4,
+      "status": "MATCH"
+    },
+    {
+      "path": [
+        "reassignment",
+        "suggestions",
+        0,
+        "precision",
+        "unit_stratum",
+        "n_cells"
+      ],
+      "op": "eq",
+      "value": 2,
+      "actual": 2,
+      "status": "MATCH"
+    },
+    {
+      "path": [
+        "reassignment",
+        "suggestions",
+        0,
+        "precision",
+        "se"
+      ],
+      "op": "approx",
+      "value": 0.7071067811865476,
+      "actual": 0.7071067811865476,
+      "status": "MATCH"
+    },
+    {
+      "path": [
+        "reassignment",
+        "suggestions",
+        0,
+        "precision",
+        "se_from_components"
+      ],
+      "op": "approx",
+      "value": 0.7071067811865476,
+      "actual": 0.7071067811865476,
+      "status": "MATCH"
+    },
+    {
+      "path": [
+        "reassignment",
+        "suggestions",
+        0,
+        "precision",
+        "se_interval",
+        0
+      ],
+      "op": "approx_expr",
+      "value": "sqrt(2 * 4 * 15 / chi2_quantile(0.975, 4) / (4 * 15))",
+      "evaluated": 0.4236511055153344,
+      "actual": 0.4236511055153344,
+      "status": "MATCH"
+    },
+    {
+      "path": [
+        "reassignment",
+        "suggestions",
+        0,
+        "precision",
+        "se_interval",
+        1
+      ],
+      "op": "approx_expr",
+      "value": "sqrt(2 * 4 * 15 / chi2_quantile(0.025, 4) / (4 * 15))",
+      "evaluated": 2.031910674973518,
+      "actual": 2.031910674973518,
+      "status": "MATCH"
+    },
+    {
+      "path": [
+        "reassignment",
+        "suggestions",
+        0,
+        "precision",
+        "expected_half_width"
+      ],
+      "op": "approx_expr",
+      "value": "t_quantile(0.975, 5) * sqrt(0.5)",
+      "evaluated": 1.8176758475733998,
+      "actual": 1.8176758475733998,
+      "status": "MATCH"
+    },
+    {
+      "path": [
+        "reassignment",
+        "suggestions",
+        0,
+        "precision",
+        "components",
+        {
+          "component": "unit"
+        },
+        "estimate"
+      ],
+      "op": "approx",
+      "value": 0.9166666666666666,
+      "actual": 0.9166666666666666,
+      "status": "MATCH"
+    },
+    {
+      "path": [
+        "reassignment",
+        "suggestions",
+        0,
+        "precision",
+        "components",
+        {
+          "component": "sub1"
+        },
+        "estimate"
+      ],
+      "op": "approx",
+      "value": 0.245,
+      "actual": 0.245,
+      "status": "MATCH"
+    },
+    {
+      "path": [
+        "reassignment",
+        "suggestions",
+        0,
+        "precision",
+        "components",
+        {
+          "component": "sub2"
+        },
+        "estimate"
+      ],
+      "op": "approx",
+      "value": 0.025,
+      "actual": 0.025,
+      "status": "MATCH"
+    },
+    {
+      "path": [
+        "descriptive",
+        "raw_mean_difference"
+      ],
+      "op": "approx",
+      "value": -4.0,
+      "actual": -4.0,
+      "status": "MATCH"
+    }
+  ]
+}

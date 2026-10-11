@@ -1,0 +1,4892 @@
+{
+  "description": "Frozen WP3 comparison map (DECISIONS.md D-061). Every row of reference/reference_numbers.csv is classified before any Stratum analysis result exists.",
+  "frozen_by": "D-061",
+  "classes": {
+    "EXACT": "|stratum - ref| <= 1e-8 * max(1, |ref|)",
+    "PRINTED": "|stratum - ref| <= 0.5 * 10**-printed_decimal_place",
+    "ITERATIVE": "|stratum - ref| <= max(0.5 * 10**-printed_decimal_place, 1e-4 * max(1, |ref|))",
+    "STRUCTURAL": "exact equality of integer coefficients",
+    "DESCRIPTIVE": "reported side by side; no tolerance (different method by design)",
+    "OUT_OF_SCOPE": "no Stratum quantity exists; the reason names the decision",
+    "NOT_OBTAINED": "book value never obtained (D-005, D-013)"
+  },
+  "pass_fail_classes": [
+    "EXACT",
+    "PRINTED",
+    "ITERATIVE",
+    "STRUCTURAL"
+  ],
+  "rows": 136,
+  "class_counts": {
+    "PRINTED": 35,
+    "ITERATIVE": 42,
+    "STRUCTURAL": 1,
+    "DESCRIPTIVE": 10,
+    "NOT_OBTAINED": 3,
+    "OUT_OF_SCOPE": 9,
+    "EXACT": 36
+  },
+  "reference_rows": [
+    {
+      "id": "F01",
+      "dataset": "furnace",
+      "quantity": "ANOVA Run df",
+      "tier": "published",
+      "role": "canonical",
+      "printed_value": "20",
+      "class": "PRINTED",
+      "target": {
+        "dataset": "furnace",
+        "kind": "anova",
+        "key": "A",
+        "field": "df"
+      },
+      "note": "NIST/SEMATECH handbook 3.5.1.4 ANOVA table, reproduced at printed precision",
+      "printed_decimal_place": 0,
+      "ref": {
+        "source": "printed",
+        "value": "20"
+      }
+    },
+    {
+      "id": "F02",
+      "dataset": "furnace",
+      "quantity": "ANOVA Run SS",
+      "tier": "published",
+      "role": "canonical",
+      "printed_value": "61,442.29",
+      "class": "PRINTED",
+      "target": {
+        "dataset": "furnace",
+        "kind": "anova",
+        "key": "A",
+        "field": "ss"
+      },
+      "note": "NIST/SEMATECH handbook 3.5.1.4 ANOVA table, reproduced at printed precision",
+      "printed_decimal_place": 2,
+      "ref": {
+        "source": "printed",
+        "value": "61,442.29"
+      }
+    },
+    {
+      "id": "F03",
+      "dataset": "furnace",
+      "quantity": "ANOVA Run MS",
+      "tier": "published",
+      "role": "canonical",
+      "printed_value": "3,072.11",
+      "class": "PRINTED",
+      "target": {
+        "dataset": "furnace",
+        "kind": "anova",
+        "key": "A",
+        "field": "ms"
+      },
+      "note": "NIST/SEMATECH handbook 3.5.1.4 ANOVA table, reproduced at printed precision",
+      "printed_decimal_place": 2,
+      "ref": {
+        "source": "printed",
+        "value": "3,072.11"
+      }
+    },
+    {
+      "id": "F04",
+      "dataset": "furnace",
+      "quantity": "ANOVA Run F (vs location(run))",
+      "tier": "published",
+      "role": "canonical",
+      "printed_value": "5.37404",
+      "class": "PRINTED",
+      "target": {
+        "dataset": "furnace",
+        "kind": "anova",
+        "key": "A",
+        "field": "F"
+      },
+      "note": "NIST/SEMATECH handbook 3.5.1.4 ANOVA table, reproduced at printed precision",
+      "printed_decimal_place": 5,
+      "ref": {
+        "source": "printed",
+        "value": "5.37404"
+      }
+    },
+    {
+      "id": "F05",
+      "dataset": "furnace",
+      "quantity": "ANOVA Run p",
+      "tier": "published",
+      "role": "canonical",
+      "printed_value": "0.0000001",
+      "class": "PRINTED",
+      "target": {
+        "dataset": "furnace",
+        "kind": "anova",
+        "key": "A",
+        "field": "p"
+      },
+      "note": "NIST/SEMATECH handbook 3.5.1.4 ANOVA table, reproduced at printed precision",
+      "printed_decimal_place": 7,
+      "ref": {
+        "source": "printed",
+        "value": "0.0000001"
+      }
+    },
+    {
+      "id": "F06",
+      "dataset": "furnace",
+      "quantity": "ANOVA Location(Run) df",
+      "tier": "published",
+      "role": "canonical",
+      "printed_value": "63",
+      "class": "PRINTED",
+      "target": {
+        "dataset": "furnace",
+        "kind": "anova",
+        "key": "B",
+        "field": "df"
+      },
+      "note": "NIST/SEMATECH handbook 3.5.1.4 ANOVA table, reproduced at printed precision",
+      "printed_decimal_place": 0,
+      "ref": {
+        "source": "printed",
+        "value": "63"
+      }
+    },
+    {
+      "id": "F07",
+      "dataset": "furnace",
+      "quantity": "ANOVA Location(Run) SS",
+      "tier": "published",
+      "role": "canonical",
+      "printed_value": "36,014.5",
+      "class": "PRINTED",
+      "target": {
+        "dataset": "furnace",
+        "kind": "anova",
+        "key": "B",
+        "field": "ss"
+      },
+      "note": "NIST/SEMATECH handbook 3.5.1.4 ANOVA table, reproduced at printed precision",
+      "printed_decimal_place": 1,
+      "ref": {
+        "source": "printed",
+        "value": "36,014.5"
+      }
+    },
+    {
+      "id": "F08",
+      "dataset": "furnace",
+      "quantity": "ANOVA Location(Run) MS",
+      "tier": "published",
+      "role": "canonical",
+      "printed_value": "571.659",
+      "class": "PRINTED",
+      "target": {
+        "dataset": "furnace",
+        "kind": "anova",
+        "key": "B",
+        "field": "ms"
+      },
+      "note": "NIST/SEMATECH handbook 3.5.1.4 ANOVA table, reproduced at printed precision",
+      "printed_decimal_place": 3,
+      "ref": {
+        "source": "printed",
+        "value": "571.659"
+      }
+    },
+    {
+      "id": "F09",
+      "dataset": "furnace",
+      "quantity": "ANOVA Location(Run) F (vs within)",
+      "tier": "published",
+      "role": "canonical",
+      "printed_value": "4.72864",
+      "class": "PRINTED",
+      "target": {
+        "dataset": "furnace",
+        "kind": "anova",
+        "key": "B",
+        "field": "F"
+      },
+      "note": "NIST/SEMATECH handbook 3.5.1.4 ANOVA table, reproduced at printed precision",
+      "printed_decimal_place": 5,
+      "ref": {
+        "source": "printed",
+        "value": "4.72864"
+      }
+    },
+    {
+      "id": "F10",
+      "dataset": "furnace",
+      "quantity": "ANOVA Location(Run) p",
+      "tier": "published",
+      "role": "canonical",
+      "printed_value": "3.85e-11",
+      "class": "PRINTED",
+      "target": {
+        "dataset": "furnace",
+        "kind": "anova",
+        "key": "B",
+        "field": "p"
+      },
+      "note": "NIST/SEMATECH handbook 3.5.1.4 ANOVA table, reproduced at printed precision",
+      "printed_decimal_place": 13,
+      "ref": {
+        "source": "printed",
+        "value": "3.85e-11"
+      }
+    },
+    {
+      "id": "F11",
+      "dataset": "furnace",
+      "quantity": "ANOVA Within df",
+      "tier": "published",
+      "role": "canonical",
+      "printed_value": "84",
+      "class": "PRINTED",
+      "target": {
+        "dataset": "furnace",
+        "kind": "anova",
+        "key": "residual",
+        "field": "df"
+      },
+      "note": "NIST/SEMATECH handbook 3.5.1.4 ANOVA table, reproduced at printed precision",
+      "printed_decimal_place": 0,
+      "ref": {
+        "source": "printed",
+        "value": "84"
+      }
+    },
+    {
+      "id": "F12",
+      "dataset": "furnace",
+      "quantity": "ANOVA Within SS",
+      "tier": "published",
+      "role": "canonical",
+      "printed_value": "10,155",
+      "class": "PRINTED",
+      "target": {
+        "dataset": "furnace",
+        "kind": "anova",
+        "key": "residual",
+        "field": "ss"
+      },
+      "note": "NIST/SEMATECH handbook 3.5.1.4 ANOVA table, reproduced at printed precision",
+      "printed_decimal_place": 0,
+      "ref": {
+        "source": "printed",
+        "value": "10,155"
+      }
+    },
+    {
+      "id": "F13",
+      "dataset": "furnace",
+      "quantity": "ANOVA Within MS",
+      "tier": "published",
+      "role": "canonical",
+      "printed_value": "120.893",
+      "class": "PRINTED",
+      "target": {
+        "dataset": "furnace",
+        "kind": "anova",
+        "key": "residual",
+        "field": "ms"
+      },
+      "note": "NIST/SEMATECH handbook 3.5.1.4 ANOVA table, reproduced at printed precision",
+      "printed_decimal_place": 3,
+      "ref": {
+        "source": "printed",
+        "value": "120.893"
+      }
+    },
+    {
+      "id": "F14",
+      "dataset": "furnace",
+      "quantity": "ANOVA Total df",
+      "tier": "published",
+      "role": "canonical",
+      "printed_value": "167",
+      "class": "PRINTED",
+      "target": {
+        "dataset": "furnace",
+        "kind": "anova",
+        "key": "total",
+        "field": "df"
+      },
+      "note": "NIST/SEMATECH handbook 3.5.1.4 ANOVA table, reproduced at printed precision",
+      "printed_decimal_place": 0,
+      "ref": {
+        "source": "printed",
+        "value": "167"
+      }
+    },
+    {
+      "id": "F15",
+      "dataset": "furnace",
+      "quantity": "ANOVA Total SS",
+      "tier": "published",
+      "role": "canonical",
+      "printed_value": "107,611.8",
+      "class": "PRINTED",
+      "target": {
+        "dataset": "furnace",
+        "kind": "anova",
+        "key": "total",
+        "field": "ss"
+      },
+      "note": "NIST/SEMATECH handbook 3.5.1.4 ANOVA table, reproduced at printed precision",
+      "printed_decimal_place": 1,
+      "ref": {
+        "source": "printed",
+        "value": "107,611.8"
+      }
+    },
+    {
+      "id": "F16",
+      "dataset": "furnace",
+      "quantity": "ANOVA Total MS",
+      "tier": "published",
+      "role": "canonical",
+      "printed_value": "644.382",
+      "class": "PRINTED",
+      "target": {
+        "dataset": "furnace",
+        "kind": "anova",
+        "key": "total",
+        "field": "ms"
+      },
+      "note": "NIST/SEMATECH handbook 3.5.1.4 ANOVA table, reproduced at printed precision",
+      "printed_decimal_place": 3,
+      "ref": {
+        "source": "printed",
+        "value": "644.382"
+      }
+    },
+    {
+      "id": "F17",
+      "dataset": "furnace",
+      "quantity": "Variance component Run",
+      "tier": "published",
+      "role": "canonical",
+      "printed_value": "312.55694",
+      "class": "PRINTED",
+      "target": {
+        "dataset": "furnace",
+        "kind": "vc",
+        "key": "A",
+        "field": "mom"
+      },
+      "note": "published method-of-moments variance component / SD",
+      "printed_decimal_place": 5,
+      "ref": {
+        "source": "printed",
+        "value": "312.55694"
+      }
+    },
+    {
+      "id": "F18",
+      "dataset": "furnace",
+      "quantity": "SD Run",
+      "tier": "published",
+      "role": "canonical",
+      "printed_value": "17.679",
+      "class": "PRINTED",
+      "target": {
+        "dataset": "furnace",
+        "kind": "vc",
+        "key": "A",
+        "field": "sd_mom"
+      },
+      "note": "published method-of-moments variance component / SD",
+      "printed_decimal_place": 3,
+      "ref": {
+        "source": "printed",
+        "value": "17.679"
+      }
+    },
+    {
+      "id": "F19",
+      "dataset": "furnace",
+      "quantity": "Variance component Location(Run)",
+      "tier": "published",
+      "role": "canonical",
+      "printed_value": "225.38294",
+      "class": "PRINTED",
+      "target": {
+        "dataset": "furnace",
+        "kind": "vc",
+        "key": "B",
+        "field": "mom"
+      },
+      "note": "published method-of-moments variance component / SD",
+      "printed_decimal_place": 5,
+      "ref": {
+        "source": "printed",
+        "value": "225.38294"
+      }
+    },
+    {
+      "id": "F20",
+      "dataset": "furnace",
+      "quantity": "SD Location(Run)",
+      "tier": "published",
+      "role": "canonical",
+      "printed_value": "15.013",
+      "class": "PRINTED",
+      "target": {
+        "dataset": "furnace",
+        "kind": "vc",
+        "key": "B",
+        "field": "sd_mom"
+      },
+      "note": "published method-of-moments variance component / SD",
+      "printed_decimal_place": 3,
+      "ref": {
+        "source": "printed",
+        "value": "15.013"
+      }
+    },
+    {
+      "id": "F21",
+      "dataset": "furnace",
+      "quantity": "Variance component Within",
+      "tier": "published",
+      "role": "canonical",
+      "printed_value": "120.89286",
+      "class": "PRINTED",
+      "target": {
+        "dataset": "furnace",
+        "kind": "vc",
+        "key": "residual",
+        "field": "mom"
+      },
+      "note": "published method-of-moments variance component / SD",
+      "printed_decimal_place": 5,
+      "ref": {
+        "source": "printed",
+        "value": "120.89286"
+      }
+    },
+    {
+      "id": "F22",
+      "dataset": "furnace",
+      "quantity": "SD Within",
+      "tier": "published",
+      "role": "canonical",
+      "printed_value": "10.995",
+      "class": "PRINTED",
+      "target": {
+        "dataset": "furnace",
+        "kind": "vc",
+        "key": "residual",
+        "field": "sd_mom"
+      },
+      "note": "published method-of-moments variance component / SD",
+      "printed_decimal_place": 3,
+      "ref": {
+        "source": "printed",
+        "value": "10.995"
+      }
+    },
+    {
+      "id": "F23",
+      "dataset": "furnace",
+      "quantity": "Run p (NIST R output)",
+      "tier": "published",
+      "role": "cross-check",
+      "printed_value": "1.393903e-07",
+      "class": "PRINTED",
+      "target": {
+        "dataset": "furnace",
+        "kind": "anova",
+        "key": "A",
+        "field": "p"
+      },
+      "note": "NIST's own printed R p-value for the run test (classical, not iterative)",
+      "printed_decimal_place": 13,
+      "ref": {
+        "source": "printed",
+        "value": "1.393903e-07"
+      }
+    },
+    {
+      "id": "F24",
+      "dataset": "furnace",
+      "quantity": "Location(Run) MS (NIST R output)",
+      "tier": "published",
+      "role": "cross-check",
+      "printed_value": "571.6587",
+      "class": "PRINTED",
+      "target": {
+        "dataset": "furnace",
+        "kind": "anova",
+        "key": "B",
+        "field": "ms"
+      },
+      "note": "NIST's own printed R mean square for location(run)",
+      "printed_decimal_place": 4,
+      "ref": {
+        "source": "printed",
+        "value": "571.6587"
+      }
+    },
+    {
+      "id": "F25",
+      "dataset": "furnace",
+      "quantity": "Variance component Run (NIST R output; nlme REML)",
+      "tier": "published",
+      "role": "cross-check",
+      "printed_value": "312.557",
+      "class": "ITERATIVE",
+      "target": {
+        "dataset": "furnace",
+        "kind": "vc",
+        "key": "A",
+        "field": "reml"
+      },
+      "note": "NIST's printed nlme REML component; F26 and F27 are the documented differences of D-008",
+      "printed_decimal_place": 3,
+      "ref": {
+        "source": "printed",
+        "value": "312.557"
+      }
+    },
+    {
+      "id": "F26",
+      "dataset": "furnace",
+      "quantity": "Variance component Location(Run) (NIST R output; nlme REML)",
+      "tier": "published",
+      "role": "cross-check",
+      "printed_value": "225.381",
+      "class": "ITERATIVE",
+      "target": {
+        "dataset": "furnace",
+        "kind": "vc",
+        "key": "B",
+        "field": "reml"
+      },
+      "note": "NIST's printed nlme REML component; F26 and F27 are the documented differences of D-008",
+      "printed_decimal_place": 3,
+      "ref": {
+        "source": "printed",
+        "value": "225.381"
+      }
+    },
+    {
+      "id": "F27",
+      "dataset": "furnace",
+      "quantity": "Variance component Within (NIST R output; nlme REML)",
+      "tier": "published",
+      "role": "cross-check",
+      "printed_value": "120.893",
+      "class": "ITERATIVE",
+      "target": {
+        "dataset": "furnace",
+        "kind": "vc",
+        "key": "residual",
+        "field": "reml"
+      },
+      "note": "NIST's printed nlme REML component; F26 and F27 are the documented differences of D-008",
+      "printed_decimal_place": 3,
+      "ref": {
+        "source": "printed",
+        "value": "120.893"
+      }
+    },
+    {
+      "id": "F28",
+      "dataset": "furnace",
+      "quantity": "E[MS] equation for Run as published",
+      "tier": "published",
+      "role": "canonical",
+      "printed_value": "3072.11 = (4*2)*Var(Run) + 2*Var(Furnace Location) + Var(Within)",
+      "class": "STRUCTURAL",
+      "target": {
+        "dataset": "furnace",
+        "kind": "anova",
+        "key": "A",
+        "field": "ems_coefficients"
+      },
+      "note": "published E[MS] equation for the Run stratum: coefficients (8, 2, 1) over (sigma2_A, sigma2_B, sigma2_residual)",
+      "printed_decimal_place": null,
+      "ref": {
+        "source": "printed",
+        "value": "3072.11 = (4*2)*Var(Run) + 2*Var(Furnace Location) + Var(Within)"
+      }
+    },
+    {
+      "id": "L01",
+      "dataset": "lithography",
+      "quantity": "ANOVA Cassette df",
+      "tier": "published",
+      "role": "optional",
+      "printed_value": "29",
+      "class": "PRINTED",
+      "target": {
+        "dataset": "lithography",
+        "kind": "anova",
+        "key": "A",
+        "field": "df"
+      },
+      "note": "NIST/SEMATECH handbook 6.6.1.3 nested ANOVA table",
+      "printed_decimal_place": 0,
+      "ref": {
+        "source": "printed",
+        "value": "29"
+      }
+    },
+    {
+      "id": "L02",
+      "dataset": "lithography",
+      "quantity": "ANOVA Cassette SS",
+      "tier": "published",
+      "role": "optional",
+      "printed_value": "127.40293",
+      "class": "PRINTED",
+      "target": {
+        "dataset": "lithography",
+        "kind": "anova",
+        "key": "A",
+        "field": "ss"
+      },
+      "note": "NIST/SEMATECH handbook 6.6.1.3 nested ANOVA table",
+      "printed_decimal_place": 5,
+      "ref": {
+        "source": "printed",
+        "value": "127.40293"
+      }
+    },
+    {
+      "id": "L03",
+      "dataset": "lithography",
+      "quantity": "ANOVA Cassette MS",
+      "tier": "published",
+      "role": "optional",
+      "printed_value": "4.3932",
+      "class": "PRINTED",
+      "target": {
+        "dataset": "lithography",
+        "kind": "anova",
+        "key": "A",
+        "field": "ms"
+      },
+      "note": "NIST/SEMATECH handbook 6.6.1.3 nested ANOVA table",
+      "printed_decimal_place": 4,
+      "ref": {
+        "source": "printed",
+        "value": "4.3932"
+      }
+    },
+    {
+      "id": "L04",
+      "dataset": "lithography",
+      "quantity": "ANOVA Wafer(Cassette) SS",
+      "tier": "published",
+      "role": "optional",
+      "printed_value": "25.52089",
+      "class": "PRINTED",
+      "target": {
+        "dataset": "lithography",
+        "kind": "anova",
+        "key": "B",
+        "field": "ss"
+      },
+      "note": "NIST/SEMATECH handbook 6.6.1.3 nested ANOVA table",
+      "printed_decimal_place": 5,
+      "ref": {
+        "source": "printed",
+        "value": "25.52089"
+      }
+    },
+    {
+      "id": "L05",
+      "dataset": "lithography",
+      "quantity": "ANOVA Wafer(Cassette) MS",
+      "tier": "published",
+      "role": "optional",
+      "printed_value": "0.4253",
+      "class": "PRINTED",
+      "target": {
+        "dataset": "lithography",
+        "kind": "anova",
+        "key": "B",
+        "field": "ms"
+      },
+      "note": "NIST/SEMATECH handbook 6.6.1.3 nested ANOVA table",
+      "printed_decimal_place": 4,
+      "ref": {
+        "source": "printed",
+        "value": "0.4253"
+      }
+    },
+    {
+      "id": "L06",
+      "dataset": "lithography",
+      "quantity": "ANOVA Site(Cassette; Wafer) df",
+      "tier": "published",
+      "role": "optional",
+      "printed_value": "360",
+      "class": "PRINTED",
+      "target": {
+        "dataset": "lithography",
+        "kind": "anova",
+        "key": "residual",
+        "field": "df"
+      },
+      "note": "NIST/SEMATECH handbook 6.6.1.3 nested ANOVA table",
+      "printed_decimal_place": 0,
+      "ref": {
+        "source": "printed",
+        "value": "360"
+      }
+    },
+    {
+      "id": "L07",
+      "dataset": "lithography",
+      "quantity": "ANOVA Site(Cassette; Wafer) MS",
+      "tier": "published",
+      "role": "optional",
+      "printed_value": "0.1755",
+      "class": "PRINTED",
+      "target": {
+        "dataset": "lithography",
+        "kind": "anova",
+        "key": "residual",
+        "field": "ms"
+      },
+      "note": "NIST/SEMATECH handbook 6.6.1.3 nested ANOVA table",
+      "printed_decimal_place": 4,
+      "ref": {
+        "source": "printed",
+        "value": "0.1755"
+      }
+    },
+    {
+      "id": "L08",
+      "dataset": "lithography",
+      "quantity": "Variance component Cassette (table)",
+      "tier": "published",
+      "role": "optional",
+      "printed_value": "0.2645",
+      "class": "PRINTED",
+      "target": {
+        "dataset": "lithography",
+        "kind": "vc",
+        "key": "A",
+        "field": "mom"
+      },
+      "note": "published method-of-moments component (L09 table / L10 text, D-008)",
+      "printed_decimal_place": 4,
+      "ref": {
+        "source": "printed",
+        "value": "0.2645"
+      }
+    },
+    {
+      "id": "L09",
+      "dataset": "lithography",
+      "quantity": "Variance component Wafer (table)",
+      "tier": "published",
+      "role": "optional",
+      "printed_value": "0.0500",
+      "class": "PRINTED",
+      "target": {
+        "dataset": "lithography",
+        "kind": "vc",
+        "key": "B",
+        "field": "mom"
+      },
+      "note": "published method-of-moments component (L09 table / L10 text, D-008)",
+      "printed_decimal_place": 4,
+      "ref": {
+        "source": "printed",
+        "value": "0.0500"
+      }
+    },
+    {
+      "id": "L10",
+      "dataset": "lithography",
+      "quantity": "Variance component Wafer (text)",
+      "tier": "published",
+      "role": "optional",
+      "printed_value": "0.04997",
+      "class": "PRINTED",
+      "target": {
+        "dataset": "lithography",
+        "kind": "vc",
+        "key": "B",
+        "field": "mom"
+      },
+      "note": "published method-of-moments component (L09 table / L10 text, D-008)",
+      "printed_decimal_place": 5,
+      "ref": {
+        "source": "printed",
+        "value": "0.04997"
+      }
+    },
+    {
+      "id": "L11",
+      "dataset": "lithography",
+      "quantity": "Variance component Site (table)",
+      "tier": "published",
+      "role": "optional",
+      "printed_value": "0.1755",
+      "class": "PRINTED",
+      "target": {
+        "dataset": "lithography",
+        "kind": "vc",
+        "key": "residual",
+        "field": "mom"
+      },
+      "note": "published method-of-moments component (L09 table / L10 text, D-008)",
+      "printed_decimal_place": 4,
+      "ref": {
+        "source": "printed",
+        "value": "0.1755"
+      }
+    },
+    {
+      "id": "L12",
+      "dataset": "lithography",
+      "quantity": "Variance components cassette (NIST R output; nlme REML)",
+      "tier": "published",
+      "role": "optional",
+      "printed_value": "0.26452145",
+      "class": "ITERATIVE",
+      "target": {
+        "dataset": "lithography",
+        "kind": "vc",
+        "key": "A",
+        "field": "reml"
+      },
+      "note": "NIST's printed nlme REML component; L13 is a documented difference (D-008)",
+      "printed_decimal_place": 8,
+      "ref": {
+        "source": "printed",
+        "value": "0.26452145"
+      }
+    },
+    {
+      "id": "L13",
+      "dataset": "lithography",
+      "quantity": "Variance components wafer (NIST R output; nlme REML)",
+      "tier": "published",
+      "role": "optional",
+      "printed_value": "0.04997089",
+      "class": "ITERATIVE",
+      "target": {
+        "dataset": "lithography",
+        "kind": "vc",
+        "key": "B",
+        "field": "reml"
+      },
+      "note": "NIST's printed nlme REML component; L13 is a documented difference (D-008)",
+      "printed_decimal_place": 8,
+      "ref": {
+        "source": "printed",
+        "value": "0.04997089"
+      }
+    },
+    {
+      "id": "L14",
+      "dataset": "lithography",
+      "quantity": "Variance components within (NIST R output; nlme REML)",
+      "tier": "published",
+      "role": "optional",
+      "printed_value": "0.17549617",
+      "class": "ITERATIVE",
+      "target": {
+        "dataset": "lithography",
+        "kind": "vc",
+        "key": "residual",
+        "field": "reml"
+      },
+      "note": "NIST's printed nlme REML component; L13 is a documented difference (D-008)",
+      "printed_decimal_place": 8,
+      "ref": {
+        "source": "printed",
+        "value": "0.17549617"
+      }
+    },
+    {
+      "id": "O01",
+      "dataset": "oxide",
+      "quantity": "nlme re-run of P&B (2000) ch. 4 code: fm1Oxide REML SD Lot",
+      "tier": "package",
+      "role": "canonical",
+      "printed_value": "11.4",
+      "class": "ITERATIVE",
+      "target": {
+        "dataset": "oxide",
+        "kind": "vc",
+        "key": "A",
+        "field": "sd_reml"
+      },
+      "note": "printed REML SD (nlme re-run / S-PLUS transcript of the no-Source model)",
+      "printed_decimal_place": 1,
+      "ref": {
+        "source": "printed",
+        "value": "11.4"
+      }
+    },
+    {
+      "id": "O02",
+      "dataset": "oxide",
+      "quantity": "nlme re-run of P&B (2000) ch. 4 code: fm1Oxide REML SD Wafer",
+      "tier": "package",
+      "role": "canonical",
+      "printed_value": "5.99",
+      "class": "ITERATIVE",
+      "target": {
+        "dataset": "oxide",
+        "kind": "vc",
+        "key": "B",
+        "field": "sd_reml"
+      },
+      "note": "printed REML SD (nlme re-run / S-PLUS transcript of the no-Source model)",
+      "printed_decimal_place": 2,
+      "ref": {
+        "source": "printed",
+        "value": "5.99"
+      }
+    },
+    {
+      "id": "O03",
+      "dataset": "oxide",
+      "quantity": "nlme re-run of P&B (2000) ch. 4 code: fm1Oxide REML residual SD",
+      "tier": "package",
+      "role": "canonical",
+      "printed_value": "3.55",
+      "class": "ITERATIVE",
+      "target": {
+        "dataset": "oxide",
+        "kind": "vc",
+        "key": "residual",
+        "field": "sd_reml"
+      },
+      "note": "printed REML SD (nlme re-run / S-PLUS transcript of the no-Source model)",
+      "printed_decimal_place": 2,
+      "ref": {
+        "source": "printed",
+        "value": "3.55"
+      }
+    },
+    {
+      "id": "O04",
+      "dataset": "oxide",
+      "quantity": "nlme re-run of P&B (2000) ch. 4 code: fm1Oxide REML log-restricted-likelihood",
+      "tier": "package",
+      "role": "canonical",
+      "printed_value": "-227",
+      "class": "ITERATIVE",
+      "target": {
+        "dataset": "oxide",
+        "kind": "reml",
+        "key": "fit",
+        "field": "restricted_loglik"
+      },
+      "note": "nlme printed restricted log-likelihood",
+      "printed_decimal_place": 0,
+      "ref": {
+        "source": "printed",
+        "value": "-227"
+      }
+    },
+    {
+      "id": "O05",
+      "dataset": "oxide",
+      "quantity": "nlme re-run of P&B (2000) ch. 4 code: approx 95% CI SD Lot lower",
+      "tier": "package",
+      "role": "canonical",
+      "printed_value": "6.39",
+      "class": "DESCRIPTIVE",
+      "target": {
+        "dataset": "oxide",
+        "kind": "vc",
+        "key": "A",
+        "field": "sd_interval_lower"
+      },
+      "note": "nlme's approximate interval for a standard deviation is a different approximation from Stratum's Satterthwaite and exact intervals (D-060); the values are shown side by side, with no tolerance.",
+      "printed_decimal_place": 2,
+      "ref": {
+        "source": "printed",
+        "value": "6.39"
+      }
+    },
+    {
+      "id": "O06",
+      "dataset": "oxide",
+      "quantity": "nlme re-run of P&B (2000) ch. 4 code: approx 95% CI SD Lot upper",
+      "tier": "package",
+      "role": "canonical",
+      "printed_value": "20.3",
+      "class": "DESCRIPTIVE",
+      "target": {
+        "dataset": "oxide",
+        "kind": "vc",
+        "key": "A",
+        "field": "sd_interval_upper"
+      },
+      "note": "nlme's approximate interval for a standard deviation is a different approximation from Stratum's Satterthwaite and exact intervals (D-060); the values are shown side by side, with no tolerance.",
+      "printed_decimal_place": 1,
+      "ref": {
+        "source": "printed",
+        "value": "20.3"
+      }
+    },
+    {
+      "id": "O07",
+      "dataset": "oxide",
+      "quantity": "nlme re-run of P&B (2000) ch. 4 code: approx 95% CI SD Wafer lower",
+      "tier": "package",
+      "role": "canonical",
+      "printed_value": "4.06",
+      "class": "DESCRIPTIVE",
+      "target": {
+        "dataset": "oxide",
+        "kind": "vc",
+        "key": "B",
+        "field": "sd_interval_lower"
+      },
+      "note": "nlme's approximate interval for a standard deviation is a different approximation from Stratum's Satterthwaite and exact intervals (D-060); the values are shown side by side, with no tolerance.",
+      "printed_decimal_place": 2,
+      "ref": {
+        "source": "printed",
+        "value": "4.06"
+      }
+    },
+    {
+      "id": "O08",
+      "dataset": "oxide",
+      "quantity": "nlme re-run of P&B (2000) ch. 4 code: approx 95% CI SD Wafer upper",
+      "tier": "package",
+      "role": "canonical",
+      "printed_value": "8.82",
+      "class": "DESCRIPTIVE",
+      "target": {
+        "dataset": "oxide",
+        "kind": "vc",
+        "key": "B",
+        "field": "sd_interval_upper"
+      },
+      "note": "nlme's approximate interval for a standard deviation is a different approximation from Stratum's Satterthwaite and exact intervals (D-060); the values are shown side by side, with no tolerance.",
+      "printed_decimal_place": 2,
+      "ref": {
+        "source": "printed",
+        "value": "8.82"
+      }
+    },
+    {
+      "id": "O09",
+      "dataset": "oxide",
+      "quantity": "nlme re-run of P&B (2000) ch. 4 code: approx 95% CI residual SD lower",
+      "tier": "package",
+      "role": "canonical",
+      "printed_value": "2.90",
+      "class": "DESCRIPTIVE",
+      "target": {
+        "dataset": "oxide",
+        "kind": "vc",
+        "key": "residual",
+        "field": "sd_interval_lower"
+      },
+      "note": "nlme's approximate interval for a standard deviation is a different approximation from Stratum's Satterthwaite and exact intervals (D-060); the values are shown side by side, with no tolerance.",
+      "printed_decimal_place": 2,
+      "ref": {
+        "source": "printed",
+        "value": "2.90"
+      }
+    },
+    {
+      "id": "O10",
+      "dataset": "oxide",
+      "quantity": "nlme re-run of P&B (2000) ch. 4 code: approx 95% CI residual SD upper",
+      "tier": "package",
+      "role": "canonical",
+      "printed_value": "4.33",
+      "class": "DESCRIPTIVE",
+      "target": {
+        "dataset": "oxide",
+        "kind": "vc",
+        "key": "residual",
+        "field": "sd_interval_upper"
+      },
+      "note": "nlme's approximate interval for a standard deviation is a different approximation from Stratum's Satterthwaite and exact intervals (D-060); the values are shown side by side, with no tolerance.",
+      "printed_decimal_place": 2,
+      "ref": {
+        "source": "printed",
+        "value": "4.33"
+      }
+    },
+    {
+      "id": "O11",
+      "dataset": "oxide",
+      "quantity": "S-PLUS transcript fit of the Littell Output 4.13 model (no Source): REML SD Lot",
+      "tier": "package",
+      "role": "canonical",
+      "printed_value": "11.398",
+      "class": "ITERATIVE",
+      "target": {
+        "dataset": "oxide",
+        "kind": "vc",
+        "key": "A",
+        "field": "sd_reml"
+      },
+      "note": "printed REML SD (nlme re-run / S-PLUS transcript of the no-Source model)",
+      "printed_decimal_place": 3,
+      "ref": {
+        "source": "printed",
+        "value": "11.398"
+      }
+    },
+    {
+      "id": "O12",
+      "dataset": "oxide",
+      "quantity": "S-PLUS transcript fit of the Littell Output 4.13 model: REML SD Wafer",
+      "tier": "package",
+      "role": "canonical",
+      "printed_value": "5.9888",
+      "class": "ITERATIVE",
+      "target": {
+        "dataset": "oxide",
+        "kind": "vc",
+        "key": "B",
+        "field": "sd_reml"
+      },
+      "note": "printed REML SD (nlme re-run / S-PLUS transcript of the no-Source model)",
+      "printed_decimal_place": 4,
+      "ref": {
+        "source": "printed",
+        "value": "5.9888"
+      }
+    },
+    {
+      "id": "O13",
+      "dataset": "oxide",
+      "quantity": "S-PLUS transcript fit of the Littell Output 4.13 model: REML residual SD",
+      "tier": "package",
+      "role": "canonical",
+      "printed_value": "3.5453",
+      "class": "ITERATIVE",
+      "target": {
+        "dataset": "oxide",
+        "kind": "vc",
+        "key": "residual",
+        "field": "sd_reml"
+      },
+      "note": "printed REML SD (nlme re-run / S-PLUS transcript of the no-Source model)",
+      "printed_decimal_place": 4,
+      "ref": {
+        "source": "printed",
+        "value": "3.5453"
+      }
+    },
+    {
+      "id": "O14",
+      "dataset": "oxide",
+      "quantity": "S-PLUS transcript fit of the Littell Output 4.15 model (Source fixed): REML SD Lot",
+      "tier": "package",
+      "role": "sensitivity",
+      "printed_value": "10.95",
+      "class": "ITERATIVE",
+      "target": {
+        "dataset": "oxide_source_kernel",
+        "kind": "vc",
+        "key": "unit",
+        "field": "sd_reml"
+      },
+      "note": "T2 kernel cross-check only (D-067); not an analysis of Oxide as T2",
+      "printed_decimal_place": 2,
+      "ref": {
+        "source": "printed",
+        "value": "10.95"
+      }
+    },
+    {
+      "id": "O15",
+      "dataset": "oxide",
+      "quantity": "S-PLUS transcript fit of the Littell Output 4.15 model: Source estimate (SAS contrast: level 1 minus level 2)",
+      "tier": "package",
+      "role": "sensitivity",
+      "printed_value": "-10.1",
+      "class": "ITERATIVE",
+      "target": {
+        "dataset": "oxide_source_kernel",
+        "kind": "estimate",
+        "key": "contrast",
+        "field": "estimate"
+      },
+      "note": "T2 kernel cross-check only (D-067)",
+      "printed_decimal_place": 1,
+      "ref": {
+        "source": "printed",
+        "value": "-10.1"
+      }
+    },
+    {
+      "id": "O16",
+      "dataset": "oxide",
+      "quantity": "S-PLUS transcript fit of the Littell Output 4.15 model: Source SE",
+      "tier": "package",
+      "role": "sensitivity",
+      "printed_value": "8.1622",
+      "class": "ITERATIVE",
+      "target": {
+        "dataset": "oxide_source_kernel",
+        "kind": "estimate",
+        "key": "contrast",
+        "field": "se"
+      },
+      "note": "T2 kernel cross-check only (D-067)",
+      "printed_decimal_place": 4,
+      "ref": {
+        "source": "printed",
+        "value": "8.1622"
+      }
+    },
+    {
+      "id": "O17",
+      "dataset": "oxide",
+      "quantity": "S-PLUS transcript fit of the Littell Output 4.15 model: Source denominator df",
+      "tier": "package",
+      "role": "sensitivity",
+      "printed_value": "6",
+      "class": "ITERATIVE",
+      "target": {
+        "dataset": "oxide_source_kernel",
+        "kind": "estimate",
+        "key": "contrast",
+        "field": "df"
+      },
+      "note": "T2 kernel cross-check only (D-067)",
+      "printed_decimal_place": 0,
+      "ref": {
+        "source": "printed",
+        "value": "6"
+      }
+    },
+    {
+      "id": "O18",
+      "dataset": "oxide",
+      "quantity": "S-PLUS transcript fit of the Littell Output 4.15 model: Source p",
+      "tier": "package",
+      "role": "sensitivity",
+      "printed_value": "0.2629",
+      "class": "ITERATIVE",
+      "target": {
+        "dataset": "oxide_source_kernel",
+        "kind": "estimate",
+        "key": "contrast",
+        "field": "p"
+      },
+      "note": "T2 kernel cross-check only (D-067)",
+      "printed_decimal_place": 4,
+      "ref": {
+        "source": "printed",
+        "value": "0.2629"
+      }
+    },
+    {
+      "id": "O19",
+      "dataset": "oxide",
+      "quantity": "P&B (2000) printed estimates, ch. 4 Oxide",
+      "tier": "not-obtained",
+      "role": "not-obtained",
+      "printed_value": "",
+      "class": "NOT_OBTAINED",
+      "target": null,
+      "note": "a printed book value that could not be obtained (D-005, D-013).",
+      "ref": {
+        "source": "printed",
+        "value": ""
+      }
+    },
+    {
+      "id": "O20",
+      "dataset": "oxide",
+      "quantity": "Littell et al. (1996) Outputs 4.13 / 4.15 printed estimates and tests (pp. 156, 159)",
+      "tier": "not-obtained",
+      "role": "not-obtained",
+      "printed_value": "",
+      "class": "NOT_OBTAINED",
+      "target": null,
+      "note": "a printed book value that could not be obtained (D-005, D-013).",
+      "ref": {
+        "source": "printed",
+        "value": ""
+      }
+    },
+    {
+      "id": "S01",
+      "dataset": "semiconductor",
+      "quantity": "S-PLUS transcript ML fit SD wafer (Grp)",
+      "tier": "package",
+      "role": "cross-check",
+      "printed_value": "0.26557",
+      "class": "OUT_OF_SCOPE",
+      "target": null,
+      "note": "a maximum-likelihood fit. Stratum implements REML only (brief Section 5.1, D-064).",
+      "ref": {
+        "source": "printed",
+        "value": "0.26557"
+      }
+    },
+    {
+      "id": "S02",
+      "dataset": "semiconductor",
+      "quantity": "S-PLUS transcript ML fit residual SD",
+      "tier": "package",
+      "role": "cross-check",
+      "printed_value": "0.27221",
+      "class": "OUT_OF_SCOPE",
+      "target": null,
+      "note": "a maximum-likelihood fit. Stratum implements REML only (brief Section 5.1, D-064).",
+      "ref": {
+        "source": "printed",
+        "value": "0.27221"
+      }
+    },
+    {
+      "id": "S03",
+      "dataset": "semiconductor",
+      "quantity": "S-PLUS transcript ML fit logLik",
+      "tier": "package",
+      "role": "cross-check",
+      "printed_value": "-15.073",
+      "class": "OUT_OF_SCOPE",
+      "target": null,
+      "note": "a maximum-likelihood fit. Stratum implements REML only (brief Section 5.1, D-064).",
+      "ref": {
+        "source": "printed",
+        "value": "-15.073"
+      }
+    },
+    {
+      "id": "S04",
+      "dataset": "semiconductor",
+      "quantity": "S-PLUS transcript ML fit ET1 coefficient denominator df",
+      "tier": "package",
+      "role": "cross-check",
+      "printed_value": "8",
+      "class": "ITERATIVE",
+      "target": {
+        "dataset": "semiconductor",
+        "kind": "anova",
+        "key": "A",
+        "field": "den_df"
+      },
+      "note": "denominator df printed in the S-PLUS ML transcript's t-table",
+      "printed_decimal_place": 0,
+      "ref": {
+        "source": "printed",
+        "value": "8"
+      }
+    },
+    {
+      "id": "S05",
+      "dataset": "semiconductor",
+      "quantity": "S-PLUS transcript ML fit position1 coefficient denominator df",
+      "tier": "package",
+      "role": "cross-check",
+      "printed_value": "24",
+      "class": "ITERATIVE",
+      "target": {
+        "dataset": "semiconductor",
+        "kind": "anova",
+        "key": "B",
+        "field": "den_df"
+      },
+      "note": "denominator df printed in the S-PLUS ML transcript's t-table",
+      "printed_decimal_place": 0,
+      "ref": {
+        "source": "printed",
+        "value": "24"
+      }
+    },
+    {
+      "id": "S06",
+      "dataset": "semiconductor",
+      "quantity": "Littell et al. (1996) Section 2.3 printed Type 3 tests (ET, position, ET*position) and variance components",
+      "tier": "not-obtained",
+      "role": "not-obtained",
+      "printed_value": "",
+      "class": "NOT_OBTAINED",
+      "target": null,
+      "note": "a printed book value that could not be obtained (D-005, D-013).",
+      "ref": {
+        "source": "printed",
+        "value": ""
+      }
+    },
+    {
+      "id": "S07",
+      "dataset": "semiconductor",
+      "quantity": "lmer example ANOVA: ET F",
+      "tier": "package",
+      "role": "cross-check",
+      "printed_value": "1.9415",
+      "class": "ITERATIVE",
+      "target": {
+        "dataset": "semiconductor",
+        "kind": "anova",
+        "key": "A",
+        "field": "F"
+      },
+      "note": "third-party rendering of the package lmer example's ANOVA (D-020)",
+      "printed_decimal_place": 4,
+      "ref": {
+        "source": "printed",
+        "value": "1.9415"
+      }
+    },
+    {
+      "id": "S08",
+      "dataset": "semiconductor",
+      "quantity": "lmer example ANOVA: position F",
+      "tier": "package",
+      "role": "cross-check",
+      "printed_value": "3.3855",
+      "class": "ITERATIVE",
+      "target": {
+        "dataset": "semiconductor",
+        "kind": "anova",
+        "key": "B",
+        "field": "F"
+      },
+      "note": "third-party rendering of the package lmer example's ANOVA (D-020)",
+      "printed_decimal_place": 4,
+      "ref": {
+        "source": "printed",
+        "value": "3.3855"
+      }
+    },
+    {
+      "id": "S09",
+      "dataset": "semiconductor",
+      "quantity": "lmer example ANOVA: ET:position F",
+      "tier": "package",
+      "role": "cross-check",
+      "printed_value": "0.8092",
+      "class": "ITERATIVE",
+      "target": {
+        "dataset": "semiconductor",
+        "kind": "anova",
+        "key": "AB",
+        "field": "F"
+      },
+      "note": "third-party rendering of the package lmer example's ANOVA (D-020)",
+      "printed_decimal_place": 4,
+      "ref": {
+        "source": "printed",
+        "value": "0.8092"
+      }
+    },
+    {
+      "id": "S10",
+      "dataset": "semiconductor",
+      "quantity": "lmer example REML SD wafer (Grp)",
+      "tier": "package",
+      "role": "cross-check",
+      "printed_value": "0.3253",
+      "class": "ITERATIVE",
+      "target": {
+        "dataset": "semiconductor",
+        "kind": "vc",
+        "key": "wholeplot",
+        "field": "sd_reml"
+      },
+      "note": "third-party rendering of the package lmer example (D-020)",
+      "printed_decimal_place": 4,
+      "ref": {
+        "source": "printed",
+        "value": "0.3253"
+      }
+    },
+    {
+      "id": "S11",
+      "dataset": "semiconductor",
+      "quantity": "lmer example REML residual SD",
+      "tier": "package",
+      "role": "cross-check",
+      "printed_value": "0.3334",
+      "class": "ITERATIVE",
+      "target": {
+        "dataset": "semiconductor",
+        "kind": "vc",
+        "key": "residual",
+        "field": "sd_reml"
+      },
+      "note": "third-party rendering of the package lmer example (D-020)",
+      "printed_decimal_place": 4,
+      "ref": {
+        "source": "printed",
+        "value": "0.3334"
+      }
+    },
+    {
+      "id": "RF01",
+      "dataset": "furnace",
+      "quantity": "R aov Error strata MS run",
+      "tier": "r-run",
+      "role": "canonical",
+      "printed_value": "3072.114",
+      "class": "EXACT",
+      "target": {
+        "dataset": "furnace",
+        "kind": "anova",
+        "key": "A",
+        "field": "ms"
+      },
+      "note": "",
+      "printed_decimal_place": 3,
+      "ref": {
+        "source": "r_outputs",
+        "path": [
+          "furnace",
+          "aov_error_strata",
+          0,
+          "ms"
+        ],
+        "value": 3072.11428571428
+      }
+    },
+    {
+      "id": "RF02",
+      "dataset": "furnace",
+      "quantity": "R aov Error strata MS location(run)",
+      "tier": "r-run",
+      "role": "canonical",
+      "printed_value": "571.6587",
+      "class": "EXACT",
+      "target": {
+        "dataset": "furnace",
+        "kind": "anova",
+        "key": "B",
+        "field": "ms"
+      },
+      "note": "",
+      "printed_decimal_place": 4,
+      "ref": {
+        "source": "r_outputs",
+        "path": [
+          "furnace",
+          "aov_error_strata",
+          1,
+          "ms"
+        ],
+        "value": 571.65873015873
+      }
+    },
+    {
+      "id": "RF03",
+      "dataset": "furnace",
+      "quantity": "R aov Error strata MS within",
+      "tier": "r-run",
+      "role": "canonical",
+      "printed_value": "120.8929",
+      "class": "EXACT",
+      "target": {
+        "dataset": "furnace",
+        "kind": "anova",
+        "key": "residual",
+        "field": "ms"
+      },
+      "note": "",
+      "printed_decimal_place": 4,
+      "ref": {
+        "source": "r_outputs",
+        "path": [
+          "furnace",
+          "aov_error_strata",
+          2,
+          "ms"
+        ],
+        "value": 120.892857142857
+      }
+    },
+    {
+      "id": "RF04",
+      "dataset": "furnace",
+      "quantity": "R F run vs location(run)",
+      "tier": "r-run",
+      "role": "canonical",
+      "printed_value": "5.374035",
+      "class": "EXACT",
+      "target": {
+        "dataset": "furnace",
+        "kind": "anova",
+        "key": "A",
+        "field": "F"
+      },
+      "note": "",
+      "printed_decimal_place": 6,
+      "ref": {
+        "source": "r_outputs",
+        "path": [
+          "furnace",
+          "f_tests_handbook_form",
+          0,
+          "F"
+        ],
+        "value": 5.37403545794055
+      }
+    },
+    {
+      "id": "RF05",
+      "dataset": "furnace",
+      "quantity": "R p run",
+      "tier": "r-run",
+      "role": "canonical",
+      "printed_value": "1.393903e-07",
+      "class": "EXACT",
+      "target": {
+        "dataset": "furnace",
+        "kind": "anova",
+        "key": "A",
+        "field": "p"
+      },
+      "note": "",
+      "printed_decimal_place": 13,
+      "ref": {
+        "source": "r_outputs",
+        "path": [
+          "furnace",
+          "f_tests_handbook_form",
+          0,
+          "p"
+        ],
+        "value": 1.39390304449293e-07
+      }
+    },
+    {
+      "id": "RF06",
+      "dataset": "furnace",
+      "quantity": "R method-of-moments VC run",
+      "tier": "r-run",
+      "role": "canonical",
+      "printed_value": "312.5569",
+      "class": "EXACT",
+      "target": {
+        "dataset": "furnace",
+        "kind": "vc",
+        "key": "A",
+        "field": "mom"
+      },
+      "note": "",
+      "printed_decimal_place": 4,
+      "ref": {
+        "source": "r_outputs",
+        "path": [
+          "furnace",
+          "mom_variance_components",
+          "run"
+        ],
+        "value": 312.556944444444
+      }
+    },
+    {
+      "id": "RF07",
+      "dataset": "furnace",
+      "quantity": "R method-of-moments VC location",
+      "tier": "r-run",
+      "role": "canonical",
+      "printed_value": "225.3829",
+      "class": "EXACT",
+      "target": {
+        "dataset": "furnace",
+        "kind": "vc",
+        "key": "B",
+        "field": "mom"
+      },
+      "note": "",
+      "printed_decimal_place": 4,
+      "ref": {
+        "source": "r_outputs",
+        "path": [
+          "furnace",
+          "mom_variance_components",
+          "location"
+        ],
+        "value": 225.382936507936
+      }
+    },
+    {
+      "id": "RF08",
+      "dataset": "furnace",
+      "quantity": "R method-of-moments VC within",
+      "tier": "r-run",
+      "role": "canonical",
+      "printed_value": "120.8929",
+      "class": "EXACT",
+      "target": {
+        "dataset": "furnace",
+        "kind": "vc",
+        "key": "residual",
+        "field": "mom"
+      },
+      "note": "",
+      "printed_decimal_place": 4,
+      "ref": {
+        "source": "r_outputs",
+        "path": [
+          "furnace",
+          "mom_variance_components",
+          "within"
+        ],
+        "value": 120.892857142857
+      }
+    },
+    {
+      "id": "RF09",
+      "dataset": "furnace",
+      "quantity": "lme4 REML VC run",
+      "tier": "r-run",
+      "role": "canonical",
+      "printed_value": "312.5589",
+      "class": "ITERATIVE",
+      "target": {
+        "dataset": "furnace",
+        "kind": "vc",
+        "key": "A",
+        "field": "reml"
+      },
+      "note": "",
+      "printed_decimal_place": 4,
+      "ref": {
+        "source": "r_outputs",
+        "path": [
+          "furnace",
+          "lmer_reml",
+          "vc",
+          "run",
+          "variance"
+        ],
+        "value": 312.558925622824
+      }
+    },
+    {
+      "id": "RF10",
+      "dataset": "furnace",
+      "quantity": "lme4 REML VC location",
+      "tier": "r-run",
+      "role": "canonical",
+      "printed_value": "225.3826",
+      "class": "ITERATIVE",
+      "target": {
+        "dataset": "furnace",
+        "kind": "vc",
+        "key": "B",
+        "field": "reml"
+      },
+      "note": "",
+      "printed_decimal_place": 4,
+      "ref": {
+        "source": "r_outputs",
+        "path": [
+          "furnace",
+          "lmer_reml",
+          "vc",
+          "run:zone",
+          "variance"
+        ],
+        "value": 225.382594293995
+      }
+    },
+    {
+      "id": "RF11",
+      "dataset": "furnace",
+      "quantity": "lme4 REML VC within",
+      "tier": "r-run",
+      "role": "canonical",
+      "printed_value": "120.8928",
+      "class": "ITERATIVE",
+      "target": {
+        "dataset": "furnace",
+        "kind": "vc",
+        "key": "residual",
+        "field": "reml"
+      },
+      "note": "",
+      "printed_decimal_place": 4,
+      "ref": {
+        "source": "r_outputs",
+        "path": [
+          "furnace",
+          "lmer_reml",
+          "vc",
+          "Residual",
+          "variance"
+        ],
+        "value": 120.892828434181
+      }
+    },
+    {
+      "id": "RF12",
+      "dataset": "furnace",
+      "quantity": "nlme REML VC run",
+      "tier": "r-run",
+      "role": "canonical",
+      "printed_value": "312.5573",
+      "class": "ITERATIVE",
+      "target": {
+        "dataset": "furnace",
+        "kind": "vc",
+        "key": "A",
+        "field": "reml"
+      },
+      "note": "",
+      "printed_decimal_place": 4,
+      "ref": {
+        "source": "r_outputs",
+        "path": [
+          "furnace",
+          "nlme_reml",
+          "run",
+          "variance"
+        ],
+        "value": 312.557297938594
+      }
+    },
+    {
+      "id": "RF13",
+      "dataset": "furnace",
+      "quantity": "nlme REML VC location",
+      "tier": "r-run",
+      "role": "canonical",
+      "printed_value": "225.3849",
+      "class": "ITERATIVE",
+      "target": {
+        "dataset": "furnace",
+        "kind": "vc",
+        "key": "B",
+        "field": "reml"
+      },
+      "note": "",
+      "printed_decimal_place": 4,
+      "ref": {
+        "source": "r_outputs",
+        "path": [
+          "furnace",
+          "nlme_reml",
+          "zone",
+          "variance"
+        ],
+        "value": 225.384856996391
+      }
+    },
+    {
+      "id": "RF14",
+      "dataset": "furnace",
+      "quantity": "lme4 profile 95% CI SD run lower",
+      "tier": "r-run",
+      "role": "cross-check",
+      "printed_value": "11.679",
+      "class": "DESCRIPTIVE",
+      "target": {
+        "dataset": "furnace",
+        "kind": "vc",
+        "key": "A",
+        "field": "sd_interval_lower"
+      },
+      "note": "lme4's profile-likelihood interval is a different method from Stratum's Satterthwaite and exact intervals (D-060); shown side by side, no tolerance.",
+      "printed_decimal_place": 3,
+      "ref": {
+        "source": "r_outputs",
+        "path": [
+          "furnace",
+          "lmer_reml",
+          "profile_sd_ci",
+          1,
+          "lower"
+        ],
+        "value": 11.6793902571896
+      }
+    },
+    {
+      "id": "RF15",
+      "dataset": "furnace",
+      "quantity": "lme4 profile 95% CI SD run upper",
+      "tier": "r-run",
+      "role": "cross-check",
+      "printed_value": "25.409",
+      "class": "DESCRIPTIVE",
+      "target": {
+        "dataset": "furnace",
+        "kind": "vc",
+        "key": "A",
+        "field": "sd_interval_upper"
+      },
+      "note": "lme4's profile-likelihood interval is a different method from Stratum's Satterthwaite and exact intervals (D-060); shown side by side, no tolerance.",
+      "printed_decimal_place": 3,
+      "ref": {
+        "source": "r_outputs",
+        "path": [
+          "furnace",
+          "lmer_reml",
+          "profile_sd_ci",
+          1,
+          "upper"
+        ],
+        "value": 25.4089433965895
+      }
+    },
+    {
+      "id": "RF16",
+      "dataset": "furnace",
+      "quantity": "Supplementary: zone as fixed crossed factor F (3; 60 df)",
+      "tier": "r-run",
+      "role": "supplementary",
+      "printed_value": "0.5200",
+      "class": "OUT_OF_SCOPE",
+      "target": null,
+      "note": "a supplementary fit treating a within-group position as a fixed crossed factor. T1 has no fixed factor (D-007, D-015), so Stratum computes no comparable quantity.",
+      "ref": {
+        "source": "printed",
+        "value": "0.5200"
+      }
+    },
+    {
+      "id": "RF17",
+      "dataset": "furnace",
+      "quantity": "Supplementary: zone as fixed crossed factor p",
+      "tier": "r-run",
+      "role": "supplementary",
+      "printed_value": "0.6701",
+      "class": "OUT_OF_SCOPE",
+      "target": null,
+      "note": "a supplementary fit treating a within-group position as a fixed crossed factor. T1 has no fixed factor (D-007, D-015), so Stratum computes no comparable quantity.",
+      "ref": {
+        "source": "printed",
+        "value": "0.6701"
+      }
+    },
+    {
+      "id": "RO01",
+      "dataset": "oxide",
+      "quantity": "R aov Error strata MS lot",
+      "tier": "r-run",
+      "role": "canonical",
+      "printed_value": "1289.331",
+      "class": "EXACT",
+      "target": {
+        "dataset": "oxide",
+        "kind": "anova",
+        "key": "A",
+        "field": "ms"
+      },
+      "note": "",
+      "printed_decimal_place": 3,
+      "ref": {
+        "source": "r_outputs",
+        "path": [
+          "oxide",
+          "without_source",
+          "aov_error_strata",
+          0,
+          "ms"
+        ],
+        "value": 1289.33134920634
+      }
+    },
+    {
+      "id": "RO02",
+      "dataset": "oxide",
+      "quantity": "R aov Error strata MS wafer(lot)",
+      "tier": "r-run",
+      "role": "canonical",
+      "printed_value": "120.1667",
+      "class": "EXACT",
+      "target": {
+        "dataset": "oxide",
+        "kind": "anova",
+        "key": "B",
+        "field": "ms"
+      },
+      "note": "",
+      "printed_decimal_place": 4,
+      "ref": {
+        "source": "r_outputs",
+        "path": [
+          "oxide",
+          "without_source",
+          "aov_error_strata",
+          1,
+          "ms"
+        ],
+        "value": 120.166666666675
+      }
+    },
+    {
+      "id": "RO03",
+      "dataset": "oxide",
+      "quantity": "R aov Error strata MS site (within)",
+      "tier": "r-run",
+      "role": "canonical",
+      "printed_value": "12.56944",
+      "class": "EXACT",
+      "target": {
+        "dataset": "oxide",
+        "kind": "anova",
+        "key": "residual",
+        "field": "ms"
+      },
+      "note": "",
+      "printed_decimal_place": 5,
+      "ref": {
+        "source": "r_outputs",
+        "path": [
+          "oxide",
+          "without_source",
+          "aov_error_strata",
+          2,
+          "ms"
+        ],
+        "value": 12.5694444444452
+      }
+    },
+    {
+      "id": "RO04",
+      "dataset": "oxide",
+      "quantity": "R method-of-moments VC lot",
+      "tier": "r-run",
+      "role": "canonical",
+      "printed_value": "129.9072",
+      "class": "EXACT",
+      "target": {
+        "dataset": "oxide",
+        "kind": "vc",
+        "key": "A",
+        "field": "mom"
+      },
+      "note": "",
+      "printed_decimal_place": 4,
+      "ref": {
+        "source": "r_outputs",
+        "path": [
+          "oxide",
+          "without_source",
+          "mom_variance_components",
+          "lot"
+        ],
+        "value": 129.907186948852
+      }
+    },
+    {
+      "id": "RO05",
+      "dataset": "oxide",
+      "quantity": "R method-of-moments VC wafer",
+      "tier": "r-run",
+      "role": "canonical",
+      "printed_value": "35.8657",
+      "class": "EXACT",
+      "target": {
+        "dataset": "oxide",
+        "kind": "vc",
+        "key": "B",
+        "field": "mom"
+      },
+      "note": "",
+      "printed_decimal_place": 4,
+      "ref": {
+        "source": "r_outputs",
+        "path": [
+          "oxide",
+          "without_source",
+          "mom_variance_components",
+          "wafer"
+        ],
+        "value": 35.8657407407434
+      }
+    },
+    {
+      "id": "RO06",
+      "dataset": "oxide",
+      "quantity": "R method-of-moments VC site",
+      "tier": "r-run",
+      "role": "canonical",
+      "printed_value": "12.5694",
+      "class": "EXACT",
+      "target": {
+        "dataset": "oxide",
+        "kind": "vc",
+        "key": "residual",
+        "field": "mom"
+      },
+      "note": "",
+      "printed_decimal_place": 4,
+      "ref": {
+        "source": "r_outputs",
+        "path": [
+          "oxide",
+          "without_source",
+          "mom_variance_components",
+          "site"
+        ],
+        "value": 12.5694444444452
+      }
+    },
+    {
+      "id": "RO07",
+      "dataset": "oxide",
+      "quantity": "lme4 REML SD lot",
+      "tier": "r-run",
+      "role": "canonical",
+      "printed_value": "11.398",
+      "class": "ITERATIVE",
+      "target": {
+        "dataset": "oxide",
+        "kind": "vc",
+        "key": "A",
+        "field": "sd_reml"
+      },
+      "note": "",
+      "printed_decimal_place": 3,
+      "ref": {
+        "source": "r_outputs",
+        "path": [
+          "oxide",
+          "without_source",
+          "lmer_reml",
+          "vc",
+          "Lot",
+          "sd"
+        ],
+        "value": 11.3979647470559
+      }
+    },
+    {
+      "id": "RO08",
+      "dataset": "oxide",
+      "quantity": "lme4 REML SD wafer",
+      "tier": "r-run",
+      "role": "canonical",
+      "printed_value": "5.989",
+      "class": "ITERATIVE",
+      "target": {
+        "dataset": "oxide",
+        "kind": "vc",
+        "key": "B",
+        "field": "sd_reml"
+      },
+      "note": "",
+      "printed_decimal_place": 3,
+      "ref": {
+        "source": "r_outputs",
+        "path": [
+          "oxide",
+          "without_source",
+          "lmer_reml",
+          "vc",
+          "Wafer:Lot",
+          "sd"
+        ],
+        "value": 5.98880262324367
+      }
+    },
+    {
+      "id": "RO09",
+      "dataset": "oxide",
+      "quantity": "lme4 REML residual SD",
+      "tier": "r-run",
+      "role": "canonical",
+      "printed_value": "3.545",
+      "class": "ITERATIVE",
+      "target": {
+        "dataset": "oxide",
+        "kind": "vc",
+        "key": "residual",
+        "field": "sd_reml"
+      },
+      "note": "",
+      "printed_decimal_place": 3,
+      "ref": {
+        "source": "r_outputs",
+        "path": [
+          "oxide",
+          "without_source",
+          "lmer_reml",
+          "vc",
+          "Residual",
+          "sd"
+        ],
+        "value": 3.5453298248429
+      }
+    },
+    {
+      "id": "RO10",
+      "dataset": "oxide",
+      "quantity": "nlme REML approx 95% CI SD lot lower",
+      "tier": "r-run",
+      "role": "canonical",
+      "printed_value": "6.390",
+      "class": "DESCRIPTIVE",
+      "target": {
+        "dataset": "oxide",
+        "kind": "vc",
+        "key": "A",
+        "field": "sd_interval_lower"
+      },
+      "note": "nlme's approximate interval for a standard deviation is a different approximation from Stratum's Satterthwaite and exact intervals (D-060); the values are shown side by side, with no tolerance.",
+      "printed_decimal_place": 3,
+      "ref": {
+        "source": "r_outputs",
+        "path": [
+          "oxide",
+          "without_source",
+          "nlme_reml",
+          "sd_intervals",
+          "Lot",
+          "lower"
+        ],
+        "value": 6.39018883965111
+      }
+    },
+    {
+      "id": "RO11",
+      "dataset": "oxide",
+      "quantity": "nlme REML approx 95% CI SD lot upper",
+      "tier": "r-run",
+      "role": "canonical",
+      "printed_value": "20.329",
+      "class": "DESCRIPTIVE",
+      "target": {
+        "dataset": "oxide",
+        "kind": "vc",
+        "key": "A",
+        "field": "sd_interval_upper"
+      },
+      "note": "nlme's approximate interval for a standard deviation is a different approximation from Stratum's Satterthwaite and exact intervals (D-060); the values are shown side by side, with no tolerance.",
+      "printed_decimal_place": 3,
+      "ref": {
+        "source": "r_outputs",
+        "path": [
+          "oxide",
+          "without_source",
+          "nlme_reml",
+          "sd_intervals",
+          "Lot",
+          "upper"
+        ],
+        "value": 20.3291629572573
+      }
+    },
+    {
+      "id": "RO12",
+      "dataset": "oxide",
+      "quantity": "Source fixed: aov F Source in lot stratum",
+      "tier": "r-run",
+      "role": "sensitivity",
+      "printed_value": "1.526",
+      "class": "EXACT",
+      "target": {
+        "dataset": "oxide_source_kernel",
+        "kind": "anova",
+        "key": "treatment",
+        "field": "F"
+      },
+      "note": "T2 kernel cross-check only (D-067); classical aov Error-strata F",
+      "printed_decimal_place": 3,
+      "ref": {
+        "source": "r_outputs",
+        "path": [
+          "oxide",
+          "with_source_fixed",
+          "aov_error_strata",
+          0,
+          "F"
+        ],
+        "value": 1.52612275940338
+      }
+    },
+    {
+      "id": "RO13",
+      "dataset": "oxide",
+      "quantity": "Source fixed: aov p Source",
+      "tier": "r-run",
+      "role": "sensitivity",
+      "printed_value": "0.2629",
+      "class": "EXACT",
+      "target": {
+        "dataset": "oxide_source_kernel",
+        "kind": "anova",
+        "key": "treatment",
+        "field": "p"
+      },
+      "note": "T2 kernel cross-check only (D-067)",
+      "printed_decimal_place": 4,
+      "ref": {
+        "source": "r_outputs",
+        "path": [
+          "oxide",
+          "with_source_fixed",
+          "aov_error_strata",
+          0,
+          "p"
+        ],
+        "value": 0.262869992227237
+      }
+    },
+    {
+      "id": "RO14",
+      "dataset": "oxide",
+      "quantity": "Source fixed: lmerTest Satterthwaite den df",
+      "tier": "r-run",
+      "role": "sensitivity",
+      "printed_value": "6.000",
+      "class": "ITERATIVE",
+      "target": {
+        "dataset": "oxide_source_kernel",
+        "kind": "estimate",
+        "key": "contrast",
+        "field": "df"
+      },
+      "note": "T2 kernel cross-check only (D-067); Satterthwaite denominator df",
+      "printed_decimal_place": 3,
+      "ref": {
+        "source": "r_outputs",
+        "path": [
+          "oxide",
+          "with_source_fixed",
+          "lmertest_type3_satterthwaite",
+          0,
+          "den_df"
+        ],
+        "value": 5.99999599517346
+      }
+    },
+    {
+      "id": "RO15",
+      "dataset": "oxide",
+      "quantity": "Source fixed: lmerTest Kenward-Roger p",
+      "tier": "r-run",
+      "role": "sensitivity",
+      "printed_value": "0.2629",
+      "class": "ITERATIVE",
+      "target": {
+        "dataset": "oxide_source_kernel",
+        "kind": "anova",
+        "key": "treatment",
+        "field": "p"
+      },
+      "note": "T2 kernel cross-check only (D-067); Kenward-Roger p",
+      "printed_decimal_place": 4,
+      "ref": {
+        "source": "r_outputs",
+        "path": [
+          "oxide",
+          "with_source_fixed",
+          "lmertest_type3_kenward_roger",
+          0,
+          "p"
+        ],
+        "value": 0.26287009136464
+      }
+    },
+    {
+      "id": "RO16",
+      "dataset": "oxide",
+      "quantity": "Source fixed: nlme REML Source estimate (contr.SAS)",
+      "tier": "r-run",
+      "role": "sensitivity",
+      "printed_value": "-10.0833",
+      "class": "ITERATIVE",
+      "target": {
+        "dataset": "oxide_source_kernel",
+        "kind": "estimate",
+        "key": "contrast",
+        "field": "estimate"
+      },
+      "note": "T2 kernel cross-check only (D-067)",
+      "printed_decimal_place": 4,
+      "ref": {
+        "source": "r_outputs",
+        "path": [
+          "oxide",
+          "with_source_fixed",
+          "nlme_reml_contr_sas",
+          "ttable",
+          1,
+          "Value"
+        ],
+        "value": -10.0833333333333
+      }
+    },
+    {
+      "id": "RO17",
+      "dataset": "oxide",
+      "quantity": "Source fixed: nlme REML Source SE",
+      "tier": "r-run",
+      "role": "sensitivity",
+      "printed_value": "8.1622",
+      "class": "ITERATIVE",
+      "target": {
+        "dataset": "oxide_source_kernel",
+        "kind": "estimate",
+        "key": "contrast",
+        "field": "se"
+      },
+      "note": "T2 kernel cross-check only (D-067)",
+      "printed_decimal_place": 4,
+      "ref": {
+        "source": "r_outputs",
+        "path": [
+          "oxide",
+          "with_source_fixed",
+          "nlme_reml_contr_sas",
+          "ttable",
+          1,
+          "Std.Error"
+        ],
+        "value": 8.16224000727281
+      }
+    },
+    {
+      "id": "RO18",
+      "dataset": "oxide",
+      "quantity": "Source fixed: lme4 REML SD lot (within source)",
+      "tier": "r-run",
+      "role": "sensitivity",
+      "printed_value": "10.950",
+      "class": "ITERATIVE",
+      "target": {
+        "dataset": "oxide_source_kernel",
+        "kind": "vc",
+        "key": "unit",
+        "field": "sd_reml"
+      },
+      "note": "T2 kernel cross-check only (D-067)",
+      "printed_decimal_place": 3,
+      "ref": {
+        "source": "r_outputs",
+        "path": [
+          "oxide",
+          "with_source_fixed",
+          "lmer_reml",
+          "vc",
+          "Lot",
+          "sd"
+        ],
+        "value": 10.9495457498008
+      }
+    },
+    {
+      "id": "RS01",
+      "dataset": "semiconductor",
+      "quantity": "Split-plot aov ET F (3; 8 df)",
+      "tier": "r-run",
+      "role": "canonical",
+      "printed_value": "1.9415",
+      "class": "EXACT",
+      "target": {
+        "dataset": "semiconductor",
+        "kind": "anova",
+        "key": "A",
+        "field": "F"
+      },
+      "note": "",
+      "printed_decimal_place": 4,
+      "ref": {
+        "source": "r_outputs",
+        "path": [
+          "semiconductor",
+          "split_plot_aov_error_strata",
+          0,
+          "F"
+        ],
+        "value": 1.94154199272946
+      }
+    },
+    {
+      "id": "RS02",
+      "dataset": "semiconductor",
+      "quantity": "Split-plot aov ET p",
+      "tier": "r-run",
+      "role": "canonical",
+      "printed_value": "0.2015",
+      "class": "EXACT",
+      "target": {
+        "dataset": "semiconductor",
+        "kind": "anova",
+        "key": "A",
+        "field": "p"
+      },
+      "note": "",
+      "printed_decimal_place": 4,
+      "ref": {
+        "source": "r_outputs",
+        "path": [
+          "semiconductor",
+          "split_plot_aov_error_strata",
+          0,
+          "p"
+        ],
+        "value": 0.201503076014436
+      }
+    },
+    {
+      "id": "RS03",
+      "dataset": "semiconductor",
+      "quantity": "Split-plot aov ET df",
+      "tier": "r-run",
+      "role": "canonical",
+      "printed_value": "3",
+      "class": "EXACT",
+      "target": {
+        "dataset": "semiconductor",
+        "kind": "anova",
+        "key": "A",
+        "field": "df"
+      },
+      "note": "",
+      "printed_decimal_place": 0,
+      "ref": {
+        "source": "r_outputs",
+        "path": [
+          "semiconductor",
+          "split_plot_aov_error_strata",
+          0,
+          "df"
+        ],
+        "value": 3
+      }
+    },
+    {
+      "id": "RS04",
+      "dataset": "semiconductor",
+      "quantity": "Split-plot aov whole-plot error df",
+      "tier": "r-run",
+      "role": "canonical",
+      "printed_value": "8",
+      "class": "EXACT",
+      "target": {
+        "dataset": "semiconductor",
+        "kind": "anova",
+        "key": "wholeplot_error",
+        "field": "df"
+      },
+      "note": "",
+      "printed_decimal_place": 0,
+      "ref": {
+        "source": "r_outputs",
+        "path": [
+          "semiconductor",
+          "split_plot_aov_error_strata",
+          1,
+          "df"
+        ],
+        "value": 8
+      }
+    },
+    {
+      "id": "RS05",
+      "dataset": "semiconductor",
+      "quantity": "Split-plot aov MS whole-plot error",
+      "tier": "r-run",
+      "role": "canonical",
+      "printed_value": "0.53431",
+      "class": "EXACT",
+      "target": {
+        "dataset": "semiconductor",
+        "kind": "anova",
+        "key": "wholeplot_error",
+        "field": "ms"
+      },
+      "note": "",
+      "printed_decimal_place": 5,
+      "ref": {
+        "source": "r_outputs",
+        "path": [
+          "semiconductor",
+          "split_plot_aov_error_strata",
+          1,
+          "ms"
+        ],
+        "value": 0.534310416666667
+      }
+    },
+    {
+      "id": "RS06",
+      "dataset": "semiconductor",
+      "quantity": "Split-plot aov position F (3; 24 df)",
+      "tier": "r-run",
+      "role": "canonical",
+      "printed_value": "3.3855",
+      "class": "EXACT",
+      "target": {
+        "dataset": "semiconductor",
+        "kind": "anova",
+        "key": "B",
+        "field": "F"
+      },
+      "note": "",
+      "printed_decimal_place": 4,
+      "ref": {
+        "source": "r_outputs",
+        "path": [
+          "semiconductor",
+          "split_plot_aov_error_strata",
+          2,
+          "F"
+        ],
+        "value": 3.38551123051451
+      }
+    },
+    {
+      "id": "RS07",
+      "dataset": "semiconductor",
+      "quantity": "Split-plot aov position p",
+      "tier": "r-run",
+      "role": "canonical",
+      "printed_value": "0.0345",
+      "class": "EXACT",
+      "target": {
+        "dataset": "semiconductor",
+        "kind": "anova",
+        "key": "B",
+        "field": "p"
+      },
+      "note": "",
+      "printed_decimal_place": 4,
+      "ref": {
+        "source": "r_outputs",
+        "path": [
+          "semiconductor",
+          "split_plot_aov_error_strata",
+          2,
+          "p"
+        ],
+        "value": 0.0345138666154782
+      }
+    },
+    {
+      "id": "RS08",
+      "dataset": "semiconductor",
+      "quantity": "Split-plot aov ET:position F (9; 24 df)",
+      "tier": "r-run",
+      "role": "canonical",
+      "printed_value": "0.8092",
+      "class": "EXACT",
+      "target": {
+        "dataset": "semiconductor",
+        "kind": "anova",
+        "key": "AB",
+        "field": "F"
+      },
+      "note": "",
+      "printed_decimal_place": 4,
+      "ref": {
+        "source": "r_outputs",
+        "path": [
+          "semiconductor",
+          "split_plot_aov_error_strata",
+          3,
+          "F"
+        ],
+        "value": 0.809196838586736
+      }
+    },
+    {
+      "id": "RS09",
+      "dataset": "semiconductor",
+      "quantity": "Split-plot aov ET:position p",
+      "tier": "r-run",
+      "role": "canonical",
+      "printed_value": "0.6125",
+      "class": "EXACT",
+      "target": {
+        "dataset": "semiconductor",
+        "kind": "anova",
+        "key": "AB",
+        "field": "p"
+      },
+      "note": "",
+      "printed_decimal_place": 4,
+      "ref": {
+        "source": "r_outputs",
+        "path": [
+          "semiconductor",
+          "split_plot_aov_error_strata",
+          3,
+          "p"
+        ],
+        "value": 0.612527873849378
+      }
+    },
+    {
+      "id": "RS10",
+      "dataset": "semiconductor",
+      "quantity": "Split-plot aov subplot error df",
+      "tier": "r-run",
+      "role": "canonical",
+      "printed_value": "24",
+      "class": "EXACT",
+      "target": {
+        "dataset": "semiconductor",
+        "kind": "anova",
+        "key": "subplot_error",
+        "field": "df"
+      },
+      "note": "",
+      "printed_decimal_place": 0,
+      "ref": {
+        "source": "r_outputs",
+        "path": [
+          "semiconductor",
+          "split_plot_aov_error_strata",
+          4,
+          "df"
+        ],
+        "value": 24
+      }
+    },
+    {
+      "id": "RS11",
+      "dataset": "semiconductor",
+      "quantity": "Split-plot aov MS subplot error",
+      "tier": "r-run",
+      "role": "canonical",
+      "printed_value": "0.11115",
+      "class": "EXACT",
+      "target": {
+        "dataset": "semiconductor",
+        "kind": "anova",
+        "key": "subplot_error",
+        "field": "ms"
+      },
+      "note": "",
+      "printed_decimal_place": 5,
+      "ref": {
+        "source": "r_outputs",
+        "path": [
+          "semiconductor",
+          "split_plot_aov_error_strata",
+          4,
+          "ms"
+        ],
+        "value": 0.111149305555555
+      }
+    },
+    {
+      "id": "RS12",
+      "dataset": "semiconductor",
+      "quantity": "Naive single-error aov ET F (3; 32 df)",
+      "tier": "r-run",
+      "role": "canonical",
+      "printed_value": "4.7819",
+      "class": "EXACT",
+      "target": {
+        "dataset": "semiconductor",
+        "kind": "naive_anova",
+        "key": "A",
+        "field": "F"
+      },
+      "note": "",
+      "printed_decimal_place": 4,
+      "ref": {
+        "source": "r_outputs",
+        "path": [
+          "semiconductor",
+          "naive_aov",
+          0,
+          "F"
+        ],
+        "value": 4.78191252684919
+      }
+    },
+    {
+      "id": "RS13",
+      "dataset": "semiconductor",
+      "quantity": "Naive single-error aov ET p",
+      "tier": "r-run",
+      "role": "canonical",
+      "printed_value": "0.0073",
+      "class": "EXACT",
+      "target": {
+        "dataset": "semiconductor",
+        "kind": "naive_anova",
+        "key": "A",
+        "field": "p"
+      },
+      "note": "",
+      "printed_decimal_place": 4,
+      "ref": {
+        "source": "r_outputs",
+        "path": [
+          "semiconductor",
+          "naive_aov",
+          0,
+          "p"
+        ],
+        "value": 0.00728207937857895
+      }
+    },
+    {
+      "id": "RS14",
+      "dataset": "semiconductor",
+      "quantity": "Naive single-error aov residual df",
+      "tier": "r-run",
+      "role": "canonical",
+      "printed_value": "32",
+      "class": "EXACT",
+      "target": {
+        "dataset": "semiconductor",
+        "kind": "naive_anova",
+        "key": "residual",
+        "field": "df"
+      },
+      "note": "",
+      "printed_decimal_place": 0,
+      "ref": {
+        "source": "r_outputs",
+        "path": [
+          "semiconductor",
+          "naive_aov",
+          3,
+          "df"
+        ],
+        "value": 32
+      }
+    },
+    {
+      "id": "RS15",
+      "dataset": "semiconductor",
+      "quantity": "lmerTest Satterthwaite ET den df",
+      "tier": "r-run",
+      "role": "cross-check",
+      "printed_value": "8.000",
+      "class": "ITERATIVE",
+      "target": {
+        "dataset": "semiconductor",
+        "kind": "anova",
+        "key": "A",
+        "field": "den_df"
+      },
+      "note": "",
+      "printed_decimal_place": 3,
+      "ref": {
+        "source": "r_outputs",
+        "path": [
+          "semiconductor",
+          "lmertest_type3_satterthwaite",
+          0,
+          "den_df"
+        ],
+        "value": 7.99999481316797
+      }
+    },
+    {
+      "id": "RS16",
+      "dataset": "semiconductor",
+      "quantity": "lmerTest Kenward-Roger position den df",
+      "tier": "r-run",
+      "role": "cross-check",
+      "printed_value": "24",
+      "class": "ITERATIVE",
+      "target": {
+        "dataset": "semiconductor",
+        "kind": "anova",
+        "key": "B",
+        "field": "den_df"
+      },
+      "note": "",
+      "printed_decimal_place": 0,
+      "ref": {
+        "source": "r_outputs",
+        "path": [
+          "semiconductor",
+          "lmertest_type3_kenward_roger",
+          1,
+          "den_df"
+        ],
+        "value": 24
+      }
+    },
+    {
+      "id": "RS17",
+      "dataset": "semiconductor",
+      "quantity": "lme4 REML VC wafer (Grp)",
+      "tier": "r-run",
+      "role": "cross-check",
+      "printed_value": "0.10579",
+      "class": "ITERATIVE",
+      "target": {
+        "dataset": "semiconductor",
+        "kind": "vc",
+        "key": "wholeplot",
+        "field": "reml"
+      },
+      "note": "",
+      "printed_decimal_place": 5,
+      "ref": {
+        "source": "r_outputs",
+        "path": [
+          "semiconductor",
+          "lmer_reml",
+          "vc",
+          "Grp",
+          "variance"
+        ],
+        "value": 0.105790345460477
+      }
+    },
+    {
+      "id": "RS18",
+      "dataset": "semiconductor",
+      "quantity": "lme4 REML VC residual",
+      "tier": "r-run",
+      "role": "cross-check",
+      "printed_value": "0.11115",
+      "class": "ITERATIVE",
+      "target": {
+        "dataset": "semiconductor",
+        "kind": "vc",
+        "key": "residual",
+        "field": "reml"
+      },
+      "note": "",
+      "printed_decimal_place": 5,
+      "ref": {
+        "source": "r_outputs",
+        "path": [
+          "semiconductor",
+          "lmer_reml",
+          "vc",
+          "Residual",
+          "variance"
+        ],
+        "value": 0.111149288000067
+      }
+    },
+    {
+      "id": "RS19",
+      "dataset": "semiconductor",
+      "quantity": "nlme ML SD wafer (reproduces S01)",
+      "tier": "r-run",
+      "role": "cross-check",
+      "printed_value": "0.26557",
+      "class": "OUT_OF_SCOPE",
+      "target": null,
+      "note": "a maximum-likelihood fit. Stratum implements REML only (brief Section 5.1, D-064).",
+      "ref": {
+        "source": "printed",
+        "value": "0.26557"
+      }
+    },
+    {
+      "id": "RS20",
+      "dataset": "semiconductor",
+      "quantity": "nlme ML logLik (reproduces S03)",
+      "tier": "r-run",
+      "role": "cross-check",
+      "printed_value": "-15.073",
+      "class": "OUT_OF_SCOPE",
+      "target": null,
+      "note": "a maximum-likelihood fit. Stratum implements REML only (brief Section 5.1, D-064).",
+      "ref": {
+        "source": "printed",
+        "value": "-15.073"
+      }
+    },
+    {
+      "id": "RL01",
+      "dataset": "lithography",
+      "quantity": "R aov Error strata MS cassette",
+      "tier": "r-run",
+      "role": "optional",
+      "printed_value": "4.3932",
+      "class": "EXACT",
+      "target": {
+        "dataset": "lithography",
+        "kind": "anova",
+        "key": "A",
+        "field": "ms"
+      },
+      "note": "",
+      "printed_decimal_place": 4,
+      "ref": {
+        "source": "r_outputs",
+        "path": [
+          "lithography",
+          "aov_error_strata",
+          0,
+          "ms"
+        ],
+        "value": 4.39320454168549
+      }
+    },
+    {
+      "id": "RL02",
+      "dataset": "lithography",
+      "quantity": "R aov Error strata MS wafer(cassette)",
+      "tier": "r-run",
+      "role": "optional",
+      "printed_value": "0.4253",
+      "class": "EXACT",
+      "target": {
+        "dataset": "lithography",
+        "kind": "anova",
+        "key": "B",
+        "field": "ms"
+      },
+      "note": "",
+      "printed_decimal_place": 4,
+      "ref": {
+        "source": "r_outputs",
+        "path": [
+          "lithography",
+          "aov_error_strata",
+          1,
+          "ms"
+        ],
+        "value": 0.425348171603095
+      }
+    },
+    {
+      "id": "RL03",
+      "dataset": "lithography",
+      "quantity": "R aov Error strata MS site",
+      "tier": "r-run",
+      "role": "optional",
+      "printed_value": "0.1755",
+      "class": "EXACT",
+      "target": {
+        "dataset": "lithography",
+        "kind": "anova",
+        "key": "residual",
+        "field": "ms"
+      },
+      "note": "",
+      "printed_decimal_place": 4,
+      "ref": {
+        "source": "r_outputs",
+        "path": [
+          "lithography",
+          "aov_error_strata",
+          2,
+          "ms"
+        ],
+        "value": 0.175496236421874
+      }
+    },
+    {
+      "id": "RL04",
+      "dataset": "lithography",
+      "quantity": "R method-of-moments VC cassette",
+      "tier": "r-run",
+      "role": "optional",
+      "printed_value": "0.26452",
+      "class": "EXACT",
+      "target": {
+        "dataset": "lithography",
+        "kind": "vc",
+        "key": "A",
+        "field": "mom"
+      },
+      "note": "",
+      "printed_decimal_place": 5,
+      "ref": {
+        "source": "r_outputs",
+        "path": [
+          "lithography",
+          "mom_variance_components",
+          "cassette"
+        ],
+        "value": 0.264523758005493
+      }
+    },
+    {
+      "id": "RL05",
+      "dataset": "lithography",
+      "quantity": "R method-of-moments VC wafer",
+      "tier": "r-run",
+      "role": "optional",
+      "printed_value": "0.04997",
+      "class": "EXACT",
+      "target": {
+        "dataset": "lithography",
+        "kind": "vc",
+        "key": "B",
+        "field": "mom"
+      },
+      "note": "",
+      "printed_decimal_place": 5,
+      "ref": {
+        "source": "r_outputs",
+        "path": [
+          "lithography",
+          "mom_variance_components",
+          "wafer"
+        ],
+        "value": 0.0499703870362442
+      }
+    },
+    {
+      "id": "RL06",
+      "dataset": "lithography",
+      "quantity": "R method-of-moments VC site",
+      "tier": "r-run",
+      "role": "optional",
+      "printed_value": "0.17550",
+      "class": "EXACT",
+      "target": {
+        "dataset": "lithography",
+        "kind": "vc",
+        "key": "residual",
+        "field": "mom"
+      },
+      "note": "",
+      "printed_decimal_place": 5,
+      "ref": {
+        "source": "r_outputs",
+        "path": [
+          "lithography",
+          "mom_variance_components",
+          "site"
+        ],
+        "value": 0.175496236421874
+      }
+    },
+    {
+      "id": "RL07",
+      "dataset": "lithography",
+      "quantity": "Supplementary: site as fixed position F (4; 356 df)",
+      "tier": "r-run",
+      "role": "supplementary",
+      "printed_value": "262.24",
+      "class": "OUT_OF_SCOPE",
+      "target": null,
+      "note": "a supplementary fit treating a within-group position as a fixed crossed factor. T1 has no fixed factor (D-007, D-015), so Stratum computes no comparable quantity.",
+      "ref": {
+        "source": "printed",
+        "value": "262.24"
+      }
+    },
+    {
+      "id": "RL08",
+      "dataset": "lithography",
+      "quantity": "Supplementary: residual MS after removing site position",
+      "tier": "r-run",
+      "role": "supplementary",
+      "printed_value": "0.04497",
+      "class": "OUT_OF_SCOPE",
+      "target": null,
+      "note": "a supplementary fit treating a within-group position as a fixed crossed factor. T1 has no fixed factor (D-007, D-015), so Stratum computes no comparable quantity.",
+      "ref": {
+        "source": "printed",
+        "value": "0.04497"
+      }
+    }
+  ],
+  "extra_checks": [
+    {
+      "class": "EXACT",
+      "target": {
+        "dataset": "furnace",
+        "kind": "anova",
+        "key": "A",
+        "field": "ss"
+      },
+      "note": "",
+      "ref": {
+        "source": "r_outputs",
+        "path": [
+          "furnace",
+          "aov_error_strata",
+          0,
+          "ss"
+        ],
+        "value": 61442.2857142857
+      }
+    },
+    {
+      "class": "EXACT",
+      "target": {
+        "dataset": "furnace",
+        "kind": "anova",
+        "key": "A",
+        "field": "df"
+      },
+      "note": "",
+      "ref": {
+        "source": "r_outputs",
+        "path": [
+          "furnace",
+          "aov_error_strata",
+          0,
+          "df"
+        ],
+        "value": 20
+      }
+    },
+    {
+      "class": "EXACT",
+      "target": {
+        "dataset": "furnace",
+        "kind": "anova",
+        "key": "B",
+        "field": "ss"
+      },
+      "note": "",
+      "ref": {
+        "source": "r_outputs",
+        "path": [
+          "furnace",
+          "aov_error_strata",
+          1,
+          "ss"
+        ],
+        "value": 36014.5
+      }
+    },
+    {
+      "class": "EXACT",
+      "target": {
+        "dataset": "furnace",
+        "kind": "anova",
+        "key": "B",
+        "field": "df"
+      },
+      "note": "",
+      "ref": {
+        "source": "r_outputs",
+        "path": [
+          "furnace",
+          "aov_error_strata",
+          1,
+          "df"
+        ],
+        "value": 63
+      }
+    },
+    {
+      "class": "EXACT",
+      "target": {
+        "dataset": "furnace",
+        "kind": "anova",
+        "key": "residual",
+        "field": "ss"
+      },
+      "note": "",
+      "ref": {
+        "source": "r_outputs",
+        "path": [
+          "furnace",
+          "aov_error_strata",
+          2,
+          "ss"
+        ],
+        "value": 10155
+      }
+    },
+    {
+      "class": "EXACT",
+      "target": {
+        "dataset": "furnace",
+        "kind": "anova",
+        "key": "residual",
+        "field": "df"
+      },
+      "note": "",
+      "ref": {
+        "source": "r_outputs",
+        "path": [
+          "furnace",
+          "aov_error_strata",
+          2,
+          "df"
+        ],
+        "value": 84
+      }
+    },
+    {
+      "class": "EXACT",
+      "target": {
+        "dataset": "furnace",
+        "kind": "anova",
+        "key": "B",
+        "field": "F"
+      },
+      "note": "",
+      "ref": {
+        "source": "r_outputs",
+        "path": [
+          "furnace",
+          "f_tests_handbook_form",
+          1,
+          "F"
+        ],
+        "value": 4.72863942228786
+      }
+    },
+    {
+      "class": "EXACT",
+      "target": {
+        "dataset": "furnace",
+        "kind": "anova",
+        "key": "B",
+        "field": "p"
+      },
+      "note": "",
+      "ref": {
+        "source": "r_outputs",
+        "path": [
+          "furnace",
+          "f_tests_handbook_form",
+          1,
+          "p"
+        ],
+        "value": 3.85035979516032e-11
+      }
+    },
+    {
+      "class": "EXACT",
+      "target": {
+        "dataset": "furnace",
+        "kind": "vc",
+        "key": "A",
+        "field": "sd_mom"
+      },
+      "note": "",
+      "ref": {
+        "source": "r_outputs",
+        "path": [
+          "furnace",
+          "mom_sd",
+          "run"
+        ],
+        "value": 17.6792800884098
+      }
+    },
+    {
+      "class": "EXACT",
+      "target": {
+        "dataset": "furnace",
+        "kind": "vc",
+        "key": "A",
+        "field": "percent_of_total"
+      },
+      "note": "",
+      "ref": {
+        "source": "r_outputs",
+        "path": [
+          "furnace",
+          "mom_percent_of_total",
+          "run"
+        ],
+        "value": 47.4410159622733
+      }
+    },
+    {
+      "class": "EXACT",
+      "target": {
+        "dataset": "furnace",
+        "kind": "vc",
+        "key": "B",
+        "field": "sd_mom"
+      },
+      "note": "",
+      "ref": {
+        "source": "r_outputs",
+        "path": [
+          "furnace",
+          "mom_sd",
+          "location"
+        ],
+        "value": 15.0127591237566
+      }
+    },
+    {
+      "class": "EXACT",
+      "target": {
+        "dataset": "furnace",
+        "kind": "vc",
+        "key": "B",
+        "field": "percent_of_total"
+      },
+      "note": "",
+      "ref": {
+        "source": "r_outputs",
+        "path": [
+          "furnace",
+          "mom_percent_of_total",
+          "location"
+        ],
+        "value": 34.2094318444989
+      }
+    },
+    {
+      "class": "EXACT",
+      "target": {
+        "dataset": "furnace",
+        "kind": "vc",
+        "key": "residual",
+        "field": "sd_mom"
+      },
+      "note": "",
+      "ref": {
+        "source": "r_outputs",
+        "path": [
+          "furnace",
+          "mom_sd",
+          "within"
+        ],
+        "value": 10.9951287915539
+      }
+    },
+    {
+      "class": "EXACT",
+      "target": {
+        "dataset": "furnace",
+        "kind": "vc",
+        "key": "residual",
+        "field": "percent_of_total"
+      },
+      "note": "",
+      "ref": {
+        "source": "r_outputs",
+        "path": [
+          "furnace",
+          "mom_percent_of_total",
+          "within"
+        ],
+        "value": 18.3495521932278
+      }
+    },
+    {
+      "class": "EXACT",
+      "target": {
+        "dataset": "furnace",
+        "kind": "estimate",
+        "key": "grand_mean",
+        "field": "estimate"
+      },
+      "note": "for a balanced design the REML intercept is the grand mean exactly",
+      "ref": {
+        "source": "r_outputs",
+        "path": [
+          "furnace",
+          "lmer_reml",
+          "intercept"
+        ],
+        "value": 563.035714285713
+      }
+    },
+    {
+      "class": "ITERATIVE",
+      "target": {
+        "dataset": "furnace",
+        "kind": "vc",
+        "key": "A",
+        "field": "sd_reml"
+      },
+      "note": "",
+      "ref": {
+        "source": "r_outputs",
+        "path": [
+          "furnace",
+          "lmer_reml",
+          "vc",
+          "run",
+          "sd"
+        ],
+        "value": 17.6793361194029
+      }
+    },
+    {
+      "class": "ITERATIVE",
+      "target": {
+        "dataset": "furnace",
+        "kind": "vc",
+        "key": "B",
+        "field": "sd_reml"
+      },
+      "note": "",
+      "ref": {
+        "source": "r_outputs",
+        "path": [
+          "furnace",
+          "lmer_reml",
+          "vc",
+          "run:zone",
+          "sd"
+        ],
+        "value": 15.0127477263156
+      }
+    },
+    {
+      "class": "ITERATIVE",
+      "target": {
+        "dataset": "furnace",
+        "kind": "vc",
+        "key": "residual",
+        "field": "sd_reml"
+      },
+      "note": "",
+      "ref": {
+        "source": "r_outputs",
+        "path": [
+          "furnace",
+          "lmer_reml",
+          "vc",
+          "Residual",
+          "sd"
+        ],
+        "value": 10.9951274860359
+      }
+    },
+    {
+      "class": "EXACT",
+      "target": {
+        "dataset": "oxide",
+        "kind": "anova",
+        "key": "A",
+        "field": "ss"
+      },
+      "note": "",
+      "ref": {
+        "source": "r_outputs",
+        "path": [
+          "oxide",
+          "without_source",
+          "aov_error_strata",
+          0,
+          "ss"
+        ],
+        "value": 9025.31944444438
+      }
+    },
+    {
+      "class": "EXACT",
+      "target": {
+        "dataset": "oxide",
+        "kind": "anova",
+        "key": "A",
+        "field": "df"
+      },
+      "note": "",
+      "ref": {
+        "source": "r_outputs",
+        "path": [
+          "oxide",
+          "without_source",
+          "aov_error_strata",
+          0,
+          "df"
+        ],
+        "value": 7
+      }
+    },
+    {
+      "class": "EXACT",
+      "target": {
+        "dataset": "oxide",
+        "kind": "anova",
+        "key": "B",
+        "field": "ss"
+      },
+      "note": "",
+      "ref": {
+        "source": "r_outputs",
+        "path": [
+          "oxide",
+          "without_source",
+          "aov_error_strata",
+          1,
+          "ss"
+        ],
+        "value": 1922.6666666668
+      }
+    },
+    {
+      "class": "EXACT",
+      "target": {
+        "dataset": "oxide",
+        "kind": "anova",
+        "key": "B",
+        "field": "df"
+      },
+      "note": "",
+      "ref": {
+        "source": "r_outputs",
+        "path": [
+          "oxide",
+          "without_source",
+          "aov_error_strata",
+          1,
+          "df"
+        ],
+        "value": 16
+      }
+    },
+    {
+      "class": "EXACT",
+      "target": {
+        "dataset": "oxide",
+        "kind": "anova",
+        "key": "residual",
+        "field": "ss"
+      },
+      "note": "",
+      "ref": {
+        "source": "r_outputs",
+        "path": [
+          "oxide",
+          "without_source",
+          "aov_error_strata",
+          2,
+          "ss"
+        ],
+        "value": 603.333333333369
+      }
+    },
+    {
+      "class": "EXACT",
+      "target": {
+        "dataset": "oxide",
+        "kind": "anova",
+        "key": "residual",
+        "field": "df"
+      },
+      "note": "",
+      "ref": {
+        "source": "r_outputs",
+        "path": [
+          "oxide",
+          "without_source",
+          "aov_error_strata",
+          2,
+          "df"
+        ],
+        "value": 48
+      }
+    },
+    {
+      "class": "EXACT",
+      "target": {
+        "dataset": "oxide",
+        "kind": "vc",
+        "key": "A",
+        "field": "sd_mom"
+      },
+      "note": "",
+      "ref": {
+        "source": "r_outputs",
+        "path": [
+          "oxide",
+          "without_source",
+          "mom_sd",
+          "lot"
+        ],
+        "value": 11.3976834027293
+      }
+    },
+    {
+      "class": "EXACT",
+      "target": {
+        "dataset": "oxide",
+        "kind": "vc",
+        "key": "B",
+        "field": "sd_mom"
+      },
+      "note": "",
+      "ref": {
+        "source": "r_outputs",
+        "path": [
+          "oxide",
+          "without_source",
+          "mom_sd",
+          "wafer"
+        ],
+        "value": 5.98880127744638
+      }
+    },
+    {
+      "class": "EXACT",
+      "target": {
+        "dataset": "oxide",
+        "kind": "vc",
+        "key": "residual",
+        "field": "sd_mom"
+      },
+      "note": "",
+      "ref": {
+        "source": "r_outputs",
+        "path": [
+          "oxide",
+          "without_source",
+          "mom_sd",
+          "site"
+        ],
+        "value": 3.54534123103055
+      }
+    },
+    {
+      "class": "EXACT",
+      "target": {
+        "dataset": "oxide",
+        "kind": "estimate",
+        "key": "grand_mean",
+        "field": "estimate"
+      },
+      "note": "",
+      "ref": {
+        "source": "r_outputs",
+        "path": [
+          "oxide",
+          "without_source",
+          "lmer_reml",
+          "intercept"
+        ],
+        "value": 2000.15277777766
+      }
+    },
+    {
+      "class": "ITERATIVE",
+      "target": {
+        "dataset": "oxide",
+        "kind": "reml",
+        "key": "fit",
+        "field": "restricted_loglik"
+      },
+      "note": "",
+      "ref": {
+        "source": "r_outputs",
+        "path": [
+          "oxide",
+          "without_source",
+          "nlme_reml",
+          "logLik"
+        ],
+        "value": -227.011034655497
+      }
+    },
+    {
+      "class": "ITERATIVE",
+      "target": {
+        "dataset": "oxide",
+        "kind": "vc",
+        "key": "A",
+        "field": "reml"
+      },
+      "note": "",
+      "ref": {
+        "source": "r_outputs",
+        "path": [
+          "oxide",
+          "without_source",
+          "nlme_reml",
+          "vc",
+          "Lot",
+          "variance"
+        ],
+        "value": 129.907190248915
+      }
+    },
+    {
+      "class": "ITERATIVE",
+      "target": {
+        "dataset": "oxide",
+        "kind": "vc",
+        "key": "B",
+        "field": "reml"
+      },
+      "note": "",
+      "ref": {
+        "source": "r_outputs",
+        "path": [
+          "oxide",
+          "without_source",
+          "nlme_reml",
+          "vc",
+          "Wafer",
+          "variance"
+        ],
+        "value": 35.8657454032183
+      }
+    },
+    {
+      "class": "ITERATIVE",
+      "target": {
+        "dataset": "oxide",
+        "kind": "vc",
+        "key": "residual",
+        "field": "reml"
+      },
+      "note": "",
+      "ref": {
+        "source": "r_outputs",
+        "path": [
+          "oxide",
+          "without_source",
+          "nlme_reml",
+          "vc",
+          "Residual",
+          "variance"
+        ],
+        "value": 12.5694439138903
+      }
+    },
+    {
+      "class": "EXACT",
+      "target": {
+        "dataset": "semiconductor",
+        "kind": "anova",
+        "key": "A",
+        "field": "df"
+      },
+      "note": "",
+      "ref": {
+        "source": "r_outputs",
+        "path": [
+          "semiconductor",
+          "split_plot_aov_error_strata",
+          0,
+          "df"
+        ],
+        "value": 3
+      }
+    },
+    {
+      "class": "EXACT",
+      "target": {
+        "dataset": "semiconductor",
+        "kind": "anova",
+        "key": "A",
+        "field": "ss"
+      },
+      "note": "",
+      "ref": {
+        "source": "r_outputs",
+        "path": [
+          "semiconductor",
+          "split_plot_aov_error_strata",
+          0,
+          "ss"
+        ],
+        "value": 3.11215833333333
+      }
+    },
+    {
+      "class": "EXACT",
+      "target": {
+        "dataset": "semiconductor",
+        "kind": "anova",
+        "key": "A",
+        "field": "ms"
+      },
+      "note": "",
+      "ref": {
+        "source": "r_outputs",
+        "path": [
+          "semiconductor",
+          "split_plot_aov_error_strata",
+          0,
+          "ms"
+        ],
+        "value": 1.03738611111111
+      }
+    },
+    {
+      "class": "EXACT",
+      "target": {
+        "dataset": "semiconductor",
+        "kind": "anova",
+        "key": "wholeplot_error",
+        "field": "df"
+      },
+      "note": "",
+      "ref": {
+        "source": "r_outputs",
+        "path": [
+          "semiconductor",
+          "split_plot_aov_error_strata",
+          1,
+          "df"
+        ],
+        "value": 8
+      }
+    },
+    {
+      "class": "EXACT",
+      "target": {
+        "dataset": "semiconductor",
+        "kind": "anova",
+        "key": "wholeplot_error",
+        "field": "ss"
+      },
+      "note": "",
+      "ref": {
+        "source": "r_outputs",
+        "path": [
+          "semiconductor",
+          "split_plot_aov_error_strata",
+          1,
+          "ss"
+        ],
+        "value": 4.27448333333334
+      }
+    },
+    {
+      "class": "EXACT",
+      "target": {
+        "dataset": "semiconductor",
+        "kind": "anova",
+        "key": "wholeplot_error",
+        "field": "ms"
+      },
+      "note": "",
+      "ref": {
+        "source": "r_outputs",
+        "path": [
+          "semiconductor",
+          "split_plot_aov_error_strata",
+          1,
+          "ms"
+        ],
+        "value": 0.534310416666667
+      }
+    },
+    {
+      "class": "EXACT",
+      "target": {
+        "dataset": "semiconductor",
+        "kind": "anova",
+        "key": "B",
+        "field": "df"
+      },
+      "note": "",
+      "ref": {
+        "source": "r_outputs",
+        "path": [
+          "semiconductor",
+          "split_plot_aov_error_strata",
+          2,
+          "df"
+        ],
+        "value": 3
+      }
+    },
+    {
+      "class": "EXACT",
+      "target": {
+        "dataset": "semiconductor",
+        "kind": "anova",
+        "key": "B",
+        "field": "ss"
+      },
+      "note": "",
+      "ref": {
+        "source": "r_outputs",
+        "path": [
+          "semiconductor",
+          "split_plot_aov_error_strata",
+          2,
+          "ss"
+        ],
+        "value": 1.12889166666667
+      }
+    },
+    {
+      "class": "EXACT",
+      "target": {
+        "dataset": "semiconductor",
+        "kind": "anova",
+        "key": "B",
+        "field": "ms"
+      },
+      "note": "",
+      "ref": {
+        "source": "r_outputs",
+        "path": [
+          "semiconductor",
+          "split_plot_aov_error_strata",
+          2,
+          "ms"
+        ],
+        "value": 0.376297222222222
+      }
+    },
+    {
+      "class": "EXACT",
+      "target": {
+        "dataset": "semiconductor",
+        "kind": "anova",
+        "key": "AB",
+        "field": "df"
+      },
+      "note": "",
+      "ref": {
+        "source": "r_outputs",
+        "path": [
+          "semiconductor",
+          "split_plot_aov_error_strata",
+          3,
+          "df"
+        ],
+        "value": 9
+      }
+    },
+    {
+      "class": "EXACT",
+      "target": {
+        "dataset": "semiconductor",
+        "kind": "anova",
+        "key": "AB",
+        "field": "ss"
+      },
+      "note": "",
+      "ref": {
+        "source": "r_outputs",
+        "path": [
+          "semiconductor",
+          "split_plot_aov_error_strata",
+          3,
+          "ss"
+        ],
+        "value": 0.809474999999999
+      }
+    },
+    {
+      "class": "EXACT",
+      "target": {
+        "dataset": "semiconductor",
+        "kind": "anova",
+        "key": "AB",
+        "field": "ms"
+      },
+      "note": "",
+      "ref": {
+        "source": "r_outputs",
+        "path": [
+          "semiconductor",
+          "split_plot_aov_error_strata",
+          3,
+          "ms"
+        ],
+        "value": 0.0899416666666665
+      }
+    },
+    {
+      "class": "EXACT",
+      "target": {
+        "dataset": "semiconductor",
+        "kind": "anova",
+        "key": "subplot_error",
+        "field": "df"
+      },
+      "note": "",
+      "ref": {
+        "source": "r_outputs",
+        "path": [
+          "semiconductor",
+          "split_plot_aov_error_strata",
+          4,
+          "df"
+        ],
+        "value": 24
+      }
+    },
+    {
+      "class": "EXACT",
+      "target": {
+        "dataset": "semiconductor",
+        "kind": "anova",
+        "key": "subplot_error",
+        "field": "ss"
+      },
+      "note": "",
+      "ref": {
+        "source": "r_outputs",
+        "path": [
+          "semiconductor",
+          "split_plot_aov_error_strata",
+          4,
+          "ss"
+        ],
+        "value": 2.66758333333333
+      }
+    },
+    {
+      "class": "EXACT",
+      "target": {
+        "dataset": "semiconductor",
+        "kind": "anova",
+        "key": "subplot_error",
+        "field": "ms"
+      },
+      "note": "",
+      "ref": {
+        "source": "r_outputs",
+        "path": [
+          "semiconductor",
+          "split_plot_aov_error_strata",
+          4,
+          "ms"
+        ],
+        "value": 0.111149305555555
+      }
+    },
+    {
+      "class": "EXACT",
+      "target": {
+        "dataset": "semiconductor",
+        "kind": "naive_anova",
+        "key": "A",
+        "field": "df"
+      },
+      "note": "",
+      "ref": {
+        "source": "r_outputs",
+        "path": [
+          "semiconductor",
+          "naive_aov",
+          0,
+          "df"
+        ],
+        "value": 3
+      }
+    },
+    {
+      "class": "EXACT",
+      "target": {
+        "dataset": "semiconductor",
+        "kind": "naive_anova",
+        "key": "A",
+        "field": "ss"
+      },
+      "note": "",
+      "ref": {
+        "source": "r_outputs",
+        "path": [
+          "semiconductor",
+          "naive_aov",
+          0,
+          "ss"
+        ],
+        "value": 3.11215833333333
+      }
+    },
+    {
+      "class": "EXACT",
+      "target": {
+        "dataset": "semiconductor",
+        "kind": "naive_anova",
+        "key": "A",
+        "field": "ms"
+      },
+      "note": "",
+      "ref": {
+        "source": "r_outputs",
+        "path": [
+          "semiconductor",
+          "naive_aov",
+          0,
+          "ms"
+        ],
+        "value": 1.03738611111111
+      }
+    },
+    {
+      "class": "EXACT",
+      "target": {
+        "dataset": "semiconductor",
+        "kind": "naive_anova",
+        "key": "B",
+        "field": "df"
+      },
+      "note": "",
+      "ref": {
+        "source": "r_outputs",
+        "path": [
+          "semiconductor",
+          "naive_aov",
+          1,
+          "df"
+        ],
+        "value": 3
+      }
+    },
+    {
+      "class": "EXACT",
+      "target": {
+        "dataset": "semiconductor",
+        "kind": "naive_anova",
+        "key": "B",
+        "field": "ss"
+      },
+      "note": "",
+      "ref": {
+        "source": "r_outputs",
+        "path": [
+          "semiconductor",
+          "naive_aov",
+          1,
+          "ss"
+        ],
+        "value": 1.12889166666667
+      }
+    },
+    {
+      "class": "EXACT",
+      "target": {
+        "dataset": "semiconductor",
+        "kind": "naive_anova",
+        "key": "B",
+        "field": "ms"
+      },
+      "note": "",
+      "ref": {
+        "source": "r_outputs",
+        "path": [
+          "semiconductor",
+          "naive_aov",
+          1,
+          "ms"
+        ],
+        "value": 0.376297222222222
+      }
+    },
+    {
+      "class": "EXACT",
+      "target": {
+        "dataset": "semiconductor",
+        "kind": "naive_anova",
+        "key": "AB",
+        "field": "df"
+      },
+      "note": "",
+      "ref": {
+        "source": "r_outputs",
+        "path": [
+          "semiconductor",
+          "naive_aov",
+          2,
+          "df"
+        ],
+        "value": 9
+      }
+    },
+    {
+      "class": "EXACT",
+      "target": {
+        "dataset": "semiconductor",
+        "kind": "naive_anova",
+        "key": "AB",
+        "field": "ss"
+      },
+      "note": "",
+      "ref": {
+        "source": "r_outputs",
+        "path": [
+          "semiconductor",
+          "naive_aov",
+          2,
+          "ss"
+        ],
+        "value": 0.809475000000001
+      }
+    },
+    {
+      "class": "EXACT",
+      "target": {
+        "dataset": "semiconductor",
+        "kind": "naive_anova",
+        "key": "AB",
+        "field": "ms"
+      },
+      "note": "",
+      "ref": {
+        "source": "r_outputs",
+        "path": [
+          "semiconductor",
+          "naive_aov",
+          2,
+          "ms"
+        ],
+        "value": 0.0899416666666668
+      }
+    },
+    {
+      "class": "EXACT",
+      "target": {
+        "dataset": "semiconductor",
+        "kind": "naive_anova",
+        "key": "residual",
+        "field": "df"
+      },
+      "note": "",
+      "ref": {
+        "source": "r_outputs",
+        "path": [
+          "semiconductor",
+          "naive_aov",
+          3,
+          "df"
+        ],
+        "value": 32
+      }
+    },
+    {
+      "class": "EXACT",
+      "target": {
+        "dataset": "semiconductor",
+        "kind": "naive_anova",
+        "key": "residual",
+        "field": "ss"
+      },
+      "note": "",
+      "ref": {
+        "source": "r_outputs",
+        "path": [
+          "semiconductor",
+          "naive_aov",
+          3,
+          "ss"
+        ],
+        "value": 6.94206666666666
+      }
+    },
+    {
+      "class": "EXACT",
+      "target": {
+        "dataset": "semiconductor",
+        "kind": "naive_anova",
+        "key": "residual",
+        "field": "ms"
+      },
+      "note": "",
+      "ref": {
+        "source": "r_outputs",
+        "path": [
+          "semiconductor",
+          "naive_aov",
+          3,
+          "ms"
+        ],
+        "value": 0.216939583333333
+      }
+    },
+    {
+      "class": "EXACT",
+      "target": {
+        "dataset": "semiconductor",
+        "kind": "naive_anova",
+        "key": "B",
+        "field": "F"
+      },
+      "note": "",
+      "ref": {
+        "source": "r_outputs",
+        "path": [
+          "semiconductor",
+          "naive_aov",
+          1,
+          "F"
+        ],
+        "value": 1.73457151728752
+      }
+    },
+    {
+      "class": "EXACT",
+      "target": {
+        "dataset": "semiconductor",
+        "kind": "naive_anova",
+        "key": "B",
+        "field": "p"
+      },
+      "note": "",
+      "ref": {
+        "source": "r_outputs",
+        "path": [
+          "semiconductor",
+          "naive_aov",
+          1,
+          "p"
+        ],
+        "value": 0.179652866223573
+      }
+    },
+    {
+      "class": "EXACT",
+      "target": {
+        "dataset": "semiconductor",
+        "kind": "naive_anova",
+        "key": "AB",
+        "field": "F"
+      },
+      "note": "",
+      "ref": {
+        "source": "r_outputs",
+        "path": [
+          "semiconductor",
+          "naive_aov",
+          2,
+          "F"
+        ],
+        "value": 0.414593156696854
+      }
+    },
+    {
+      "class": "EXACT",
+      "target": {
+        "dataset": "semiconductor",
+        "kind": "naive_anova",
+        "key": "AB",
+        "field": "p"
+      },
+      "note": "",
+      "ref": {
+        "source": "r_outputs",
+        "path": [
+          "semiconductor",
+          "naive_aov",
+          2,
+          "p"
+        ],
+        "value": 0.91775420582428
+      }
+    },
+    {
+      "class": "ITERATIVE",
+      "target": {
+        "dataset": "semiconductor",
+        "kind": "vc",
+        "key": "wholeplot",
+        "field": "sd_reml"
+      },
+      "note": "",
+      "ref": {
+        "source": "r_outputs",
+        "path": [
+          "semiconductor",
+          "lmer_reml",
+          "vc",
+          "Grp",
+          "sd"
+        ],
+        "value": 0.325254278158608
+      }
+    },
+    {
+      "class": "ITERATIVE",
+      "target": {
+        "dataset": "semiconductor",
+        "kind": "vc",
+        "key": "residual",
+        "field": "sd_reml"
+      },
+      "note": "",
+      "ref": {
+        "source": "r_outputs",
+        "path": [
+          "semiconductor",
+          "lmer_reml",
+          "vc",
+          "Residual",
+          "sd"
+        ],
+        "value": 0.333390593748634
+      }
+    },
+    {
+      "class": "ITERATIVE",
+      "target": {
+        "dataset": "semiconductor",
+        "kind": "reml",
+        "key": "fit",
+        "field": "minus2_restricted_loglik"
+      },
+      "note": "lme4's REMLcrit is -2 x the restricted log-likelihood; the convention is named, and any constant offset is reported rather than absorbed",
+      "ref": {
+        "source": "r_outputs",
+        "path": [
+          "semiconductor",
+          "lmer_reml",
+          "reml_criterion"
+        ],
+        "value": 72.8312048136367
+      }
+    },
+    {
+      "class": "ITERATIVE",
+      "target": {
+        "dataset": "semiconductor",
+        "kind": "anova",
+        "key": "A",
+        "field": "F"
+      },
+      "note": "",
+      "ref": {
+        "source": "r_outputs",
+        "path": [
+          "semiconductor",
+          "lmertest_type3_satterthwaite",
+          0,
+          "F"
+        ],
+        "value": 1.94154107275811
+      }
+    },
+    {
+      "class": "ITERATIVE",
+      "target": {
+        "dataset": "semiconductor",
+        "kind": "anova",
+        "key": "A",
+        "field": "p"
+      },
+      "note": "",
+      "ref": {
+        "source": "r_outputs",
+        "path": [
+          "semiconductor",
+          "lmertest_type3_satterthwaite",
+          0,
+          "p"
+        ],
+        "value": 0.201503265142612
+      }
+    },
+    {
+      "class": "ITERATIVE",
+      "target": {
+        "dataset": "semiconductor",
+        "kind": "anova",
+        "key": "B",
+        "field": "F"
+      },
+      "note": "",
+      "ref": {
+        "source": "r_outputs",
+        "path": [
+          "semiconductor",
+          "lmertest_type3_satterthwaite",
+          1,
+          "F"
+        ],
+        "value": 3.38551176523952
+      }
+    },
+    {
+      "class": "ITERATIVE",
+      "target": {
+        "dataset": "semiconductor",
+        "kind": "anova",
+        "key": "B",
+        "field": "p"
+      },
+      "note": "",
+      "ref": {
+        "source": "r_outputs",
+        "path": [
+          "semiconductor",
+          "lmertest_type3_satterthwaite",
+          1,
+          "p"
+        ],
+        "value": 0.0345138468149846
+      }
+    },
+    {
+      "class": "ITERATIVE",
+      "target": {
+        "dataset": "semiconductor",
+        "kind": "anova",
+        "key": "AB",
+        "field": "F"
+      },
+      "note": "",
+      "ref": {
+        "source": "r_outputs",
+        "path": [
+          "semiconductor",
+          "lmertest_type3_satterthwaite",
+          2,
+          "F"
+        ],
+        "value": 0.809196966395438
+      }
+    },
+    {
+      "class": "ITERATIVE",
+      "target": {
+        "dataset": "semiconductor",
+        "kind": "anova",
+        "key": "AB",
+        "field": "p"
+      },
+      "note": "",
+      "ref": {
+        "source": "r_outputs",
+        "path": [
+          "semiconductor",
+          "lmertest_type3_satterthwaite",
+          2,
+          "p"
+        ],
+        "value": 0.612527769301971
+      }
+    },
+    {
+      "class": "ITERATIVE",
+      "target": {
+        "dataset": "semiconductor",
+        "kind": "anova",
+        "key": "AB",
+        "field": "den_df"
+      },
+      "note": "",
+      "ref": {
+        "source": "r_outputs",
+        "path": [
+          "semiconductor",
+          "lmertest_type3_kenward_roger",
+          2,
+          "den_df"
+        ],
+        "value": 24
+      }
+    },
+    {
+      "class": "EXACT",
+      "target": {
+        "dataset": "lithography",
+        "kind": "anova",
+        "key": "A",
+        "field": "ss"
+      },
+      "note": "",
+      "ref": {
+        "source": "r_outputs",
+        "path": [
+          "lithography",
+          "aov_error_strata",
+          0,
+          "ss"
+        ],
+        "value": 127.402931708879
+      }
+    },
+    {
+      "class": "EXACT",
+      "target": {
+        "dataset": "lithography",
+        "kind": "anova",
+        "key": "A",
+        "field": "df"
+      },
+      "note": "",
+      "ref": {
+        "source": "r_outputs",
+        "path": [
+          "lithography",
+          "aov_error_strata",
+          0,
+          "df"
+        ],
+        "value": 29
+      }
+    },
+    {
+      "class": "EXACT",
+      "target": {
+        "dataset": "lithography",
+        "kind": "anova",
+        "key": "B",
+        "field": "ss"
+      },
+      "note": "",
+      "ref": {
+        "source": "r_outputs",
+        "path": [
+          "lithography",
+          "aov_error_strata",
+          1,
+          "ss"
+        ],
+        "value": 25.5208902961857
+      }
+    },
+    {
+      "class": "EXACT",
+      "target": {
+        "dataset": "lithography",
+        "kind": "anova",
+        "key": "B",
+        "field": "df"
+      },
+      "note": "",
+      "ref": {
+        "source": "r_outputs",
+        "path": [
+          "lithography",
+          "aov_error_strata",
+          1,
+          "df"
+        ],
+        "value": 60
+      }
+    },
+    {
+      "class": "EXACT",
+      "target": {
+        "dataset": "lithography",
+        "kind": "anova",
+        "key": "residual",
+        "field": "ss"
+      },
+      "note": "",
+      "ref": {
+        "source": "r_outputs",
+        "path": [
+          "lithography",
+          "aov_error_strata",
+          2,
+          "ss"
+        ],
+        "value": 63.1786451118748
+      }
+    },
+    {
+      "class": "EXACT",
+      "target": {
+        "dataset": "lithography",
+        "kind": "anova",
+        "key": "residual",
+        "field": "df"
+      },
+      "note": "",
+      "ref": {
+        "source": "r_outputs",
+        "path": [
+          "lithography",
+          "aov_error_strata",
+          2,
+          "df"
+        ],
+        "value": 360
+      }
+    },
+    {
+      "class": "ITERATIVE",
+      "target": {
+        "dataset": "lithography",
+        "kind": "vc",
+        "key": "A",
+        "field": "reml"
+      },
+      "note": "",
+      "ref": {
+        "source": "r_outputs",
+        "path": [
+          "lithography",
+          "nlme_reml",
+          "cassette",
+          "variance"
+        ],
+        "value": 0.264521449155228
+      }
+    },
+    {
+      "class": "ITERATIVE",
+      "target": {
+        "dataset": "lithography",
+        "kind": "vc",
+        "key": "B",
+        "field": "reml"
+      },
+      "note": "",
+      "ref": {
+        "source": "r_outputs",
+        "path": [
+          "lithography",
+          "nlme_reml",
+          "wafer",
+          "variance"
+        ],
+        "value": 0.0499708974161168
+      }
+    },
+    {
+      "class": "ITERATIVE",
+      "target": {
+        "dataset": "lithography",
+        "kind": "vc",
+        "key": "residual",
+        "field": "reml"
+      },
+      "note": "",
+      "ref": {
+        "source": "r_outputs",
+        "path": [
+          "lithography",
+          "nlme_reml",
+          "Residual",
+          "variance"
+        ],
+        "value": 0.175496169026995
+      }
+    },
+    {
+      "class": "EXACT",
+      "target": {
+        "dataset": "semiconductor_wholeplot_kernel",
+        "kind": "anova",
+        "key": "treatment",
+        "field": "F"
+      },
+      "note": "T2 kernel cross-check only (D-067)",
+      "ref": {
+        "source": "r_outputs",
+        "path": [
+          "semiconductor",
+          "split_plot_aov_error_strata",
+          0,
+          "F"
+        ],
+        "value": 1.94154199272946
+      }
+    },
+    {
+      "class": "EXACT",
+      "target": {
+        "dataset": "semiconductor_wholeplot_kernel",
+        "kind": "anova",
+        "key": "treatment",
+        "field": "p"
+      },
+      "note": "T2 kernel cross-check only (D-067)",
+      "ref": {
+        "source": "r_outputs",
+        "path": [
+          "semiconductor",
+          "split_plot_aov_error_strata",
+          0,
+          "p"
+        ],
+        "value": 0.201503076014436
+      }
+    },
+    {
+      "class": "EXACT",
+      "target": {
+        "dataset": "semiconductor_wholeplot_kernel",
+        "kind": "anova",
+        "key": "treatment",
+        "field": "den_df"
+      },
+      "note": "T2 kernel cross-check only (D-067)",
+      "ref": {
+        "source": "r_outputs",
+        "path": [
+          "semiconductor",
+          "split_plot_aov_error_strata",
+          1,
+          "df"
+        ],
+        "value": 8
+      }
+    }
+  ]
+}

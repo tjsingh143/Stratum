@@ -1,0 +1,155 @@
+{
+  "dataset": "NIST furnace (FURNACE.DAT)",
+  "design": {
+    "a_runs": 21,
+    "b_zones_per_run": 4,
+    "n_wafers_per_zone": 2
+  },
+  "aov_error_strata": [
+    {
+      "stratum": "Error: run",
+      "term": "run",
+      "df": 20,
+      "ss": 61442.2857142857,
+      "ms": 3072.11428571428,
+      "F": null,
+      "p": null
+    },
+    {
+      "stratum": "Error: run:zone",
+      "term": "Residuals",
+      "df": 63,
+      "ss": 36014.5,
+      "ms": 571.65873015873,
+      "F": null,
+      "p": null
+    },
+    {
+      "stratum": "Error: Within",
+      "term": "Residuals",
+      "df": 84,
+      "ss": 10155,
+      "ms": 120.892857142857,
+      "F": null,
+      "p": null
+    }
+  ],
+  "f_tests_handbook_form": [
+    {
+      "term": "run",
+      "num_df": 20,
+      "den_df": 63,
+      "F": 5.37403545794055,
+      "p": 1.39390304449293e-07
+    },
+    {
+      "term": "location(run)",
+      "num_df": 63,
+      "den_df": 84,
+      "F": 4.72863942228786,
+      "p": 3.85035979516032e-11
+    }
+  ],
+  "mom_variance_components": {
+    "run": 312.556944444444,
+    "location": 225.382936507936,
+    "within": 120.892857142857
+  },
+  "mom_sd": {
+    "run": 17.6792800884098,
+    "location": 15.0127591237566,
+    "within": 10.9951287915539
+  },
+  "mom_percent_of_total": {
+    "run": 47.4410159622733,
+    "location": 34.2094318444989,
+    "within": 18.3495521932278
+  },
+  "lmer_reml": {
+    "vc": {
+      "run:zone": {
+        "variance": 225.382594293995,
+        "sd": 15.0127477263156
+      },
+      "run": {
+        "variance": 312.558925622824,
+        "sd": 17.6793361194029
+      },
+      "Residual": {
+        "variance": 120.892828434181,
+        "sd": 10.9951274860359
+      }
+    },
+    "intercept": 563.035714285713,
+    "singular": false,
+    "profile_sd_ci": [
+      {
+        "parameter": "sd_(Intercept)|run:zone",
+        "lower": 11.9242331512623,
+        "upper": 18.8324593752264
+      },
+      {
+        "parameter": "sd_(Intercept)|run",
+        "lower": 11.6793902571896,
+        "upper": 25.4089433965895
+      },
+      {
+        "parameter": "sigma",
+        "lower": 9.52091022238572,
+        "upper": 12.8930562248369
+      }
+    ]
+  },
+  "nlme_reml": {
+    "zone": {
+      "variance": 225.384856996391,
+      "sd": 15.0128230854956
+    },
+    "run": {
+      "variance": 312.557297938594,
+      "sd": 17.6792900858206
+    },
+    "Residual": {
+      "variance": 120.892282056394,
+      "sd": 10.995102639648
+    }
+  },
+  "supplementary_zone_fixed": [
+    {
+      "stratum": "Error: run",
+      "term": "Residuals",
+      "df": 20,
+      "ss": 61442.2857142857,
+      "ms": 3072.11428571428,
+      "F": null,
+      "p": null
+    },
+    {
+      "stratum": "Error: run:zone",
+      "term": "zone",
+      "df": 3,
+      "ss": 912.690476190468,
+      "ms": 304.230158730156,
+      "F": 0.520024744349086,
+      "p": 0.670126047817169
+    },
+    {
+      "stratum": "Error: run:zone",
+      "term": "Residuals",
+      "df": 60,
+      "ss": 35101.8095238095,
+      "ms": 585.030158730158,
+      "F": null,
+      "p": null
+    },
+    {
+      "stratum": "Error: Within",
+      "term": "Residuals",
+      "df": 84,
+      "ss": 10155,
+      "ms": 120.892857142857,
+      "F": null,
+      "p": null
+    }
+  ]
+}

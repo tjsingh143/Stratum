@@ -1,0 +1,189 @@
+
+> source("r/common.R")
+
+> d <- read.csv(file.path(DERIVED, "semiconductor.csv"))
+
+> stopifnot(nrow(d) == 48)
+
+> d$ET <- factor(d$ET)
+
+> d$position <- factor(d$position)
+
+> d$Grp <- factor(d$Grp)
+
+> fit_split <- aov(resistance ~ ET * position + Error(Grp), 
++     data = d)
+
+> summary(fit_split)
+
+Error: Grp
+          Df Sum Sq Mean Sq F value Pr(>F)
+ET         3  3.112  1.0374   1.942  0.202
+Residuals  8  4.274  0.5343               
+
+Error: Within
+            Df Sum Sq Mean Sq F value Pr(>F)  
+position     3 1.1289  0.3763   3.386 0.0345 *
+ET:position  9 0.8095  0.0899   0.809 0.6125  
+Residuals   24 2.6676  0.1111                 
+---
+Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
+
+> fit_naive <- aov(resistance ~ ET * position, data = d)
+
+> summary(fit_naive)
+            Df Sum Sq Mean Sq F value  Pr(>F)   
+ET           3  3.112  1.0374   4.782 0.00728 **
+position     3  1.129  0.3763   1.735 0.17965   
+ET:position  9  0.809  0.0899   0.415 0.91775   
+Residuals   32  6.942  0.2169                   
+---
+Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
+
+> fit_lmer <- lmer(resistance ~ ET * position + (1 | 
++     Grp), data = d, REML = TRUE)
+
+> summary(fit_lmer)
+Linear mixed model fit by REML. t-tests use Satterthwaite's method ['lmerModLmerTest']
+Formula: resistance ~ ET * position + (1 | Grp)
+   Data: d
+
+REML criterion at convergence: 72.8
+
+Scaled residuals: 
+     Min       1Q   Median       3Q      Max 
+-1.91111 -0.45920  0.01029  0.46868  1.31146 
+
+Random effects:
+ Groups   Name        Variance Std.Dev.
+ Grp      (Intercept) 0.1058   0.3253  
+ Residual             0.1111   0.3334  
+Number of obs: 48, groups:  Grp, 12
+
+Fixed effects:
+               Estimate Std. Error        df t value Pr(>|t|)    
+(Intercept)    6.002917   0.105506  7.999995  56.897 1.01e-11 ***
+ET1           -0.377083   0.182741  7.999995  -2.063  0.07296 .  
+ET2           -0.037083   0.182741  7.999995  -0.203  0.84426    
+ET3            0.084583   0.182741  7.999995   0.463  0.65580    
+position1      0.017917   0.083348 24.000002   0.215  0.83161    
+position2      0.131250   0.083348 24.000002   1.575  0.12841    
+position3     -0.255417   0.083348 24.000002  -3.064  0.00532 ** 
+ET1:position1 -0.030417   0.144362 24.000002  -0.211  0.83490    
+ET2:position1  0.009583   0.144362 24.000002   0.066  0.94762    
+ET3:position1  0.031250   0.144362 24.000002   0.216  0.83045    
+ET1:position2 -0.307083   0.144362 24.000002  -2.127  0.04388 *  
+ET2:position2  0.089583   0.144362 24.000002   0.621  0.54075    
+ET3:position2  0.127917   0.144362 24.000002   0.886  0.38437    
+ET1:position3  0.182917   0.144362 24.000002   1.267  0.21729    
+ET2:position3  0.056250   0.144362 24.000002   0.390  0.70024    
+ET3:position3 -0.058750   0.144362 24.000002  -0.407  0.68764    
+---
+Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
+
+Correlation matrix not shown by default, as p = 16 > 12.
+Use print(yy$value, correlation=TRUE)  or
+    vcov(yy$value)        if you need it
+
+
+> an_sat <- lmertest_anova(fit_lmer, "Satterthwaite")
+
+> an_kr <- lmertest_anova(fit_lmer, "Kenward-Roger")
+
+> an_sat
+         term num_df    den_df        F          p
+1          ET      3  7.999995 1.941541 0.20150327
+2    position      3 24.000002 3.385512 0.03451385
+3 ET:position      9 24.000002 0.809197 0.61252777
+
+> an_kr
+         term num_df den_df        F          p
+1          ET      3      8 1.941541 0.20150322
+2    position      3     24 3.385512 0.03451385
+3 ET:position      9     24 0.809197 0.61252777
+
+> op <- options(contrasts = c("contr.SAS", "contr.poly"))
+
+> fit_lme_ml <- nlme::lme(resistance ~ ET * position, 
++     random = ~1 | Grp, data = d, method = "ML")
+
+> summary(fit_lme_ml)
+Linear mixed-effects model fit by maximum likelihood
+  Data: d 
+       AIC      BIC    logLik
+  66.14672 99.82834 -15.07336
+
+Random effects:
+ Formula: ~1 | Grp
+        (Intercept)  Residual
+StdDev:   0.2655689 0.2722123
+
+Fixed effects:  resistance ~ ET * position 
+                  Value Std.Error DF   t-value p-value
+(Intercept)    6.540000 0.2689111 24 24.320302  0.0000
+ET1           -0.653333 0.3802978  8 -1.717952  0.1241
+ET2           -0.623333 0.3802978  8 -1.639067  0.1398
+ET3           -0.446667 0.3802978  8 -1.174518  0.2740
+position1     -0.200000 0.2722123 24 -0.734721  0.4696
+position2      0.013333 0.2722123 24  0.048981  0.9613
+position3     -0.643333 0.2722123 24 -2.363351  0.0266
+ET1:position1 -0.073333 0.3849663 24 -0.190493  0.8505
+ET2:position1  0.276667 0.3849663 24  0.718678  0.4793
+ET3:position1  0.243333 0.3849663 24  0.632090  0.5333
+ET1:position2 -0.450000 0.3849663 24 -1.168933  0.2539
+ET2:position2  0.256667 0.3849663 24  0.666725  0.5113
+ET3:position2  0.240000 0.3849663 24  0.623431  0.5389
+ET1:position3  0.310000 0.3849663 24  0.805265  0.4286
+ET2:position3  0.493333 0.3849663 24  1.281497  0.2123
+ET3:position3  0.323333 0.3849663 24  0.839900  0.4093
+ Correlation: 
+              (Intr) ET1    ET2    ET3    postn1 postn2 postn3 ET1:p1 ET2:p1 ET3:p1 ET1:p2 ET2:p2
+ET1           -0.707                                                                             
+ET2           -0.707  0.500                                                                      
+ET3           -0.707  0.500  0.500                                                               
+position1     -0.506  0.358  0.358  0.358                                                        
+position2     -0.506  0.358  0.358  0.358  0.500                                                 
+position3     -0.506  0.358  0.358  0.358  0.500  0.500                                          
+ET1:position1  0.358 -0.506 -0.253 -0.253 -0.707 -0.354 -0.354                                   
+ET2:position1  0.358 -0.253 -0.506 -0.253 -0.707 -0.354 -0.354  0.500                            
+ET3:position1  0.358 -0.253 -0.253 -0.506 -0.707 -0.354 -0.354  0.500  0.500                     
+ET1:position2  0.358 -0.506 -0.253 -0.253 -0.354 -0.707 -0.354  0.500  0.250  0.250              
+ET2:position2  0.358 -0.253 -0.506 -0.253 -0.354 -0.707 -0.354  0.250  0.500  0.250  0.500       
+ET3:position2  0.358 -0.253 -0.253 -0.506 -0.354 -0.707 -0.354  0.250  0.250  0.500  0.500  0.500
+ET1:position3  0.358 -0.506 -0.253 -0.253 -0.354 -0.354 -0.707  0.500  0.250  0.250  0.500  0.250
+ET2:position3  0.358 -0.253 -0.506 -0.253 -0.354 -0.354 -0.707  0.250  0.500  0.250  0.250  0.500
+ET3:position3  0.358 -0.253 -0.253 -0.506 -0.354 -0.354 -0.707  0.250  0.250  0.500  0.250  0.250
+              ET3:p2 ET1:p3 ET2:p3
+ET1                               
+ET2                               
+ET3                               
+position1                         
+position2                         
+position3                         
+ET1:position1                     
+ET2:position1                     
+ET3:position1                     
+ET1:position2                     
+ET2:position2                     
+ET3:position2                     
+ET1:position3  0.250              
+ET2:position3  0.250  0.500       
+ET3:position3  0.500  0.500  0.500
+
+Standardized Within-Group Residuals:
+        Min          Q1         Med          Q3         Max 
+-2.34061670 -0.56240337  0.01260018  0.57401650  1.60620077 
+
+Number of Observations: 48
+Number of Groups: 12 
+
+> options(op)
+
+> write_result(list(dataset = "SASmixed Semiconductor", 
++     design = list(a_et_levels = nlevels(d$ET), r_wafers_per_et = 3, 
++         b_positions = nlevels(d$position)), split_plot_aov_error_strata = aov_strata(fit_split), 
++     naive_aov = aov_table(fit_naive), lmer_reml = list(vc = lmer_vc(fit_lmer), 
++         singular = isSingular(fit_lmer), reml_criterion = unname(REMLcrit(fit_lmer))), 
++     lmertest_type3_satterthwaite = an_sat, lmertest_type3_kenward_roger = an_kr, 
++     nlme_ml_contr_sas = list(vc = nlme_vc(fit_lme_ml), logLik = as.numeric(logLik(fit_lme_ml)), 
++         AIC = AIC(fit_lme_ml), BIC = BIC(fit_lme_ml))), "semiconductor.json")

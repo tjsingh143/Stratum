@@ -1,0 +1,137 @@
+id,dataset,quantity,value,tier,role,source_file,anchor,window,notes
+F01,furnace,ANOVA Run df,20,published,canonical,nist/ppc514.txt,Prob > F||Run,1,NIST/SEMATECH e-Handbook 3.5.1.4 ANOVA table
+F02,furnace,ANOVA Run SS,"61,442.29",published,canonical,nist/ppc514.txt,Prob > F||Run,2,
+F03,furnace,ANOVA Run MS,"3,072.11",published,canonical,nist/ppc514.txt,Prob > F||Run,3,Brief Section 3.2 quotes 3072.11
+F04,furnace,ANOVA Run F (vs location(run)),5.37404,published,canonical,nist/ppc514.txt,Prob > F||Run,4,
+F05,furnace,ANOVA Run p,0.0000001,published,canonical,nist/ppc514.txt,Prob > F||Run,5,NIST's R output prints 1.393903e-07 (F23)
+F06,furnace,ANOVA Location(Run) df,63,published,canonical,nist/ppc514.txt,Prob > F||Furnace Location [Run],1,
+F07,furnace,ANOVA Location(Run) SS,"36,014.5",published,canonical,nist/ppc514.txt,Prob > F||Furnace Location [Run],2,
+F08,furnace,ANOVA Location(Run) MS,571.659,published,canonical,nist/ppc514.txt,Prob > F||Furnace Location [Run],3,
+F09,furnace,ANOVA Location(Run) F (vs within),4.72864,published,canonical,nist/ppc514.txt,Prob > F||Furnace Location [Run],4,
+F10,furnace,ANOVA Location(Run) p,3.85e-11,published,canonical,nist/ppc514.txt,Prob > F||Furnace Location [Run],5,
+F11,furnace,ANOVA Within df,84,published,canonical,nist/ppc514.txt,Prob > F||Within,1,
+F12,furnace,ANOVA Within SS,"10,155",published,canonical,nist/ppc514.txt,Prob > F||Within,2,
+F13,furnace,ANOVA Within MS,120.893,published,canonical,nist/ppc514.txt,Prob > F||Within,3,
+F14,furnace,ANOVA Total df,167,published,canonical,nist/ppc514.txt,Prob > F||Total,1,
+F15,furnace,ANOVA Total SS,"107,611.8",published,canonical,nist/ppc514.txt,Prob > F||Total,2,
+F16,furnace,ANOVA Total MS,644.382,published,canonical,nist/ppc514.txt,Prob > F||Total,3,
+F17,furnace,Variance component Run,312.55694,published,canonical,nist/ppc514.txt,Sqrt(Variance Component)||Run,1,Brief Section 3.2 rounds to 312.557
+F18,furnace,SD Run,17.679,published,canonical,nist/ppc514.txt,Sqrt(Variance Component)||Run,3,
+F19,furnace,Variance component Location(Run),225.38294,published,canonical,nist/ppc514.txt,Sqrt(Variance Component)||Furnace Location[Run],1,Brief Section 3.2 rounds to 225.383
+F20,furnace,SD Location(Run),15.013,published,canonical,nist/ppc514.txt,Sqrt(Variance Component)||Furnace Location[Run],3,
+F21,furnace,Variance component Within,120.89286,published,canonical,nist/ppc514.txt,Sqrt(Variance Component)||Within,1,Brief Section 3.2 rounds to 120.893
+F22,furnace,SD Within,10.995,published,canonical,nist/ppc514.txt,Sqrt(Variance Component)||Within,3,
+F23,furnace,Run p (NIST R output),1.393903e-07,published,cross-check,nist/ppc511.r,F Ratio Prob > F||> Run,0,Printed output in NIST's published R code for 3.5.1.4
+F24,furnace,Location(Run) MS (NIST R output),571.6587,published,cross-check,nist/ppc511.r,F Ratio Prob > F||> Location(Run),0,
+F25,furnace,Variance component Run (NIST R output; nlme REML),312.557,published,cross-check,nist/ppc511.r,Var. Comp.||> Run,0,REML via nlme::lme in NIST's code
+F26,furnace,Variance component Location(Run) (NIST R output; nlme REML),225.381,published,cross-check,nist/ppc511.r,Var. Comp.||> Location(Run),0,"Differs from the ANOVA page's 225.38294 in the 3rd decimal; REML optimizer tolerance, see D-008"
+F27,furnace,Variance component Within (NIST R output; nlme REML),120.893,published,cross-check,nist/ppc511.r,Var. Comp.||> Within,0,
+F28,furnace,E[MS] equation for Run as published,3072.11 = (4*2)*Var(Run) + 2*Var(Furnace Location) + Var(Within),published,canonical,nist/ppc514.txt,following set of equations,3,Handbook's balanced E[MS] with b=4 and n=2
+L01,lithography,ANOVA Cassette df,29,published,optional,nist/pmc613.txt,Mean Squares||Cassette 29,0,NIST/SEMATECH e-Handbook 6.6.1.3
+L02,lithography,ANOVA Cassette SS,127.40293,published,optional,nist/pmc613.txt,Mean Squares||Cassette 29,0,
+L03,lithography,ANOVA Cassette MS,4.3932,published,optional,nist/pmc613.txt,Mean Squares||Cassette 29,0,
+L04,lithography,ANOVA Wafer(Cassette) SS,25.52089,published,optional,nist/pmc613.txt,Mean Squares||Wafer(Cassette),0,
+L05,lithography,ANOVA Wafer(Cassette) MS,0.4253,published,optional,nist/pmc613.txt,Mean Squares||Wafer(Cassette),0,
+L06,lithography,ANOVA Site(Cassette; Wafer) df,360,published,optional,nist/pmc613.txt,"Mean Squares||Site(Cassette, Wafer)",0,
+L07,lithography,ANOVA Site(Cassette; Wafer) MS,0.1755,published,optional,nist/pmc613.txt,"Mean Squares||Site(Cassette, Wafer)",0,
+L08,lithography,Variance component Cassette (table),0.2645,published,optional,nist/pmc613.txt,Estimate||Cassette,1,
+L09,lithography,Variance component Wafer (table),0.0500,published,optional,nist/pmc613.txt,Estimate||Wafer,1,Page text gives 0.04997 for the same quantity (L10)
+L10,lithography,Variance component Wafer (text),0.04997,published,optional,nist/pmc613.txt,Solving these equations,1,
+L11,lithography,Variance component Site (table),0.1755,published,optional,nist/pmc613.txt,Estimate||Site,1,
+L12,lithography,Variance components cassette (NIST R output; nlme REML),0.26452145,published,optional,nist/pmc613.r,##> cassette wafer Within,1,
+L13,lithography,Variance components wafer (NIST R output; nlme REML),0.04997089,published,optional,nist/pmc613.r,##> cassette wafer Within,1,
+L14,lithography,Variance components within (NIST R output; nlme REML),0.17549617,published,optional,nist/pmc613.r,##> cassette wafer Within,1,
+O01,oxide,nlme re-run of P&B (2000) ch. 4 code: fm1Oxide REML SD Lot,11.4,package,canonical,cran/nlme_3.1-171.tar.gz::nlme/tests/extras/scripts.Rout.save,> fm1Oxide||Formula: ~1 | Lot,2,"Book's ch04 code re-run by nlme (R 4.6.0, digits=5 option set by script); not the book's printed page"
+O02,oxide,nlme re-run of P&B (2000) ch. 4 code: fm1Oxide REML SD Wafer,5.99,package,canonical,cran/nlme_3.1-171.tar.gz::nlme/tests/extras/scripts.Rout.save,> fm1Oxide||Formula: ~1 | Wafer %in% Lot,2,"package-distributed reproduction, NOT verified against the book"
+O03,oxide,nlme re-run of P&B (2000) ch. 4 code: fm1Oxide REML residual SD,3.55,package,canonical,cran/nlme_3.1-171.tar.gz::nlme/tests/extras/scripts.Rout.save,> fm1Oxide||Formula: ~1 | Wafer %in% Lot,2,"package-distributed reproduction, NOT verified against the book"
+O04,oxide,nlme re-run of P&B (2000) ch. 4 code: fm1Oxide REML log-restricted-likelihood,-227,package,canonical,cran/nlme_3.1-171.tar.gz::nlme/tests/extras/scripts.Rout.save,> fm1Oxide||Log-restricted-likelihood:,0,"package-distributed reproduction, NOT verified against the book"
+O05,oxide,nlme re-run of P&B (2000) ch. 4 code: approx 95% CI SD Lot lower,6.39,package,canonical,cran/nlme_3.1-171.tar.gz::nlme/tests/extras/scripts.Rout.save,intervals(fm1Oxide||Level: Lot,2,"nlme intervals(): Wald on log-SD scale; package-distributed reproduction, NOT verified against the book"
+O06,oxide,nlme re-run of P&B (2000) ch. 4 code: approx 95% CI SD Lot upper,20.3,package,canonical,cran/nlme_3.1-171.tar.gz::nlme/tests/extras/scripts.Rout.save,intervals(fm1Oxide||Level: Lot,2,"package-distributed reproduction, NOT verified against the book"
+O07,oxide,nlme re-run of P&B (2000) ch. 4 code: approx 95% CI SD Wafer lower,4.06,package,canonical,cran/nlme_3.1-171.tar.gz::nlme/tests/extras/scripts.Rout.save,intervals(fm1Oxide||Level: Wafer,2,"package-distributed reproduction, NOT verified against the book"
+O08,oxide,nlme re-run of P&B (2000) ch. 4 code: approx 95% CI SD Wafer upper,8.82,package,canonical,cran/nlme_3.1-171.tar.gz::nlme/tests/extras/scripts.Rout.save,intervals(fm1Oxide||Level: Wafer,2,"package-distributed reproduction, NOT verified against the book"
+O09,oxide,nlme re-run of P&B (2000) ch. 4 code: approx 95% CI residual SD lower,2.90,package,canonical,cran/nlme_3.1-171.tar.gz::nlme/tests/extras/scripts.Rout.save,intervals(fm1Oxide||Within-group standard error:,2,"package-distributed reproduction, NOT verified against the book"
+O10,oxide,nlme re-run of P&B (2000) ch. 4 code: approx 95% CI residual SD upper,4.33,package,canonical,cran/nlme_3.1-171.tar.gz::nlme/tests/extras/scripts.Rout.save,intervals(fm1Oxide||Within-group standard error:,2,"package-distributed reproduction, NOT verified against the book"
+O11,oxide,S-PLUS transcript fit of the Littell Output 4.13 model (no Source): REML SD Lot,11.398,package,canonical,cran/SASmixed_1.0-5.tar.gz::SASmixed/inst/transcripts/Semi2.St,summary( fm1RSemi2 ),9,"S-PLUS 3.4 / nlme 3.0 transcript (Bates & Pinheiro 1999), annotated 'compare with output 4.13, p. 156'; not SAS output; package-distributed reproduction, NOT verified against the book"
+O12,oxide,S-PLUS transcript fit of the Littell Output 4.13 model: REML SD Wafer,5.9888,package,canonical,cran/SASmixed_1.0-5.tar.gz::SASmixed/inst/transcripts/Semi2.St,summary( fm1RSemi2 )||Wafer %in% Lot,2,"package-distributed reproduction, NOT verified against the book"
+O13,oxide,S-PLUS transcript fit of the Littell Output 4.13 model: REML residual SD,3.5453,package,canonical,cran/SASmixed_1.0-5.tar.gz::SASmixed/inst/transcripts/Semi2.St,summary( fm1RSemi2 )||Wafer %in% Lot,2,"package-distributed reproduction, NOT verified against the book"
+O14,oxide,S-PLUS transcript fit of the Littell Output 4.15 model (Source fixed): REML SD Lot,10.95,package,sensitivity,cran/SASmixed_1.0-5.tar.gz::SASmixed/inst/transcripts/Semi2.St,summary( fm2RSemi2 ),9,"Transcript annotated 'compare with output 4.15, p. 159'; package-distributed reproduction, NOT verified against the book"
+O15,oxide,S-PLUS transcript fit of the Littell Output 4.15 model: Source estimate (SAS contrast: level 1 minus level 2),-10.1,package,sensitivity,cran/SASmixed_1.0-5.tar.gz::SASmixed/inst/transcripts/Semi2.St,summary( fm2RSemi2 )||Value Std.Error DF t-value p-value||Source,0,"package-distributed reproduction, NOT verified against the book"
+O16,oxide,S-PLUS transcript fit of the Littell Output 4.15 model: Source SE,8.1622,package,sensitivity,cran/SASmixed_1.0-5.tar.gz::SASmixed/inst/transcripts/Semi2.St,summary( fm2RSemi2 )||Value Std.Error DF t-value p-value||Source,0,"package-distributed reproduction, NOT verified against the book"
+O17,oxide,S-PLUS transcript fit of the Littell Output 4.15 model: Source denominator df,6,package,sensitivity,cran/SASmixed_1.0-5.tar.gz::SASmixed/inst/transcripts/Semi2.St,summary( fm2RSemi2 )||Value Std.Error DF t-value p-value||Source,0,"package-distributed reproduction, NOT verified against the book"
+O18,oxide,S-PLUS transcript fit of the Littell Output 4.15 model: Source p,0.2629,package,sensitivity,cran/SASmixed_1.0-5.tar.gz::SASmixed/inst/transcripts/Semi2.St,summary( fm2RSemi2 )||Value Std.Error DF t-value p-value||Source,0,"package-distributed reproduction, NOT verified against the book"
+O19,oxide,"P&B (2000) printed estimates, ch. 4 Oxide",,not-obtained,not-obtained,,,,Not obtained: the book was not accessible. v1 reference is the package tier per D-013; never filled from memory
+O20,oxide,"Littell et al. (1996) Outputs 4.13 / 4.15 printed estimates and tests (pp. 156, 159)",,not-obtained,not-obtained,,,,Not obtained: the book was not accessible. v1 reference is the package tier per D-013; never filled from memory
+S01,semiconductor,S-PLUS transcript ML fit SD wafer (Grp),0.26557,package,cross-check,cran/SASmixed_1.0-5.tar.gz::SASmixed/inst/transcripts/Semiconductor.St,summary( fm1Semi )||Formula: ~ 1 | Grp,2,"S-PLUS 3.4 / nlme 3.0 transcript, ML (not REML, not SAS Type 3 tests); package-distributed reproduction, NOT verified against the book"
+S02,semiconductor,S-PLUS transcript ML fit residual SD,0.27221,package,cross-check,cran/SASmixed_1.0-5.tar.gz::SASmixed/inst/transcripts/Semiconductor.St,summary( fm1Semi )||Formula: ~ 1 | Grp,2,"package-distributed reproduction, NOT verified against the book"
+S03,semiconductor,S-PLUS transcript ML fit logLik,-15.073,package,cross-check,cran/SASmixed_1.0-5.tar.gz::SASmixed/inst/transcripts/Semiconductor.St,summary( fm1Semi )||AIC BIC logLik,1,"package-distributed reproduction, NOT verified against the book"
+S04,semiconductor,S-PLUS transcript ML fit ET1 coefficient denominator df,8,package,cross-check,cran/SASmixed_1.0-5.tar.gz::SASmixed/inst/transcripts/Semiconductor.St,summary( fm1Semi )||Value Std.Error DF t-value p-value||ET1,0,"Whole-plot terms carry 8 df in the transcript; package-distributed reproduction, NOT verified against the book"
+S05,semiconductor,S-PLUS transcript ML fit position1 coefficient denominator df,24,package,cross-check,cran/SASmixed_1.0-5.tar.gz::SASmixed/inst/transcripts/Semiconductor.St,summary( fm1Semi )||Value Std.Error DF t-value p-value||position1,0,"Subplot terms carry 24 df; package-distributed reproduction, NOT verified against the book"
+S06,semiconductor,"Littell et al. (1996) Section 2.3 printed Type 3 tests (ET, position, ET*position) and variance components",,not-obtained,not-obtained,,,,Not obtained: the book was not accessible. v1 reference is the package tier per D-013; never filled from memory
+S07,semiconductor,lmer example ANOVA: ET F,1.9415,package,cross-check,rdrr/SASmixed_Semiconductor.txt,Analysis of Variance Table||ET 3,0,"rdrr.io rendering of the SASmixed Rd example (lmer, REML), built 2019-05-01, lme4 version not stated; third-party, NOT verified against the book"
+S08,semiconductor,lmer example ANOVA: position F,3.3855,package,cross-check,rdrr/SASmixed_Semiconductor.txt,Analysis of Variance Table||position 3,0,"rdrr.io rendering of the SASmixed Rd example (lmer, REML), built 2019-05-01, lme4 version not stated; third-party, NOT verified against the book"
+S09,semiconductor,lmer example ANOVA: ET:position F,0.8092,package,cross-check,rdrr/SASmixed_Semiconductor.txt,Analysis of Variance Table||ET : position 9,0,"rdrr.io rendering of the SASmixed Rd example (lmer, REML), built 2019-05-01, lme4 version not stated; third-party, NOT verified against the book"
+S10,semiconductor,lmer example REML SD wafer (Grp),0.3253,package,cross-check,rdrr/SASmixed_Semiconductor.txt,resistance ~ ET * position||Grp ( Intercept ),0,"rdrr.io rendering of the SASmixed Rd example (lmer, REML), built 2019-05-01, lme4 version not stated; third-party, NOT verified against the book"
+S11,semiconductor,lmer example REML residual SD,0.3334,package,cross-check,rdrr/SASmixed_Semiconductor.txt,resistance ~ ET * position||Grp ( Intercept )||Residual,0,"rdrr.io rendering of the SASmixed Rd example (lmer, REML), built 2019-05-01, lme4 version not stated; third-party, NOT verified against the book"
+RF01,furnace,R aov Error strata MS run,3072.114,r-run,canonical,r_outputs/furnace.json,aov_error_strata[term=run]/ms,,
+RF02,furnace,R aov Error strata MS location(run),571.6587,r-run,canonical,r_outputs/furnace.json,aov_error_strata[stratum=Error: run:zone]/ms,,
+RF03,furnace,R aov Error strata MS within,120.8929,r-run,canonical,r_outputs/furnace.json,aov_error_strata[stratum=Error: Within]/ms,,
+RF04,furnace,R F run vs location(run),5.374035,r-run,canonical,r_outputs/furnace.json,f_tests_handbook_form[term=run]/F,,
+RF05,furnace,R p run,1.393903e-07,r-run,canonical,r_outputs/furnace.json,f_tests_handbook_form[term=run]/p,,
+RF06,furnace,R method-of-moments VC run,312.5569,r-run,canonical,r_outputs/furnace.json,mom_variance_components/run,,
+RF07,furnace,R method-of-moments VC location,225.3829,r-run,canonical,r_outputs/furnace.json,mom_variance_components/location,,
+RF08,furnace,R method-of-moments VC within,120.8929,r-run,canonical,r_outputs/furnace.json,mom_variance_components/within,,
+RF09,furnace,lme4 REML VC run,312.5589,r-run,canonical,r_outputs/furnace.json,lmer_reml/vc/run/variance,,
+RF10,furnace,lme4 REML VC location,225.3826,r-run,canonical,r_outputs/furnace.json,lmer_reml/vc/run:zone/variance,,
+RF11,furnace,lme4 REML VC within,120.8928,r-run,canonical,r_outputs/furnace.json,lmer_reml/vc/Residual/variance,,
+RF12,furnace,nlme REML VC run,312.5573,r-run,canonical,r_outputs/furnace.json,nlme_reml/run/variance,,
+RF13,furnace,nlme REML VC location,225.3849,r-run,canonical,r_outputs/furnace.json,nlme_reml/zone/variance,,
+RF14,furnace,lme4 profile 95% CI SD run lower,11.679,r-run,cross-check,r_outputs/furnace.json,lmer_reml/profile_sd_ci[parameter=sd_(Intercept)|run]/lower,,
+RF15,furnace,lme4 profile 95% CI SD run upper,25.409,r-run,cross-check,r_outputs/furnace.json,lmer_reml/profile_sd_ci[parameter=sd_(Intercept)|run]/upper,,
+RF16,furnace,Supplementary: zone as fixed crossed factor F (3; 60 df),0.5200,r-run,supplementary,r_outputs/furnace.json,supplementary_zone_fixed[term=zone]/F,,Structural check only (D-007)
+RF17,furnace,Supplementary: zone as fixed crossed factor p,0.6701,r-run,supplementary,r_outputs/furnace.json,supplementary_zone_fixed[term=zone]/p,,
+RO01,oxide,R aov Error strata MS lot,1289.331,r-run,canonical,r_outputs/oxide.json,without_source/aov_error_strata[stratum=Error: Lot]/ms,,
+RO02,oxide,R aov Error strata MS wafer(lot),120.1667,r-run,canonical,r_outputs/oxide.json,without_source/aov_error_strata[stratum=Error: Lot:Wafer]/ms,,
+RO03,oxide,R aov Error strata MS site (within),12.56944,r-run,canonical,r_outputs/oxide.json,without_source/aov_error_strata[stratum=Error: Within]/ms,,
+RO04,oxide,R method-of-moments VC lot,129.9072,r-run,canonical,r_outputs/oxide.json,without_source/mom_variance_components/lot,,
+RO05,oxide,R method-of-moments VC wafer,35.8657,r-run,canonical,r_outputs/oxide.json,without_source/mom_variance_components/wafer,,
+RO06,oxide,R method-of-moments VC site,12.5694,r-run,canonical,r_outputs/oxide.json,without_source/mom_variance_components/site,,
+RO07,oxide,lme4 REML SD lot,11.398,r-run,canonical,r_outputs/oxide.json,without_source/lmer_reml/vc/Lot/sd,,
+RO08,oxide,lme4 REML SD wafer,5.989,r-run,canonical,r_outputs/oxide.json,without_source/lmer_reml/vc/Wafer:Lot/sd,,
+RO09,oxide,lme4 REML residual SD,3.545,r-run,canonical,r_outputs/oxide.json,without_source/lmer_reml/vc/Residual/sd,,
+RO10,oxide,nlme REML approx 95% CI SD lot lower,6.390,r-run,canonical,r_outputs/oxide.json,without_source/nlme_reml/sd_intervals/Lot/lower,,
+RO11,oxide,nlme REML approx 95% CI SD lot upper,20.329,r-run,canonical,r_outputs/oxide.json,without_source/nlme_reml/sd_intervals/Lot/upper,,
+RO12,oxide,Source fixed: aov F Source in lot stratum,1.526,r-run,sensitivity,r_outputs/oxide.json,with_source_fixed/aov_error_strata[term=Source]/F,,Source tested against lots within source on (1; 6) df
+RO13,oxide,Source fixed: aov p Source,0.2629,r-run,sensitivity,r_outputs/oxide.json,with_source_fixed/aov_error_strata[term=Source]/p,,
+RO14,oxide,Source fixed: lmerTest Satterthwaite den df,6.000,r-run,sensitivity,r_outputs/oxide.json,with_source_fixed/lmertest_type3_satterthwaite[term=Source]/den_df,,
+RO15,oxide,Source fixed: lmerTest Kenward-Roger p,0.2629,r-run,sensitivity,r_outputs/oxide.json,with_source_fixed/lmertest_type3_kenward_roger[term=Source]/p,,
+RO16,oxide,Source fixed: nlme REML Source estimate (contr.SAS),-10.0833,r-run,sensitivity,r_outputs/oxide.json,with_source_fixed/nlme_reml_contr_sas/ttable[term=Source1]/Value,,
+RO17,oxide,Source fixed: nlme REML Source SE,8.1622,r-run,sensitivity,r_outputs/oxide.json,with_source_fixed/nlme_reml_contr_sas/ttable[term=Source1]/Std.Error,,
+RO18,oxide,Source fixed: lme4 REML SD lot (within source),10.950,r-run,sensitivity,r_outputs/oxide.json,with_source_fixed/lmer_reml/vc/Lot/sd,,
+RS01,semiconductor,Split-plot aov ET F (3; 8 df),1.9415,r-run,canonical,r_outputs/semiconductor.json,split_plot_aov_error_strata[term=ET]/F,,
+RS02,semiconductor,Split-plot aov ET p,0.2015,r-run,canonical,r_outputs/semiconductor.json,split_plot_aov_error_strata[term=ET]/p,,
+RS03,semiconductor,Split-plot aov ET df,3,r-run,canonical,r_outputs/semiconductor.json,split_plot_aov_error_strata[term=ET]/df,,
+RS04,semiconductor,Split-plot aov whole-plot error df,8,r-run,canonical,r_outputs/semiconductor.json,split_plot_aov_error_strata[stratum=Error: Grp;term=Residuals]/df,,
+RS05,semiconductor,Split-plot aov MS whole-plot error,0.53431,r-run,canonical,r_outputs/semiconductor.json,split_plot_aov_error_strata[stratum=Error: Grp;term=Residuals]/ms,,
+RS06,semiconductor,Split-plot aov position F (3; 24 df),3.3855,r-run,canonical,r_outputs/semiconductor.json,split_plot_aov_error_strata[term=position]/F,,
+RS07,semiconductor,Split-plot aov position p,0.0345,r-run,canonical,r_outputs/semiconductor.json,split_plot_aov_error_strata[term=position]/p,,
+RS08,semiconductor,Split-plot aov ET:position F (9; 24 df),0.8092,r-run,canonical,r_outputs/semiconductor.json,split_plot_aov_error_strata[term=ET:position]/F,,
+RS09,semiconductor,Split-plot aov ET:position p,0.6125,r-run,canonical,r_outputs/semiconductor.json,split_plot_aov_error_strata[term=ET:position]/p,,
+RS10,semiconductor,Split-plot aov subplot error df,24,r-run,canonical,r_outputs/semiconductor.json,split_plot_aov_error_strata[stratum=Error: Within;term=Residuals]/df,,
+RS11,semiconductor,Split-plot aov MS subplot error,0.11115,r-run,canonical,r_outputs/semiconductor.json,split_plot_aov_error_strata[stratum=Error: Within;term=Residuals]/ms,,
+RS12,semiconductor,Naive single-error aov ET F (3; 32 df),4.7819,r-run,canonical,r_outputs/semiconductor.json,naive_aov[term=ET]/F,,Wrong error term: shown only for the side-by-side comparison
+RS13,semiconductor,Naive single-error aov ET p,0.0073,r-run,canonical,r_outputs/semiconductor.json,naive_aov[term=ET]/p,,
+RS14,semiconductor,Naive single-error aov residual df,32,r-run,canonical,r_outputs/semiconductor.json,naive_aov[term=Residuals]/df,,
+RS15,semiconductor,lmerTest Satterthwaite ET den df,8.000,r-run,cross-check,r_outputs/semiconductor.json,lmertest_type3_satterthwaite[term=ET]/den_df,,
+RS16,semiconductor,lmerTest Kenward-Roger position den df,24,r-run,cross-check,r_outputs/semiconductor.json,lmertest_type3_kenward_roger[term=position]/den_df,,
+RS17,semiconductor,lme4 REML VC wafer (Grp),0.10579,r-run,cross-check,r_outputs/semiconductor.json,lmer_reml/vc/Grp/variance,,
+RS18,semiconductor,lme4 REML VC residual,0.11115,r-run,cross-check,r_outputs/semiconductor.json,lmer_reml/vc/Residual/variance,,
+RS19,semiconductor,nlme ML SD wafer (reproduces S01),0.26557,r-run,cross-check,r_outputs/semiconductor.json,nlme_ml_contr_sas/vc/Grp/sd,,
+RS20,semiconductor,nlme ML logLik (reproduces S03),-15.073,r-run,cross-check,r_outputs/semiconductor.json,nlme_ml_contr_sas/logLik,,
+RL01,lithography,R aov Error strata MS cassette,4.3932,r-run,optional,r_outputs/lithography.json,aov_error_strata[stratum=Error: cassette]/ms,,
+RL02,lithography,R aov Error strata MS wafer(cassette),0.4253,r-run,optional,r_outputs/lithography.json,aov_error_strata[stratum=Error: cassette:wafer]/ms,,
+RL03,lithography,R aov Error strata MS site,0.1755,r-run,optional,r_outputs/lithography.json,aov_error_strata[stratum=Error: Within]/ms,,
+RL04,lithography,R method-of-moments VC cassette,0.26452,r-run,optional,r_outputs/lithography.json,mom_variance_components/cassette,,
+RL05,lithography,R method-of-moments VC wafer,0.04997,r-run,optional,r_outputs/lithography.json,mom_variance_components/wafer,,
+RL06,lithography,R method-of-moments VC site,0.17550,r-run,optional,r_outputs/lithography.json,mom_variance_components/site,,
+RL07,lithography,Supplementary: site as fixed position F (4; 356 df),262.24,r-run,supplementary,r_outputs/lithography.json,supplementary_site_fixed[term=site]/F,,Structural check only (D-007): site positions differ systematically
+RL08,lithography,Supplementary: residual MS after removing site position,0.04497,r-run,supplementary,r_outputs/lithography.json,supplementary_site_fixed[stratum=Error: Within;term=Residuals]/ms,,

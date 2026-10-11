@@ -1,0 +1,513 @@
+{
+  "schema": "stratum-results/1",
+  "generated_by": "stratum 1.0.0 (stratum.results.build); never hand-edited",
+  "synthetic": true,
+  "data_label": "SYNTHETIC demonstration scenario S2 (No run replication); results show software behaviour, not process realism",
+  "provenance": {
+    "inputs": {
+      "declaration": {
+        "path": "scenarios/S2-no-run-replication/declaration_synthetic.yaml",
+        "sha256": "3647fe29fcb1eff5220bedeb6c9af733ff1d077ecab4acff234344fb743acfc5",
+        "bytes": 1144
+      },
+      "data": {
+        "path": "scenarios/S2-no-run-replication/data_synthetic.csv",
+        "sha256": "90645a6ef482d4f8c32cbbf984a042fa0076d2cdd91f2c7290b7011b41373102",
+        "bytes": 2006
+      },
+      "explanations": {
+        "path": "resources/explanations.yaml",
+        "sha256": "45923fbd6faf9e13bd694316bc407fca02bb7a819226dce39f5bd3bfd2dcc5e3",
+        "bytes": 22437
+      }
+    },
+    "code": {
+      "package": "stratum",
+      "version": "1.0.0",
+      "source_sha256": "ada12f7b897c7d9984c6300a1c86c9ac23e1db099ffa5a24a39aa6a5c81cb860",
+      "source_files": 17,
+      "method": "SHA-256 over the sorted lines '<relative path> <file SHA-256>' of every file in the stratum package (D-077)"
+    },
+    "git": null,
+    "environment": null,
+    "omitted": "omitted from committed reports so that they regenerate byte for byte: a commit hash written into a committed file is always the parent of the commit that contains it. source_sha256 identifies the code (D-077)."
+  },
+  "declaration": {
+    "claimed_template": "T2",
+    "description": "SYNTHETIC SCENARIO S2. A run-level anneal treatment with one run per level: 2 runs in all, 6 wafers per run, 9 sites per wafer, 108 measurements.\n",
+    "response": {
+      "column": "y",
+      "units": "a.u. (synthetic)"
+    },
+    "hierarchy": [
+      {
+        "name": "run",
+        "count": 2,
+        "per_parent": false,
+        "exchangeable": null,
+        "exchangeable_declared": false
+      },
+      {
+        "name": "wafer",
+        "count": 6,
+        "per_parent": true,
+        "exchangeable": false,
+        "exchangeable_declared": false
+      },
+      {
+        "name": "site",
+        "count": 9,
+        "per_parent": true,
+        "exchangeable": true,
+        "exchangeable_declared": true
+      }
+    ],
+    "treatments": [
+      {
+        "name": "anneal",
+        "levels": [
+          "baseline",
+          "new"
+        ],
+        "applied_to": "run",
+        "replicates_per_level": 1,
+        "assignment": "randomized"
+      }
+    ],
+    "nuisance_factors": []
+  },
+  "decision": {
+    "evidence_decision": "REFUSE",
+    "analyzed": false,
+    "template": "T2"
+  },
+  "comparisons": [
+    {
+      "id": "new_vs_baseline",
+      "kind": "pairwise",
+      "factors": [
+        "anneal"
+      ],
+      "levels": [
+        "new",
+        "baseline"
+      ],
+      "description": "Mean response, new minus baseline.",
+      "role": "treatment",
+      "experimental_unit": "run",
+      "status": "refused",
+      "test": null,
+      "estimates": [],
+      "refusal_codes": [
+        "declaration_refused"
+      ],
+      "specific_refusal_codes": []
+    }
+  ],
+  "findings": [
+    {
+      "code": "declaration_refused",
+      "severity": "refuse",
+      "stage": "S0",
+      "message": "The declaration does not fit claimed template T2, so its data are not checked. WP1 refusals: [T2.replicated] With one 'run' per treatment level there is no variation among units treated alike, so the treatment test has zero error degrees of freedom (brief Section 5.2). Subsamples measure within-unit variation only; more of them cannot replace replicated 'run' units.",
+      "details": {
+        "wp1_refusals": [
+          {
+            "category": "replication",
+            "condition": "T2.replicated",
+            "declared": "treatment 'anneal': replicates_per_level 1 'run' per level, with 6 'wafer', 9 'site' below each",
+            "reason": "With one 'run' per treatment level there is no variation among units treated alike, so the treatment test has zero error degrees of freedom (brief Section 5.2). Subsamples measure within-unit variation only; more of them cannot replace replicated 'run' units.",
+            "remedy": "Run at least two 'run' units per treatment level. No declaration change can make this design testable."
+          }
+        ]
+      },
+      "explanation": {
+        "category": "declaration_refused",
+        "kind": "refusal",
+        "status": "written",
+        "text": "The declaration does not describe a design Stratum supports, so the data are not checked or analyzed for this decision. This is a judgment about the declared design, not a crash or a data error. The specific reasons are listed underneath, each with what would have to change. (When the only reason is a single unit per treatment level, the data are still read to plan a better design; that planning cannot change the decision.)",
+        "same_as": null
+      },
+      "wp1_refusals": [
+        {
+          "category": "replication",
+          "condition": "T2.replicated",
+          "path": null,
+          "declared": "treatment 'anneal': replicates_per_level 1 'run' per level, with 6 'wafer', 9 'site' below each",
+          "requirement": "replicates_per_level >= 2 experimental units per treatment level",
+          "reason": "With one 'run' per treatment level there is no variation among units treated alike, so the treatment test has zero error degrees of freedom (brief Section 5.2). Subsamples measure within-unit variation only; more of them cannot replace replicated 'run' units.",
+          "remedy": "Run at least two 'run' units per treatment level. No declaration change can make this design testable.",
+          "explanation": {
+            "category": "replication",
+            "kind": "refusal",
+            "status": "written",
+            "text": "The declaration has too few units at some level for the claimed template, most often a single run (or other experimental unit) per treatment level. With one unit per level there is no way to see how much units treated alike differ from each other, so there is nothing to judge a treatment difference against. Measuring more wafers or sites inside that unit does not help, because they all share it. More independent units per treatment level are needed.",
+            "same_as": null
+          }
+        }
+      ]
+    }
+  ],
+  "caveats": [],
+  "stages": [
+    {
+      "id": "S0",
+      "title": "declaration matches the claimed template",
+      "status": "fail",
+      "reason": null
+    },
+    {
+      "id": "S1",
+      "title": "declared columns present",
+      "status": "not_evaluated",
+      "reason": "the declaration was refused at S0"
+    },
+    {
+      "id": "S2",
+      "title": "labels and response values",
+      "status": "not_evaluated",
+      "reason": "the declaration was refused at S0"
+    },
+    {
+      "id": "S3",
+      "title": "unit identity and ownership",
+      "status": "not_evaluated",
+      "reason": "the declaration was refused at S0"
+    },
+    {
+      "id": "S4",
+      "title": "declaration-data consistency",
+      "status": "not_evaluated",
+      "reason": "the declaration was refused at S0"
+    },
+    {
+      "id": "S5",
+      "title": "balance, replication and missing data",
+      "status": "not_evaluated",
+      "reason": "the declaration was refused at S0"
+    },
+    {
+      "id": "S6",
+      "title": "confounding",
+      "status": "not_evaluated",
+      "reason": "the declaration was refused at S0"
+    },
+    {
+      "id": "S7",
+      "title": "aliasing",
+      "status": "not_evaluated",
+      "reason": "the declaration was refused at S0"
+    },
+    {
+      "id": "S8",
+      "title": "diagnostics",
+      "status": "not_evaluated",
+      "reason": "the declaration was refused at S0"
+    }
+  ],
+  "assumptions": [
+    {
+      "assumption": "balance at the experimental-unit level",
+      "handling": "checked from the data; imbalance is refused (S5)",
+      "status": "not_evaluated"
+    },
+    {
+      "assumption": "equal variance across treatment levels",
+      "handling": "diagnosed: Brown-Forsythe test and largest-to-smallest SD ratio of unit means; warnings only (D-044)",
+      "status": "not_evaluated"
+    },
+    {
+      "assumption": "normally distributed random effects and errors",
+      "handling": "diagnosed: normal quantile plot and externally studentized residuals beyond +-3; warnings only (D-044)",
+      "status": "not_evaluated"
+    },
+    {
+      "assumption": "independent experimental units",
+      "handling": "not checkable from the data; it rests on how the units were run and assigned (the declared assignment method)",
+      "status": "not_checkable"
+    }
+  ],
+  "diagnostics": null,
+  "diagnostics_display": {},
+  "evidence": {},
+  "analysis": {
+    "template": "T2",
+    "decision": "REFUSE",
+    "analyzed": false,
+    "design": {},
+    "anova": {},
+    "naive_anova": {},
+    "variance_components": {},
+    "stratum_expectations": {},
+    "estimates": {},
+    "reml": {},
+    "fits": {},
+    "notes": [
+      "No analysis was produced. The evidence checks refused this design, and refusal is a successful outcome (brief Section 8): Stratum does not estimate anything a declared design cannot support.",
+      "Reasons: [declaration_refused] The declaration does not fit claimed template T2, so its data are not checked. WP1 refusals: [T2.replicated] With one 'run' per treatment level there is no variation among units treated alike, so the treatment test has zero error degrees of freedom (brief Section 5.2). Subsamples measure within-unit variation only; more of them cannot replace replicated 'run' units."
+    ],
+    "labels": {}
+  },
+  "allocation": {
+    "status": "planning",
+    "basis": "planning quantities from the strata that do not involve the refused comparison (D-081)",
+    "components": [
+      {
+        "component": "unit",
+        "label": "runs within treatment",
+        "levels": [
+          "unit"
+        ],
+        "merged": false,
+        "df": 0,
+        "estimable": false,
+        "estimate": null,
+        "reason": "the stratum has 0 degrees of freedom (one unit per treatment level), so this component is not estimable"
+      },
+      {
+        "component": "sub1",
+        "label": "wafer",
+        "levels": [
+          "sub1"
+        ],
+        "merged": false,
+        "df": 10,
+        "estimable": true,
+        "estimate": 0.13166666666666665,
+        "estimate_exact": "79/600",
+        "ms": 1.26,
+        "lambda_hat": 1.26
+      },
+      {
+        "component": "sub2",
+        "label": "site",
+        "levels": [
+          "sub2"
+        ],
+        "merged": false,
+        "df": 96,
+        "estimable": true,
+        "estimate": 0.075,
+        "estimate_exact": "3/40",
+        "ms": 0.075,
+        "lambda_hat": 0.075
+      }
+    ],
+    "components_method": "closed-form REML (D-064); equal to the method-of-moments estimates whenever those are all >= 0 (D-078)",
+    "plausible_values": {
+      "method": "generalized pivotal quantities: lambda* = nu MS / U, U ~ chi-square(nu), then the same pooling and inversion as the point estimate (Weerahandi 1993; D-079)",
+      "draws": 20000,
+      "seed_text": "stratum-wp4-plausible-values-v1",
+      "seed": 10763399368363203454,
+      "percentiles": "2.5, 50, 97.5 (statistics.quantiles, n = 40, inclusive)",
+      "label": "approximate; not validated in the WP6 grid"
+    },
+    "comparisons": [
+      {
+        "comparison_of": "the difference between two anneal level means",
+        "factor": "anneal",
+        "formula": "(2 / r) * (sigma2[run] + sigma2[wafer] / n_wafer + sigma2[site] / (n_wafer * n_site)); r = runs per treatment level, n_wafer = wafers per run, n_site = sites per wafer",
+        "scenarios": [
+          {
+            "id": "current",
+            "label": "current design",
+            "design": {
+              "run_per_level": 1,
+              "wafer_per_parent": 6,
+              "site_per_parent": 9
+            },
+            "added_units": "none",
+            "added_measurements": 0,
+            "error_df": 0,
+            "balanced": true,
+            "status": "lower_bound",
+            "note": "",
+            "candidate": false,
+            "se": null,
+            "se_lower": 0.21602468994692867,
+            "se_upper": null,
+            "bounds_note": "lower bound only: a component that enters this variance is not estimable from these data, so no upper bound exists",
+            "plausible_se_lower": {
+              "p2_5": 0.150087,
+              "p50": 0.223273,
+              "p97_5": 0.382366
+            }
+          },
+          {
+            "id": "add_unit",
+            "label": "one more run per treatment level",
+            "design": {
+              "run_per_level": 2,
+              "wafer_per_parent": 6,
+              "site_per_parent": 9
+            },
+            "added_units": "2 runs (one per treatment level)",
+            "added_measurements": 108,
+            "error_df": 2,
+            "balanced": true,
+            "status": "lower_bound",
+            "note": "",
+            "candidate": true,
+            "se": null,
+            "se_lower": 0.15275252316519466,
+            "se_upper": null,
+            "bounds_note": "lower bound only: a component that enters this variance is not estimable from these data, so no upper bound exists",
+            "plausible_se_lower": {
+              "p2_5": 0.106128,
+              "p50": 0.157878,
+              "p97_5": 0.270373
+            }
+          },
+          {
+            "id": "add_wafer",
+            "label": "one more wafer per run",
+            "design": {
+              "run_per_level": 1,
+              "wafer_per_parent": 7,
+              "site_per_parent": 9
+            },
+            "added_units": "2 wafers (one per run)",
+            "added_measurements": 18,
+            "error_df": 0,
+            "balanced": true,
+            "status": "lower_bound",
+            "note": "",
+            "candidate": true,
+            "se": null,
+            "se_lower": 0.2,
+            "se_upper": null,
+            "bounds_note": "lower bound only: a component that enters this variance is not estimable from these data, so no upper bound exists",
+            "plausible_se_lower": {
+              "p2_5": 0.138954,
+              "p50": 0.206711,
+              "p97_5": 0.354002
+            }
+          },
+          {
+            "id": "add_site",
+            "label": "one more site per wafer",
+            "design": {
+              "run_per_level": 1,
+              "wafer_per_parent": 6,
+              "site_per_parent": 10
+            },
+            "added_units": "12 sites (one per wafer)",
+            "added_measurements": 12,
+            "error_df": 0,
+            "balanced": true,
+            "status": "lower_bound",
+            "note": "",
+            "candidate": true,
+            "se": null,
+            "se_lower": 0.21538079972200141,
+            "se_upper": null,
+            "bounds_note": "lower bound only: a component that enters this variance is not estimable from these data, so no upper bound exists",
+            "plausible_se_lower": {
+              "p2_5": 0.149069,
+              "p50": 0.222664,
+              "p97_5": 0.382069
+            }
+          },
+          {
+            "id": "floor",
+            "label": "the floor: unlimited wafers and sites",
+            "design": {
+              "run_per_level": 1,
+              "wafer_per_parent": "unlimited",
+              "site_per_parent": "unlimited"
+            },
+            "added_units": "unlimited",
+            "added_measurements": 0,
+            "error_df": 0,
+            "balanced": true,
+            "status": "not_estimable",
+            "note": "2 sigma^2[run] / r: the limit as every lower count grows",
+            "candidate": false,
+            "se": null,
+            "se_lower": null,
+            "se_upper": null,
+            "bounds_note": "not estimable: the only component that enters is not estimable from these data"
+          }
+        ],
+        "ranking": {
+          "candidates": [
+            "add_unit",
+            "add_wafer",
+            "add_site"
+          ],
+          "candidate_labels": {
+            "add_unit": "one more run per treatment level",
+            "add_wafer": "one more wafer per run",
+            "add_site": "one more site per wafer"
+          },
+          "draws": 20000,
+          "robust_threshold_wins": 19000,
+          "seed_text": "stratum-wp4-plausible-values-v1",
+          "assessed": false,
+          "reason": "not assessed: one more run per treatment level; one more wafer per run; one more site per wafer are not identified (limited or a lower bound), so the order of the standard errors is not determined by the data"
+        },
+        "floor_statement": "No number of additional wafers or sites can bring the standard error below the floor; only additional runs lower it."
+      }
+    ],
+    "not_implemented": "cost-weighted versions and cost-optimal subsample sizes (optional in brief Section 5.5; D-078)",
+    "planning_label": "planning quantities, not results: the design was refused, and no estimate, test or interval of the comparison is produced (D-081)",
+    "unit_stratum_df": 0,
+    "unit_note": "With 1 run per treatment level there is no variation among runs treated alike, so sigma2[run] is not estimable: every standard error below is a lower bound, and the floor is not estimable. With 2 runs per level it becomes estimable."
+  },
+  "reassignment": {
+    "status": "not_applicable",
+    "reason": "no complete confounding was found, so no reassignment is needed"
+  },
+  "planning": {
+    "eligible": true,
+    "mode": "planning_only_checks",
+    "planning_only_findings": [
+      {
+        "code": "insufficient_replication",
+        "severity": "refuse",
+        "stage": "S5",
+        "message": "'anneal' was applied to 'run' units, and level(s) {'baseline': 1, 'new': 1} have fewer than 2 of them in the data. With r < 2 there is no variation among units treated alike, so the test has no error degrees of freedom. More wafers or sites cannot replace replicated 'run' units."
+      }
+    ],
+    "codes": [
+      "insufficient_replication"
+    ],
+    "reason": "the refusal reasons are within the planning pathway (D-081)"
+  },
+  "explanations": {
+    "required": 47,
+    "required_written": 47,
+    "required_pending": [],
+    "optional": 2,
+    "optional_written": 2,
+    "file": "resources/explanations.yaml",
+    "policy": "D-075 (verbatim insertion, pending marked)"
+  },
+  "summary": {
+    "decision": "REFUSE",
+    "analyzed": false,
+    "analyzed_comparisons": [],
+    "refused_comparisons": [
+      "new_vs_baseline"
+    ],
+    "refusal_codes": [
+      "declaration_refused"
+    ],
+    "warning_codes": [],
+    "note_codes": [],
+    "caveat_codes": [],
+    "next_steps": [
+      {
+        "kind": "wp1_remedy",
+        "category": "replication",
+        "text": "Run at least two 'run' units per treatment level. No declaration change can make this design testable."
+      },
+      {
+        "kind": "allocation",
+        "factor": "anneal",
+        "text": "No number of additional wafers or sites can bring the standard error below the floor; only additional runs lower it."
+      }
+    ],
+    "pending_in_report": []
+  }
+}

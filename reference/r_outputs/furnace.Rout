@@ -1,0 +1,143 @@
+
+> source("r/common.R")
+
+> d <- read.csv(file.path(DERIVED, "furnace.csv"))
+
+> stopifnot(nrow(d) == 168)
+
+> d$run <- factor(d$run)
+
+> d$zone <- factor(d$zone)
+
+> a <- nlevels(d$run)
+
+> b <- nlevels(d$zone)
+
+> n <- 2
+
+> fit_aov <- aov(thickness ~ run + Error(run/zone), 
++     data = d)
+
+> summary(fit_aov)
+
+Error: run
+    Df Sum Sq Mean Sq
+run 20  61442    3072
+
+Error: run:zone
+          Df Sum Sq Mean Sq F value Pr(>F)
+Residuals 63  36014   571.7               
+
+Error: Within
+          Df Sum Sq Mean Sq F value Pr(>F)
+Residuals 84  10155   120.9               
+
+> strata <- aov_strata(fit_aov)
+
+> ms_run <- strata$ms[strata$term == "run"]
+
+> ms_loc <- strata$ms[strata$stratum == "Error: run:zone"]
+
+> ms_within <- strata$ms[strata$stratum == "Error: Within"]
+
+> df_run <- a - 1
+
+> df_loc <- a * (b - 1)
+
+> df_within <- a * b * (n - 1)
+
+> stopifnot(strata$df[strata$term == "run"] == df_run)
+
+> f_run <- ms_run/ms_loc
+
+> f_loc <- ms_loc/ms_within
+
+> tests <- data.frame(term = c("run", "location(run)"), 
++     num_df = c(df_run, df_loc), den_df = c(df_loc, df_within), 
++     F = c(f_run, f_loc), p = c(pf(f_run, df_run, df_loc, lower.tail = FALSE), 
++         pf(f_loc, df_loc, df_within, lower.tail = FALSE)))
+
+> tests
+           term num_df den_df        F            p
+1           run     20     63 5.374035 1.393903e-07
+2 location(run)     63     84 4.728639 3.850360e-11
+
+> mom <- c(run = (ms_run - ms_loc)/(b * n), location = (ms_loc - 
++     ms_within)/n, within = ms_within)
+
+> mom
+     run location   within 
+312.5569 225.3829 120.8929 
+
+> fit_lmer <- lmer(thickness ~ 1 + (1 | run) + (1 | 
++     run:zone), data = d, REML = TRUE)
+
+> summary(fit_lmer)
+Linear mixed model fit by REML. t-tests use Satterthwaite's method ['lmerModLmerTest']
+Formula: thickness ~ 1 + (1 | run) + (1 | run:zone)
+   Data: d
+
+REML criterion at convergence: 1442.4
+
+Scaled residuals: 
+    Min      1Q  Median      3Q     Max 
+-1.7713 -0.4970  0.0219  0.4338  2.4123 
+
+Random effects:
+ Groups   Name        Variance Std.Dev.
+ run:zone (Intercept) 225.4    15.01   
+ run      (Intercept) 312.6    17.68   
+ Residual             120.9    11.00   
+Number of obs: 168, groups:  run:zone, 84; run, 21
+
+Fixed effects:
+            Estimate Std. Error      df t value Pr(>|t|)    
+(Intercept)  563.036      4.276  20.000   131.7   <2e-16 ***
+---
+Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
+
+> ci <- profile_sd_ci(fit_lmer)
+
+> ci
+                parameter    lower    upper
+1 sd_(Intercept)|run:zone 11.92423 18.83246
+2      sd_(Intercept)|run 11.67939 25.40894
+3                   sigma  9.52091 12.89306
+
+> fit_lme <- nlme::lme(thickness ~ 1, random = ~1 | 
++     run/zone, data = d, method = "REML")
+
+> nlme::VarCorr(fit_lme)
+            Variance     StdDev  
+run =       pdLogChol(1)         
+(Intercept) 312.5573     17.67929
+zone =      pdLogChol(1)         
+(Intercept) 225.3849     15.01282
+Residual    120.8923     10.99510
+
+> fit_zone_fixed <- aov(thickness ~ zone + Error(run/zone), 
++     data = d)
+
+> summary(fit_zone_fixed)
+
+Error: run
+          Df Sum Sq Mean Sq F value Pr(>F)
+Residuals 20  61442    3072               
+
+Error: run:zone
+          Df Sum Sq Mean Sq F value Pr(>F)
+zone       3    913   304.2    0.52   0.67
+Residuals 60  35102   585.0               
+
+Error: Within
+          Df Sum Sq Mean Sq F value Pr(>F)
+Residuals 84  10155   120.9               
+
+> write_result(list(dataset = "NIST furnace (FURNACE.DAT)", 
++     design = list(a_runs = a, b_zones_per_run = b, n_wafers_per_zone = n), 
++     aov_error_strata = strata, f_tests_handbook_form = tests, 
++     mom_variance_components = as.list(mom), mom_sd = as.list(sqrt(mom)), 
++     mom_percent_of_total = as.list(100 * mom/sum(mom)), lmer_reml = list(vc = lmer_vc(fit_lmer), 
++         intercept = unname(fixef(fit_lmer)), singular = isSingular(fit_lmer), 
++         profile_sd_ci = ci), nlme_reml = nlme_vc(fit_lme), supplementary_zone_fixed = aov_strata(fit_zone_fixed)), 
++     "furnace.json")

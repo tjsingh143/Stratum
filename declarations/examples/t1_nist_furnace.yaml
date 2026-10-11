@@ -1,0 +1,31 @@
+# T1 reference declaration: NIST/SEMATECH furnace case study (FURNACE.DAT).
+# Structure taken from reference/README.md and reference/r_outputs/structure.json:
+# 21 runs x 4 zones x 2 wafers, one reading per wafer, 168 rows.
+stratum_declaration: 1
+claimed_template: T1
+description: >
+  NIST/SEMATECH e-Handbook furnace case study (Section 3.5.1). Published textbook
+  data, not synthetic, not fab data. Passive variance-components study: no treatment.
+response:
+  column: thickness
+  units: "Å"
+hierarchy:
+  - name: run
+    id_column: run
+    count: 21
+  - name: zone
+    id_column: zone
+    nested_in: run
+    count_per_parent: 4
+    id_scope: parent        # zone labels 1-4 repeat in every run
+    exchangeable: false     # the same physical tube positions in every run (D-007)
+  - name: wafer
+    id_column: wafer
+    nested_in: zone
+    count_per_parent: 2
+    id_scope: parent        # wafer labels 1-2 repeat in every run x zone
+    # exchangeable omitted: the source does not say whether the two wafers at a
+    # location are interchangeable, so the conservative default (false) applies.
+treatments: []
+nuisance_factors: []
+comparisons: []

@@ -1,0 +1,235 @@
+{
+  "schema": "stratum-evidence/1",
+  "synthetic": true,
+  "source": {
+    "path": "validation/synthetic_wp6_interval_investigation.json",
+    "release": "Stratum v1.0.0",
+    "sha256": "ce2b505e3cff00717b9b6df101ff96bc1b2aa25e0bb53a7906ca46a7818927c6",
+    "selection": "All 24 numerical entries and quadrature targets, values unchanged."
+  },
+  "values": {
+    "synthetic": true,
+    "entries": [
+      {
+        "analytical_coverage": 0.5872494257686336,
+        "cell_id": "T1-g2-w2-s5",
+        "component": "run",
+        "derivation": "Independent chi-square strata, beta/chi-square change of variables; see source.",
+        "maximum_coverage_from_availability": 0.6466607081135431,
+        "negative_moment_probability": 0.35333929188645685,
+        "quadrature_refinement_difference": 2.4380264473933266e-10
+      },
+      {
+        "analytical_coverage": 0.8735025337587919,
+        "cell_id": "T1-g2-w2-s5",
+        "component": "wafer",
+        "derivation": "Independent chi-square strata, beta/chi-square change of variables; see source.",
+        "maximum_coverage_from_availability": 0.9081894718787258,
+        "negative_moment_probability": 0.09181052812127422,
+        "quadrature_refinement_difference": 1.5891221671893163e-09
+      },
+      {
+        "analytical_coverage": 0.5931602906445005,
+        "cell_id": "T1-g2-w2-s9",
+        "component": "run",
+        "derivation": "Independent chi-square strata, beta/chi-square change of variables; see source.",
+        "maximum_coverage_from_availability": 0.6515302956396227,
+        "negative_moment_probability": 0.3484697043603773,
+        "quadrature_refinement_difference": 3.3408409372270853e-10
+      },
+      {
+        "analytical_coverage": 0.9149559638046866,
+        "cell_id": "T1-g2-w2-s9",
+        "component": "wafer",
+        "derivation": "Independent chi-square strata, beta/chi-square change of variables; see source.",
+        "maximum_coverage_from_availability": 0.945399312584182,
+        "negative_moment_probability": 0.05460068741581803,
+        "quadrature_refinement_difference": 2.0719999715979043e-08
+      },
+      {
+        "analytical_coverage": 0.6516342422508556,
+        "cell_id": "T1-g2-w4-s5",
+        "component": "run",
+        "derivation": "Independent chi-square strata, beta/chi-square change of variables; see source.",
+        "maximum_coverage_from_availability": 0.6974900795106372,
+        "negative_moment_probability": 0.30250992048936276,
+        "quadrature_refinement_difference": 3.392919278866202e-10
+      },
+      {
+        "analytical_coverage": 0.9663335956558057,
+        "cell_id": "T1-g2-w4-s5",
+        "component": "wafer",
+        "derivation": "Independent chi-square strata, beta/chi-square change of variables; see source.",
+        "maximum_coverage_from_availability": 0.9962085580727381,
+        "negative_moment_probability": 0.003791441927261885,
+        "quadrature_refinement_difference": 7.150910974473845e-10
+      },
+      {
+        "analytical_coverage": 0.6574187942754489,
+        "cell_id": "T1-g2-w4-s9",
+        "component": "run",
+        "derivation": "Independent chi-square strata, beta/chi-square change of variables; see source.",
+        "maximum_coverage_from_availability": 0.7026752678814829,
+        "negative_moment_probability": 0.29732473211851707,
+        "quadrature_refinement_difference": 1.496859303173892e-10
+      },
+      {
+        "analytical_coverage": 0.9716827047376041,
+        "cell_id": "T1-g2-w4-s9",
+        "component": "wafer",
+        "derivation": "Independent chi-square strata, beta/chi-square change of variables; see source.",
+        "maximum_coverage_from_availability": 0.9992353152781385,
+        "negative_moment_probability": 0.0007646847218615305,
+        "quadrature_refinement_difference": 1.1162040181034172e-09
+      },
+      {
+        "analytical_coverage": 0.7108823472288514,
+        "cell_id": "T1-g3-w2-s5",
+        "component": "run",
+        "derivation": "Independent chi-square strata, beta/chi-square change of variables; see source.",
+        "maximum_coverage_from_availability": 0.7701284132068884,
+        "negative_moment_probability": 0.2298715867931116,
+        "quadrature_refinement_difference": 1.9150891983343854e-10
+      },
+      {
+        "analytical_coverage": 0.9287175371966219,
+        "cell_id": "T1-g3-w2-s5",
+        "component": "wafer",
+        "derivation": "Independent chi-square strata, beta/chi-square change of variables; see source.",
+        "maximum_coverage_from_availability": 0.9610002459263647,
+        "negative_moment_probability": 0.03899975407363532,
+        "quadrature_refinement_difference": 1.1862673066076468e-09
+      },
+      {
+        "analytical_coverage": 0.7179141710159239,
+        "cell_id": "T1-g3-w2-s9",
+        "component": "run",
+        "derivation": "Independent chi-square strata, beta/chi-square change of variables; see source.",
+        "maximum_coverage_from_availability": 0.7759164477453129,
+        "negative_moment_probability": 0.22408355225468712,
+        "quadrature_refinement_difference": 1.6390233614771432e-10
+      },
+      {
+        "analytical_coverage": 0.9535067296186945,
+        "cell_id": "T1-g3-w2-s9",
+        "component": "wafer",
+        "derivation": "Independent chi-square strata, beta/chi-square change of variables; see source.",
+        "maximum_coverage_from_availability": 0.9822529091330352,
+        "negative_moment_probability": 0.0177470908669648,
+        "quadrature_refinement_difference": 1.3074263893742e-10
+      },
+      {
+        "analytical_coverage": 0.8068222906792187,
+        "cell_id": "T1-g3-w4-s5",
+        "component": "run",
+        "derivation": "Independent chi-square strata, beta/chi-square change of variables; see source.",
+        "maximum_coverage_from_availability": 0.8492556256398907,
+        "negative_moment_probability": 0.15074437436010935,
+        "quadrature_refinement_difference": 4.123551944346104e-09
+      },
+      {
+        "analytical_coverage": 0.9702894598469118,
+        "cell_id": "T1-g3-w4-s5",
+        "component": "wafer",
+        "derivation": "Independent chi-square strata, beta/chi-square change of variables; see source.",
+        "maximum_coverage_from_availability": 0.9995900914756408,
+        "negative_moment_probability": 0.00040990852435918157,
+        "quadrature_refinement_difference": 3.316150221088776e-08
+      },
+      {
+        "analytical_coverage": 0.8124340780179348,
+        "cell_id": "T1-g3-w4-s9",
+        "component": "run",
+        "derivation": "Independent chi-square strata, beta/chi-square change of variables; see source.",
+        "maximum_coverage_from_availability": 0.8541999867212047,
+        "negative_moment_probability": 0.14580001327879533,
+        "quadrature_refinement_difference": 1.3623169259346923e-09
+      },
+      {
+        "analytical_coverage": 0.9690023825091009,
+        "cell_id": "T1-g3-w4-s9",
+        "component": "wafer",
+        "derivation": "Independent chi-square strata, beta/chi-square change of variables; see source.",
+        "maximum_coverage_from_availability": 0.9999630501308846,
+        "negative_moment_probability": 3.69498691153991e-05,
+        "quadrature_refinement_difference": 7.182124894811182e-10
+      },
+      {
+        "analytical_coverage": 0.8202210734591148,
+        "cell_id": "T1-g5-w2-s5",
+        "component": "run",
+        "derivation": "Independent chi-square strata, beta/chi-square change of variables; see source.",
+        "maximum_coverage_from_availability": 0.8759821137857767,
+        "negative_moment_probability": 0.12401788621422327,
+        "quadrature_refinement_difference": 1.2554235429007576e-09
+      },
+      {
+        "analytical_coverage": 0.9619074299805834,
+        "cell_id": "T1-g5-w2-s5",
+        "component": "wafer",
+        "derivation": "Independent chi-square strata, beta/chi-square change of variables; see source.",
+        "maximum_coverage_from_availability": 0.9921490515777068,
+        "negative_moment_probability": 0.00785094842229317,
+        "quadrature_refinement_difference": 1.1275512712405344e-07
+      },
+      {
+        "analytical_coverage": 0.8272071750640559,
+        "cell_id": "T1-g5-w2-s9",
+        "component": "run",
+        "derivation": "Independent chi-square strata, beta/chi-square change of variables; see source.",
+        "maximum_coverage_from_availability": 0.8815982090670188,
+        "negative_moment_probability": 0.1184017909329812,
+        "quadrature_refinement_difference": 1.7627621584637154e-10
+      },
+      {
+        "analytical_coverage": 0.9701918380406538,
+        "cell_id": "T1-g5-w2-s9",
+        "component": "wafer",
+        "derivation": "Independent chi-square strata, beta/chi-square change of variables; see source.",
+        "maximum_coverage_from_availability": 0.9978987591194052,
+        "negative_moment_probability": 0.0021012408805948235,
+        "quadrature_refinement_difference": 1.519532277782787e-10
+      },
+      {
+        "analytical_coverage": 0.9145636559778956,
+        "cell_id": "T1-g5-w4-s5",
+        "component": "run",
+        "derivation": "Independent chi-square strata, beta/chi-square change of variables; see source.",
+        "maximum_coverage_from_availability": 0.9521712060475445,
+        "negative_moment_probability": 0.04782879395245554,
+        "quadrature_refinement_difference": 5.89483065693841e-08
+      },
+      {
+        "analytical_coverage": 0.9659603987480816,
+        "cell_id": "T1-g5-w4-s5",
+        "component": "wafer",
+        "derivation": "Independent chi-square strata, beta/chi-square change of variables; see source.",
+        "maximum_coverage_from_availability": 0.9999945438694579,
+        "negative_moment_probability": 5.4561305421474415e-06,
+        "quadrature_refinement_difference": 7.023138848261112e-09
+      },
+      {
+        "analytical_coverage": 0.9181469408345555,
+        "cell_id": "T1-g5-w4-s9",
+        "component": "run",
+        "derivation": "Independent chi-square strata, beta/chi-square change of variables; see source.",
+        "maximum_coverage_from_availability": 0.9551426639633583,
+        "negative_moment_probability": 0.04485733603664166,
+        "quadrature_refinement_difference": 6.120636830697634e-08
+      },
+      {
+        "analytical_coverage": 0.957090887102188,
+        "cell_id": "T1-g5-w4-s9",
+        "component": "wafer",
+        "derivation": "Independent chi-square strata, beta/chi-square change of variables; see source.",
+        "maximum_coverage_from_availability": 0.9999999013203984,
+        "negative_moment_probability": 9.867960160114819e-08,
+        "quadrature_refinement_difference": 6.123826890025441e-09
+      }
+    ],
+    "quadrature_absolute_targets": [
+      1e-07,
+      1e-09
+    ]
+  }
+}

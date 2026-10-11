@@ -1,0 +1,554 @@
+{
+  "scenario": "S2",
+  "name": "No run replication",
+  "synthetic": true,
+  "preregistered_in": "scenarios/expectations.json (D-086)",
+  "assertions": 39,
+  "matched": 39,
+  "status": "MATCH",
+  "descriptive": {
+    "label": "descriptive only: raw means of every measurement per level of 'anneal', computed from the data file by scenarios/run.py; not an estimate Stratum supports, and it says nothing about uncertainty",
+    "factor": "anneal",
+    "means": {
+      "baseline": 50.0,
+      "new": 53.0
+    },
+    "measurements_per_level": {
+      "baseline": 54,
+      "new": 54
+    },
+    "raw_mean_difference": 3.0,
+    "difference_of": "new - baseline"
+  },
+  "checks": [
+    {
+      "path": [
+        "decision",
+        "evidence_decision"
+      ],
+      "op": "eq",
+      "value": "REFUSE",
+      "actual": "REFUSE",
+      "status": "MATCH"
+    },
+    {
+      "path": [
+        "decision",
+        "analyzed"
+      ],
+      "op": "eq",
+      "value": false,
+      "actual": false,
+      "status": "MATCH"
+    },
+    {
+      "path": [
+        "findings"
+      ],
+      "op": "field_set",
+      "value": [
+        "declaration_refused"
+      ],
+      "field": "code",
+      "actual": [
+        "declaration_refused"
+      ],
+      "status": "MATCH"
+    },
+    {
+      "path": [
+        "findings",
+        0,
+        "wp1_refusals"
+      ],
+      "op": "field_set",
+      "value": [
+        "replication"
+      ],
+      "field": "category",
+      "actual": [
+        "replication"
+      ],
+      "status": "MATCH"
+    },
+    {
+      "path": [
+        "findings",
+        0,
+        "wp1_refusals",
+        0,
+        "condition"
+      ],
+      "op": "eq",
+      "value": "T2.replicated",
+      "actual": "T2.replicated",
+      "status": "MATCH"
+    },
+    {
+      "path": [
+        "findings",
+        0,
+        "wp1_refusals",
+        0,
+        "explanation",
+        "text"
+      ],
+      "op": "contains",
+      "value": "Measuring more wafers or sites inside that unit does not help",
+      "actual": "The declaration has too few units at some level for the claimed template, most often a single run (or other experimental unit) per treatment level. With one unit per level there is no way to see how much units treated alike differ from each other, so there is nothing to judge a treatment difference against. Measuring more wafers or sites inside that unit does not help, because they all share it. More independent units per treatment level are needed.",
+      "status": "MATCH"
+    },
+    {
+      "path": [
+        "comparisons",
+        0,
+        "status"
+      ],
+      "op": "eq",
+      "value": "refused",
+      "actual": "refused",
+      "status": "MATCH"
+    },
+    {
+      "path": [
+        "comparisons",
+        0,
+        "estimates"
+      ],
+      "op": "len",
+      "value": 0,
+      "actual": 0,
+      "status": "MATCH"
+    },
+    {
+      "path": [
+        "analysis",
+        "anova"
+      ],
+      "op": "eq",
+      "value": {},
+      "actual": {},
+      "status": "MATCH"
+    },
+    {
+      "path": [
+        "planning",
+        "eligible"
+      ],
+      "op": "eq",
+      "value": true,
+      "actual": true,
+      "status": "MATCH"
+    },
+    {
+      "path": [
+        "planning",
+        "mode"
+      ],
+      "op": "eq",
+      "value": "planning_only_checks",
+      "actual": "planning_only_checks",
+      "status": "MATCH"
+    },
+    {
+      "path": [
+        "planning",
+        "planning_only_findings"
+      ],
+      "op": "field_set",
+      "value": [
+        "insufficient_replication"
+      ],
+      "field": "code",
+      "actual": [
+        "insufficient_replication"
+      ],
+      "status": "MATCH"
+    },
+    {
+      "path": [
+        "allocation",
+        "status"
+      ],
+      "op": "eq",
+      "value": "planning",
+      "actual": "planning",
+      "status": "MATCH"
+    },
+    {
+      "path": [
+        "allocation",
+        "unit_stratum_df"
+      ],
+      "op": "eq",
+      "value": 0,
+      "actual": 0,
+      "status": "MATCH"
+    },
+    {
+      "path": [
+        "allocation",
+        "unit_note"
+      ],
+      "op": "contains",
+      "value": "not estimable",
+      "actual": "With 1 run per treatment level there is no variation among runs treated alike, so sigma2[run] is not estimable: every standard error below is a lower bound, and the floor is not estimable. With 2 runs per level it becomes estimable.",
+      "status": "MATCH"
+    },
+    {
+      "path": [
+        "allocation",
+        "components",
+        {
+          "component": "unit"
+        },
+        "estimable"
+      ],
+      "op": "eq",
+      "value": false,
+      "actual": false,
+      "status": "MATCH"
+    },
+    {
+      "path": [
+        "allocation",
+        "components",
+        {
+          "component": "sub1"
+        },
+        "estimate"
+      ],
+      "op": "approx",
+      "value": 0.13166666666666665,
+      "actual": 0.13166666666666665,
+      "status": "MATCH"
+    },
+    {
+      "path": [
+        "allocation",
+        "components",
+        {
+          "component": "sub2"
+        },
+        "estimate"
+      ],
+      "op": "approx",
+      "value": 0.075,
+      "actual": 0.075,
+      "status": "MATCH"
+    },
+    {
+      "path": [
+        "allocation",
+        "comparisons",
+        0,
+        "scenarios",
+        {
+          "id": "current"
+        },
+        "status"
+      ],
+      "op": "eq",
+      "value": "lower_bound",
+      "actual": "lower_bound",
+      "status": "MATCH"
+    },
+    {
+      "path": [
+        "allocation",
+        "comparisons",
+        0,
+        "scenarios",
+        {
+          "id": "current"
+        },
+        "se_lower"
+      ],
+      "op": "approx",
+      "value": 0.21602468994692867,
+      "actual": 0.21602468994692867,
+      "status": "MATCH"
+    },
+    {
+      "path": [
+        "allocation",
+        "comparisons",
+        0,
+        "scenarios",
+        {
+          "id": "current"
+        },
+        "se_upper"
+      ],
+      "op": "absent",
+      "value": null,
+      "actual": null,
+      "status": "MATCH"
+    },
+    {
+      "path": [
+        "allocation",
+        "comparisons",
+        0,
+        "scenarios",
+        {
+          "id": "current"
+        },
+        "error_df"
+      ],
+      "op": "eq",
+      "value": 0,
+      "actual": 0,
+      "status": "MATCH"
+    },
+    {
+      "path": [
+        "allocation",
+        "comparisons",
+        0,
+        "scenarios",
+        {
+          "id": "add_unit"
+        },
+        "status"
+      ],
+      "op": "eq",
+      "value": "lower_bound",
+      "actual": "lower_bound",
+      "status": "MATCH"
+    },
+    {
+      "path": [
+        "allocation",
+        "comparisons",
+        0,
+        "scenarios",
+        {
+          "id": "add_unit"
+        },
+        "se_lower"
+      ],
+      "op": "approx",
+      "value": 0.15275252316519466,
+      "actual": 0.15275252316519466,
+      "status": "MATCH"
+    },
+    {
+      "path": [
+        "allocation",
+        "comparisons",
+        0,
+        "scenarios",
+        {
+          "id": "add_unit"
+        },
+        "added_measurements"
+      ],
+      "op": "eq",
+      "value": 108,
+      "actual": 108,
+      "status": "MATCH"
+    },
+    {
+      "path": [
+        "allocation",
+        "comparisons",
+        0,
+        "scenarios",
+        {
+          "id": "add_unit"
+        },
+        "error_df"
+      ],
+      "op": "eq",
+      "value": 2,
+      "actual": 2,
+      "status": "MATCH"
+    },
+    {
+      "path": [
+        "allocation",
+        "comparisons",
+        0,
+        "scenarios",
+        {
+          "id": "add_wafer"
+        },
+        "status"
+      ],
+      "op": "eq",
+      "value": "lower_bound",
+      "actual": "lower_bound",
+      "status": "MATCH"
+    },
+    {
+      "path": [
+        "allocation",
+        "comparisons",
+        0,
+        "scenarios",
+        {
+          "id": "add_wafer"
+        },
+        "se_lower"
+      ],
+      "op": "approx",
+      "value": 0.2,
+      "actual": 0.2,
+      "status": "MATCH"
+    },
+    {
+      "path": [
+        "allocation",
+        "comparisons",
+        0,
+        "scenarios",
+        {
+          "id": "add_wafer"
+        },
+        "added_measurements"
+      ],
+      "op": "eq",
+      "value": 18,
+      "actual": 18,
+      "status": "MATCH"
+    },
+    {
+      "path": [
+        "allocation",
+        "comparisons",
+        0,
+        "scenarios",
+        {
+          "id": "add_site"
+        },
+        "status"
+      ],
+      "op": "eq",
+      "value": "lower_bound",
+      "actual": "lower_bound",
+      "status": "MATCH"
+    },
+    {
+      "path": [
+        "allocation",
+        "comparisons",
+        0,
+        "scenarios",
+        {
+          "id": "add_site"
+        },
+        "se_lower"
+      ],
+      "op": "approx",
+      "value": 0.21538079972200141,
+      "actual": 0.21538079972200141,
+      "status": "MATCH"
+    },
+    {
+      "path": [
+        "allocation",
+        "comparisons",
+        0,
+        "scenarios",
+        {
+          "id": "add_site"
+        },
+        "added_measurements"
+      ],
+      "op": "eq",
+      "value": 12,
+      "actual": 12,
+      "status": "MATCH"
+    },
+    {
+      "path": [
+        "allocation",
+        "comparisons",
+        0,
+        "scenarios",
+        {
+          "id": "floor"
+        },
+        "status"
+      ],
+      "op": "eq",
+      "value": "not_estimable",
+      "actual": "not_estimable",
+      "status": "MATCH"
+    },
+    {
+      "path": [
+        "allocation",
+        "comparisons",
+        0,
+        "scenarios",
+        {
+          "id": "floor"
+        },
+        "se_lower"
+      ],
+      "op": "absent",
+      "value": null,
+      "actual": null,
+      "status": "MATCH"
+    },
+    {
+      "path": [
+        "allocation",
+        "comparisons",
+        0,
+        "ranking",
+        "assessed"
+      ],
+      "op": "eq",
+      "value": false,
+      "actual": false,
+      "status": "MATCH"
+    },
+    {
+      "path": [
+        "allocation",
+        "comparisons",
+        0,
+        "robust_conclusion"
+      ],
+      "op": "absent",
+      "value": null,
+      "actual": null,
+      "status": "MATCH"
+    },
+    {
+      "path": [
+        "allocation",
+        "comparisons",
+        0,
+        "floor_statement"
+      ],
+      "op": "eq",
+      "value": "No number of additional wafers or sites can bring the standard error below the floor; only additional runs lower it.",
+      "actual": "No number of additional wafers or sites can bring the standard error below the floor; only additional runs lower it.",
+      "status": "MATCH"
+    },
+    {
+      "path": [
+        "reassignment",
+        "status"
+      ],
+      "op": "eq",
+      "value": "not_applicable",
+      "actual": "not_applicable",
+      "status": "MATCH"
+    },
+    {
+      "path": [
+        "descriptive",
+        "raw_mean_difference"
+      ],
+      "op": "approx",
+      "value": 3.0,
+      "actual": 3.0,
+      "status": "MATCH"
+    }
+  ]
+}

@@ -1,0 +1,734 @@
+{
+  "scenario": "S3",
+  "name": "A correct split-plot",
+  "synthetic": true,
+  "preregistered_in": "scenarios/expectations.json (D-086)",
+  "assertions": 58,
+  "matched": 58,
+  "status": "MATCH",
+  "descriptive": {
+    "label": "descriptive only: raw means of every measurement per level of 'etch_setting', computed from the data file by scenarios/run.py; not an estimate Stratum supports, and it says nothing about uncertainty",
+    "factor": "etch_setting",
+    "means": {
+      "E1": 49.1,
+      "E2": 49.699999999999996,
+      "E3": 50.300000000000004,
+      "E4": 50.90000000000001
+    },
+    "measurements_per_level": {
+      "E1": 12,
+      "E2": 12,
+      "E3": 12,
+      "E4": 12
+    }
+  },
+  "checks": [
+    {
+      "path": [
+        "decision",
+        "evidence_decision"
+      ],
+      "op": "eq",
+      "value": "ANALYZE",
+      "actual": "ANALYZE",
+      "status": "MATCH"
+    },
+    {
+      "path": [
+        "decision",
+        "analyzed"
+      ],
+      "op": "eq",
+      "value": true,
+      "actual": true,
+      "status": "MATCH"
+    },
+    {
+      "path": [
+        "findings"
+      ],
+      "op": "len",
+      "value": 0,
+      "actual": 0,
+      "status": "MATCH"
+    },
+    {
+      "path": [
+        "caveats"
+      ],
+      "op": "len",
+      "value": 1,
+      "actual": 1,
+      "status": "MATCH"
+    },
+    {
+      "path": [
+        "caveats",
+        0,
+        "code"
+      ],
+      "op": "eq",
+      "value": "assignment_not_randomized",
+      "actual": "assignment_not_randomized",
+      "status": "MATCH"
+    },
+    {
+      "path": [
+        "caveats",
+        0,
+        "details",
+        "factor"
+      ],
+      "op": "eq",
+      "value": "position",
+      "actual": "position",
+      "status": "MATCH"
+    },
+    {
+      "path": [
+        "stages",
+        {
+          "id": "S8"
+        },
+        "status"
+      ],
+      "op": "eq",
+      "value": "pass",
+      "actual": "pass",
+      "status": "MATCH"
+    },
+    {
+      "path": [
+        "analysis",
+        "anova",
+        "A",
+        "F"
+      ],
+      "op": "approx",
+      "value": 1.8,
+      "actual": 1.8,
+      "status": "MATCH"
+    },
+    {
+      "path": [
+        "analysis",
+        "anova",
+        "A",
+        "num_df"
+      ],
+      "op": "eq",
+      "value": 3,
+      "actual": 3,
+      "status": "MATCH"
+    },
+    {
+      "path": [
+        "analysis",
+        "anova",
+        "A",
+        "den_df"
+      ],
+      "op": "eq",
+      "value": 8,
+      "actual": 8,
+      "status": "MATCH"
+    },
+    {
+      "path": [
+        "analysis",
+        "anova",
+        "A",
+        "error_term"
+      ],
+      "op": "eq",
+      "value": "whole plots within etch_setting",
+      "actual": "whole plots within etch_setting",
+      "status": "MATCH"
+    },
+    {
+      "path": [
+        "analysis",
+        "anova",
+        "A",
+        "p"
+      ],
+      "op": "gt",
+      "value": 0.05,
+      "actual": 0.22504495350464732,
+      "status": "MATCH"
+    },
+    {
+      "path": [
+        "analysis",
+        "anova",
+        "wholeplot_error",
+        "ms"
+      ],
+      "op": "approx",
+      "value": 4.0,
+      "actual": 4.0,
+      "status": "MATCH"
+    },
+    {
+      "path": [
+        "analysis",
+        "anova",
+        "B",
+        "F"
+      ],
+      "op": "approx",
+      "value": 8.0,
+      "actual": 8.0,
+      "status": "MATCH"
+    },
+    {
+      "path": [
+        "analysis",
+        "anova",
+        "B",
+        "num_df"
+      ],
+      "op": "eq",
+      "value": 3,
+      "actual": 3,
+      "status": "MATCH"
+    },
+    {
+      "path": [
+        "analysis",
+        "anova",
+        "B",
+        "den_df"
+      ],
+      "op": "eq",
+      "value": 24,
+      "actual": 24,
+      "status": "MATCH"
+    },
+    {
+      "path": [
+        "analysis",
+        "anova",
+        "B",
+        "error_term"
+      ],
+      "op": "eq",
+      "value": "subplot error",
+      "actual": "subplot error",
+      "status": "MATCH"
+    },
+    {
+      "path": [
+        "analysis",
+        "anova",
+        "B",
+        "p"
+      ],
+      "op": "lt",
+      "value": 0.05,
+      "actual": 0.0007215102454105524,
+      "status": "MATCH"
+    },
+    {
+      "path": [
+        "analysis",
+        "anova",
+        "AB",
+        "F"
+      ],
+      "op": "approx",
+      "value": 0.3333333333333333,
+      "actual": 0.3333333333333333,
+      "status": "MATCH"
+    },
+    {
+      "path": [
+        "analysis",
+        "anova",
+        "AB",
+        "num_df"
+      ],
+      "op": "eq",
+      "value": 9,
+      "actual": 9,
+      "status": "MATCH"
+    },
+    {
+      "path": [
+        "analysis",
+        "anova",
+        "AB",
+        "den_df"
+      ],
+      "op": "eq",
+      "value": 24,
+      "actual": 24,
+      "status": "MATCH"
+    },
+    {
+      "path": [
+        "analysis",
+        "anova",
+        "AB",
+        "p"
+      ],
+      "op": "gt",
+      "value": 0.05,
+      "actual": 0.9548765456346505,
+      "status": "MATCH"
+    },
+    {
+      "path": [
+        "analysis",
+        "anova",
+        "subplot_error",
+        "ms"
+      ],
+      "op": "approx",
+      "value": 0.09,
+      "actual": 0.09,
+      "status": "MATCH"
+    },
+    {
+      "path": [
+        "analysis",
+        "anova",
+        "subplot_error",
+        "df"
+      ],
+      "op": "eq",
+      "value": 24,
+      "actual": 24,
+      "status": "MATCH"
+    },
+    {
+      "path": [
+        "analysis",
+        "naive_anova",
+        "residual",
+        "df"
+      ],
+      "op": "eq",
+      "value": 32,
+      "actual": 32,
+      "status": "MATCH"
+    },
+    {
+      "path": [
+        "analysis",
+        "naive_anova",
+        "residual",
+        "ms"
+      ],
+      "op": "approx",
+      "value": 1.0675,
+      "actual": 1.0675,
+      "status": "MATCH"
+    },
+    {
+      "path": [
+        "analysis",
+        "naive_anova",
+        "A",
+        "F"
+      ],
+      "op": "approx",
+      "value": 6.74473067915691,
+      "actual": 6.744730679156909,
+      "status": "MATCH"
+    },
+    {
+      "path": [
+        "analysis",
+        "naive_anova",
+        "A",
+        "den_df"
+      ],
+      "op": "eq",
+      "value": 32,
+      "actual": 32,
+      "status": "MATCH"
+    },
+    {
+      "path": [
+        "analysis",
+        "naive_anova",
+        "A",
+        "p"
+      ],
+      "op": "lt",
+      "value": 0.05,
+      "actual": 0.0011821138348475674,
+      "status": "MATCH"
+    },
+    {
+      "path": [
+        "analysis",
+        "naive_anova",
+        "A",
+        "note"
+      ],
+      "op": "contains",
+      "value": "WRONG for this design",
+      "actual": "WRONG for this design: it tests a factor applied to whole plots against subplot error, treating the 4 readings on one wafer as independent replicates of etch_setting",
+      "status": "MATCH"
+    },
+    {
+      "path": [
+        "analysis",
+        "naive_anova",
+        "B",
+        "F"
+      ],
+      "op": "approx",
+      "value": 0.674473067915691,
+      "actual": 0.6744730679156908,
+      "status": "MATCH"
+    },
+    {
+      "path": [
+        "analysis",
+        "naive_anova",
+        "B",
+        "p"
+      ],
+      "op": "gt",
+      "value": 0.05,
+      "actual": 0.5740419745122949,
+      "status": "MATCH"
+    },
+    {
+      "path": [
+        "analysis",
+        "naive_anova",
+        "AB",
+        "F"
+      ],
+      "op": "approx",
+      "value": 0.028103044496487123,
+      "actual": 0.02810304449648712,
+      "status": "MATCH"
+    },
+    {
+      "path": [
+        "analysis",
+        "variance_components",
+        "wholeplot",
+        "mom"
+      ],
+      "op": "approx",
+      "value": 0.9775,
+      "actual": 0.9775,
+      "status": "MATCH"
+    },
+    {
+      "path": [
+        "analysis",
+        "variance_components",
+        "wholeplot",
+        "reml"
+      ],
+      "op": "approx",
+      "value": 0.9775,
+      "actual": 0.9775,
+      "status": "MATCH"
+    },
+    {
+      "path": [
+        "analysis",
+        "variance_components",
+        "residual",
+        "mom"
+      ],
+      "op": "approx",
+      "value": 0.09,
+      "actual": 0.09,
+      "status": "MATCH"
+    },
+    {
+      "path": [
+        "comparisons",
+        0,
+        "estimates"
+      ],
+      "op": "len",
+      "value": 3,
+      "actual": 3,
+      "status": "MATCH"
+    },
+    {
+      "path": [
+        "comparisons",
+        0,
+        "estimates",
+        0,
+        "contrast"
+      ],
+      "op": "eq",
+      "value": "E2 - E1",
+      "actual": "E2 - E1",
+      "status": "MATCH"
+    },
+    {
+      "path": [
+        "comparisons",
+        0,
+        "estimates",
+        0,
+        "estimate"
+      ],
+      "op": "approx",
+      "value": 0.6,
+      "actual": 0.6,
+      "status": "MATCH"
+    },
+    {
+      "path": [
+        "comparisons",
+        0,
+        "estimates",
+        0,
+        "se"
+      ],
+      "op": "approx",
+      "value": 0.816496580927726,
+      "actual": 0.816496580927726,
+      "status": "MATCH"
+    },
+    {
+      "path": [
+        "comparisons",
+        0,
+        "estimates",
+        0,
+        "df"
+      ],
+      "op": "approx",
+      "value": 8.0,
+      "actual": 8.0,
+      "status": "MATCH"
+    },
+    {
+      "path": [
+        "comparisons",
+        1,
+        "estimates",
+        0,
+        "contrast"
+      ],
+      "op": "eq",
+      "value": "P2 - P1",
+      "actual": "P2 - P1",
+      "status": "MATCH"
+    },
+    {
+      "path": [
+        "comparisons",
+        1,
+        "estimates",
+        0,
+        "estimate"
+      ],
+      "op": "approx",
+      "value": 0.3,
+      "actual": 0.3,
+      "status": "MATCH"
+    },
+    {
+      "path": [
+        "comparisons",
+        1,
+        "estimates",
+        0,
+        "se"
+      ],
+      "op": "approx",
+      "value": 0.1224744871391589,
+      "actual": 0.1224744871391589,
+      "status": "MATCH"
+    },
+    {
+      "path": [
+        "comparisons",
+        1,
+        "estimates",
+        0,
+        "df"
+      ],
+      "op": "approx",
+      "value": 24.0,
+      "actual": 24.0,
+      "status": "MATCH"
+    },
+    {
+      "path": [
+        "comparisons",
+        2,
+        "estimates"
+      ],
+      "op": "len",
+      "value": 9,
+      "actual": 9,
+      "status": "MATCH"
+    },
+    {
+      "path": [
+        "comparisons",
+        2,
+        "estimates",
+        0,
+        "estimate"
+      ],
+      "op": "approx",
+      "value": 0.6,
+      "actual": 0.6,
+      "status": "MATCH"
+    },
+    {
+      "path": [
+        "comparisons",
+        2,
+        "estimates",
+        0,
+        "se"
+      ],
+      "op": "approx",
+      "value": 0.34641016151377546,
+      "actual": 0.34641016151377546,
+      "status": "MATCH"
+    },
+    {
+      "path": [
+        "allocation",
+        "status"
+      ],
+      "op": "eq",
+      "value": "available",
+      "actual": "available",
+      "status": "MATCH"
+    },
+    {
+      "path": [
+        "allocation",
+        "components",
+        {
+          "component": "wholeplot"
+        },
+        "estimate"
+      ],
+      "op": "approx",
+      "value": 0.9775,
+      "actual": 0.9775,
+      "status": "MATCH"
+    },
+    {
+      "path": [
+        "allocation",
+        "comparisons",
+        0,
+        "factor"
+      ],
+      "op": "eq",
+      "value": "etch_setting",
+      "actual": "etch_setting",
+      "status": "MATCH"
+    },
+    {
+      "path": [
+        "allocation",
+        "comparisons",
+        0,
+        "scenarios",
+        {
+          "id": "current"
+        },
+        "se"
+      ],
+      "op": "approx",
+      "value": 0.816496580927726,
+      "actual": 0.816496580927726,
+      "status": "MATCH"
+    },
+    {
+      "path": [
+        "allocation",
+        "comparisons",
+        0,
+        "scenarios",
+        {
+          "id": "floor"
+        },
+        "se"
+      ],
+      "op": "approx",
+      "value": 0.807258735887489,
+      "actual": 0.807258735887489,
+      "status": "MATCH"
+    },
+    {
+      "path": [
+        "allocation",
+        "comparisons",
+        0,
+        "ranking",
+        "assessed"
+      ],
+      "op": "eq",
+      "value": true,
+      "actual": true,
+      "status": "MATCH"
+    },
+    {
+      "path": [
+        "allocation",
+        "comparisons",
+        0,
+        "ranking",
+        "robust"
+      ],
+      "op": "eq",
+      "value": true,
+      "actual": true,
+      "status": "MATCH"
+    },
+    {
+      "path": [
+        "allocation",
+        "comparisons",
+        0,
+        "ranking",
+        "best"
+      ],
+      "op": "eq",
+      "value": "add_unit",
+      "actual": "add_unit",
+      "status": "MATCH"
+    },
+    {
+      "path": [
+        "allocation",
+        "comparisons",
+        0,
+        "ranking",
+        "wins",
+        "add_unit"
+      ],
+      "op": "eq",
+      "value": 20000,
+      "actual": 20000,
+      "status": "MATCH"
+    },
+    {
+      "path": [
+        "allocation",
+        "comparisons",
+        0,
+        "robust_conclusion"
+      ],
+      "op": "eq",
+      "value": "Robust conclusion: only additional wafers lower the floor.",
+      "actual": "Robust conclusion: only additional wafers lower the floor.",
+      "status": "MATCH"
+    }
+  ]
+}

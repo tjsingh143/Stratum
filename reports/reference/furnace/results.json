@@ -1,0 +1,999 @@
+{
+  "schema": "stratum-results/1",
+  "generated_by": "stratum 1.0.0 (stratum.results.build); never hand-edited",
+  "synthetic": false,
+  "data_label": "Published textbook / NIST-SEMATECH dataset, not synthetic and not fab data: NIST/SEMATECH furnace case study (FURNACE.DAT), handbook 3.5.1",
+  "provenance": {
+    "inputs": {
+      "declaration": {
+        "path": "declarations/examples/t1_nist_furnace.yaml",
+        "sha256": "e31dad6e85cbe33ac8b6739e7566482f40fa62d08f643c9edef53d4ef7eab733",
+        "bytes": 1149
+      },
+      "data": {
+        "path": "reference/_fetched/derived/furnace.csv",
+        "sha256": "1c6d5bbb710c1c2fd7bf6ee4f95c742ee4864346361a50c80efbaa49dfff4293",
+        "bytes": 1809
+      },
+      "explanations": {
+        "path": "resources/explanations.yaml",
+        "sha256": "45923fbd6faf9e13bd694316bc407fca02bb7a819226dce39f5bd3bfd2dcc5e3",
+        "bytes": 22437
+      }
+    },
+    "code": {
+      "package": "stratum",
+      "version": "1.0.0",
+      "source_sha256": "ada12f7b897c7d9984c6300a1c86c9ac23e1db099ffa5a24a39aa6a5c81cb860",
+      "source_files": 17,
+      "method": "SHA-256 over the sorted lines '<relative path> <file SHA-256>' of every file in the stratum package (D-077)"
+    },
+    "git": null,
+    "environment": null,
+    "omitted": "omitted from committed reports so that they regenerate byte for byte: a commit hash written into a committed file is always the parent of the commit that contains it. source_sha256 identifies the code (D-077)."
+  },
+  "declaration": {
+    "claimed_template": "T1",
+    "description": "NIST/SEMATECH e-Handbook furnace case study (Section 3.5.1). Published textbook data, not synthetic, not fab data. Passive variance-components study: no treatment.\n",
+    "response": {
+      "column": "thickness",
+      "units": "Å"
+    },
+    "hierarchy": [
+      {
+        "name": "run",
+        "count": 21,
+        "per_parent": false,
+        "exchangeable": null,
+        "exchangeable_declared": false
+      },
+      {
+        "name": "zone",
+        "count": 4,
+        "per_parent": true,
+        "exchangeable": false,
+        "exchangeable_declared": true
+      },
+      {
+        "name": "wafer",
+        "count": 2,
+        "per_parent": true,
+        "exchangeable": false,
+        "exchangeable_declared": false
+      }
+    ],
+    "treatments": [],
+    "nuisance_factors": []
+  },
+  "decision": {
+    "evidence_decision": "ANALYZE",
+    "analyzed": true,
+    "template": "T1"
+  },
+  "comparisons": [],
+  "findings": [],
+  "caveats": [],
+  "stages": [
+    {
+      "id": "S0",
+      "title": "declaration matches the claimed template",
+      "status": "pass",
+      "reason": null
+    },
+    {
+      "id": "S1",
+      "title": "declared columns present",
+      "status": "pass",
+      "reason": null
+    },
+    {
+      "id": "S2",
+      "title": "labels and response values",
+      "status": "pass",
+      "reason": null
+    },
+    {
+      "id": "S3",
+      "title": "unit identity and ownership",
+      "status": "pass",
+      "reason": null
+    },
+    {
+      "id": "S4",
+      "title": "declaration-data consistency",
+      "status": "pass",
+      "reason": null
+    },
+    {
+      "id": "S5",
+      "title": "balance, replication and missing data",
+      "status": "pass",
+      "reason": null
+    },
+    {
+      "id": "S6",
+      "title": "confounding",
+      "status": "pass",
+      "reason": null
+    },
+    {
+      "id": "S7",
+      "title": "aliasing",
+      "status": "pass",
+      "reason": null
+    },
+    {
+      "id": "S8",
+      "title": "diagnostics",
+      "status": "pass",
+      "reason": null
+    }
+  ],
+  "assumptions": [
+    {
+      "assumption": "balance at the experimental-unit level",
+      "handling": "checked from the data; imbalance is refused (S5)",
+      "status": "pass"
+    },
+    {
+      "assumption": "normally distributed random effects and errors",
+      "handling": "diagnosed: normal quantile plot and externally studentized residuals beyond +-3; warnings only (D-044)",
+      "status": "no warning triggered; assumption not verified"
+    },
+    {
+      "assumption": "independent experimental units",
+      "handling": "not checkable from the data; it rests on how the units were run and assigned (the declared assignment method)",
+      "status": "not_checkable"
+    }
+  ],
+  "diagnostics": {
+    "top_units": {
+      "brown_forsythe": {
+        "available": false,
+        "warn": false,
+        "not_applicable": true,
+        "reason": "no treatment groups in this stratum"
+      },
+      "sd_ratio": {
+        "available": false,
+        "warn": false,
+        "not_applicable": true,
+        "reason": "no treatment groups in this stratum"
+      },
+      "studentized_residuals": {
+        "diagnostic": "studentized_residuals",
+        "available": true,
+        "warn": false,
+        "model": "intercept only",
+        "residual_df": 20,
+        "max_abs_external": 2.773364152270188,
+        "undefined_units": [],
+        "threshold": "|externally studentized residual| > 3",
+        "units": [
+          {
+            "unit": "1",
+            "residual": -11.660714285714286,
+            "leverage": 0.047619047619047616,
+            "internal": -0.6097420034090872,
+            "external": -0.5999050447935903,
+            "flagged": false
+          },
+          {
+            "unit": "2",
+            "residual": -2.6607142857142856,
+            "leverage": 0.047619047619047616,
+            "internal": -0.13912949235521285,
+            "external": -0.1356723261056836,
+            "flagged": false
+          },
+          {
+            "unit": "3",
+            "residual": -45.910714285714285,
+            "leverage": 0.047619047619047616,
+            "internal": -2.4006840593641092,
+            "external": -2.773364152270188,
+            "flagged": false
+          },
+          {
+            "unit": "4",
+            "residual": 6.714285714285714,
+            "leverage": 0.047619047619047616,
+            "internal": 0.35109187332590625,
+            "external": 0.34326147092717757,
+            "flagged": false
+          },
+          {
+            "unit": "5",
+            "residual": -7.160714285714286,
+            "leverage": 0.047619047619047616,
+            "internal": -0.37443574788215,
+            "external": -0.3662407740309502,
+            "flagged": false
+          },
+          {
+            "unit": "6",
+            "residual": 11.464285714285714,
+            "leverage": 0.047619047619047616,
+            "internal": 0.59947069860434,
+            "external": 0.5896129309059287,
+            "flagged": false
+          },
+          {
+            "unit": "7",
+            "residual": 31.339285714285715,
+            "leverage": 0.047619047619047616,
+            "internal": 1.6387399938483125,
+            "external": 1.7166489188249061,
+            "flagged": false
+          },
+          {
+            "unit": "8",
+            "residual": -26.660714285714285,
+            "leverage": 0.047619047619047616,
+            "internal": -1.3940961884988778,
+            "external": -1.4300552098019885,
+            "flagged": false
+          },
+          {
+            "unit": "9",
+            "residual": -17.285714285714285,
+            "leverage": 0.047619047619047616,
+            "internal": -0.9038748228177587,
+            "external": -0.8995529038463109,
+            "flagged": false
+          },
+          {
+            "unit": "10",
+            "residual": 2.4642857142857144,
+            "leverage": 0.047619047619047616,
+            "internal": 0.1288581875504656,
+            "external": 0.12564759387480287,
+            "flagged": false
+          },
+          {
+            "unit": "11",
+            "residual": 2.0892857142857144,
+            "leverage": 0.047619047619047616,
+            "internal": 0.10924933292322084,
+            "external": 0.10651486525680737,
+            "flagged": false
+          },
+          {
+            "unit": "12",
+            "residual": -2.9107142857142856,
+            "leverage": 0.047619047619047616,
+            "internal": -0.15220206210670936,
+            "external": -0.14843420842434185,
+            "flagged": false
+          },
+          {
+            "unit": "13",
+            "residual": 21.214285714285715,
+            "leverage": 0.047619047619047616,
+            "internal": 1.1093009189127039,
+            "external": 1.116092996268854,
+            "flagged": false
+          },
+          {
+            "unit": "14",
+            "residual": 6.964285714285714,
+            "leverage": 0.047619047619047616,
+            "internal": 0.36416444307740276,
+            "external": 0.3561262558813652,
+            "flagged": false
+          },
+          {
+            "unit": "15",
+            "residual": -19.410714285714285,
+            "leverage": 0.047619047619047616,
+            "internal": -1.014991665705479,
+            "external": -1.0157994962391579,
+            "flagged": false
+          },
+          {
+            "unit": "16",
+            "residual": 4.714285714285714,
+            "leverage": 0.047619047619047616,
+            "internal": 0.2465113153139342,
+            "external": 0.24063535972108988,
+            "flagged": false
+          },
+          {
+            "unit": "17",
+            "residual": 11.964285714285714,
+            "leverage": 0.047619047619047616,
+            "internal": 0.625615838107333,
+            "external": 0.6158304914331126,
+            "flagged": false
+          },
+          {
+            "unit": "18",
+            "residual": -25.410714285714285,
+            "leverage": 0.047619047619047616,
+            "internal": -1.3287333397413952,
+            "external": -1.3563384939858079,
+            "flagged": false
+          },
+          {
+            "unit": "19",
+            "residual": 23.089285714285715,
+            "leverage": 0.047619047619047616,
+            "internal": 1.2073451920489278,
+            "external": 1.2221548901300021,
+            "flagged": false
+          },
+          {
+            "unit": "20",
+            "residual": 6.589285714285714,
+            "leverage": 0.047619047619047616,
+            "internal": 0.344555588450158,
+            "external": 0.33683244056689404,
+            "flagged": false
+          },
+          {
+            "unit": "21",
+            "residual": 30.464285714285715,
+            "leverage": 0.047619047619047616,
+            "internal": 1.5929859997180746,
+            "external": 1.66163965474289,
+            "flagged": false
+          }
+        ],
+        "normal_quantiles": {
+          "positions": "Blom (i - 3/8) / (n + 1/4)",
+          "theoretical": [
+            -1.8895099603334302,
+            -1.4292194242710632,
+            -1.1575228149633463,
+            -0.9518432764036353,
+            -0.7801643936029728,
+            -0.6289042176321897,
+            -0.4908544270112465,
+            -0.3616052259851682,
+            -0.23815006422976967,
+            -0.11823387106613353,
+            0.0,
+            0.11823387106613367,
+            0.23815006422976967,
+            0.36160522598516837,
+            0.4908544270112465,
+            0.62890421763219,
+            0.7801643936029728,
+            0.9518432764036356,
+            1.1575228149633463,
+            1.4292194242710636,
+            1.8895099603334298
+          ],
+          "internally_studentized_sorted": [
+            -2.4006840593641092,
+            -1.3940961884988778,
+            -1.3287333397413952,
+            -1.014991665705479,
+            -0.9038748228177587,
+            -0.6097420034090872,
+            -0.37443574788215,
+            -0.15220206210670936,
+            -0.13912949235521285,
+            0.10924933292322084,
+            0.1288581875504656,
+            0.2465113153139342,
+            0.344555588450158,
+            0.35109187332590625,
+            0.36416444307740276,
+            0.59947069860434,
+            0.625615838107333,
+            1.1093009189127039,
+            1.2073451920489278,
+            1.5929859997180746,
+            1.6387399938483125
+          ]
+        }
+      }
+    }
+  },
+  "diagnostics_display": {
+    "top_units": {
+      "n": 21,
+      "x_min": -1.8895099603334302,
+      "x_max": 1.8895099603334298,
+      "y_min": -2.4006840593641092,
+      "y_max": 1.6387399938483125
+    }
+  },
+  "evidence": {
+    "structure": {
+      "rows": 168,
+      "observed_responses": 168,
+      "missing_responses": 0,
+      "levels": [
+        {
+          "level": "run",
+          "declared_total": 21,
+          "present": 21
+        },
+        {
+          "level": "zone",
+          "declared_per_parent": 4,
+          "present_per_parent": [
+            4
+          ]
+        },
+        {
+          "level": "wafer",
+          "declared_per_parent": 2,
+          "present_per_parent": [
+            2
+          ]
+        }
+      ]
+    },
+    "confounding": [],
+    "confounding_note": "T1 has no treatment: confounding is not applicable.",
+    "aliasing": {
+      "groupings": [
+        "level 'run'",
+        "level 'zone'",
+        "level 'wafer'"
+      ],
+      "aliased_pairs": [],
+      "excluded_unit_unique": []
+    },
+    "diagnostics": {
+      "top_units": {
+        "brown_forsythe": {
+          "available": false,
+          "warn": false,
+          "not_applicable": true,
+          "reason": "no treatment groups in this stratum"
+        },
+        "sd_ratio": {
+          "available": false,
+          "warn": false,
+          "not_applicable": true,
+          "reason": "no treatment groups in this stratum"
+        },
+        "studentized_residuals": {
+          "diagnostic": "studentized_residuals",
+          "available": true,
+          "warn": false,
+          "model": "intercept only",
+          "residual_df": 20,
+          "max_abs_external": 2.773364152270188,
+          "undefined_units": [],
+          "threshold": "|externally studentized residual| > 3",
+          "units": [
+            {
+              "unit": "1",
+              "residual": -11.660714285714286,
+              "leverage": 0.047619047619047616,
+              "internal": -0.6097420034090872,
+              "external": -0.5999050447935903,
+              "flagged": false
+            },
+            {
+              "unit": "2",
+              "residual": -2.6607142857142856,
+              "leverage": 0.047619047619047616,
+              "internal": -0.13912949235521285,
+              "external": -0.1356723261056836,
+              "flagged": false
+            },
+            {
+              "unit": "3",
+              "residual": -45.910714285714285,
+              "leverage": 0.047619047619047616,
+              "internal": -2.4006840593641092,
+              "external": -2.773364152270188,
+              "flagged": false
+            },
+            {
+              "unit": "4",
+              "residual": 6.714285714285714,
+              "leverage": 0.047619047619047616,
+              "internal": 0.35109187332590625,
+              "external": 0.34326147092717757,
+              "flagged": false
+            },
+            {
+              "unit": "5",
+              "residual": -7.160714285714286,
+              "leverage": 0.047619047619047616,
+              "internal": -0.37443574788215,
+              "external": -0.3662407740309502,
+              "flagged": false
+            },
+            {
+              "unit": "6",
+              "residual": 11.464285714285714,
+              "leverage": 0.047619047619047616,
+              "internal": 0.59947069860434,
+              "external": 0.5896129309059287,
+              "flagged": false
+            },
+            {
+              "unit": "7",
+              "residual": 31.339285714285715,
+              "leverage": 0.047619047619047616,
+              "internal": 1.6387399938483125,
+              "external": 1.7166489188249061,
+              "flagged": false
+            },
+            {
+              "unit": "8",
+              "residual": -26.660714285714285,
+              "leverage": 0.047619047619047616,
+              "internal": -1.3940961884988778,
+              "external": -1.4300552098019885,
+              "flagged": false
+            },
+            {
+              "unit": "9",
+              "residual": -17.285714285714285,
+              "leverage": 0.047619047619047616,
+              "internal": -0.9038748228177587,
+              "external": -0.8995529038463109,
+              "flagged": false
+            },
+            {
+              "unit": "10",
+              "residual": 2.4642857142857144,
+              "leverage": 0.047619047619047616,
+              "internal": 0.1288581875504656,
+              "external": 0.12564759387480287,
+              "flagged": false
+            },
+            {
+              "unit": "11",
+              "residual": 2.0892857142857144,
+              "leverage": 0.047619047619047616,
+              "internal": 0.10924933292322084,
+              "external": 0.10651486525680737,
+              "flagged": false
+            },
+            {
+              "unit": "12",
+              "residual": -2.9107142857142856,
+              "leverage": 0.047619047619047616,
+              "internal": -0.15220206210670936,
+              "external": -0.14843420842434185,
+              "flagged": false
+            },
+            {
+              "unit": "13",
+              "residual": 21.214285714285715,
+              "leverage": 0.047619047619047616,
+              "internal": 1.1093009189127039,
+              "external": 1.116092996268854,
+              "flagged": false
+            },
+            {
+              "unit": "14",
+              "residual": 6.964285714285714,
+              "leverage": 0.047619047619047616,
+              "internal": 0.36416444307740276,
+              "external": 0.3561262558813652,
+              "flagged": false
+            },
+            {
+              "unit": "15",
+              "residual": -19.410714285714285,
+              "leverage": 0.047619047619047616,
+              "internal": -1.014991665705479,
+              "external": -1.0157994962391579,
+              "flagged": false
+            },
+            {
+              "unit": "16",
+              "residual": 4.714285714285714,
+              "leverage": 0.047619047619047616,
+              "internal": 0.2465113153139342,
+              "external": 0.24063535972108988,
+              "flagged": false
+            },
+            {
+              "unit": "17",
+              "residual": 11.964285714285714,
+              "leverage": 0.047619047619047616,
+              "internal": 0.625615838107333,
+              "external": 0.6158304914331126,
+              "flagged": false
+            },
+            {
+              "unit": "18",
+              "residual": -25.410714285714285,
+              "leverage": 0.047619047619047616,
+              "internal": -1.3287333397413952,
+              "external": -1.3563384939858079,
+              "flagged": false
+            },
+            {
+              "unit": "19",
+              "residual": 23.089285714285715,
+              "leverage": 0.047619047619047616,
+              "internal": 1.2073451920489278,
+              "external": 1.2221548901300021,
+              "flagged": false
+            },
+            {
+              "unit": "20",
+              "residual": 6.589285714285714,
+              "leverage": 0.047619047619047616,
+              "internal": 0.344555588450158,
+              "external": 0.33683244056689404,
+              "flagged": false
+            },
+            {
+              "unit": "21",
+              "residual": 30.464285714285715,
+              "leverage": 0.047619047619047616,
+              "internal": 1.5929859997180746,
+              "external": 1.66163965474289,
+              "flagged": false
+            }
+          ],
+          "normal_quantiles": {
+            "positions": "Blom (i - 3/8) / (n + 1/4)",
+            "theoretical": [
+              -1.8895099603334302,
+              -1.4292194242710632,
+              -1.1575228149633463,
+              -0.9518432764036353,
+              -0.7801643936029728,
+              -0.6289042176321897,
+              -0.4908544270112465,
+              -0.3616052259851682,
+              -0.23815006422976967,
+              -0.11823387106613353,
+              0.0,
+              0.11823387106613367,
+              0.23815006422976967,
+              0.36160522598516837,
+              0.4908544270112465,
+              0.62890421763219,
+              0.7801643936029728,
+              0.9518432764036356,
+              1.1575228149633463,
+              1.4292194242710636,
+              1.8895099603334298
+            ],
+            "internally_studentized_sorted": [
+              -2.4006840593641092,
+              -1.3940961884988778,
+              -1.3287333397413952,
+              -1.014991665705479,
+              -0.9038748228177587,
+              -0.6097420034090872,
+              -0.37443574788215,
+              -0.15220206210670936,
+              -0.13912949235521285,
+              0.10924933292322084,
+              0.1288581875504656,
+              0.2465113153139342,
+              0.344555588450158,
+              0.35109187332590625,
+              0.36416444307740276,
+              0.59947069860434,
+              0.625615838107333,
+              1.1093009189127039,
+              1.2073451920489278,
+              1.5929859997180746,
+              1.6387399938483125
+            ]
+          }
+        }
+      }
+    }
+  },
+  "analysis": {
+    "template": "T1",
+    "decision": "ANALYZE",
+    "analyzed": true,
+    "design": {
+      "levels": [
+        "run",
+        "zone",
+        "wafer"
+      ],
+      "units_per_level": [
+        21,
+        84,
+        168
+      ],
+      "observations_per_unit": [
+        8,
+        2,
+        1
+      ],
+      "n_observations": 168,
+      "treatment": null
+    },
+    "anova": {
+      "A": {
+        "source": "run",
+        "key": "A",
+        "df": 20,
+        "ss": 61442.28571428572,
+        "ss_exact": "430096/7",
+        "ms": 3072.114285714286,
+        "error_term": "zone",
+        "F": 5.374035457940551,
+        "p": 1.3939030444929414e-07,
+        "num_df": 20,
+        "den_df": 63,
+        "note": "tests sigma2[A] = 0 against the stratum below it",
+        "ems_coefficients": {
+          "A": 8,
+          "B": 2,
+          "residual": 1
+        },
+        "ems": "8*sigma2[run] + 2*sigma2[zone] + 1*sigma2[wafer]",
+        "ems_by_key": "8*sigma2[A] + 2*sigma2[B] + 1*sigma2[residual]"
+      },
+      "B": {
+        "source": "zone",
+        "key": "B",
+        "df": 63,
+        "ss": 36014.5,
+        "ss_exact": "72029/2",
+        "ms": 571.6587301587301,
+        "error_term": "wafer",
+        "F": 4.728639422287872,
+        "p": 3.850359795159967e-11,
+        "num_df": 63,
+        "den_df": 84,
+        "note": "tests sigma2[B] = 0 against the residual stratum",
+        "ems_coefficients": {
+          "B": 2,
+          "residual": 1
+        },
+        "ems": "2*sigma2[zone] + 1*sigma2[wafer]",
+        "ems_by_key": "2*sigma2[B] + 1*sigma2[residual]"
+      },
+      "residual": {
+        "source": "wafer",
+        "key": "residual",
+        "df": 84,
+        "ss": 10155.0,
+        "ss_exact": "10155",
+        "ms": 120.89285714285714,
+        "error_term": null,
+        "F": null,
+        "p": null,
+        "num_df": null,
+        "den_df": null,
+        "note": "",
+        "ems_coefficients": {
+          "residual": 1
+        },
+        "ems": "1*sigma2[wafer]",
+        "ems_by_key": "1*sigma2[residual]"
+      },
+      "total": {
+        "source": "total",
+        "key": "total",
+        "df": 167,
+        "ss": 107611.78571428571,
+        "ss_exact": "1506565/14",
+        "ms": 644.3819503849444,
+        "error_term": null,
+        "F": null,
+        "p": null,
+        "num_df": null,
+        "den_df": null,
+        "note": ""
+      }
+    },
+    "naive_anova": {},
+    "variance_components": {
+      "A": {
+        "component": "A",
+        "label": "run",
+        "merged": false,
+        "coefficient": 8,
+        "estimator": "(MS[A] - MS[B]) / 8",
+        "estimator_display": "(MS[run] - MS[zone]) / 8",
+        "mom": 312.55694444444447,
+        "mom_exact": "225041/720",
+        "mom_truncated": 312.55694444444447,
+        "negative": false,
+        "sd_mom": 17.679280088409836,
+        "reml": 312.55694444444447,
+        "sd_reml": 17.679280088409836,
+        "reml_equals_mom": true,
+        "interval_method": "approximate (Satterthwaite)",
+        "exact": false,
+        "interval_available": true,
+        "nu_eff": 13.105261559783266,
+        "interval_lower": 164.62316834515852,
+        "interval_upper": 807.3865038681846,
+        "truncated_at_zero": false,
+        "sd_interval_lower": 12.83055604193203,
+        "sd_interval_upper": 28.414547398615813,
+        "percent_of_total": 47.44101596227335
+      },
+      "B": {
+        "component": "B",
+        "label": "zone",
+        "merged": false,
+        "coefficient": 2,
+        "estimator": "(MS[B] - MS[residual]) / 2",
+        "estimator_display": "(MS[zone] - MS[wafer]) / 2",
+        "mom": 225.3829365079365,
+        "mom_exact": "113593/504",
+        "mom_truncated": 225.3829365079365,
+        "negative": false,
+        "sd_mom": 15.012759123756583,
+        "reml": 225.3829365079365,
+        "sd_reml": 15.012759123756583,
+        "reml_equals_mom": true,
+        "interval_method": "approximate (Satterthwaite)",
+        "exact": false,
+        "interval_available": true,
+        "nu_eff": 37.900138706898915,
+        "interval_lower": 150.45943553637136,
+        "interval_upper": 374.63188853873856,
+        "truncated_at_zero": false,
+        "sd_interval_lower": 12.266190750855433,
+        "sd_interval_upper": 19.355409800330722,
+        "percent_of_total": 34.209431844498916
+      },
+      "residual": {
+        "component": "residual",
+        "label": "wafer",
+        "merged": false,
+        "coefficient": 1,
+        "estimator": "MS[residual]",
+        "estimator_display": "MS[wafer]",
+        "mom": 120.89285714285714,
+        "mom_exact": "3385/28",
+        "mom_truncated": 120.89285714285714,
+        "negative": false,
+        "sd_mom": 10.995128791553883,
+        "reml": 120.89285714285714,
+        "sd_reml": 10.995128791553883,
+        "reml_equals_mom": true,
+        "interval_method": "exact under the model for balanced data",
+        "exact": true,
+        "interval_available": true,
+        "nu_eff": 84.0,
+        "interval_lower": 91.28725072005666,
+        "interval_upper": 167.7408593496928,
+        "truncated_at_zero": false,
+        "sd_interval_lower": 9.554436180123695,
+        "sd_interval_upper": 12.951480971290225,
+        "percent_of_total": 18.349552193227744
+      }
+    },
+    "stratum_expectations": {
+      "A": {
+        "stratum": "A",
+        "label": "run",
+        "df": 20,
+        "ms": 3072.114285714286,
+        "lower": 1798.1560598281844,
+        "upper": 6406.392641731006,
+        "exact": true,
+        "interval_method": "exact under the model for balanced data",
+        "definition": "E[MS] = 8*sigma2[run] + 2*sigma2[zone] + 1*sigma2[wafer]"
+      },
+      "B": {
+        "stratum": "B",
+        "label": "zone",
+        "df": 63,
+        "ms": 571.6587301587301,
+        "lower": 414.77219649091404,
+        "upper": 838.5161702549302,
+        "exact": true,
+        "interval_method": "exact under the model for balanced data",
+        "definition": "E[MS] = 2*sigma2[zone] + 1*sigma2[wafer]"
+      },
+      "residual": {
+        "stratum": "residual",
+        "label": "wafer",
+        "df": 84,
+        "ms": 120.89285714285714,
+        "lower": 91.28725072005666,
+        "upper": 167.7408593496928,
+        "exact": true,
+        "interval_method": "exact under the model for balanced data",
+        "definition": "E[MS] = 1*sigma2[wafer]"
+      }
+    },
+    "estimates": {
+      "grand_mean": {
+        "estimate_of": "the overall mean of thickness",
+        "estimate": 563.0357142857143,
+        "se": 4.276259411895299,
+        "df": 20.0,
+        "error_term": "run",
+        "independent_units": 21,
+        "lower": 554.1155934614741,
+        "upper": 571.9558351099546,
+        "t_critical": 2.0859634472658644,
+        "interval_method": "exact under the model for balanced data",
+        "approximate": false,
+        "note": "Var(mean) = E[MS run] / N, so the interval rests on the top-level units, not on the observations"
+      }
+    },
+    "reml": {
+      "fit": {
+        "method": "closed-form order-restricted (pool-adjacent-violators) REML for balanced designs; no optimizer, so no convergence failure (D-064)",
+        "lambda_hat": {
+          "A": 3072.114285714286,
+          "B": 571.6587301587301,
+          "residual": 120.89285714285714
+        },
+        "mean_squares": {
+          "A": 3072.114285714286,
+          "B": 571.6587301587301,
+          "residual": 120.89285714285714
+        },
+        "pooled": [],
+        "boundary": false,
+        "error_contrast_df": 167,
+        "n_fixed_parameters": 1,
+        "minus2_restricted_loglik_error_contrasts": 1437.2580465509413,
+        "restricted_loglik_error_contrasts": -718.6290232754707,
+        "log_det_xtx": 5.123963979403259,
+        "fixed_parameterization": "intercept only",
+        "minus2_restricted_loglik": 1442.3820105303446,
+        "restricted_loglik": -721.1910052651723,
+        "convention": "-2 log L_R = (N - p) log(2 pi) + sum_k [ df_k log lambda_k + SS_k / lambda_k ] + log det(X'X), the standard restricted log-likelihood (Harville 1977). The last term is an additive constant that depends on how the fixed effects are parameterised, so a REML log-likelihood is comparable only between fits that share one. X here is the full-rank indicator parameterisation named in `fixed_parameterization`. The form without that term is also reported, and any offset against a package's printed value is reported rather than absorbed (D-064)."
+      }
+    },
+    "fits": {
+      "boundary": [],
+      "degenerate": [],
+      "failed": [],
+      "note": "Every step is closed form (exact rational ANOVA, closed-form REML, deterministic quantile functions), so no fit can fail to converge. An empty `failed` list means none occurred, not that none were looked for (D-066). A design the evidence checks refuse is not a failed fit: refusal is a successful outcome.",
+      "boundary_count": 0,
+      "degenerate_count": 0,
+      "failed_count": 0
+    },
+    "notes": [
+      "T1 has no treatment, so there is no treatment comparison. The two F tests test whether each variance component is zero.",
+      "Variance-component intervals are Satterthwaite except where marked exact (D-060); every one is a per-component 95% interval, not a simultaneous band."
+    ],
+    "labels": {
+      "template": "T1: balanced nested variance components, no treatment",
+      "levels": {
+        "A": "run",
+        "B": "zone",
+        "residual": "wafer"
+      }
+    }
+  },
+  "allocation": {
+    "status": "not_applicable",
+    "reason": "T1 has no treatment comparison, so there is no allocation analysis (brief Section 5.5 covers T2 and T3)."
+  },
+  "reassignment": {
+    "status": "not_applicable",
+    "reason": "no complete confounding was found, so no reassignment is needed"
+  },
+  "planning": {
+    "eligible": false,
+    "reason": "the design was analyzed"
+  },
+  "explanations": {
+    "required": 47,
+    "required_written": 47,
+    "required_pending": [],
+    "optional": 2,
+    "optional_written": 2,
+    "file": "resources/explanations.yaml",
+    "policy": "D-075 (verbatim insertion, pending marked)"
+  },
+  "summary": {
+    "decision": "ANALYZE",
+    "analyzed": true,
+    "analyzed_comparisons": [],
+    "refused_comparisons": [],
+    "refusal_codes": [],
+    "warning_codes": [],
+    "note_codes": [],
+    "caveat_codes": [],
+    "next_steps": [],
+    "pending_in_report": []
+  }
+}

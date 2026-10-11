@@ -1,0 +1,991 @@
+{
+  "schema": "stratum-results/1",
+  "generated_by": "stratum 1.0.0 (stratum.results.build); never hand-edited",
+  "synthetic": true,
+  "data_label": "labelled synthetic data; results show software behavior, not process realism (brief Section 3.3)",
+  "provenance": {
+    "inputs": {
+      "declaration": {
+        "path": "fixtures/synthetic_wp2/MISS-01/declaration_synthetic.yaml",
+        "sha256": "c0538e1e3b442e2cdf6c3334f634cfb9d0ec14cbcfc528b1995d274e8d11e8f1",
+        "bytes": 926
+      },
+      "data": {
+        "path": "fixtures/synthetic_wp2/MISS-01/data_synthetic.csv",
+        "sha256": "7b72f5cd7271ba9b0ae9ac6a4a69b7de618c3a7794629433afbc2b76a178ad4e",
+        "bytes": 1581
+      },
+      "explanations": {
+        "path": "resources/explanations.yaml",
+        "sha256": "45923fbd6faf9e13bd694316bc407fca02bb7a819226dce39f5bd3bfd2dcc5e3",
+        "bytes": 22437
+      }
+    },
+    "code": {
+      "package": "stratum",
+      "version": "1.0.0",
+      "source_sha256": "ada12f7b897c7d9984c6300a1c86c9ac23e1db099ffa5a24a39aa6a5c81cb860",
+      "source_files": 17,
+      "method": "SHA-256 over the sorted lines '<relative path> <file SHA-256>' of every file in the stratum package (D-077)"
+    },
+    "git": null,
+    "environment": null,
+    "omitted": "omitted from committed reports so that they regenerate byte for byte: a commit hash written into a committed file is always the parent of the commit that contains it. source_sha256 identifies the code (D-077)."
+  },
+  "declaration": {
+    "claimed_template": "T2",
+    "description": "SYNTHETIC FIXTURE MISS-01: T2, sites declared exchangeable; site 3 missing on 3 of 16 wafers",
+    "response": {
+      "column": "y",
+      "units": "a.u. (synthetic)"
+    },
+    "hierarchy": [
+      {
+        "name": "run",
+        "count": 8,
+        "per_parent": false,
+        "exchangeable": null,
+        "exchangeable_declared": false
+      },
+      {
+        "name": "wafer",
+        "count": 2,
+        "per_parent": true,
+        "exchangeable": false,
+        "exchangeable_declared": false
+      },
+      {
+        "name": "site",
+        "count": 5,
+        "per_parent": true,
+        "exchangeable": true,
+        "exchangeable_declared": true
+      }
+    ],
+    "treatments": [
+      {
+        "name": "temp",
+        "levels": [
+          "low",
+          "high"
+        ],
+        "applied_to": "run",
+        "replicates_per_level": 4,
+        "assignment": "systematic"
+      }
+    ],
+    "nuisance_factors": []
+  },
+  "decision": {
+    "evidence_decision": "WARN",
+    "analyzed": true,
+    "template": "T2"
+  },
+  "comparisons": [
+    {
+      "id": "high_vs_low",
+      "kind": "pairwise",
+      "factors": [
+        "temp"
+      ],
+      "levels": [
+        "high",
+        "low"
+      ],
+      "description": null,
+      "role": "treatment",
+      "experimental_unit": "run",
+      "status": "analyzed_approximate",
+      "test": {
+        "source": "temp",
+        "F": 19.2,
+        "num_df": 1,
+        "den_df": 6,
+        "p": 0.004659214943993942,
+        "error_term": "units within treatment",
+        "note": "computed on experimental-unit means (D-016); approximate, because unequal site counts give the unit means unequal precision"
+      },
+      "estimates": [
+        {
+          "estimate_of": "high - low",
+          "estimate": 4.0,
+          "se": 0.9128709291752769,
+          "df": 6.0,
+          "error_term": "units within treatment",
+          "independent_units": 8,
+          "lower": 1.766285304835296,
+          "upper": 6.233714695164704,
+          "t_critical": 2.4469118511449683,
+          "interval_method": "approximate (Satterthwaite)",
+          "approximate": true,
+          "t": 4.381780460041329,
+          "p": 0.004659214943993942,
+          "comparison": "high_vs_low",
+          "contrast": "high - low",
+          "factor": "temp",
+          "key": "high_vs_low: high - low",
+          "half_width": 2.233714695164704,
+          "interval_includes_zero": false
+        }
+      ],
+      "independent_units": {
+        "per_level": {
+          "low": 4,
+          "high": 4
+        },
+        "level": "run"
+      }
+    }
+  ],
+  "findings": [
+    {
+      "code": "missing_sites_exception",
+      "severity": "warn",
+      "stage": "S5",
+      "message": "3 exchangeable 'site' observation(s) are missing (R02/1 has 4 of 5, R05/2 has 4 of 5, R07/1 has 4 of 5); every experimental unit and intermediate unit is present, so the narrow missing-site exception applies (D-016). The treatment comparison will use hierarchical unit means and is approximate rather than the exact balanced test: unequal site counts give the unit means unequal precision. Variance components and the allocation analysis are not computed for this case.",
+      "details": {
+        "lost": 3,
+        "equal_counts": false
+      },
+      "explanation": {
+        "category": "missing_sites_exception",
+        "kind": "warning",
+        "status": "written",
+        "text": "A few sites are missing inside otherwise complete units, and the sites were declared interchangeable, so the narrow missing-site exception applies and the comparison is still made. It uses each unit's average, but units that lost sites have slightly less precise averages, so the test and intervals are approximate rather than exact. Variance components and the allocation analysis are not computed for this case. The site-count table shows how much each unit lost.",
+        "same_as": null
+      }
+    }
+  ],
+  "caveats": [
+    {
+      "code": "assignment_not_randomized",
+      "severity": "caveat",
+      "message": "Factor 'temp': assignment.method is 'systematic' in the declaration (Synthetic fixture: levels are assigned by construction.). The tests and intervals are computed the same way for every assignment method; the caveat concerns attributing a difference to the factor (D-039).",
+      "details": {
+        "factor": "temp",
+        "method": "systematic"
+      },
+      "explanation": {
+        "category": "assignment_not_randomized",
+        "kind": "caveat",
+        "status": "written",
+        "text": "The declaration says this factor's levels were not assigned at random: they were assigned systematically, the method was not stated, or the factor is an inherent property such as a position on the wafer. The test and intervals are computed the same way regardless. What changes is the interpretation: without randomization, a difference may partly reflect something else that varied along with the factor, so it should not automatically be read as caused by it.",
+        "same_as": null
+      }
+    }
+  ],
+  "stages": [
+    {
+      "id": "S0",
+      "title": "declaration matches the claimed template",
+      "status": "pass",
+      "reason": null
+    },
+    {
+      "id": "S1",
+      "title": "declared columns present",
+      "status": "pass",
+      "reason": null
+    },
+    {
+      "id": "S2",
+      "title": "labels and response values",
+      "status": "pass",
+      "reason": null
+    },
+    {
+      "id": "S3",
+      "title": "unit identity and ownership",
+      "status": "pass",
+      "reason": null
+    },
+    {
+      "id": "S4",
+      "title": "declaration-data consistency",
+      "status": "pass",
+      "reason": null
+    },
+    {
+      "id": "S5",
+      "title": "balance, replication and missing data",
+      "status": "warn",
+      "reason": null
+    },
+    {
+      "id": "S6",
+      "title": "confounding",
+      "status": "pass",
+      "reason": null
+    },
+    {
+      "id": "S7",
+      "title": "aliasing",
+      "status": "pass",
+      "reason": null
+    },
+    {
+      "id": "S8",
+      "title": "diagnostics",
+      "status": "pass",
+      "reason": null
+    }
+  ],
+  "assumptions": [
+    {
+      "assumption": "balance at the experimental-unit level",
+      "handling": "checked from the data; imbalance is refused (S5)",
+      "status": "warn"
+    },
+    {
+      "assumption": "equal variance across treatment levels",
+      "handling": "diagnosed: Brown-Forsythe test and largest-to-smallest SD ratio of unit means; warnings only (D-044)",
+      "status": "no warning triggered; assumption not verified"
+    },
+    {
+      "assumption": "normally distributed random effects and errors",
+      "handling": "diagnosed: normal quantile plot and externally studentized residuals beyond +-3; warnings only (D-044)",
+      "status": "no warning triggered; assumption not verified"
+    },
+    {
+      "assumption": "independent experimental units",
+      "handling": "not checkable from the data; it rests on how the units were run and assigned (the declared assignment method)",
+      "status": "not_checkable"
+    },
+    {
+      "assumption": "unit means of equal precision",
+      "handling": "violated by unequal site counts; the treatment test and intervals are approximate (D-016, D-065)",
+      "status": "approximate"
+    }
+  ],
+  "diagnostics": {
+    "run": {
+      "brown_forsythe": {
+        "diagnostic": "brown_forsythe",
+        "available": true,
+        "warn": false,
+        "F": 0.0,
+        "df": [
+          1,
+          6
+        ],
+        "p": 1.0,
+        "threshold": "p < 0.05",
+        "groups": [
+          "low",
+          "high"
+        ]
+      },
+      "sd_ratio": {
+        "diagnostic": "sd_ratio",
+        "available": true,
+        "sds": {
+          "low": 1.2909944487358056,
+          "high": 1.2909944487358056
+        },
+        "threshold": ">= 2 (pragmatic v1 threshold, not a universal law)",
+        "warn": false,
+        "ratio": 1.0
+      },
+      "studentized_residuals": {
+        "diagnostic": "studentized_residuals",
+        "available": true,
+        "warn": false,
+        "model": "temp",
+        "residual_df": 6,
+        "max_abs_external": 1.4638501094227998,
+        "undefined_units": [],
+        "threshold": "|externally studentized residual| > 3",
+        "units": [
+          {
+            "unit": "R01",
+            "residual": -1.5,
+            "leverage": 0.25,
+            "internal": -1.3416407864998738,
+            "external": -1.4638501094227998,
+            "flagged": false
+          },
+          {
+            "unit": "R02",
+            "residual": -0.5,
+            "leverage": 0.25,
+            "internal": -0.4472135954999579,
+            "external": -0.41522739926869984,
+            "flagged": false
+          },
+          {
+            "unit": "R03",
+            "residual": 0.5,
+            "leverage": 0.25,
+            "internal": 0.4472135954999579,
+            "external": 0.41522739926869984,
+            "flagged": false
+          },
+          {
+            "unit": "R04",
+            "residual": 1.5,
+            "leverage": 0.25,
+            "internal": 1.3416407864998738,
+            "external": 1.4638501094227998,
+            "flagged": false
+          },
+          {
+            "unit": "R05",
+            "residual": -1.5,
+            "leverage": 0.25,
+            "internal": -1.3416407864998738,
+            "external": -1.4638501094227998,
+            "flagged": false
+          },
+          {
+            "unit": "R06",
+            "residual": -0.5,
+            "leverage": 0.25,
+            "internal": -0.4472135954999579,
+            "external": -0.41522739926869984,
+            "flagged": false
+          },
+          {
+            "unit": "R07",
+            "residual": 0.5,
+            "leverage": 0.25,
+            "internal": 0.4472135954999579,
+            "external": 0.41522739926869984,
+            "flagged": false
+          },
+          {
+            "unit": "R08",
+            "residual": 1.5,
+            "leverage": 0.25,
+            "internal": 1.3416407864998738,
+            "external": 1.4638501094227998,
+            "flagged": false
+          }
+        ],
+        "normal_quantiles": {
+          "positions": "Blom (i - 3/8) / (n + 1/4)",
+          "theoretical": [
+            -1.4342001596863796,
+            -0.8524950342746942,
+            -0.47278912099226733,
+            -0.15250597424624437,
+            0.15250597424624424,
+            0.4727891209922672,
+            0.8524950342746939,
+            1.4342001596863792
+          ],
+          "internally_studentized_sorted": [
+            -1.3416407864998738,
+            -1.3416407864998738,
+            -0.4472135954999579,
+            -0.4472135954999579,
+            0.4472135954999579,
+            0.4472135954999579,
+            1.3416407864998738,
+            1.3416407864998738
+          ]
+        }
+      }
+    }
+  },
+  "diagnostics_display": {
+    "run": {
+      "n": 8,
+      "x_min": -1.4342001596863796,
+      "x_max": 1.4342001596863792,
+      "y_min": -1.3416407864998738,
+      "y_max": 1.3416407864998738
+    }
+  },
+  "evidence": {
+    "structure": {
+      "rows": 77,
+      "observed_responses": 77,
+      "missing_responses": 0,
+      "levels": [
+        {
+          "level": "run",
+          "declared_total": 8,
+          "present": 8
+        },
+        {
+          "level": "wafer",
+          "declared_per_parent": 2,
+          "present_per_parent": [
+            2
+          ]
+        },
+        {
+          "level": "site",
+          "declared_per_parent": 5,
+          "present_per_parent": [
+            4,
+            5
+          ]
+        }
+      ]
+    },
+    "missing_sites": {
+      "lost": 3,
+      "exception_applies": true,
+      "declared_per_wafer": 5,
+      "units": {
+        "R01": {
+          "site_counts": [
+            5,
+            5
+          ],
+          "F_site": {
+            "exact": "1",
+            "value": 1.0
+          },
+          "precision_lower_bound": {
+            "exact": "1",
+            "value": 1.0
+          }
+        },
+        "R02": {
+          "site_counts": [
+            4,
+            5
+          ],
+          "F_site": {
+            "exact": "9/8",
+            "value": 1.125
+          },
+          "precision_lower_bound": {
+            "exact": "8/9",
+            "value": 0.8888888888888888
+          }
+        },
+        "R03": {
+          "site_counts": [
+            5,
+            5
+          ],
+          "F_site": {
+            "exact": "1",
+            "value": 1.0
+          },
+          "precision_lower_bound": {
+            "exact": "1",
+            "value": 1.0
+          }
+        },
+        "R04": {
+          "site_counts": [
+            5,
+            5
+          ],
+          "F_site": {
+            "exact": "1",
+            "value": 1.0
+          },
+          "precision_lower_bound": {
+            "exact": "1",
+            "value": 1.0
+          }
+        },
+        "R05": {
+          "site_counts": [
+            5,
+            4
+          ],
+          "F_site": {
+            "exact": "9/8",
+            "value": 1.125
+          },
+          "precision_lower_bound": {
+            "exact": "8/9",
+            "value": 0.8888888888888888
+          }
+        },
+        "R06": {
+          "site_counts": [
+            5,
+            5
+          ],
+          "F_site": {
+            "exact": "1",
+            "value": 1.0
+          },
+          "precision_lower_bound": {
+            "exact": "1",
+            "value": 1.0
+          }
+        },
+        "R07": {
+          "site_counts": [
+            4,
+            5
+          ],
+          "F_site": {
+            "exact": "9/8",
+            "value": 1.125
+          },
+          "precision_lower_bound": {
+            "exact": "8/9",
+            "value": 0.8888888888888888
+          }
+        },
+        "R08": {
+          "site_counts": [
+            5,
+            5
+          ],
+          "F_site": {
+            "exact": "1",
+            "value": 1.0
+          },
+          "precision_lower_bound": {
+            "exact": "1",
+            "value": 1.0
+          }
+        }
+      },
+      "label": "1/F_site: count-only lower bound on this unit mean's precision relative to the balanced design. Not an estimated total precision loss, and not a substitute for variance-component inference (D-021)."
+    },
+    "replication": {
+      "factor": "temp",
+      "applied_to": "run",
+      "declared_per_level": 4,
+      "present_per_level": {
+        "low": 4,
+        "high": 4
+      }
+    },
+    "confounding": [],
+    "aliasing": {
+      "groupings": [
+        "level 'run'",
+        "level 'wafer'",
+        "level 'site'"
+      ],
+      "aliased_pairs": [],
+      "excluded_unit_unique": []
+    },
+    "diagnostics": {
+      "run": {
+        "brown_forsythe": {
+          "diagnostic": "brown_forsythe",
+          "available": true,
+          "warn": false,
+          "F": 0.0,
+          "df": [
+            1,
+            6
+          ],
+          "p": 1.0,
+          "threshold": "p < 0.05",
+          "groups": [
+            "low",
+            "high"
+          ]
+        },
+        "sd_ratio": {
+          "diagnostic": "sd_ratio",
+          "available": true,
+          "sds": {
+            "low": 1.2909944487358056,
+            "high": 1.2909944487358056
+          },
+          "threshold": ">= 2 (pragmatic v1 threshold, not a universal law)",
+          "warn": false,
+          "ratio": 1.0
+        },
+        "studentized_residuals": {
+          "diagnostic": "studentized_residuals",
+          "available": true,
+          "warn": false,
+          "model": "temp",
+          "residual_df": 6,
+          "max_abs_external": 1.4638501094227998,
+          "undefined_units": [],
+          "threshold": "|externally studentized residual| > 3",
+          "units": [
+            {
+              "unit": "R01",
+              "residual": -1.5,
+              "leverage": 0.25,
+              "internal": -1.3416407864998738,
+              "external": -1.4638501094227998,
+              "flagged": false
+            },
+            {
+              "unit": "R02",
+              "residual": -0.5,
+              "leverage": 0.25,
+              "internal": -0.4472135954999579,
+              "external": -0.41522739926869984,
+              "flagged": false
+            },
+            {
+              "unit": "R03",
+              "residual": 0.5,
+              "leverage": 0.25,
+              "internal": 0.4472135954999579,
+              "external": 0.41522739926869984,
+              "flagged": false
+            },
+            {
+              "unit": "R04",
+              "residual": 1.5,
+              "leverage": 0.25,
+              "internal": 1.3416407864998738,
+              "external": 1.4638501094227998,
+              "flagged": false
+            },
+            {
+              "unit": "R05",
+              "residual": -1.5,
+              "leverage": 0.25,
+              "internal": -1.3416407864998738,
+              "external": -1.4638501094227998,
+              "flagged": false
+            },
+            {
+              "unit": "R06",
+              "residual": -0.5,
+              "leverage": 0.25,
+              "internal": -0.4472135954999579,
+              "external": -0.41522739926869984,
+              "flagged": false
+            },
+            {
+              "unit": "R07",
+              "residual": 0.5,
+              "leverage": 0.25,
+              "internal": 0.4472135954999579,
+              "external": 0.41522739926869984,
+              "flagged": false
+            },
+            {
+              "unit": "R08",
+              "residual": 1.5,
+              "leverage": 0.25,
+              "internal": 1.3416407864998738,
+              "external": 1.4638501094227998,
+              "flagged": false
+            }
+          ],
+          "normal_quantiles": {
+            "positions": "Blom (i - 3/8) / (n + 1/4)",
+            "theoretical": [
+              -1.4342001596863796,
+              -0.8524950342746942,
+              -0.47278912099226733,
+              -0.15250597424624437,
+              0.15250597424624424,
+              0.4727891209922672,
+              0.8524950342746939,
+              1.4342001596863792
+            ],
+            "internally_studentized_sorted": [
+              -1.3416407864998738,
+              -1.3416407864998738,
+              -0.4472135954999579,
+              -0.4472135954999579,
+              0.4472135954999579,
+              0.4472135954999579,
+              1.3416407864998738,
+              1.3416407864998738
+            ]
+          }
+        }
+      }
+    }
+  },
+  "analysis": {
+    "template": "T2",
+    "decision": "WARN",
+    "analyzed": true,
+    "design": {
+      "levels": [
+        "run",
+        "wafer",
+        "site"
+      ],
+      "units_per_level": [
+        8,
+        16,
+        77
+      ],
+      "n_observations": 77,
+      "treatment": "temp",
+      "treatment_levels": [
+        "low",
+        "high"
+      ],
+      "replicates_per_level": {
+        "low": 4,
+        "high": 4
+      },
+      "block": null,
+      "missing_site_exception": true,
+      "site_counts": {
+        "lost": 3,
+        "exception_applies": true,
+        "declared_per_wafer": 5,
+        "units": {
+          "R01": {
+            "site_counts": [
+              5,
+              5
+            ],
+            "F_site": {
+              "exact": "1",
+              "value": 1.0
+            },
+            "precision_lower_bound": {
+              "exact": "1",
+              "value": 1.0
+            }
+          },
+          "R02": {
+            "site_counts": [
+              4,
+              5
+            ],
+            "F_site": {
+              "exact": "9/8",
+              "value": 1.125
+            },
+            "precision_lower_bound": {
+              "exact": "8/9",
+              "value": 0.8888888888888888
+            }
+          },
+          "R03": {
+            "site_counts": [
+              5,
+              5
+            ],
+            "F_site": {
+              "exact": "1",
+              "value": 1.0
+            },
+            "precision_lower_bound": {
+              "exact": "1",
+              "value": 1.0
+            }
+          },
+          "R04": {
+            "site_counts": [
+              5,
+              5
+            ],
+            "F_site": {
+              "exact": "1",
+              "value": 1.0
+            },
+            "precision_lower_bound": {
+              "exact": "1",
+              "value": 1.0
+            }
+          },
+          "R05": {
+            "site_counts": [
+              5,
+              4
+            ],
+            "F_site": {
+              "exact": "9/8",
+              "value": 1.125
+            },
+            "precision_lower_bound": {
+              "exact": "8/9",
+              "value": 0.8888888888888888
+            }
+          },
+          "R06": {
+            "site_counts": [
+              5,
+              5
+            ],
+            "F_site": {
+              "exact": "1",
+              "value": 1.0
+            },
+            "precision_lower_bound": {
+              "exact": "1",
+              "value": 1.0
+            }
+          },
+          "R07": {
+            "site_counts": [
+              4,
+              5
+            ],
+            "F_site": {
+              "exact": "9/8",
+              "value": 1.125
+            },
+            "precision_lower_bound": {
+              "exact": "8/9",
+              "value": 0.8888888888888888
+            }
+          },
+          "R08": {
+            "site_counts": [
+              5,
+              5
+            ],
+            "F_site": {
+              "exact": "1",
+              "value": 1.0
+            },
+            "precision_lower_bound": {
+              "exact": "1",
+              "value": 1.0
+            }
+          }
+        },
+        "label": "1/F_site: count-only lower bound on this unit mean's precision relative to the balanced design. Not an estimated total precision loss, and not a substitute for variance-component inference (D-021)."
+      }
+    },
+    "anova": {
+      "treatment": {
+        "source": "temp",
+        "key": "treatment",
+        "df": 1,
+        "ss": 32.0,
+        "ss_exact": "32",
+        "ms": 32.0,
+        "error_term": "units within treatment",
+        "F": 19.2,
+        "p": 0.004659214943993942,
+        "num_df": 1,
+        "den_df": 6,
+        "note": "computed on experimental-unit means (D-016); approximate, because unequal site counts give the unit means unequal precision"
+      },
+      "unit": {
+        "source": "units within treatment",
+        "key": "unit",
+        "df": 6,
+        "ss": 10.0,
+        "ss_exact": "10",
+        "ms": 1.6666666666666667,
+        "error_term": null,
+        "F": null,
+        "p": null,
+        "num_df": null,
+        "den_df": null,
+        "note": "the experimental-unit error stratum, on the unit-mean scale"
+      }
+    },
+    "naive_anova": {},
+    "variance_components": {},
+    "stratum_expectations": {},
+    "estimates": {
+      "mean[low]": {
+        "estimate_of": "mean response at low",
+        "estimate": 100.0,
+        "se": 0.6454972243679028,
+        "df": 6.0,
+        "error_term": "units within treatment",
+        "independent_units": 4,
+        "lower": 98.420525191813,
+        "upper": 101.579474808187,
+        "t_critical": 2.4469118511449683,
+        "interval_method": "approximate (Satterthwaite)",
+        "approximate": true
+      },
+      "mean[high]": {
+        "estimate_of": "mean response at high",
+        "estimate": 104.0,
+        "se": 0.6454972243679028,
+        "df": 6.0,
+        "error_term": "units within treatment",
+        "independent_units": 4,
+        "lower": 102.420525191813,
+        "upper": 105.579474808187,
+        "t_critical": 2.4469118511449683,
+        "interval_method": "approximate (Satterthwaite)",
+        "approximate": true
+      },
+      "high_vs_low: high - low": {
+        "estimate_of": "high - low",
+        "estimate": 4.0,
+        "se": 0.9128709291752769,
+        "df": 6.0,
+        "error_term": "units within treatment",
+        "independent_units": 8,
+        "lower": 1.766285304835296,
+        "upper": 6.233714695164704,
+        "t_critical": 2.4469118511449683,
+        "interval_method": "approximate (Satterthwaite)",
+        "approximate": true,
+        "t": 4.381780460041329,
+        "p": 0.004659214943993942,
+        "comparison": "high_vs_low",
+        "contrast": "high - low",
+        "factor": "temp"
+      }
+    },
+    "reml": {},
+    "fits": {
+      "boundary": [],
+      "degenerate": [],
+      "failed": [],
+      "note": "Every step is closed form (exact rational ANOVA, closed-form REML, deterministic quantile functions), so no fit can fail to converge. An empty `failed` list means none occurred, not that none were looked for (D-066). A design the evidence checks refuse is not a failed fit: refusal is a successful outcome.",
+      "boundary_count": 0,
+      "degenerate_count": 0,
+      "failed_count": 0
+    },
+    "notes": [
+      "The narrow missing-site exception applies (D-016, D-065). Experimental-unit means are formed hierarchically: sites are averaged within a wafer, then wafers are weighted equally within a unit.",
+      "The treatment test, its standard errors and its intervals are APPROXIMATE: the exact balanced F test needs every unit mean to have the same variance, and unequal site counts break that.",
+      "withheld: D-016 forbids balanced expected-mean-square variance-component inference on an unbalanced missing-site case",
+      "withheld: the closed-form REML of D-064 is valid only for balanced data",
+      "withheld: the allocation decomposition needs the variance components (D-016); the report must say so"
+    ],
+    "labels": {
+      "template": "T2: one treatment on the top level, with balanced subsampling (missing-site exception)",
+      "treatment": "temp",
+      "applied_to": "run",
+      "levels": {
+        "0": "run",
+        "1": "wafer",
+        "2": "site"
+      }
+    }
+  },
+  "allocation": {
+    "status": "withheld",
+    "reason": "withheld for the missing-site exception: the allocation decomposition needs balanced variance components, which D-016 forbids for an unbalanced missing-site case (D-065, D-078)."
+  },
+  "reassignment": {
+    "status": "not_applicable",
+    "reason": "no complete confounding was found, so no reassignment is needed"
+  },
+  "planning": {
+    "eligible": false,
+    "reason": "the design was analyzed"
+  },
+  "explanations": {
+    "required": 47,
+    "required_written": 47,
+    "required_pending": [],
+    "optional": 2,
+    "optional_written": 2,
+    "file": "resources/explanations.yaml",
+    "policy": "D-075 (verbatim insertion, pending marked)"
+  },
+  "summary": {
+    "decision": "WARN",
+    "analyzed": true,
+    "analyzed_comparisons": [
+      "high_vs_low"
+    ],
+    "refused_comparisons": [],
+    "refusal_codes": [],
+    "warning_codes": [
+      "missing_sites_exception"
+    ],
+    "note_codes": [],
+    "caveat_codes": [
+      "assignment_not_randomized"
+    ],
+    "next_steps": [],
+    "pending_in_report": []
+  }
+}

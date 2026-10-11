@@ -1,0 +1,55 @@
+# T2 ILLUSTRATIVE DECLARATION. SYNTHETIC: no dataset exists for it.
+# No public reference dataset in this repository has an assigned treatment applied to
+# replicated runs (reference/README.md), so this file only shows the declaration shape
+# of a supported T2 design. It makes no claim about any real experiment.
+stratum_declaration: 1
+claimed_template: T2
+description: >
+  Synthetic illustration. A two-level anneal recipe applied to whole furnace runs:
+  6 runs per recipe, 2 wafers per run, 5 sites per wafer. Chamber is a balanced block
+  crossed with the recipe (each chamber runs each recipe 2 times).
+response:
+  column: thickness
+  units: "Å"
+hierarchy:
+  - name: run
+    id_column: run_id
+    count: 12
+  - name: wafer
+    id_column: wafer_id
+    nested_in: run
+    count_per_parent: 2
+    id_scope: global        # synthetic wafer IDs are unique across runs
+    # exchangeable omitted: default false.
+  - name: site
+    id_column: site_id
+    nested_in: wafer
+    count_per_parent: 5
+    id_scope: parent
+    exchangeable: true      # declared: sites are interchangeable random subsamples
+treatments:
+  - name: recipe
+    column: recipe
+    levels: [standard, modified]
+    applied_to: run
+    replicates_per_level: 6
+    assignment:
+      method: randomized
+      description: Recipe randomized to runs within each chamber (synthetic illustration).
+nuisance_factors:
+  - name: chamber
+    column: chamber
+    recorded_at: run
+    role: block
+    levels: [A, B, C]
+    crossed_with: recipe
+  - name: day
+    column: day
+    recorded_at: run
+    role: recorded
+comparisons:
+  - id: modified_vs_standard
+    kind: pairwise
+    factors: [recipe]
+    levels: [modified, standard]
+    description: Difference in mean thickness, modified minus standard.

@@ -1,0 +1,395 @@
+{
+  "schema": "stratum-results/1",
+  "generated_by": "stratum 1.0.0 (stratum.results.build); never hand-edited",
+  "synthetic": true,
+  "data_label": "labelled synthetic data; results show software behavior, not process realism (brief Section 3.3)",
+  "provenance": {
+    "inputs": {
+      "declaration": {
+        "path": "fixtures/synthetic_wp2/CONF-05/declaration_synthetic.yaml",
+        "sha256": "9578193c27ac47274bf61bc3d4a7074495c9925b44695f749f838a21803315d5",
+        "bytes": 1015
+      },
+      "data": {
+        "path": "fixtures/synthetic_wp2/CONF-05/data_synthetic.csv",
+        "sha256": "81ab9d7c80d8f24636dbef06fd07956171a4dc91a8cb29c892dc6cc9964be62c",
+        "bytes": 1098
+      },
+      "explanations": {
+        "path": "resources/explanations.yaml",
+        "sha256": "45923fbd6faf9e13bd694316bc407fca02bb7a819226dce39f5bd3bfd2dcc5e3",
+        "bytes": 22437
+      }
+    },
+    "code": {
+      "package": "stratum",
+      "version": "1.0.0",
+      "source_sha256": "ada12f7b897c7d9984c6300a1c86c9ac23e1db099ffa5a24a39aa6a5c81cb860",
+      "source_files": 17,
+      "method": "SHA-256 over the sorted lines '<relative path> <file SHA-256>' of every file in the stratum package (D-077)"
+    },
+    "git": null,
+    "environment": null,
+    "omitted": "omitted from committed reports so that they regenerate byte for byte: a commit hash written into a committed file is always the parent of the commit that contains it. source_sha256 identifies the code (D-077)."
+  },
+  "declaration": {
+    "claimed_template": "T2",
+    "description": "SYNTHETIC FIXTURE CONF-05: recorded chamber partially confounded: 'low' 3 in A, 1 in B; 'high' 1 in A, 3 in B",
+    "response": {
+      "column": "y",
+      "units": "a.u. (synthetic)"
+    },
+    "hierarchy": [
+      {
+        "name": "run",
+        "count": 8,
+        "per_parent": false,
+        "exchangeable": null,
+        "exchangeable_declared": false
+      },
+      {
+        "name": "wafer",
+        "count": 2,
+        "per_parent": true,
+        "exchangeable": false,
+        "exchangeable_declared": false
+      },
+      {
+        "name": "site",
+        "count": 3,
+        "per_parent": true,
+        "exchangeable": false,
+        "exchangeable_declared": false
+      }
+    ],
+    "treatments": [
+      {
+        "name": "temp",
+        "levels": [
+          "low",
+          "high"
+        ],
+        "applied_to": "run",
+        "replicates_per_level": 4,
+        "assignment": "systematic"
+      }
+    ],
+    "nuisance_factors": [
+      {
+        "name": "chamber",
+        "role": "recorded",
+        "recorded_at": "run"
+      }
+    ]
+  },
+  "decision": {
+    "evidence_decision": "REFUSE",
+    "analyzed": false,
+    "template": "T2"
+  },
+  "comparisons": [
+    {
+      "id": "high_vs_low",
+      "kind": "pairwise",
+      "factors": [
+        "temp"
+      ],
+      "levels": [
+        "high",
+        "low"
+      ],
+      "description": null,
+      "role": "treatment",
+      "experimental_unit": "run",
+      "status": "refused",
+      "test": null,
+      "estimates": [],
+      "independent_units": {
+        "per_level": {
+          "low": 4,
+          "high": 4
+        },
+        "level": "run"
+      },
+      "refusal_codes": [
+        "partial_confounding"
+      ],
+      "specific_refusal_codes": [
+        "partial_confounding"
+      ]
+    }
+  ],
+  "findings": [
+    {
+      "code": "partial_confounding",
+      "severity": "refuse",
+      "stage": "S6",
+      "message": "Comparison 'high_vs_low' is estimable but 'chamber' is unevenly spread over its levels (table [[3, 1], [1, 3]]; Cramer's V = 0.5000, descriptive). Including 'chamber' inflates the variance of high - low by 4/3 (standard error x 1.1547). v1 refuses unbalanced experimental-unit designs, so this partially confounded design is refused. Designs outside v1 can be fitted in lme4 or lmerTest; Stratum does not analyze them.",
+      "details": {
+        "comparison": "high_vs_low",
+        "nuisance": "chamber",
+        "table": [
+          [
+            3,
+            1
+          ],
+          [
+            1,
+            3
+          ]
+        ],
+        "cramers_v": 0.5,
+        "variance_ratio": {
+          "exact": "4/3",
+          "value": 1.3333333333333333
+        },
+        "se_inflation": 1.1547005383792515
+      },
+      "explanation": {
+        "category": "partial_confounding",
+        "kind": "refusal",
+        "status": "written",
+        "text": "The treatment comparison can still be estimated, but the treatment levels are unevenly spread over a recorded nuisance factor; for example, one recipe ran mostly in one chamber. Separating the two costs precision (the technical detail gives how much), and the uneven spread makes the design unbalanced, which Stratum refuses. Running every treatment level equally often at every level of that factor avoids both problems.",
+        "same_as": null
+      }
+    }
+  ],
+  "caveats": [],
+  "stages": [
+    {
+      "id": "S0",
+      "title": "declaration matches the claimed template",
+      "status": "pass",
+      "reason": null
+    },
+    {
+      "id": "S1",
+      "title": "declared columns present",
+      "status": "pass",
+      "reason": null
+    },
+    {
+      "id": "S2",
+      "title": "labels and response values",
+      "status": "pass",
+      "reason": null
+    },
+    {
+      "id": "S3",
+      "title": "unit identity and ownership",
+      "status": "pass",
+      "reason": null
+    },
+    {
+      "id": "S4",
+      "title": "declaration-data consistency",
+      "status": "pass",
+      "reason": null
+    },
+    {
+      "id": "S5",
+      "title": "balance, replication and missing data",
+      "status": "pass",
+      "reason": null
+    },
+    {
+      "id": "S6",
+      "title": "confounding",
+      "status": "fail",
+      "reason": null
+    },
+    {
+      "id": "S7",
+      "title": "aliasing",
+      "status": "pass",
+      "reason": null
+    },
+    {
+      "id": "S8",
+      "title": "diagnostics",
+      "status": "not_evaluated",
+      "reason": "a refusal was found; diagnostics are not computed for a structure that cannot be analyzed"
+    }
+  ],
+  "assumptions": [
+    {
+      "assumption": "balance at the experimental-unit level",
+      "handling": "checked from the data; imbalance is refused (S5)",
+      "status": "pass"
+    },
+    {
+      "assumption": "equal variance across treatment levels",
+      "handling": "diagnosed: Brown-Forsythe test and largest-to-smallest SD ratio of unit means; warnings only (D-044)",
+      "status": "not_evaluated"
+    },
+    {
+      "assumption": "normally distributed random effects and errors",
+      "handling": "diagnosed: normal quantile plot and externally studentized residuals beyond +-3; warnings only (D-044)",
+      "status": "not_evaluated"
+    },
+    {
+      "assumption": "independent experimental units",
+      "handling": "not checkable from the data; it rests on how the units were run and assigned (the declared assignment method)",
+      "status": "not_checkable"
+    }
+  ],
+  "diagnostics": null,
+  "diagnostics_display": {},
+  "evidence": {
+    "structure": {
+      "rows": 48,
+      "observed_responses": 48,
+      "missing_responses": 0,
+      "levels": [
+        {
+          "level": "run",
+          "declared_total": 8,
+          "present": 8
+        },
+        {
+          "level": "wafer",
+          "declared_per_parent": 2,
+          "present_per_parent": [
+            2
+          ]
+        },
+        {
+          "level": "site",
+          "declared_per_parent": 3,
+          "present_per_parent": [
+            3
+          ]
+        }
+      ]
+    },
+    "replication": {
+      "factor": "temp",
+      "applied_to": "run",
+      "declared_per_level": 4,
+      "present_per_level": {
+        "low": 4,
+        "high": 4
+      }
+    },
+    "confounding": [
+      {
+        "comparison": "high_vs_low",
+        "effect": "temp",
+        "nuisance": "chamber",
+        "rows_are": "run",
+        "levels": [
+          "low",
+          "high"
+        ],
+        "nuisance_levels": [
+          "A",
+          "B"
+        ],
+        "table": [
+          [
+            3,
+            1
+          ],
+          [
+            1,
+            3
+          ]
+        ],
+        "n_rows": 8,
+        "proportional": false,
+        "cramers_v": 0.5,
+        "cramers_v_squared": {
+          "exact": "1/4",
+          "value": 0.25
+        },
+        "contrasts": [
+          {
+            "contrast": "high - low",
+            "estimable": true,
+            "variance_ratio": {
+              "exact": "4/3",
+              "value": 1.3333333333333333
+            },
+            "se_inflation": 1.1547005383792515,
+            "var_with_nuisance_over_sigma2": {
+              "exact": "2/3",
+              "value": 0.6666666666666666
+            },
+            "var_treatment_only_over_sigma2": {
+              "exact": "1/2",
+              "value": 0.5
+            }
+          }
+        ],
+        "status": "partial"
+      }
+    ],
+    "aliasing": {
+      "groupings": [
+        "level 'run'",
+        "level 'wafer'",
+        "level 'site'",
+        "recorded factor 'chamber'"
+      ],
+      "aliased_pairs": [],
+      "excluded_unit_unique": []
+    }
+  },
+  "analysis": {
+    "template": "T2",
+    "decision": "REFUSE",
+    "analyzed": false,
+    "design": {},
+    "anova": {},
+    "naive_anova": {},
+    "variance_components": {},
+    "stratum_expectations": {},
+    "estimates": {},
+    "reml": {},
+    "fits": {},
+    "notes": [
+      "No analysis was produced. The evidence checks refused this design, and refusal is a successful outcome (brief Section 8): Stratum does not estimate anything a declared design cannot support.",
+      "Reasons: [partial_confounding] Comparison 'high_vs_low' is estimable but 'chamber' is unevenly spread over its levels (table [[3, 1], [1, 3]]; Cramer's V = 0.5000, descriptive). Including 'chamber' inflates the variance of high - low by 4/3 (standard error x 1.1547). v1 refuses unbalanced experimental-unit designs, so this partially confounded design is refused. Designs outside v1 can be fitted in lme4 or lmerTest; Stratum does not analyze them."
+    ],
+    "labels": {}
+  },
+  "allocation": {
+    "status": "not_applicable",
+    "reason": "the design was refused and is outside the planning pathway: refusal reasons ['partial_confounding'] are outside the planning pathway, which allows only ['complete_confounding', 'insufficient_replication', 'missing_top_unit'] (D-081)"
+  },
+  "reassignment": {
+    "status": "not_applicable",
+    "reason": "no complete confounding was found, so no reassignment is needed"
+  },
+  "planning": {
+    "eligible": false,
+    "mode": null,
+    "planning_only_findings": [],
+    "reason": "refusal reasons ['partial_confounding'] are outside the planning pathway, which allows only ['complete_confounding', 'insufficient_replication', 'missing_top_unit'] (D-081)"
+  },
+  "explanations": {
+    "required": 47,
+    "required_written": 47,
+    "required_pending": [],
+    "optional": 2,
+    "optional_written": 2,
+    "file": "resources/explanations.yaml",
+    "policy": "D-075 (verbatim insertion, pending marked)"
+  },
+  "summary": {
+    "decision": "REFUSE",
+    "analyzed": false,
+    "analyzed_comparisons": [],
+    "refused_comparisons": [
+      "high_vs_low"
+    ],
+    "refusal_codes": [
+      "partial_confounding"
+    ],
+    "warning_codes": [],
+    "note_codes": [],
+    "caveat_codes": [],
+    "next_steps": [],
+    "pending_in_report": []
+  }
+}

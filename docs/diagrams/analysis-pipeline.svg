@@ -1,0 +1,51 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1100" height="805" viewBox="0 0 1100 805" role="img" aria-labelledby="title desc">
+<title id="title">Stratum analysis pipeline</title><desc id="desc">Declaration and observed-data checks control inference. Refused comparisons remain refused, with only eligible T2 planning available.</desc>
+<defs><marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M 0 0 L 10 5 L 0 10 z" fill="#64748b"/></marker></defs>
+<rect width="1100" height="805" fill="#f8fafc"/>
+<text x="48" y="57" font-family="Arial, Helvetica, sans-serif" font-size="30" font-weight="700" fill="#0f172a">Structure determines what can be analyzed</text>
+<text x="48" y="90" font-family="Arial, Helvetica, sans-serif" font-size="18" font-weight="400" fill="#334155">Ordinary CLI execution · local YAML and CSV → result document → report</text>
+<rect x="48" y="145" width="282" height="100" rx="12" fill="#ffffff" stroke="#cbd5e1" stroke-width="1.5"/>
+<text x="68" y="176" font-family="Arial, Helvetica, sans-serif" font-size="19" font-weight="700" fill="#0f172a">Declared inputs</text>
+<text x="68" y="203" font-family="Arial, Helvetica, sans-serif" font-size="16" font-weight="400" fill="#475569">YAML: units, assignments, counts</text>
+<text x="68" y="226" font-family="Arial, Helvetica, sans-serif" font-size="16" font-weight="400" fill="#475569">CSV: labels and responses</text>
+<rect x="410" y="145" width="282" height="100" rx="12" fill="#ffffff" stroke="#cbd5e1" stroke-width="1.5"/>
+<text x="430" y="176" font-family="Arial, Helvetica, sans-serif" font-size="19" font-weight="700" fill="#0f172a">Parse + match</text>
+<text x="430" y="203" font-family="Arial, Helvetica, sans-serif" font-size="16" font-weight="400" fill="#475569">Strict declaration validation</text>
+<text x="430" y="226" font-family="Arial, Helvetica, sans-serif" font-size="16" font-weight="400" fill="#475569">Claimed T1 / T2 / T3 only</text>
+<rect x="770" y="145" width="282" height="115" rx="12" fill="#ffffff" stroke="#cbd5e1" stroke-width="1.5"/>
+<text x="790" y="176" font-family="Arial, Helvetica, sans-serif" font-size="19" font-weight="700" fill="#0f172a">Evidence checks</text>
+<text x="790" y="203" font-family="Arial, Helvetica, sans-serif" font-size="16" font-weight="400" fill="#475569">Hierarchy, replication, balance</text>
+<text x="790" y="226" font-family="Arial, Helvetica, sans-serif" font-size="16" font-weight="400" fill="#475569">Confounding and aliasing</text>
+<text x="790" y="249" font-family="Arial, Helvetica, sans-serif" font-size="16" font-weight="400" fill="#475569">Diagnostics when supported</text>
+<path d="M330 195 H410" fill="none" stroke="#64748b" stroke-width="2" marker-end="url(#arrow)"/>
+<path d="M692 195 H770" fill="none" stroke="#64748b" stroke-width="2" marker-end="url(#arrow)"/>
+<rect x="410" y="350" width="282" height="110" rx="12" fill="#fffbeb" stroke="#fcd34d" stroke-width="1.5"/>
+<text x="430" y="381" font-family="Arial, Helvetica, sans-serif" font-size="19" font-weight="700" fill="#0f172a">REFUSE</text>
+<text x="430" y="408" font-family="Arial, Helvetica, sans-serif" font-size="16" font-weight="400" fill="#475569">Reasons and withheld inference</text>
+<text x="430" y="431" font-family="Arial, Helvetica, sans-serif" font-size="16" font-weight="400" fill="#475569">Comparison remains unsupported</text>
+<rect x="770" y="350" width="282" height="110" rx="12" fill="#ecfdf5" stroke="#6ee7b7" stroke-width="1.5"/>
+<text x="790" y="381" font-family="Arial, Helvetica, sans-serif" font-size="19" font-weight="700" fill="#0f172a">Supported analysis</text>
+<text x="790" y="408" font-family="Arial, Helvetica, sans-serif" font-size="16" font-weight="400" fill="#475569">ANOVA + effects + components</text>
+<text x="790" y="431" font-family="Arial, Helvetica, sans-serif" font-size="16" font-weight="400" fill="#475569">Correct error strata; REML</text>
+<path d="M911 260 V350" fill="none" stroke="#64748b" stroke-width="2" marker-end="url(#arrow)"/>
+<text x="923" y="304" font-family="Arial, Helvetica, sans-serif" font-size="15" font-weight="400" fill="#334155">analyzable</text>
+<path d="M860 260 V298 H551 V350" fill="none" stroke="#64748b" stroke-width="2" marker-end="url(#arrow)"/>
+<text x="549" y="287" font-family="Arial, Helvetica, sans-serif" font-size="15" font-weight="400" fill="#334155">structural refusal</text>
+<rect x="770" y="535" width="282" height="95" rx="12" fill="#ffffff" stroke="#cbd5e1" stroke-width="1.5"/>
+<text x="790" y="566" font-family="Arial, Helvetica, sans-serif" font-size="19" font-weight="700" fill="#0f172a">Planning</text>
+<text x="790" y="593" font-family="Arial, Helvetica, sans-serif" font-size="16" font-weight="400" fill="#475569">Allocation or reassignment</text>
+<text x="790" y="616" font-family="Arial, Helvetica, sans-serif" font-size="16" font-weight="400" fill="#475569">Subject to eligibility / limits</text>
+<path d="M911 460 V535" fill="none" stroke="#64748b" stroke-width="2" marker-end="url(#arrow)"/>
+<path d="M692 404 H732 V580 H770" fill="none" stroke="#64748b" stroke-width="2" stroke-dasharray="5 5" marker-end="url(#arrow)"/>
+<text x="563" y="492" font-family="Arial, Helvetica, sans-serif" font-size="14" font-weight="400" fill="#334155">Dashed path: eligible</text>
+<text x="563" y="510" font-family="Arial, Helvetica, sans-serif" font-size="14" font-weight="400" fill="#334155">T2 planning only</text>
+<rect x="410" y="675" width="282" height="88" rx="12" fill="#0f172a" stroke="#0f172a" stroke-width="1.5"/>
+<text x="430" y="706" font-family="Arial, Helvetica, sans-serif" font-size="19" font-weight="700" fill="#f8fafc">results.json</text>
+<text x="430" y="733" font-family="Arial, Helvetica, sans-serif" font-size="16" font-weight="400" fill="#cbd5e1">Decision, numbers, limits, hashes</text>
+<rect x="48" y="675" width="282" height="88" rx="12" fill="#ffffff" stroke="#cbd5e1" stroke-width="1.5"/>
+<text x="68" y="706" font-family="Arial, Helvetica, sans-serif" font-size="19" font-weight="700" fill="#0f172a">Generated report</text>
+<text x="68" y="733" font-family="Arial, Helvetica, sans-serif" font-size="16" font-weight="400" fill="#475569">Rendered from the saved JSON</text>
+<path d="M551 460 V675" fill="none" stroke="#64748b" stroke-width="2" marker-end="url(#arrow)"/>
+<path d="M911 630 V719 H692" fill="none" stroke="#64748b" stroke-width="2" marker-end="url(#arrow)"/>
+<path d="M410 719 H330" fill="none" stroke="#64748b" stroke-width="2" marker-end="url(#arrow)"/>
+</svg>

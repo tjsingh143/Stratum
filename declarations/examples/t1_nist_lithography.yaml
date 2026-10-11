@@ -1,0 +1,31 @@
+# Optional T1 reference declaration: NIST/SEMATECH lithography case study (LITHOGRA.DAT).
+# Kept only as a reproduction of NIST's published nested table (D-015). Structure from
+# reference/r_outputs/structure.json: 30 cassettes x 3 wafers x 5 sites, 450 rows.
+stratum_declaration: 1
+claimed_template: T1
+description: >
+  NIST/SEMATECH e-Handbook lithography case study (Section 6.6.1), raw line width
+  (D-011). Published textbook data, not synthetic, not fab data. The five sites are
+  fixed positions with a large systematic pattern, so the site component is mostly
+  position, not random site-to-site variation (D-007, D-015).
+response:
+  column: width_raw
+  units: "µm"
+hierarchy:
+  - name: cassette
+    id_column: cassette
+    count: 30
+  - name: wafer
+    id_column: wafer
+    nested_in: cassette
+    count_per_parent: 3
+    id_scope: parent        # wafer labels 1-3 repeat in every cassette
+  - name: site
+    id_column: site
+    nested_in: wafer
+    count_per_parent: 5
+    id_scope: parent
+    exchangeable: false     # Top, Left, Center, Right, Bottom on every wafer
+treatments: []
+nuisance_factors: []
+comparisons: []

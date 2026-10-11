@@ -1,0 +1,57 @@
+# T3 reference declaration: SASmixed Semiconductor (Littell et al. 1996, Data Set 2.2(b)).
+# Structure from reference/r_outputs/structure.json: 4 etch times x 3 wafers x
+# 4 positions, one reading per position, 48 rows.
+stratum_declaration: 1
+claimed_template: T3
+description: >
+  SASmixed Semiconductor split-plot. Published textbook data, not synthetic, not fab
+  data. Whole plot = wafer (etch time applied to wafers); subplot = position on the
+  wafer.
+response:
+  column: resistance
+  units: null               # the package documentation does not state units
+hierarchy:
+  - name: wafer
+    id_column: Grp          # "ET/Wafer"; the Wafer column (1-3) repeats across etch times
+    count: 12
+  - name: position
+    id_column: position
+    nested_in: wafer
+    count_per_parent: 4
+    id_scope: parent        # positions 1-4 repeat on every wafer
+    # exchangeable omitted (default false): positions carry the subplot factor.
+treatments:
+  - name: etch_time
+    column: ET
+    levels: ["1", "2", "3", "4"]
+    applied_to: wafer
+    replicates_per_level: 3
+    assignment:
+      method: not_stated
+      description: >
+        The package documentation says etch time has 4 levels and wafers are nested in
+        etch time; it does not state how etch times were assigned to wafers.
+  - name: position
+    column: position
+    levels: ["1", "2", "3", "4"]
+    applied_to: position
+    replicates_per_level: 12   # each of the 12 wafers has each position once
+    assignment:
+      method: inherent
+      description: >
+        Position on the wafer is a property of the measurement location, not a level
+        that could be randomized to it.
+nuisance_factors: []
+comparisons:
+  - id: etch_time_overall
+    kind: overall
+    factors: [etch_time]
+  - id: position_overall
+    kind: overall
+    factors: [position]
+  - id: etch_time_by_position
+    kind: interaction
+    factors: [etch_time, position]
+split_plot:
+  whole_plot_factor: etch_time
+  subplot_factor: position

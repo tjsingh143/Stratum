@@ -1,0 +1,19 @@
+{
+  "schema": "stratum-evidence/1",
+  "synthetic": false,
+  "source": {
+    "path": "validation/wp7_gate.json",
+    "release": "Stratum v1.0.0",
+    "sha256": "b20756c2bfc28ebc2624e8d6ae521db7d02617929a8ab73a864b879d27262680",
+    "selection": "Completion status and counts of the canonical release gate of the original v1.0.0 repository. Retained evidence: this gate depends on material that is not part of this snapshot and was not re-run here."
+  },
+  "values": {
+    "complete": true,
+    "all_passed": true,
+    "command_count": 42,
+    "commands_with_exit_code_0": 42,
+    "unit_tests": 466,
+    "pinned_R_replay_exit_code": 0,
+    "full_simulation_replay": "a completed full replay of the seeded study was verified by the gate; the gate did not draw the study again"
+  }
+}

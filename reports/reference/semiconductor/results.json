@@ -1,0 +1,3148 @@
+{
+  "schema": "stratum-results/1",
+  "generated_by": "stratum 1.0.0 (stratum.results.build); never hand-edited",
+  "synthetic": false,
+  "data_label": "Published textbook / NIST-SEMATECH dataset, not synthetic and not fab data: SASmixed Semiconductor (Littell et al. 1996, Data Set 2.2(b)), split-plot",
+  "provenance": {
+    "inputs": {
+      "declaration": {
+        "path": "declarations/examples/t3_sasmixed_semiconductor.yaml",
+        "sha256": "d3980cb1deae7e97cc3fa6ffbbe0e07619970abdfcf6ac4db27eabda8f2afd5e",
+        "bytes": 1975
+      },
+      "data": {
+        "path": "reference/_fetched/derived/semiconductor.csv",
+        "sha256": "1b34dd59bf25d8b1e3ce4dc77f35d5ad9a5aaf0acbb149bcd47464f0795785a8",
+        "bytes": 1143
+      },
+      "explanations": {
+        "path": "resources/explanations.yaml",
+        "sha256": "45923fbd6faf9e13bd694316bc407fca02bb7a819226dce39f5bd3bfd2dcc5e3",
+        "bytes": 22437
+      }
+    },
+    "code": {
+      "package": "stratum",
+      "version": "1.0.0",
+      "source_sha256": "ada12f7b897c7d9984c6300a1c86c9ac23e1db099ffa5a24a39aa6a5c81cb860",
+      "source_files": 17,
+      "method": "SHA-256 over the sorted lines '<relative path> <file SHA-256>' of every file in the stratum package (D-077)"
+    },
+    "git": null,
+    "environment": null,
+    "omitted": "omitted from committed reports so that they regenerate byte for byte: a commit hash written into a committed file is always the parent of the commit that contains it. source_sha256 identifies the code (D-077)."
+  },
+  "declaration": {
+    "claimed_template": "T3",
+    "description": "SASmixed Semiconductor split-plot. Published textbook data, not synthetic, not fab data. Whole plot = wafer (etch time applied to wafers); subplot = position on the wafer.\n",
+    "response": {
+      "column": "resistance",
+      "units": null
+    },
+    "hierarchy": [
+      {
+        "name": "wafer",
+        "count": 12,
+        "per_parent": false,
+        "exchangeable": null,
+        "exchangeable_declared": false
+      },
+      {
+        "name": "position",
+        "count": 4,
+        "per_parent": true,
+        "exchangeable": false,
+        "exchangeable_declared": false
+      }
+    ],
+    "treatments": [
+      {
+        "name": "etch_time",
+        "levels": [
+          "1",
+          "2",
+          "3",
+          "4"
+        ],
+        "applied_to": "wafer",
+        "replicates_per_level": 3,
+        "assignment": "not_stated"
+      },
+      {
+        "name": "position",
+        "levels": [
+          "1",
+          "2",
+          "3",
+          "4"
+        ],
+        "applied_to": "position",
+        "replicates_per_level": 12,
+        "assignment": "inherent"
+      }
+    ],
+    "nuisance_factors": []
+  },
+  "decision": {
+    "evidence_decision": "WARN",
+    "analyzed": true,
+    "template": "T3"
+  },
+  "comparisons": [
+    {
+      "id": "etch_time_overall",
+      "kind": "overall",
+      "factors": [
+        "etch_time"
+      ],
+      "levels": null,
+      "description": null,
+      "role": "whole-plot factor",
+      "experimental_unit": "wafer",
+      "units_note": "etch_time is applied to whole wafers",
+      "status": "analyzed",
+      "test": {
+        "source": "etch_time",
+        "F": 1.9415419927294657,
+        "num_df": 3,
+        "den_df": 8,
+        "p": 0.20150307601443493,
+        "error_term": "whole plots within etch_time",
+        "note": "the whole-plot factor is tested against whole-plot error on (3, 8) df (brief Section 5.3)"
+      },
+      "estimates": [
+        {
+          "estimate_of": "2 - 1",
+          "estimate": 0.34,
+          "se": 0.29841537512519545,
+          "df": 8.0,
+          "error_term": "whole plots within etch_time",
+          "independent_units": 6,
+          "lower": -0.3481470890472032,
+          "upper": 1.0281470890472033,
+          "t_critical": 2.3060041352041662,
+          "interval_method": "exact under the model for balanced data",
+          "approximate": false,
+          "t": 1.1393514823335038,
+          "p": 0.2875200552264737,
+          "comparison": "etch_time_overall",
+          "contrast": "2 - 1",
+          "factor": "etch_time",
+          "key": "etch_time_overall: 2 - 1",
+          "half_width": 0.6881470890472032,
+          "interval_includes_zero": true
+        },
+        {
+          "estimate_of": "3 - 1",
+          "estimate": 0.46166666666666667,
+          "se": 0.29841537512519545,
+          "df": 8.0,
+          "error_term": "whole plots within etch_time",
+          "independent_units": 6,
+          "lower": -0.22648042238053656,
+          "upper": 1.14981375571387,
+          "t_critical": 2.3060041352041662,
+          "interval_method": "exact under the model for balanced data",
+          "approximate": false,
+          "t": 1.5470605912077477,
+          "p": 0.16043573861512983,
+          "comparison": "etch_time_overall",
+          "contrast": "3 - 1",
+          "factor": "etch_time",
+          "key": "etch_time_overall: 3 - 1",
+          "half_width": 0.6881470890472032,
+          "interval_includes_zero": true
+        },
+        {
+          "estimate_of": "4 - 1",
+          "estimate": 0.7066666666666667,
+          "se": 0.29841537512519545,
+          "df": 8.0,
+          "error_term": "whole plots within etch_time",
+          "independent_units": 6,
+          "lower": 0.018519577619463434,
+          "upper": 1.3948137557138698,
+          "t_critical": 2.3060041352041662,
+          "interval_method": "exact under the model for balanced data",
+          "approximate": false,
+          "t": 2.368063865242184,
+          "p": 0.045383364530964164,
+          "comparison": "etch_time_overall",
+          "contrast": "4 - 1",
+          "factor": "etch_time",
+          "key": "etch_time_overall: 4 - 1",
+          "half_width": 0.6881470890472032,
+          "interval_includes_zero": false
+        }
+      ],
+      "independent_units": {
+        "per_level": {
+          "1": 3,
+          "2": 3,
+          "3": 3,
+          "4": 3
+        },
+        "level": "wafer"
+      }
+    },
+    {
+      "id": "position_overall",
+      "kind": "overall",
+      "factors": [
+        "position"
+      ],
+      "levels": null,
+      "description": null,
+      "role": "subplot factor",
+      "experimental_unit": "wafer",
+      "units_note": "each wafer contributes one independent within-wafer comparison",
+      "status": "analyzed",
+      "test": {
+        "source": "position",
+        "F": 3.3855112305145107,
+        "num_df": 3,
+        "den_df": 24,
+        "p": 0.0345138666154782,
+        "error_term": "subplot error",
+        "note": "the subplot factor is tested against subplot error"
+      },
+      "estimates": [
+        {
+          "estimate_of": "2 - 1",
+          "estimate": 0.11333333333333333,
+          "se": 0.1361061507032627,
+          "df": 24.0,
+          "error_term": "subplot error",
+          "independent_units": 12,
+          "lower": -0.1675759553318576,
+          "upper": 0.3942426219985243,
+          "t_critical": 2.0638985616280237,
+          "interval_method": "exact under the model for balanced data",
+          "approximate": false,
+          "t": 0.8326834073826799,
+          "p": 0.41323308763296485,
+          "comparison": "position_overall",
+          "contrast": "2 - 1",
+          "factor": "position",
+          "units_note": "each whole plot contributes one independent within-plot comparison",
+          "key": "position_overall: 2 - 1",
+          "half_width": 0.28090928866519094,
+          "interval_includes_zero": true
+        },
+        {
+          "estimate_of": "3 - 1",
+          "estimate": -0.2733333333333333,
+          "se": 0.1361061507032627,
+          "df": 24.0,
+          "error_term": "subplot error",
+          "independent_units": 12,
+          "lower": -0.5542426219985243,
+          "upper": 0.00757595533185762,
+          "t_critical": 2.0638985616280237,
+          "interval_method": "exact under the model for balanced data",
+          "approximate": false,
+          "t": -2.0082364530994044,
+          "p": 0.05599984565304512,
+          "comparison": "position_overall",
+          "contrast": "3 - 1",
+          "factor": "position",
+          "units_note": "each whole plot contributes one independent within-plot comparison",
+          "key": "position_overall: 3 - 1",
+          "half_width": 0.28090928866519094,
+          "interval_includes_zero": true
+        },
+        {
+          "estimate_of": "4 - 1",
+          "estimate": 0.08833333333333333,
+          "se": 0.1361061507032627,
+          "df": 24.0,
+          "error_term": "subplot error",
+          "independent_units": 12,
+          "lower": -0.19257595533185762,
+          "upper": 0.36924262199852426,
+          "t_critical": 2.0638985616280237,
+          "interval_method": "exact under the model for balanced data",
+          "approximate": false,
+          "t": 0.6490032439894418,
+          "p": 0.5224989451844515,
+          "comparison": "position_overall",
+          "contrast": "4 - 1",
+          "factor": "position",
+          "units_note": "each whole plot contributes one independent within-plot comparison",
+          "key": "position_overall: 4 - 1",
+          "half_width": 0.28090928866519094,
+          "interval_includes_zero": true
+        }
+      ],
+      "independent_units": {
+        "total": 12,
+        "level": "wafer"
+      }
+    },
+    {
+      "id": "etch_time_by_position",
+      "kind": "interaction",
+      "factors": [
+        "etch_time",
+        "position"
+      ],
+      "levels": null,
+      "description": null,
+      "role": "interaction",
+      "experimental_unit": "wafer",
+      "units_note": "each wafer contributes one independent within-wafer comparison",
+      "status": "analyzed",
+      "test": {
+        "source": "etch_time x position",
+        "F": 0.8091968385867359,
+        "num_df": 9,
+        "den_df": 24,
+        "p": 0.6125278738493771,
+        "error_term": "subplot error",
+        "note": "the interaction lives in the subplot stratum"
+      },
+      "estimates": [
+        {
+          "estimate_of": "(2,2)-(2,1)-(1,2)+(1,1)",
+          "estimate": 0.3566666666666667,
+          "se": 0.38496632849390094,
+          "df": 24.0,
+          "error_term": "subplot error",
+          "independent_units": 6,
+          "lower": -0.4378647849871168,
+          "upper": 1.1511981183204503,
+          "t_critical": 2.0638985616280237,
+          "interval_method": "exact under the model for balanced data",
+          "approximate": false,
+          "t": 0.9264879556143243,
+          "p": 0.3634161424575252,
+          "comparison": "etch_time_by_position",
+          "contrast": "(2,2)-(2,1)-(1,2)+(1,1)",
+          "factor": "etch_time x position",
+          "units_note": "each whole plot contributes one independent within-plot comparison",
+          "key": "etch_time_by_position: (2,2)-(2,1)-(1,2)+(1,1)",
+          "half_width": 0.7945314516537835,
+          "interval_includes_zero": true
+        },
+        {
+          "estimate_of": "(2,3)-(2,1)-(1,3)+(1,1)",
+          "estimate": -0.16666666666666666,
+          "se": 0.38496632849390094,
+          "df": 24.0,
+          "error_term": "subplot error",
+          "independent_units": 6,
+          "lower": -0.9611981183204501,
+          "upper": 0.6278647849871168,
+          "t_critical": 2.0638985616280237,
+          "interval_method": "exact under the model for balanced data",
+          "approximate": false,
+          "t": -0.43293829701603936,
+          "p": 0.6689255086453372,
+          "comparison": "etch_time_by_position",
+          "contrast": "(2,3)-(2,1)-(1,3)+(1,1)",
+          "factor": "etch_time x position",
+          "units_note": "each whole plot contributes one independent within-plot comparison",
+          "key": "etch_time_by_position: (2,3)-(2,1)-(1,3)+(1,1)",
+          "half_width": 0.7945314516537835,
+          "interval_includes_zero": true
+        },
+        {
+          "estimate_of": "(2,4)-(2,1)-(1,4)+(1,1)",
+          "estimate": -0.35,
+          "se": 0.38496632849390094,
+          "df": 24.0,
+          "error_term": "subplot error",
+          "independent_units": 6,
+          "lower": -1.1445314516537834,
+          "upper": 0.4445314516537835,
+          "t_critical": 2.0638985616280237,
+          "interval_method": "exact under the model for balanced data",
+          "approximate": false,
+          "t": -0.9091704237336826,
+          "p": 0.372300414878479,
+          "comparison": "etch_time_by_position",
+          "contrast": "(2,4)-(2,1)-(1,4)+(1,1)",
+          "factor": "etch_time x position",
+          "units_note": "each whole plot contributes one independent within-plot comparison",
+          "key": "etch_time_by_position: (2,4)-(2,1)-(1,4)+(1,1)",
+          "half_width": 0.7945314516537835,
+          "interval_includes_zero": true
+        },
+        {
+          "estimate_of": "(3,2)-(3,1)-(1,2)+(1,1)",
+          "estimate": 0.37333333333333335,
+          "se": 0.38496632849390094,
+          "df": 24.0,
+          "error_term": "subplot error",
+          "independent_units": 6,
+          "lower": -0.4211981183204501,
+          "upper": 1.1678647849871169,
+          "t_critical": 2.0638985616280237,
+          "interval_method": "exact under the model for balanced data",
+          "approximate": false,
+          "t": 0.9697817853159282,
+          "p": 0.34182785969628793,
+          "comparison": "etch_time_by_position",
+          "contrast": "(3,2)-(3,1)-(1,2)+(1,1)",
+          "factor": "etch_time x position",
+          "units_note": "each whole plot contributes one independent within-plot comparison",
+          "key": "etch_time_by_position: (3,2)-(3,1)-(1,2)+(1,1)",
+          "half_width": 0.7945314516537835,
+          "interval_includes_zero": true
+        },
+        {
+          "estimate_of": "(3,3)-(3,1)-(1,3)+(1,1)",
+          "estimate": -0.30333333333333334,
+          "se": 0.38496632849390094,
+          "df": 24.0,
+          "error_term": "subplot error",
+          "independent_units": 6,
+          "lower": -1.0978647849871168,
+          "upper": 0.49119811832045013,
+          "t_critical": 2.0638985616280237,
+          "interval_method": "exact under the model for balanced data",
+          "approximate": false,
+          "t": -0.7879477005691917,
+          "p": 0.43844086846998853,
+          "comparison": "etch_time_by_position",
+          "contrast": "(3,3)-(3,1)-(1,3)+(1,1)",
+          "factor": "etch_time x position",
+          "units_note": "each whole plot contributes one independent within-plot comparison",
+          "key": "etch_time_by_position: (3,3)-(3,1)-(1,3)+(1,1)",
+          "half_width": 0.7945314516537835,
+          "interval_includes_zero": true
+        },
+        {
+          "estimate_of": "(3,4)-(3,1)-(1,4)+(1,1)",
+          "estimate": -0.31666666666666665,
+          "se": 0.38496632849390094,
+          "df": 24.0,
+          "error_term": "subplot error",
+          "independent_units": 6,
+          "lower": -1.1111981183204502,
+          "upper": 0.4778647849871168,
+          "t_critical": 2.0638985616280237,
+          "interval_method": "exact under the model for balanced data",
+          "approximate": false,
+          "t": -0.8225827643304747,
+          "p": 0.4188435358899071,
+          "comparison": "etch_time_by_position",
+          "contrast": "(3,4)-(3,1)-(1,4)+(1,1)",
+          "factor": "etch_time x position",
+          "units_note": "each whole plot contributes one independent within-plot comparison",
+          "key": "etch_time_by_position: (3,4)-(3,1)-(1,4)+(1,1)",
+          "half_width": 0.7945314516537835,
+          "interval_includes_zero": true
+        },
+        {
+          "estimate_of": "(4,2)-(4,1)-(1,2)+(1,1)",
+          "estimate": 0.37666666666666665,
+          "se": 0.38496632849390094,
+          "df": 24.0,
+          "error_term": "subplot error",
+          "independent_units": 6,
+          "lower": -0.4178647849871168,
+          "upper": 1.17119811832045,
+          "t_critical": 2.0638985616280237,
+          "interval_method": "exact under the model for balanced data",
+          "approximate": false,
+          "t": 0.978440551256249,
+          "p": 0.33761697728846285,
+          "comparison": "etch_time_by_position",
+          "contrast": "(4,2)-(4,1)-(1,2)+(1,1)",
+          "factor": "etch_time x position",
+          "units_note": "each whole plot contributes one independent within-plot comparison",
+          "key": "etch_time_by_position: (4,2)-(4,1)-(1,2)+(1,1)",
+          "half_width": 0.7945314516537835,
+          "interval_includes_zero": true
+        },
+        {
+          "estimate_of": "(4,3)-(4,1)-(1,3)+(1,1)",
+          "estimate": -0.38333333333333336,
+          "se": 0.38496632849390094,
+          "df": 24.0,
+          "error_term": "subplot error",
+          "independent_units": 6,
+          "lower": -1.1778647849871169,
+          "upper": 0.4111981183204501,
+          "t_critical": 2.0638985616280237,
+          "interval_method": "exact under the model for balanced data",
+          "approximate": false,
+          "t": -0.9957580831368906,
+          "p": 0.32930195193605394,
+          "comparison": "etch_time_by_position",
+          "contrast": "(4,3)-(4,1)-(1,3)+(1,1)",
+          "factor": "etch_time x position",
+          "units_note": "each whole plot contributes one independent within-plot comparison",
+          "key": "etch_time_by_position: (4,3)-(4,1)-(1,3)+(1,1)",
+          "half_width": 0.7945314516537835,
+          "interval_includes_zero": true
+        },
+        {
+          "estimate_of": "(4,4)-(4,1)-(1,4)+(1,1)",
+          "estimate": -0.07333333333333333,
+          "se": 0.38496632849390094,
+          "df": 24.0,
+          "error_term": "subplot error",
+          "independent_units": 6,
+          "lower": -0.8678647849871168,
+          "upper": 0.7211981183204501,
+          "t_critical": 2.0638985616280237,
+          "interval_method": "exact under the model for balanced data",
+          "approximate": false,
+          "t": -0.19049285068705732,
+          "p": 0.8505251087831371,
+          "comparison": "etch_time_by_position",
+          "contrast": "(4,4)-(4,1)-(1,4)+(1,1)",
+          "factor": "etch_time x position",
+          "units_note": "each whole plot contributes one independent within-plot comparison",
+          "key": "etch_time_by_position: (4,4)-(4,1)-(1,4)+(1,1)",
+          "half_width": 0.7945314516537835,
+          "interval_includes_zero": true
+        }
+      ],
+      "independent_units": {
+        "total": 12,
+        "level": "wafer"
+      }
+    }
+  ],
+  "findings": [
+    {
+      "code": "sd_ratio",
+      "severity": "warn",
+      "stage": "S8",
+      "message": "wafer means: largest-to-smallest SD of unit means = 5.543 (warning at >= 2.0, a pragmatic v1 threshold). Warning only.",
+      "details": {
+        "stratum": "wafer means",
+        "ratio": 5.543446956683784,
+        "sds": {
+          "1": 0.44696429760477885,
+          "2": 0.08251262529657709,
+          "3": 0.45740436158829967,
+          "4": 0.34424736745543894
+        }
+      },
+      "explanation": {
+        "category": "sd_ratio",
+        "kind": "warning",
+        "status": "written",
+        "text": "The largest spread of unit averages within a treatment level is at least twice the smallest. The analysis assumes a similar spread at every level, so read its results with some caution. The factor of two is a practical rule of thumb, and with few units per level the spread itself is poorly known, so this is a prompt to look, not a verdict.",
+        "same_as": null
+      }
+    }
+  ],
+  "caveats": [
+    {
+      "code": "assignment_not_randomized",
+      "severity": "caveat",
+      "message": "Factor 'etch_time': assignment.method is 'not_stated' in the declaration (The package documentation says etch time has 4 levels and wafers are nested in etch time; it does not state how etch times were assigned to wafers.). The tests and intervals are computed the same way for every assignment method; the caveat concerns attributing a difference to the factor (D-039).",
+      "details": {
+        "factor": "etch_time",
+        "method": "not_stated"
+      },
+      "explanation": {
+        "category": "assignment_not_randomized",
+        "kind": "caveat",
+        "status": "written",
+        "text": "The declaration says this factor's levels were not assigned at random: they were assigned systematically, the method was not stated, or the factor is an inherent property such as a position on the wafer. The test and intervals are computed the same way regardless. What changes is the interpretation: without randomization, a difference may partly reflect something else that varied along with the factor, so it should not automatically be read as caused by it.",
+        "same_as": null
+      }
+    },
+    {
+      "code": "assignment_not_randomized",
+      "severity": "caveat",
+      "message": "Factor 'position': assignment.method is 'inherent' in the declaration (Position on the wafer is a property of the measurement location, not a level that could be randomized to it.). The tests and intervals are computed the same way for every assignment method; the caveat concerns attributing a difference to the factor (D-039).",
+      "details": {
+        "factor": "position",
+        "method": "inherent"
+      },
+      "explanation": {
+        "category": "assignment_not_randomized",
+        "kind": "caveat",
+        "status": "written",
+        "text": "The declaration says this factor's levels were not assigned at random: they were assigned systematically, the method was not stated, or the factor is an inherent property such as a position on the wafer. The test and intervals are computed the same way regardless. What changes is the interpretation: without randomization, a difference may partly reflect something else that varied along with the factor, so it should not automatically be read as caused by it.",
+        "same_as": null
+      }
+    }
+  ],
+  "stages": [
+    {
+      "id": "S0",
+      "title": "declaration matches the claimed template",
+      "status": "pass",
+      "reason": null
+    },
+    {
+      "id": "S1",
+      "title": "declared columns present",
+      "status": "pass",
+      "reason": null
+    },
+    {
+      "id": "S2",
+      "title": "labels and response values",
+      "status": "pass",
+      "reason": null
+    },
+    {
+      "id": "S3",
+      "title": "unit identity and ownership",
+      "status": "pass",
+      "reason": null
+    },
+    {
+      "id": "S4",
+      "title": "declaration-data consistency",
+      "status": "pass",
+      "reason": null
+    },
+    {
+      "id": "S5",
+      "title": "balance, replication and missing data",
+      "status": "pass",
+      "reason": null
+    },
+    {
+      "id": "S6",
+      "title": "confounding",
+      "status": "pass",
+      "reason": null
+    },
+    {
+      "id": "S7",
+      "title": "aliasing",
+      "status": "pass",
+      "reason": null
+    },
+    {
+      "id": "S8",
+      "title": "diagnostics",
+      "status": "warn",
+      "reason": null
+    }
+  ],
+  "assumptions": [
+    {
+      "assumption": "balance at the experimental-unit level",
+      "handling": "checked from the data; imbalance is refused (S5)",
+      "status": "pass"
+    },
+    {
+      "assumption": "equal variance across treatment levels",
+      "handling": "diagnosed: Brown-Forsythe test and largest-to-smallest SD ratio of unit means; warnings only (D-044)",
+      "status": "warn"
+    },
+    {
+      "assumption": "normally distributed random effects and errors",
+      "handling": "diagnosed: normal quantile plot and externally studentized residuals beyond +-3; warnings only (D-044)",
+      "status": "no warning triggered; assumption not verified"
+    },
+    {
+      "assumption": "independent experimental units",
+      "handling": "not checkable from the data; it rests on how the units were run and assigned (the declared assignment method)",
+      "status": "not_checkable"
+    }
+  ],
+  "diagnostics": {
+    "wafer": {
+      "brown_forsythe": {
+        "diagnostic": "brown_forsythe",
+        "available": true,
+        "warn": false,
+        "F": 0.582730127919986,
+        "df": [
+          3,
+          8
+        ],
+        "p": 0.6428438809716102,
+        "threshold": "p < 0.05",
+        "groups": [
+          "1",
+          "2",
+          "3",
+          "4"
+        ]
+      },
+      "sd_ratio": {
+        "diagnostic": "sd_ratio",
+        "available": true,
+        "sds": {
+          "1": 0.44696429760477885,
+          "2": 0.08251262529657709,
+          "3": 0.45740436158829967,
+          "4": 0.34424736745543894
+        },
+        "threshold": ">= 2 (pragmatic v1 threshold, not a universal law)",
+        "warn": true,
+        "ratio": 5.543446956683784
+      },
+      "studentized_residuals": {
+        "diagnostic": "studentized_residuals",
+        "available": true,
+        "warn": false,
+        "model": "etch_time",
+        "residual_df": 8,
+        "max_abs_external": 2.011486273976667,
+        "undefined_units": [],
+        "threshold": "|externally studentized residual| > 3",
+        "units": [
+          {
+            "unit": "1/1",
+            "residual": 0.19166666666666668,
+            "leverage": 0.3333333333333333,
+            "internal": 0.642281472884083,
+            "external": 0.6169156563656946,
+            "flagged": false
+          },
+          {
+            "unit": "1/2",
+            "residual": 0.31916666666666665,
+            "leverage": 0.3333333333333333,
+            "internal": 1.069538278759147,
+            "external": 1.0807050106607674,
+            "flagged": false
+          },
+          {
+            "unit": "1/3",
+            "residual": -0.5108333333333334,
+            "leverage": 0.3333333333333333,
+            "internal": -1.7118197516432299,
+            "external": -2.011486273976667,
+            "flagged": false
+          },
+          {
+            "unit": "2/1",
+            "residual": 0.0016666666666666668,
+            "leverage": 0.3333333333333333,
+            "internal": 0.0055850562859485475,
+            "external": 0.00522435196212974,
+            "flagged": false
+          },
+          {
+            "unit": "2/2",
+            "residual": -0.08333333333333333,
+            "leverage": 0.3333333333333333,
+            "internal": -0.2792528142974274,
+            "external": -0.2624996144539744,
+            "flagged": false
+          },
+          {
+            "unit": "2/3",
+            "residual": 0.08166666666666667,
+            "leverage": 0.3333333333333333,
+            "internal": 0.27366775801147886,
+            "external": 0.25719949740693326,
+            "flagged": false
+          },
+          {
+            "unit": "3/1",
+            "residual": -0.475,
+            "leverage": 0.3333333333333333,
+            "internal": -1.5917410414953361,
+            "external": -1.8012429800229903,
+            "flagged": false
+          },
+          {
+            "unit": "3/2",
+            "residual": 0.4375,
+            "leverage": 0.3333333333333333,
+            "internal": 1.4660772750614939,
+            "external": 1.603633174397493,
+            "flagged": false
+          },
+          {
+            "unit": "3/3",
+            "residual": 0.0375,
+            "leverage": 0.3333333333333333,
+            "internal": 0.12566376643384233,
+            "external": 0.11766387704946205,
+            "flagged": false
+          },
+          {
+            "unit": "4/1",
+            "residual": 0.3225,
+            "leverage": 0.3333333333333333,
+            "internal": 1.080708391331044,
+            "external": 1.093909540080041,
+            "flagged": false
+          },
+          {
+            "unit": "4/2",
+            "residual": 0.04,
+            "leverage": 0.3333333333333333,
+            "internal": 0.13404135086276514,
+            "external": 0.12552523953553948,
+            "flagged": false
+          },
+          {
+            "unit": "4/3",
+            "residual": -0.3625,
+            "leverage": 0.3333333333333333,
+            "internal": -1.2147497421938092,
+            "external": -1.2582475971971845,
+            "flagged": false
+          }
+        ],
+        "normal_quantiles": {
+          "positions": "Blom (i - 3/8) / (n + 1/4)",
+          "theoretical": [
+            -1.6350392668017106,
+            -1.113937215356688,
+            -0.7916386077433745,
+            -0.5361762663658063,
+            -0.3119190548203253,
+            -0.1024905076914514,
+            0.10249050769145156,
+            0.3119190548203253,
+            0.5361762663658063,
+            0.7916386077433745,
+            1.113937215356688,
+            1.6350392668017109
+          ],
+          "internally_studentized_sorted": [
+            -1.7118197516432299,
+            -1.5917410414953361,
+            -1.2147497421938092,
+            -0.2792528142974274,
+            0.0055850562859485475,
+            0.12566376643384233,
+            0.13404135086276514,
+            0.27366775801147886,
+            0.642281472884083,
+            1.069538278759147,
+            1.080708391331044,
+            1.4660772750614939
+          ]
+        }
+      }
+    },
+    "position": {
+      "brown_forsythe": {
+        "available": false,
+        "warn": false,
+        "not_applicable": true,
+        "reason": "no treatment groups in this stratum"
+      },
+      "sd_ratio": {
+        "available": false,
+        "warn": false,
+        "not_applicable": true,
+        "reason": "no treatment groups in this stratum"
+      },
+      "studentized_residuals": {
+        "diagnostic": "studentized_residuals",
+        "available": true,
+        "warn": false,
+        "model": "wafer + position + etch_time x position (subplot stratum)",
+        "residual_df": 24,
+        "max_abs_external": 2.8174669138076935,
+        "undefined_units": [],
+        "threshold": "|externally studentized residual| > 3",
+        "units": [
+          {
+            "unit": "1/1/1",
+            "residual": -0.585,
+            "leverage": 0.5,
+            "internal": -2.4815183276492045,
+            "external": -2.8174669138076935,
+            "flagged": false
+          },
+          {
+            "unit": "1/1/2",
+            "residual": -0.03166666666666667,
+            "leverage": 0.5,
+            "internal": -0.134327202921182,
+            "external": -0.13154840503785833,
+            "flagged": false
+          },
+          {
+            "unit": "1/1/3",
+            "residual": 0.365,
+            "leverage": 0.5,
+            "internal": 1.5482977599862557,
+            "external": 1.5975837775220165,
+            "flagged": false
+          },
+          {
+            "unit": "1/1/4",
+            "residual": 0.25166666666666665,
+            "leverage": 0.5,
+            "internal": 1.0675477705841308,
+            "external": 1.0708037330752687,
+            "flagged": false
+          },
+          {
+            "unit": "1/2/1",
+            "residual": 0.1975,
+            "leverage": 0.5,
+            "internal": 0.8377775550610562,
+            "external": 0.8324000897188824,
+            "flagged": false
+          },
+          {
+            "unit": "1/2/2",
+            "residual": 0.37083333333333335,
+            "leverage": 0.5,
+            "internal": 1.5730422447348946,
+            "external": 1.6260252883631332,
+            "flagged": false
+          },
+          {
+            "unit": "1/2/3",
+            "residual": -0.2725,
+            "leverage": 0.5,
+            "internal": -1.1559209304006979,
+            "external": -1.164461763948607,
+            "flagged": false
+          },
+          {
+            "unit": "1/2/4",
+            "residual": -0.29583333333333334,
+            "leverage": 0.5,
+            "internal": -1.254898869395253,
+            "external": -1.2708790026553205,
+            "flagged": false
+          },
+          {
+            "unit": "1/3/1",
+            "residual": 0.3875,
+            "leverage": 0.5,
+            "internal": 1.6437407725881483,
+            "external": 1.7081525319691728,
+            "flagged": false
+          },
+          {
+            "unit": "1/3/2",
+            "residual": -0.33916666666666667,
+            "leverage": 0.5,
+            "internal": -1.4387150418137125,
+            "external": -1.4733923336342432,
+            "flagged": false
+          },
+          {
+            "unit": "1/3/3",
+            "residual": -0.0925,
+            "leverage": 0.5,
+            "internal": -0.392376829585558,
+            "external": -0.38535334560505663,
+            "flagged": false
+          },
+          {
+            "unit": "1/3/4",
+            "residual": 0.04416666666666667,
+            "leverage": 0.5,
+            "internal": 0.18735109881112227,
+            "external": 0.1835406882668097,
+            "flagged": false
+          },
+          {
+            "unit": "2/1/1",
+            "residual": -0.215,
+            "leverage": 0.5,
+            "internal": -0.9120110093069725,
+            "external": -0.9086936966568288,
+            "flagged": false
+          },
+          {
+            "unit": "2/1/2",
+            "residual": 0.33166666666666667,
+            "leverage": 0.5,
+            "internal": 1.4069007042797486,
+            "external": 1.437846389204444,
+            "flagged": false
+          },
+          {
+            "unit": "2/1/3",
+            "residual": 0.13166666666666665,
+            "leverage": 0.5,
+            "internal": 0.5585183700407041,
+            "external": 0.550347069289386,
+            "flagged": false
+          },
+          {
+            "unit": "2/1/4",
+            "residual": -0.24833333333333332,
+            "leverage": 0.5,
+            "internal": -1.05340806501348,
+            "external": -1.0559285111486694,
+            "flagged": false
+          },
+          {
+            "unit": "2/2/1",
+            "residual": -0.14,
+            "leverage": 0.5,
+            "internal": -0.593867633967331,
+            "external": -0.585682974091385,
+            "flagged": false
+          },
+          {
+            "unit": "2/2/2",
+            "residual": 0.12666666666666668,
+            "leverage": 0.5,
+            "internal": 0.537308811684728,
+            "external": 0.5291882653242374,
+            "flagged": false
+          },
+          {
+            "unit": "2/2/3",
+            "residual": -0.11333333333333333,
+            "leverage": 0.5,
+            "internal": -0.4807499894021251,
+            "external": -0.47291038090008597,
+            "flagged": false
+          },
+          {
+            "unit": "2/2/4",
+            "residual": 0.12666666666666668,
+            "leverage": 0.5,
+            "internal": 0.537308811684728,
+            "external": 0.5291882653242374,
+            "flagged": false
+          },
+          {
+            "unit": "2/3/1",
+            "residual": 0.355,
+            "leverage": 0.5,
+            "internal": 1.5058786432743037,
+            "external": 1.549175968590271,
+            "flagged": false
+          },
+          {
+            "unit": "2/3/2",
+            "residual": -0.4583333333333333,
+            "leverage": 0.5,
+            "internal": -1.9442095159644766,
+            "external": -2.073556515823486,
+            "flagged": false
+          },
+          {
+            "unit": "2/3/3",
+            "residual": -0.018333333333333333,
+            "leverage": 0.5,
+            "internal": -0.07776838063857906,
+            "external": -0.07614056238094359,
+            "flagged": false
+          },
+          {
+            "unit": "2/3/4",
+            "residual": 0.12166666666666667,
+            "leverage": 0.5,
+            "internal": 0.516099253328752,
+            "external": 0.5080599477378759,
+            "flagged": false
+          },
+          {
+            "unit": "3/1/1",
+            "residual": -0.0016666666666666668,
+            "leverage": 0.5,
+            "internal": -0.007069852785325369,
+            "external": -0.006921004315168696,
+            "flagged": false
+          },
+          {
+            "unit": "3/1/2",
+            "residual": 0.37833333333333335,
+            "leverage": 0.5,
+            "internal": 1.6048565822688587,
+            "external": 1.6628208193878478,
+            "flagged": false
+          },
+          {
+            "unit": "3/1/3",
+            "residual": 0.16166666666666665,
+            "leverage": 0.5,
+            "internal": 0.6857757201765607,
+            "external": 0.6780125305600891,
+            "flagged": false
+          },
+          {
+            "unit": "3/1/4",
+            "residual": -0.5383333333333333,
+            "leverage": 0.5,
+            "internal": -2.283562449660094,
+            "external": -2.5267789585147113,
+            "flagged": false
+          },
+          {
+            "unit": "3/2/1",
+            "residual": -0.04416666666666667,
+            "leverage": 0.5,
+            "internal": -0.18735109881112227,
+            "external": -0.1835406882668097,
+            "flagged": false
+          },
+          {
+            "unit": "3/2/2",
+            "residual": -0.2841666666666667,
+            "leverage": 0.5,
+            "internal": -1.2054098998979754,
+            "external": -1.2174591975810944,
+            "flagged": false
+          },
+          {
+            "unit": "3/2/3",
+            "residual": 0.019166666666666665,
+            "leverage": 0.5,
+            "internal": 0.08130330703124174,
+            "external": 0.07960242979555936,
+            "flagged": false
+          },
+          {
+            "unit": "3/2/4",
+            "residual": 0.30916666666666665,
+            "leverage": 0.5,
+            "internal": 1.311457691677856,
+            "external": 1.3324773703728916,
+            "flagged": false
+          },
+          {
+            "unit": "3/3/1",
+            "residual": 0.04583333333333333,
+            "leverage": 0.5,
+            "internal": 0.19442095159644765,
+            "external": 0.190477478640905,
+            "flagged": false
+          },
+          {
+            "unit": "3/3/2",
+            "residual": -0.09416666666666666,
+            "leverage": 0.5,
+            "internal": -0.3994466823708833,
+            "external": -0.39234270484830885,
+            "flagged": false
+          },
+          {
+            "unit": "3/3/3",
+            "residual": -0.18083333333333335,
+            "leverage": 0.5,
+            "internal": -0.7670790272078025,
+            "external": -0.7603062736502672,
+            "flagged": false
+          },
+          {
+            "unit": "3/3/4",
+            "residual": 0.22916666666666666,
+            "leverage": 0.5,
+            "internal": 0.9721047579822383,
+            "external": 0.970944279393437,
+            "flagged": false
+          },
+          {
+            "unit": "4/1/1",
+            "residual": 0.0875,
+            "leverage": 0.5,
+            "internal": 0.3711672712295819,
+            "external": 0.3643997196220611,
+            "flagged": false
+          },
+          {
+            "unit": "4/1/2",
+            "residual": 0.09416666666666666,
+            "leverage": 0.5,
+            "internal": 0.3994466823708833,
+            "external": 0.39234270484830885,
+            "flagged": false
+          },
+          {
+            "unit": "4/1/3",
+            "residual": -0.19916666666666666,
+            "leverage": 0.5,
+            "internal": -0.8448474078463816,
+            "external": -0.839638948192769,
+            "flagged": false
+          },
+          {
+            "unit": "4/1/4",
+            "residual": 0.0175,
+            "leverage": 0.5,
+            "internal": 0.07423345424591637,
+            "external": 0.07267881395511426,
+            "flagged": false
+          },
+          {
+            "unit": "4/2/1",
+            "residual": -0.16,
+            "leverage": 0.5,
+            "internal": -0.6787058673912354,
+            "external": -0.6708852003810739,
+            "flagged": false
+          },
+          {
+            "unit": "4/2/2",
+            "residual": -0.05333333333333334,
+            "leverage": 0.5,
+            "internal": -0.2262352891304118,
+            "external": -0.22170844137876503,
+            "flagged": false
+          },
+          {
+            "unit": "4/2/3",
+            "residual": 0.18333333333333332,
+            "leverage": 0.5,
+            "internal": 0.7776838063857906,
+            "external": 0.7710872452077308,
+            "flagged": false
+          },
+          {
+            "unit": "4/2/4",
+            "residual": 0.03,
+            "leverage": 0.5,
+            "internal": 0.12725735013585665,
+            "external": 0.12461999984079343,
+            "flagged": false
+          },
+          {
+            "unit": "4/3/1",
+            "residual": 0.0725,
+            "leverage": 0.5,
+            "internal": 0.3075385961616535,
+            "external": 0.3016583535394519,
+            "flagged": false
+          },
+          {
+            "unit": "4/3/2",
+            "residual": -0.04083333333333333,
+            "leverage": 0.5,
+            "internal": -0.17321139324047152,
+            "external": -0.16967051411782189,
+            "flagged": false
+          },
+          {
+            "unit": "4/3/3",
+            "residual": 0.015833333333333335,
+            "leverage": 0.5,
+            "internal": 0.067163601460591,
+            "external": 0.06575565241094387,
+            "flagged": false
+          },
+          {
+            "unit": "4/3/4",
+            "residual": -0.0475,
+            "leverage": 0.5,
+            "internal": -0.20149080438177303,
+            "external": -0.1974154628508403,
+            "flagged": false
+          }
+        ],
+        "normal_quantiles": {
+          "positions": "Blom (i - 3/8) / (n + 1/4)",
+          "theoretical": [
+            -2.22760696581806,
+            -1.829281070291827,
+            -1.6035726192238413,
+            -1.4386169990406925,
+            -1.3055376234853404,
+            -1.1922566625636393,
+            -1.0925045333633963,
+            -1.0025828453137484,
+            -0.9201144511009515,
+            -0.843473410318433,
+            -0.7714934424828049,
+            -0.7033056587051926,
+            -0.638242151711956,
+            -0.5757756423760041,
+            -0.515480036218266,
+            -0.45700368925829915,
+            -0.40005070486247524,
+            -0.34436747195058887,
+            -0.2897327162421811,
+            -0.2359499566908658,
+            -0.18284163429139816,
+            -0.13024441341851126,
+            -0.07800530358809164,
+            -0.025978344259048377,
+            0.02597834425904852,
+            0.07800530358809164,
+            0.13024441341851112,
+            0.1828416342913983,
+            0.2359499566908658,
+            0.28973271624218105,
+            0.344367471950589,
+            0.40005070486247524,
+            0.45700368925829915,
+            0.5154800362182662,
+            0.5757756423760041,
+            0.6382421517119558,
+            0.7033056587051926,
+            0.7714934424828049,
+            0.8434734103184329,
+            0.9201144511009515,
+            1.0025828453137484,
+            1.092504533363396,
+            1.1922566625636393,
+            1.3055376234853404,
+            1.438616999040692,
+            1.6035726192238413,
+            1.8292810702918263,
+            2.2276069658180586
+          ],
+          "internally_studentized_sorted": [
+            -2.4815183276492045,
+            -2.283562449660094,
+            -1.9442095159644766,
+            -1.4387150418137125,
+            -1.254898869395253,
+            -1.2054098998979754,
+            -1.1559209304006979,
+            -1.05340806501348,
+            -0.9120110093069725,
+            -0.8448474078463816,
+            -0.7670790272078025,
+            -0.6787058673912354,
+            -0.593867633967331,
+            -0.4807499894021251,
+            -0.3994466823708833,
+            -0.392376829585558,
+            -0.2262352891304118,
+            -0.20149080438177303,
+            -0.18735109881112227,
+            -0.17321139324047152,
+            -0.134327202921182,
+            -0.07776838063857906,
+            -0.007069852785325369,
+            0.067163601460591,
+            0.07423345424591637,
+            0.08130330703124174,
+            0.12725735013585665,
+            0.18735109881112227,
+            0.19442095159644765,
+            0.3075385961616535,
+            0.3711672712295819,
+            0.3994466823708833,
+            0.516099253328752,
+            0.537308811684728,
+            0.537308811684728,
+            0.5585183700407041,
+            0.6857757201765607,
+            0.7776838063857906,
+            0.8377775550610562,
+            0.9721047579822383,
+            1.0675477705841308,
+            1.311457691677856,
+            1.4069007042797486,
+            1.5058786432743037,
+            1.5482977599862557,
+            1.5730422447348946,
+            1.6048565822688587,
+            1.6437407725881483
+          ]
+        }
+      }
+    }
+  },
+  "diagnostics_display": {
+    "wafer": {
+      "n": 12,
+      "x_min": -1.6350392668017106,
+      "x_max": 1.6350392668017109,
+      "y_min": -1.7118197516432299,
+      "y_max": 1.4660772750614939
+    },
+    "position": {
+      "n": 48,
+      "x_min": -2.22760696581806,
+      "x_max": 2.2276069658180586,
+      "y_min": -2.4815183276492045,
+      "y_max": 1.6437407725881483
+    }
+  },
+  "evidence": {
+    "structure": {
+      "rows": 48,
+      "observed_responses": 48,
+      "missing_responses": 0,
+      "levels": [
+        {
+          "level": "wafer",
+          "declared_total": 12,
+          "present": 12
+        },
+        {
+          "level": "position",
+          "declared_per_parent": 4,
+          "present_per_parent": [
+            4
+          ]
+        }
+      ]
+    },
+    "replication": {
+      "factor": "etch_time",
+      "applied_to": "wafer",
+      "declared_per_level": 3,
+      "present_per_level": {
+        "1": 3,
+        "2": 3,
+        "3": 3,
+        "4": 3
+      }
+    },
+    "confounding": [],
+    "aliasing": {
+      "groupings": [
+        "level 'wafer'",
+        "level 'position'"
+      ],
+      "aliased_pairs": [],
+      "excluded_unit_unique": []
+    },
+    "diagnostics": {
+      "wafer": {
+        "brown_forsythe": {
+          "diagnostic": "brown_forsythe",
+          "available": true,
+          "warn": false,
+          "F": 0.582730127919986,
+          "df": [
+            3,
+            8
+          ],
+          "p": 0.6428438809716102,
+          "threshold": "p < 0.05",
+          "groups": [
+            "1",
+            "2",
+            "3",
+            "4"
+          ]
+        },
+        "sd_ratio": {
+          "diagnostic": "sd_ratio",
+          "available": true,
+          "sds": {
+            "1": 0.44696429760477885,
+            "2": 0.08251262529657709,
+            "3": 0.45740436158829967,
+            "4": 0.34424736745543894
+          },
+          "threshold": ">= 2 (pragmatic v1 threshold, not a universal law)",
+          "warn": true,
+          "ratio": 5.543446956683784
+        },
+        "studentized_residuals": {
+          "diagnostic": "studentized_residuals",
+          "available": true,
+          "warn": false,
+          "model": "etch_time",
+          "residual_df": 8,
+          "max_abs_external": 2.011486273976667,
+          "undefined_units": [],
+          "threshold": "|externally studentized residual| > 3",
+          "units": [
+            {
+              "unit": "1/1",
+              "residual": 0.19166666666666668,
+              "leverage": 0.3333333333333333,
+              "internal": 0.642281472884083,
+              "external": 0.6169156563656946,
+              "flagged": false
+            },
+            {
+              "unit": "1/2",
+              "residual": 0.31916666666666665,
+              "leverage": 0.3333333333333333,
+              "internal": 1.069538278759147,
+              "external": 1.0807050106607674,
+              "flagged": false
+            },
+            {
+              "unit": "1/3",
+              "residual": -0.5108333333333334,
+              "leverage": 0.3333333333333333,
+              "internal": -1.7118197516432299,
+              "external": -2.011486273976667,
+              "flagged": false
+            },
+            {
+              "unit": "2/1",
+              "residual": 0.0016666666666666668,
+              "leverage": 0.3333333333333333,
+              "internal": 0.0055850562859485475,
+              "external": 0.00522435196212974,
+              "flagged": false
+            },
+            {
+              "unit": "2/2",
+              "residual": -0.08333333333333333,
+              "leverage": 0.3333333333333333,
+              "internal": -0.2792528142974274,
+              "external": -0.2624996144539744,
+              "flagged": false
+            },
+            {
+              "unit": "2/3",
+              "residual": 0.08166666666666667,
+              "leverage": 0.3333333333333333,
+              "internal": 0.27366775801147886,
+              "external": 0.25719949740693326,
+              "flagged": false
+            },
+            {
+              "unit": "3/1",
+              "residual": -0.475,
+              "leverage": 0.3333333333333333,
+              "internal": -1.5917410414953361,
+              "external": -1.8012429800229903,
+              "flagged": false
+            },
+            {
+              "unit": "3/2",
+              "residual": 0.4375,
+              "leverage": 0.3333333333333333,
+              "internal": 1.4660772750614939,
+              "external": 1.603633174397493,
+              "flagged": false
+            },
+            {
+              "unit": "3/3",
+              "residual": 0.0375,
+              "leverage": 0.3333333333333333,
+              "internal": 0.12566376643384233,
+              "external": 0.11766387704946205,
+              "flagged": false
+            },
+            {
+              "unit": "4/1",
+              "residual": 0.3225,
+              "leverage": 0.3333333333333333,
+              "internal": 1.080708391331044,
+              "external": 1.093909540080041,
+              "flagged": false
+            },
+            {
+              "unit": "4/2",
+              "residual": 0.04,
+              "leverage": 0.3333333333333333,
+              "internal": 0.13404135086276514,
+              "external": 0.12552523953553948,
+              "flagged": false
+            },
+            {
+              "unit": "4/3",
+              "residual": -0.3625,
+              "leverage": 0.3333333333333333,
+              "internal": -1.2147497421938092,
+              "external": -1.2582475971971845,
+              "flagged": false
+            }
+          ],
+          "normal_quantiles": {
+            "positions": "Blom (i - 3/8) / (n + 1/4)",
+            "theoretical": [
+              -1.6350392668017106,
+              -1.113937215356688,
+              -0.7916386077433745,
+              -0.5361762663658063,
+              -0.3119190548203253,
+              -0.1024905076914514,
+              0.10249050769145156,
+              0.3119190548203253,
+              0.5361762663658063,
+              0.7916386077433745,
+              1.113937215356688,
+              1.6350392668017109
+            ],
+            "internally_studentized_sorted": [
+              -1.7118197516432299,
+              -1.5917410414953361,
+              -1.2147497421938092,
+              -0.2792528142974274,
+              0.0055850562859485475,
+              0.12566376643384233,
+              0.13404135086276514,
+              0.27366775801147886,
+              0.642281472884083,
+              1.069538278759147,
+              1.080708391331044,
+              1.4660772750614939
+            ]
+          }
+        }
+      },
+      "position": {
+        "brown_forsythe": {
+          "available": false,
+          "warn": false,
+          "not_applicable": true,
+          "reason": "no treatment groups in this stratum"
+        },
+        "sd_ratio": {
+          "available": false,
+          "warn": false,
+          "not_applicable": true,
+          "reason": "no treatment groups in this stratum"
+        },
+        "studentized_residuals": {
+          "diagnostic": "studentized_residuals",
+          "available": true,
+          "warn": false,
+          "model": "wafer + position + etch_time x position (subplot stratum)",
+          "residual_df": 24,
+          "max_abs_external": 2.8174669138076935,
+          "undefined_units": [],
+          "threshold": "|externally studentized residual| > 3",
+          "units": [
+            {
+              "unit": "1/1/1",
+              "residual": -0.585,
+              "leverage": 0.5,
+              "internal": -2.4815183276492045,
+              "external": -2.8174669138076935,
+              "flagged": false
+            },
+            {
+              "unit": "1/1/2",
+              "residual": -0.03166666666666667,
+              "leverage": 0.5,
+              "internal": -0.134327202921182,
+              "external": -0.13154840503785833,
+              "flagged": false
+            },
+            {
+              "unit": "1/1/3",
+              "residual": 0.365,
+              "leverage": 0.5,
+              "internal": 1.5482977599862557,
+              "external": 1.5975837775220165,
+              "flagged": false
+            },
+            {
+              "unit": "1/1/4",
+              "residual": 0.25166666666666665,
+              "leverage": 0.5,
+              "internal": 1.0675477705841308,
+              "external": 1.0708037330752687,
+              "flagged": false
+            },
+            {
+              "unit": "1/2/1",
+              "residual": 0.1975,
+              "leverage": 0.5,
+              "internal": 0.8377775550610562,
+              "external": 0.8324000897188824,
+              "flagged": false
+            },
+            {
+              "unit": "1/2/2",
+              "residual": 0.37083333333333335,
+              "leverage": 0.5,
+              "internal": 1.5730422447348946,
+              "external": 1.6260252883631332,
+              "flagged": false
+            },
+            {
+              "unit": "1/2/3",
+              "residual": -0.2725,
+              "leverage": 0.5,
+              "internal": -1.1559209304006979,
+              "external": -1.164461763948607,
+              "flagged": false
+            },
+            {
+              "unit": "1/2/4",
+              "residual": -0.29583333333333334,
+              "leverage": 0.5,
+              "internal": -1.254898869395253,
+              "external": -1.2708790026553205,
+              "flagged": false
+            },
+            {
+              "unit": "1/3/1",
+              "residual": 0.3875,
+              "leverage": 0.5,
+              "internal": 1.6437407725881483,
+              "external": 1.7081525319691728,
+              "flagged": false
+            },
+            {
+              "unit": "1/3/2",
+              "residual": -0.33916666666666667,
+              "leverage": 0.5,
+              "internal": -1.4387150418137125,
+              "external": -1.4733923336342432,
+              "flagged": false
+            },
+            {
+              "unit": "1/3/3",
+              "residual": -0.0925,
+              "leverage": 0.5,
+              "internal": -0.392376829585558,
+              "external": -0.38535334560505663,
+              "flagged": false
+            },
+            {
+              "unit": "1/3/4",
+              "residual": 0.04416666666666667,
+              "leverage": 0.5,
+              "internal": 0.18735109881112227,
+              "external": 0.1835406882668097,
+              "flagged": false
+            },
+            {
+              "unit": "2/1/1",
+              "residual": -0.215,
+              "leverage": 0.5,
+              "internal": -0.9120110093069725,
+              "external": -0.9086936966568288,
+              "flagged": false
+            },
+            {
+              "unit": "2/1/2",
+              "residual": 0.33166666666666667,
+              "leverage": 0.5,
+              "internal": 1.4069007042797486,
+              "external": 1.437846389204444,
+              "flagged": false
+            },
+            {
+              "unit": "2/1/3",
+              "residual": 0.13166666666666665,
+              "leverage": 0.5,
+              "internal": 0.5585183700407041,
+              "external": 0.550347069289386,
+              "flagged": false
+            },
+            {
+              "unit": "2/1/4",
+              "residual": -0.24833333333333332,
+              "leverage": 0.5,
+              "internal": -1.05340806501348,
+              "external": -1.0559285111486694,
+              "flagged": false
+            },
+            {
+              "unit": "2/2/1",
+              "residual": -0.14,
+              "leverage": 0.5,
+              "internal": -0.593867633967331,
+              "external": -0.585682974091385,
+              "flagged": false
+            },
+            {
+              "unit": "2/2/2",
+              "residual": 0.12666666666666668,
+              "leverage": 0.5,
+              "internal": 0.537308811684728,
+              "external": 0.5291882653242374,
+              "flagged": false
+            },
+            {
+              "unit": "2/2/3",
+              "residual": -0.11333333333333333,
+              "leverage": 0.5,
+              "internal": -0.4807499894021251,
+              "external": -0.47291038090008597,
+              "flagged": false
+            },
+            {
+              "unit": "2/2/4",
+              "residual": 0.12666666666666668,
+              "leverage": 0.5,
+              "internal": 0.537308811684728,
+              "external": 0.5291882653242374,
+              "flagged": false
+            },
+            {
+              "unit": "2/3/1",
+              "residual": 0.355,
+              "leverage": 0.5,
+              "internal": 1.5058786432743037,
+              "external": 1.549175968590271,
+              "flagged": false
+            },
+            {
+              "unit": "2/3/2",
+              "residual": -0.4583333333333333,
+              "leverage": 0.5,
+              "internal": -1.9442095159644766,
+              "external": -2.073556515823486,
+              "flagged": false
+            },
+            {
+              "unit": "2/3/3",
+              "residual": -0.018333333333333333,
+              "leverage": 0.5,
+              "internal": -0.07776838063857906,
+              "external": -0.07614056238094359,
+              "flagged": false
+            },
+            {
+              "unit": "2/3/4",
+              "residual": 0.12166666666666667,
+              "leverage": 0.5,
+              "internal": 0.516099253328752,
+              "external": 0.5080599477378759,
+              "flagged": false
+            },
+            {
+              "unit": "3/1/1",
+              "residual": -0.0016666666666666668,
+              "leverage": 0.5,
+              "internal": -0.007069852785325369,
+              "external": -0.006921004315168696,
+              "flagged": false
+            },
+            {
+              "unit": "3/1/2",
+              "residual": 0.37833333333333335,
+              "leverage": 0.5,
+              "internal": 1.6048565822688587,
+              "external": 1.6628208193878478,
+              "flagged": false
+            },
+            {
+              "unit": "3/1/3",
+              "residual": 0.16166666666666665,
+              "leverage": 0.5,
+              "internal": 0.6857757201765607,
+              "external": 0.6780125305600891,
+              "flagged": false
+            },
+            {
+              "unit": "3/1/4",
+              "residual": -0.5383333333333333,
+              "leverage": 0.5,
+              "internal": -2.283562449660094,
+              "external": -2.5267789585147113,
+              "flagged": false
+            },
+            {
+              "unit": "3/2/1",
+              "residual": -0.04416666666666667,
+              "leverage": 0.5,
+              "internal": -0.18735109881112227,
+              "external": -0.1835406882668097,
+              "flagged": false
+            },
+            {
+              "unit": "3/2/2",
+              "residual": -0.2841666666666667,
+              "leverage": 0.5,
+              "internal": -1.2054098998979754,
+              "external": -1.2174591975810944,
+              "flagged": false
+            },
+            {
+              "unit": "3/2/3",
+              "residual": 0.019166666666666665,
+              "leverage": 0.5,
+              "internal": 0.08130330703124174,
+              "external": 0.07960242979555936,
+              "flagged": false
+            },
+            {
+              "unit": "3/2/4",
+              "residual": 0.30916666666666665,
+              "leverage": 0.5,
+              "internal": 1.311457691677856,
+              "external": 1.3324773703728916,
+              "flagged": false
+            },
+            {
+              "unit": "3/3/1",
+              "residual": 0.04583333333333333,
+              "leverage": 0.5,
+              "internal": 0.19442095159644765,
+              "external": 0.190477478640905,
+              "flagged": false
+            },
+            {
+              "unit": "3/3/2",
+              "residual": -0.09416666666666666,
+              "leverage": 0.5,
+              "internal": -0.3994466823708833,
+              "external": -0.39234270484830885,
+              "flagged": false
+            },
+            {
+              "unit": "3/3/3",
+              "residual": -0.18083333333333335,
+              "leverage": 0.5,
+              "internal": -0.7670790272078025,
+              "external": -0.7603062736502672,
+              "flagged": false
+            },
+            {
+              "unit": "3/3/4",
+              "residual": 0.22916666666666666,
+              "leverage": 0.5,
+              "internal": 0.9721047579822383,
+              "external": 0.970944279393437,
+              "flagged": false
+            },
+            {
+              "unit": "4/1/1",
+              "residual": 0.0875,
+              "leverage": 0.5,
+              "internal": 0.3711672712295819,
+              "external": 0.3643997196220611,
+              "flagged": false
+            },
+            {
+              "unit": "4/1/2",
+              "residual": 0.09416666666666666,
+              "leverage": 0.5,
+              "internal": 0.3994466823708833,
+              "external": 0.39234270484830885,
+              "flagged": false
+            },
+            {
+              "unit": "4/1/3",
+              "residual": -0.19916666666666666,
+              "leverage": 0.5,
+              "internal": -0.8448474078463816,
+              "external": -0.839638948192769,
+              "flagged": false
+            },
+            {
+              "unit": "4/1/4",
+              "residual": 0.0175,
+              "leverage": 0.5,
+              "internal": 0.07423345424591637,
+              "external": 0.07267881395511426,
+              "flagged": false
+            },
+            {
+              "unit": "4/2/1",
+              "residual": -0.16,
+              "leverage": 0.5,
+              "internal": -0.6787058673912354,
+              "external": -0.6708852003810739,
+              "flagged": false
+            },
+            {
+              "unit": "4/2/2",
+              "residual": -0.05333333333333334,
+              "leverage": 0.5,
+              "internal": -0.2262352891304118,
+              "external": -0.22170844137876503,
+              "flagged": false
+            },
+            {
+              "unit": "4/2/3",
+              "residual": 0.18333333333333332,
+              "leverage": 0.5,
+              "internal": 0.7776838063857906,
+              "external": 0.7710872452077308,
+              "flagged": false
+            },
+            {
+              "unit": "4/2/4",
+              "residual": 0.03,
+              "leverage": 0.5,
+              "internal": 0.12725735013585665,
+              "external": 0.12461999984079343,
+              "flagged": false
+            },
+            {
+              "unit": "4/3/1",
+              "residual": 0.0725,
+              "leverage": 0.5,
+              "internal": 0.3075385961616535,
+              "external": 0.3016583535394519,
+              "flagged": false
+            },
+            {
+              "unit": "4/3/2",
+              "residual": -0.04083333333333333,
+              "leverage": 0.5,
+              "internal": -0.17321139324047152,
+              "external": -0.16967051411782189,
+              "flagged": false
+            },
+            {
+              "unit": "4/3/3",
+              "residual": 0.015833333333333335,
+              "leverage": 0.5,
+              "internal": 0.067163601460591,
+              "external": 0.06575565241094387,
+              "flagged": false
+            },
+            {
+              "unit": "4/3/4",
+              "residual": -0.0475,
+              "leverage": 0.5,
+              "internal": -0.20149080438177303,
+              "external": -0.1974154628508403,
+              "flagged": false
+            }
+          ],
+          "normal_quantiles": {
+            "positions": "Blom (i - 3/8) / (n + 1/4)",
+            "theoretical": [
+              -2.22760696581806,
+              -1.829281070291827,
+              -1.6035726192238413,
+              -1.4386169990406925,
+              -1.3055376234853404,
+              -1.1922566625636393,
+              -1.0925045333633963,
+              -1.0025828453137484,
+              -0.9201144511009515,
+              -0.843473410318433,
+              -0.7714934424828049,
+              -0.7033056587051926,
+              -0.638242151711956,
+              -0.5757756423760041,
+              -0.515480036218266,
+              -0.45700368925829915,
+              -0.40005070486247524,
+              -0.34436747195058887,
+              -0.2897327162421811,
+              -0.2359499566908658,
+              -0.18284163429139816,
+              -0.13024441341851126,
+              -0.07800530358809164,
+              -0.025978344259048377,
+              0.02597834425904852,
+              0.07800530358809164,
+              0.13024441341851112,
+              0.1828416342913983,
+              0.2359499566908658,
+              0.28973271624218105,
+              0.344367471950589,
+              0.40005070486247524,
+              0.45700368925829915,
+              0.5154800362182662,
+              0.5757756423760041,
+              0.6382421517119558,
+              0.7033056587051926,
+              0.7714934424828049,
+              0.8434734103184329,
+              0.9201144511009515,
+              1.0025828453137484,
+              1.092504533363396,
+              1.1922566625636393,
+              1.3055376234853404,
+              1.438616999040692,
+              1.6035726192238413,
+              1.8292810702918263,
+              2.2276069658180586
+            ],
+            "internally_studentized_sorted": [
+              -2.4815183276492045,
+              -2.283562449660094,
+              -1.9442095159644766,
+              -1.4387150418137125,
+              -1.254898869395253,
+              -1.2054098998979754,
+              -1.1559209304006979,
+              -1.05340806501348,
+              -0.9120110093069725,
+              -0.8448474078463816,
+              -0.7670790272078025,
+              -0.6787058673912354,
+              -0.593867633967331,
+              -0.4807499894021251,
+              -0.3994466823708833,
+              -0.392376829585558,
+              -0.2262352891304118,
+              -0.20149080438177303,
+              -0.18735109881112227,
+              -0.17321139324047152,
+              -0.134327202921182,
+              -0.07776838063857906,
+              -0.007069852785325369,
+              0.067163601460591,
+              0.07423345424591637,
+              0.08130330703124174,
+              0.12725735013585665,
+              0.18735109881112227,
+              0.19442095159644765,
+              0.3075385961616535,
+              0.3711672712295819,
+              0.3994466823708833,
+              0.516099253328752,
+              0.537308811684728,
+              0.537308811684728,
+              0.5585183700407041,
+              0.6857757201765607,
+              0.7776838063857906,
+              0.8377775550610562,
+              0.9721047579822383,
+              1.0675477705841308,
+              1.311457691677856,
+              1.4069007042797486,
+              1.5058786432743037,
+              1.5482977599862557,
+              1.5730422447348946,
+              1.6048565822688587,
+              1.6437407725881483
+            ]
+          }
+        }
+      }
+    }
+  },
+  "analysis": {
+    "template": "T3",
+    "decision": "WARN",
+    "analyzed": true,
+    "design": {
+      "levels": [
+        "wafer",
+        "position"
+      ],
+      "whole_plot_factor": "etch_time",
+      "subplot_factor": "position",
+      "a": 4,
+      "b": 4,
+      "whole_plots": 12,
+      "replicates_per_level": {
+        "1": 3,
+        "2": 3,
+        "3": 3,
+        "4": 3
+      },
+      "n_observations": 48,
+      "a_levels": [
+        "1",
+        "2",
+        "3",
+        "4"
+      ],
+      "b_levels": [
+        "1",
+        "2",
+        "3",
+        "4"
+      ]
+    },
+    "anova": {
+      "A": {
+        "source": "etch_time",
+        "key": "A",
+        "df": 3,
+        "ss": 3.1121583333333334,
+        "ss_exact": "373459/120000",
+        "ms": 1.0373861111111111,
+        "error_term": "whole plots within etch_time",
+        "F": 1.9415419927294657,
+        "p": 0.20150307601443493,
+        "num_df": 3,
+        "den_df": 8,
+        "note": "the whole-plot factor is tested against whole-plot error on (3, 8) df (brief Section 5.3)",
+        "ems_coefficients": {
+          "wholeplot": 4,
+          "residual": 1
+        },
+        "ems": "4*sigma2[whole plots within etch_time] + 1*sigma2[subplot error] + (12 * sum of squared etch_time effects) / 3",
+        "ems_by_key": "4*sigma2[wholeplot] + 1*sigma2[residual]"
+      },
+      "wholeplot_error": {
+        "source": "whole plots within etch_time",
+        "key": "wholeplot_error",
+        "df": 8,
+        "ss": 4.274483333333333,
+        "ss_exact": "256469/60000",
+        "ms": 0.5343104166666667,
+        "error_term": "subplot error",
+        "F": 4.807141295179782,
+        "p": 0.0012741669253169311,
+        "num_df": 8,
+        "den_df": 24,
+        "note": "the error term for etch_time; it also tests sigma2[whole plot] = 0",
+        "ems_coefficients": {
+          "wholeplot": 4,
+          "residual": 1
+        },
+        "ems": "4*sigma2[whole plots within etch_time] + 1*sigma2[subplot error]",
+        "ems_by_key": "4*sigma2[wholeplot] + 1*sigma2[residual]"
+      },
+      "B": {
+        "source": "position",
+        "key": "B",
+        "df": 3,
+        "ss": 1.1288916666666666,
+        "ss_exact": "135467/120000",
+        "ms": 0.3762972222222222,
+        "error_term": "subplot error",
+        "F": 3.3855112305145107,
+        "p": 0.0345138666154782,
+        "num_df": 3,
+        "den_df": 24,
+        "note": "the subplot factor is tested against subplot error",
+        "ems_coefficients": {
+          "residual": 1
+        },
+        "ems": "1*sigma2[subplot error] + (12 * sum of squared position effects) / 3",
+        "ems_by_key": "1*sigma2[residual]"
+      },
+      "AB": {
+        "source": "etch_time x position",
+        "key": "AB",
+        "df": 9,
+        "ss": 0.809475,
+        "ss_exact": "32379/40000",
+        "ms": 0.08994166666666667,
+        "error_term": "subplot error",
+        "F": 0.8091968385867359,
+        "p": 0.6125278738493771,
+        "num_df": 9,
+        "den_df": 24,
+        "note": "the interaction lives in the subplot stratum",
+        "ems_coefficients": {
+          "residual": 1
+        },
+        "ems": "1*sigma2[subplot error] + (3 * sum of squared etch_time x position effects) / 9",
+        "ems_by_key": "1*sigma2[residual]"
+      },
+      "subplot_error": {
+        "source": "subplot error",
+        "key": "subplot_error",
+        "df": 24,
+        "ss": 2.6675833333333334,
+        "ss_exact": "32011/12000",
+        "ms": 0.11114930555555555,
+        "error_term": null,
+        "F": null,
+        "p": null,
+        "num_df": null,
+        "den_df": null,
+        "note": "",
+        "ems_coefficients": {
+          "residual": 1
+        },
+        "ems": "1*sigma2[subplot error]",
+        "ems_by_key": "1*sigma2[residual]"
+      },
+      "total": {
+        "source": "total",
+        "key": "total",
+        "df": 47,
+        "ss": 11.992591666666666,
+        "ss_exact": "1439111/120000",
+        "ms": 0.25516152482269505,
+        "error_term": null,
+        "F": null,
+        "p": null,
+        "num_df": null,
+        "den_df": null,
+        "note": ""
+      }
+    },
+    "naive_anova": {
+      "A": {
+        "source": "etch_time",
+        "key": "A",
+        "df": 3,
+        "ss": 3.1121583333333334,
+        "ss_exact": "373459/120000",
+        "ms": 1.0373861111111111,
+        "error_term": "residual (single error term)",
+        "F": 4.781912526849193,
+        "p": 0.0072820793785788995,
+        "num_df": 3,
+        "den_df": 32,
+        "note": "WRONG for this design: it tests a factor applied to whole plots against subplot error, treating the 4 readings on one wafer as independent replicates of etch_time"
+      },
+      "B": {
+        "source": "position",
+        "key": "B",
+        "df": 3,
+        "ss": 1.1288916666666666,
+        "ss_exact": "135467/120000",
+        "ms": 0.3762972222222222,
+        "error_term": "residual (single error term)",
+        "F": 1.7345715172875193,
+        "p": 0.1796528662235715,
+        "num_df": 3,
+        "den_df": 32,
+        "note": ""
+      },
+      "AB": {
+        "source": "etch_time x position",
+        "key": "AB",
+        "df": 9,
+        "ss": 0.809475,
+        "ss_exact": "32379/40000",
+        "ms": 0.08994166666666667,
+        "error_term": "residual (single error term)",
+        "F": 0.414593156696853,
+        "p": 0.9177542058242808,
+        "num_df": 9,
+        "den_df": 32,
+        "note": ""
+      },
+      "residual": {
+        "source": "residual (single error term)",
+        "key": "residual",
+        "df": 32,
+        "ss": 6.942066666666666,
+        "ss_exact": "104131/15000",
+        "ms": 0.21693958333333332,
+        "error_term": null,
+        "F": null,
+        "p": null,
+        "num_df": null,
+        "den_df": null,
+        "note": ""
+      },
+      "note": "Reported only for contrast (brief Section 5.3). Pooling the two error strata gives 32 residual df instead of 8, so etch_time is judged against within-wafer variation it was never applied to."
+    },
+    "variance_components": {
+      "wholeplot": {
+        "component": "wholeplot",
+        "label": "whole plots within etch_time",
+        "merged": false,
+        "coefficient": 4,
+        "estimator": "(MS[wholeplot] - MS[residual]) / 4",
+        "estimator_display": "(MS[whole plots within etch_time] - MS[subplot error]) / 4",
+        "mom": 0.10579027777777777,
+        "mom_exact": "76169/720000",
+        "mom_truncated": 0.10579027777777777,
+        "negative": false,
+        "sd_mom": 0.3252541741127664,
+        "reml": 0.10579027777777777,
+        "sd_reml": 0.3252541741127664,
+        "reml_equals_mom": true,
+        "interval_method": "approximate (Satterthwaite)",
+        "exact": false,
+        "interval_available": true,
+        "nu_eff": 4.946458993875605,
+        "interval_lower": 0.04106111833725602,
+        "interval_upper": 0.645235208079129,
+        "truncated_at_zero": false,
+        "sd_interval_lower": 0.20263543208742152,
+        "sd_interval_upper": 0.8032653410169824,
+        "percent_of_total": 48.764857087066616
+      },
+      "residual": {
+        "component": "residual",
+        "label": "subplot error",
+        "merged": false,
+        "coefficient": 1,
+        "estimator": "MS[residual]",
+        "estimator_display": "MS[subplot error]",
+        "mom": 0.11114930555555555,
+        "mom_exact": "32011/288000",
+        "mom_truncated": 0.11114930555555555,
+        "negative": false,
+        "sd_mom": 0.33339062007734344,
+        "reml": 0.11114930555555555,
+        "sd_reml": 0.33339062007734344,
+        "reml_equals_mom": true,
+        "interval_method": "exact under the model for balanced data",
+        "exact": true,
+        "interval_available": true,
+        "nu_eff": 24.0,
+        "interval_lower": 0.06776694729894132,
+        "interval_upper": 0.21510773489227647,
+        "truncated_at_zero": false,
+        "sd_interval_lower": 0.26032085452176384,
+        "sd_interval_upper": 0.463797083747059,
+        "percent_of_total": 51.235142912933384
+      }
+    },
+    "stratum_expectations": {
+      "wholeplot": {
+        "stratum": "wholeplot",
+        "label": "whole plots within etch_time",
+        "df": 8,
+        "ms": 0.5343104166666667,
+        "lower": 0.24377496282655226,
+        "upper": 1.9610143769917123,
+        "exact": true,
+        "interval_method": "exact under the model for balanced data",
+        "definition": "E[MS] = 4*sigma2[whole plots within etch_time] + 1*sigma2[subplot error]"
+      },
+      "residual": {
+        "stratum": "residual",
+        "label": "subplot error",
+        "df": 24,
+        "ms": 0.11114930555555555,
+        "lower": 0.06776694729894132,
+        "upper": 0.21510773489227647,
+        "exact": true,
+        "interval_method": "exact under the model for balanced data",
+        "definition": "E[MS] = 1*sigma2[subplot error]"
+      }
+    },
+    "estimates": {
+      "mean_A[1]": {
+        "estimate_of": "mean response at etch_time 1",
+        "estimate": 5.6258333333333335,
+        "se": 0.21101153536135306,
+        "df": 8.0,
+        "error_term": "whole plots within etch_time",
+        "independent_units": 3,
+        "lower": 5.139239860214273,
+        "upper": 6.112426806452394,
+        "t_critical": 2.3060041352041662,
+        "interval_method": "exact under the model for balanced data",
+        "approximate": false
+      },
+      "mean_A[2]": {
+        "estimate_of": "mean response at etch_time 2",
+        "estimate": 5.965833333333333,
+        "se": 0.21101153536135306,
+        "df": 8.0,
+        "error_term": "whole plots within etch_time",
+        "independent_units": 3,
+        "lower": 5.479239860214273,
+        "upper": 6.452426806452394,
+        "t_critical": 2.3060041352041662,
+        "interval_method": "exact under the model for balanced data",
+        "approximate": false
+      },
+      "mean_A[3]": {
+        "estimate_of": "mean response at etch_time 3",
+        "estimate": 6.0875,
+        "se": 0.21101153536135306,
+        "df": 8.0,
+        "error_term": "whole plots within etch_time",
+        "independent_units": 3,
+        "lower": 5.60090652688094,
+        "upper": 6.574093473119061,
+        "t_critical": 2.3060041352041662,
+        "interval_method": "exact under the model for balanced data",
+        "approximate": false
+      },
+      "mean_A[4]": {
+        "estimate_of": "mean response at etch_time 4",
+        "estimate": 6.3325,
+        "se": 0.21101153536135306,
+        "df": 8.0,
+        "error_term": "whole plots within etch_time",
+        "independent_units": 3,
+        "lower": 5.845906526880939,
+        "upper": 6.81909347311906,
+        "t_critical": 2.3060041352041662,
+        "interval_method": "exact under the model for balanced data",
+        "approximate": false
+      },
+      "mean_B[1]": {
+        "estimate_of": "mean response at position 1",
+        "estimate": 6.020833333333333,
+        "se": 0.13445556370456044,
+        "df": 18.676279188635736,
+        "error_term": "both strata (whole plot and subplot)",
+        "independent_units": 12,
+        "lower": 5.739084089677858,
+        "upper": 6.302582576988808,
+        "t_critical": 2.09548222396035,
+        "interval_method": "approximate (Satterthwaite)",
+        "approximate": true,
+        "note": "the standard error of a subplot-level mean needs both mean squares, so its df is Satterthwaite-approximated; the position contrasts below use the subplot stratum alone and are exact"
+      },
+      "mean_B[2]": {
+        "estimate_of": "mean response at position 2",
+        "estimate": 6.134166666666666,
+        "se": 0.13445556370456044,
+        "df": 18.676279188635736,
+        "error_term": "both strata (whole plot and subplot)",
+        "independent_units": 12,
+        "lower": 5.852417423011191,
+        "upper": 6.415915910322141,
+        "t_critical": 2.09548222396035,
+        "interval_method": "approximate (Satterthwaite)",
+        "approximate": true,
+        "note": "the standard error of a subplot-level mean needs both mean squares, so its df is Satterthwaite-approximated; the position contrasts below use the subplot stratum alone and are exact"
+      },
+      "mean_B[3]": {
+        "estimate_of": "mean response at position 3",
+        "estimate": 5.7475,
+        "se": 0.13445556370456044,
+        "df": 18.676279188635736,
+        "error_term": "both strata (whole plot and subplot)",
+        "independent_units": 12,
+        "lower": 5.465750756344525,
+        "upper": 6.0292492436554745,
+        "t_critical": 2.09548222396035,
+        "interval_method": "approximate (Satterthwaite)",
+        "approximate": true,
+        "note": "the standard error of a subplot-level mean needs both mean squares, so its df is Satterthwaite-approximated; the position contrasts below use the subplot stratum alone and are exact"
+      },
+      "mean_B[4]": {
+        "estimate_of": "mean response at position 4",
+        "estimate": 6.109166666666667,
+        "se": 0.13445556370456044,
+        "df": 18.676279188635736,
+        "error_term": "both strata (whole plot and subplot)",
+        "independent_units": 12,
+        "lower": 5.827417423011192,
+        "upper": 6.390915910322142,
+        "t_critical": 2.09548222396035,
+        "interval_method": "approximate (Satterthwaite)",
+        "approximate": true,
+        "note": "the standard error of a subplot-level mean needs both mean squares, so its df is Satterthwaite-approximated; the position contrasts below use the subplot stratum alone and are exact"
+      },
+      "etch_time_overall: 2 - 1": {
+        "estimate_of": "2 - 1",
+        "estimate": 0.34,
+        "se": 0.29841537512519545,
+        "df": 8.0,
+        "error_term": "whole plots within etch_time",
+        "independent_units": 6,
+        "lower": -0.3481470890472032,
+        "upper": 1.0281470890472033,
+        "t_critical": 2.3060041352041662,
+        "interval_method": "exact under the model for balanced data",
+        "approximate": false,
+        "t": 1.1393514823335038,
+        "p": 0.2875200552264737,
+        "comparison": "etch_time_overall",
+        "contrast": "2 - 1",
+        "factor": "etch_time"
+      },
+      "etch_time_overall: 3 - 1": {
+        "estimate_of": "3 - 1",
+        "estimate": 0.46166666666666667,
+        "se": 0.29841537512519545,
+        "df": 8.0,
+        "error_term": "whole plots within etch_time",
+        "independent_units": 6,
+        "lower": -0.22648042238053656,
+        "upper": 1.14981375571387,
+        "t_critical": 2.3060041352041662,
+        "interval_method": "exact under the model for balanced data",
+        "approximate": false,
+        "t": 1.5470605912077477,
+        "p": 0.16043573861512983,
+        "comparison": "etch_time_overall",
+        "contrast": "3 - 1",
+        "factor": "etch_time"
+      },
+      "etch_time_overall: 4 - 1": {
+        "estimate_of": "4 - 1",
+        "estimate": 0.7066666666666667,
+        "se": 0.29841537512519545,
+        "df": 8.0,
+        "error_term": "whole plots within etch_time",
+        "independent_units": 6,
+        "lower": 0.018519577619463434,
+        "upper": 1.3948137557138698,
+        "t_critical": 2.3060041352041662,
+        "interval_method": "exact under the model for balanced data",
+        "approximate": false,
+        "t": 2.368063865242184,
+        "p": 0.045383364530964164,
+        "comparison": "etch_time_overall",
+        "contrast": "4 - 1",
+        "factor": "etch_time"
+      },
+      "position_overall: 2 - 1": {
+        "estimate_of": "2 - 1",
+        "estimate": 0.11333333333333333,
+        "se": 0.1361061507032627,
+        "df": 24.0,
+        "error_term": "subplot error",
+        "independent_units": 12,
+        "lower": -0.1675759553318576,
+        "upper": 0.3942426219985243,
+        "t_critical": 2.0638985616280237,
+        "interval_method": "exact under the model for balanced data",
+        "approximate": false,
+        "t": 0.8326834073826799,
+        "p": 0.41323308763296485,
+        "comparison": "position_overall",
+        "contrast": "2 - 1",
+        "factor": "position",
+        "units_note": "each whole plot contributes one independent within-plot comparison"
+      },
+      "position_overall: 3 - 1": {
+        "estimate_of": "3 - 1",
+        "estimate": -0.2733333333333333,
+        "se": 0.1361061507032627,
+        "df": 24.0,
+        "error_term": "subplot error",
+        "independent_units": 12,
+        "lower": -0.5542426219985243,
+        "upper": 0.00757595533185762,
+        "t_critical": 2.0638985616280237,
+        "interval_method": "exact under the model for balanced data",
+        "approximate": false,
+        "t": -2.0082364530994044,
+        "p": 0.05599984565304512,
+        "comparison": "position_overall",
+        "contrast": "3 - 1",
+        "factor": "position",
+        "units_note": "each whole plot contributes one independent within-plot comparison"
+      },
+      "position_overall: 4 - 1": {
+        "estimate_of": "4 - 1",
+        "estimate": 0.08833333333333333,
+        "se": 0.1361061507032627,
+        "df": 24.0,
+        "error_term": "subplot error",
+        "independent_units": 12,
+        "lower": -0.19257595533185762,
+        "upper": 0.36924262199852426,
+        "t_critical": 2.0638985616280237,
+        "interval_method": "exact under the model for balanced data",
+        "approximate": false,
+        "t": 0.6490032439894418,
+        "p": 0.5224989451844515,
+        "comparison": "position_overall",
+        "contrast": "4 - 1",
+        "factor": "position",
+        "units_note": "each whole plot contributes one independent within-plot comparison"
+      },
+      "etch_time_by_position: (2,2)-(2,1)-(1,2)+(1,1)": {
+        "estimate_of": "(2,2)-(2,1)-(1,2)+(1,1)",
+        "estimate": 0.3566666666666667,
+        "se": 0.38496632849390094,
+        "df": 24.0,
+        "error_term": "subplot error",
+        "independent_units": 6,
+        "lower": -0.4378647849871168,
+        "upper": 1.1511981183204503,
+        "t_critical": 2.0638985616280237,
+        "interval_method": "exact under the model for balanced data",
+        "approximate": false,
+        "t": 0.9264879556143243,
+        "p": 0.3634161424575252,
+        "comparison": "etch_time_by_position",
+        "contrast": "(2,2)-(2,1)-(1,2)+(1,1)",
+        "factor": "etch_time x position",
+        "units_note": "each whole plot contributes one independent within-plot comparison"
+      },
+      "etch_time_by_position: (2,3)-(2,1)-(1,3)+(1,1)": {
+        "estimate_of": "(2,3)-(2,1)-(1,3)+(1,1)",
+        "estimate": -0.16666666666666666,
+        "se": 0.38496632849390094,
+        "df": 24.0,
+        "error_term": "subplot error",
+        "independent_units": 6,
+        "lower": -0.9611981183204501,
+        "upper": 0.6278647849871168,
+        "t_critical": 2.0638985616280237,
+        "interval_method": "exact under the model for balanced data",
+        "approximate": false,
+        "t": -0.43293829701603936,
+        "p": 0.6689255086453372,
+        "comparison": "etch_time_by_position",
+        "contrast": "(2,3)-(2,1)-(1,3)+(1,1)",
+        "factor": "etch_time x position",
+        "units_note": "each whole plot contributes one independent within-plot comparison"
+      },
+      "etch_time_by_position: (2,4)-(2,1)-(1,4)+(1,1)": {
+        "estimate_of": "(2,4)-(2,1)-(1,4)+(1,1)",
+        "estimate": -0.35,
+        "se": 0.38496632849390094,
+        "df": 24.0,
+        "error_term": "subplot error",
+        "independent_units": 6,
+        "lower": -1.1445314516537834,
+        "upper": 0.4445314516537835,
+        "t_critical": 2.0638985616280237,
+        "interval_method": "exact under the model for balanced data",
+        "approximate": false,
+        "t": -0.9091704237336826,
+        "p": 0.372300414878479,
+        "comparison": "etch_time_by_position",
+        "contrast": "(2,4)-(2,1)-(1,4)+(1,1)",
+        "factor": "etch_time x position",
+        "units_note": "each whole plot contributes one independent within-plot comparison"
+      },
+      "etch_time_by_position: (3,2)-(3,1)-(1,2)+(1,1)": {
+        "estimate_of": "(3,2)-(3,1)-(1,2)+(1,1)",
+        "estimate": 0.37333333333333335,
+        "se": 0.38496632849390094,
+        "df": 24.0,
+        "error_term": "subplot error",
+        "independent_units": 6,
+        "lower": -0.4211981183204501,
+        "upper": 1.1678647849871169,
+        "t_critical": 2.0638985616280237,
+        "interval_method": "exact under the model for balanced data",
+        "approximate": false,
+        "t": 0.9697817853159282,
+        "p": 0.34182785969628793,
+        "comparison": "etch_time_by_position",
+        "contrast": "(3,2)-(3,1)-(1,2)+(1,1)",
+        "factor": "etch_time x position",
+        "units_note": "each whole plot contributes one independent within-plot comparison"
+      },
+      "etch_time_by_position: (3,3)-(3,1)-(1,3)+(1,1)": {
+        "estimate_of": "(3,3)-(3,1)-(1,3)+(1,1)",
+        "estimate": -0.30333333333333334,
+        "se": 0.38496632849390094,
+        "df": 24.0,
+        "error_term": "subplot error",
+        "independent_units": 6,
+        "lower": -1.0978647849871168,
+        "upper": 0.49119811832045013,
+        "t_critical": 2.0638985616280237,
+        "interval_method": "exact under the model for balanced data",
+        "approximate": false,
+        "t": -0.7879477005691917,
+        "p": 0.43844086846998853,
+        "comparison": "etch_time_by_position",
+        "contrast": "(3,3)-(3,1)-(1,3)+(1,1)",
+        "factor": "etch_time x position",
+        "units_note": "each whole plot contributes one independent within-plot comparison"
+      },
+      "etch_time_by_position: (3,4)-(3,1)-(1,4)+(1,1)": {
+        "estimate_of": "(3,4)-(3,1)-(1,4)+(1,1)",
+        "estimate": -0.31666666666666665,
+        "se": 0.38496632849390094,
+        "df": 24.0,
+        "error_term": "subplot error",
+        "independent_units": 6,
+        "lower": -1.1111981183204502,
+        "upper": 0.4778647849871168,
+        "t_critical": 2.0638985616280237,
+        "interval_method": "exact under the model for balanced data",
+        "approximate": false,
+        "t": -0.8225827643304747,
+        "p": 0.4188435358899071,
+        "comparison": "etch_time_by_position",
+        "contrast": "(3,4)-(3,1)-(1,4)+(1,1)",
+        "factor": "etch_time x position",
+        "units_note": "each whole plot contributes one independent within-plot comparison"
+      },
+      "etch_time_by_position: (4,2)-(4,1)-(1,2)+(1,1)": {
+        "estimate_of": "(4,2)-(4,1)-(1,2)+(1,1)",
+        "estimate": 0.37666666666666665,
+        "se": 0.38496632849390094,
+        "df": 24.0,
+        "error_term": "subplot error",
+        "independent_units": 6,
+        "lower": -0.4178647849871168,
+        "upper": 1.17119811832045,
+        "t_critical": 2.0638985616280237,
+        "interval_method": "exact under the model for balanced data",
+        "approximate": false,
+        "t": 0.978440551256249,
+        "p": 0.33761697728846285,
+        "comparison": "etch_time_by_position",
+        "contrast": "(4,2)-(4,1)-(1,2)+(1,1)",
+        "factor": "etch_time x position",
+        "units_note": "each whole plot contributes one independent within-plot comparison"
+      },
+      "etch_time_by_position: (4,3)-(4,1)-(1,3)+(1,1)": {
+        "estimate_of": "(4,3)-(4,1)-(1,3)+(1,1)",
+        "estimate": -0.38333333333333336,
+        "se": 0.38496632849390094,
+        "df": 24.0,
+        "error_term": "subplot error",
+        "independent_units": 6,
+        "lower": -1.1778647849871169,
+        "upper": 0.4111981183204501,
+        "t_critical": 2.0638985616280237,
+        "interval_method": "exact under the model for balanced data",
+        "approximate": false,
+        "t": -0.9957580831368906,
+        "p": 0.32930195193605394,
+        "comparison": "etch_time_by_position",
+        "contrast": "(4,3)-(4,1)-(1,3)+(1,1)",
+        "factor": "etch_time x position",
+        "units_note": "each whole plot contributes one independent within-plot comparison"
+      },
+      "etch_time_by_position: (4,4)-(4,1)-(1,4)+(1,1)": {
+        "estimate_of": "(4,4)-(4,1)-(1,4)+(1,1)",
+        "estimate": -0.07333333333333333,
+        "se": 0.38496632849390094,
+        "df": 24.0,
+        "error_term": "subplot error",
+        "independent_units": 6,
+        "lower": -0.8678647849871168,
+        "upper": 0.7211981183204501,
+        "t_critical": 2.0638985616280237,
+        "interval_method": "exact under the model for balanced data",
+        "approximate": false,
+        "t": -0.19049285068705732,
+        "p": 0.8505251087831371,
+        "comparison": "etch_time_by_position",
+        "contrast": "(4,4)-(4,1)-(1,4)+(1,1)",
+        "factor": "etch_time x position",
+        "units_note": "each whole plot contributes one independent within-plot comparison"
+      }
+    },
+    "reml": {
+      "fit": {
+        "method": "closed-form order-restricted (pool-adjacent-violators) REML for balanced designs; no optimizer, so no convergence failure (D-064)",
+        "lambda_hat": {
+          "wholeplot": 0.5343104166666667,
+          "residual": 0.11114930555555555
+        },
+        "mean_squares": {
+          "wholeplot": 0.5343104166666667,
+          "residual": 0.11114930555555555
+        },
+        "pooled": [],
+        "boundary": false,
+        "error_contrast_df": 32,
+        "n_fixed_parameters": 16,
+        "minus2_restricted_loglik_error_contrasts": 33.07269841702752,
+        "restricted_loglik_error_contrasts": -16.53634920851376,
+        "log_det_xtx": 17.577796618689757,
+        "fixed_parameterization": "cell means: one indicator per whole-plot x subplot cell",
+        "minus2_restricted_loglik": 50.65049503571727,
+        "restricted_loglik": -25.325247517858635,
+        "convention": "-2 log L_R = (N - p) log(2 pi) + sum_k [ df_k log lambda_k + SS_k / lambda_k ] + log det(X'X), the standard restricted log-likelihood (Harville 1977). The last term is an additive constant that depends on how the fixed effects are parameterised, so a REML log-likelihood is comparable only between fits that share one. X here is the full-rank indicator parameterisation named in `fixed_parameterization`. The form without that term is also reported, and any offset against a package's printed value is reported rather than absorbed (D-064)."
+      }
+    },
+    "fits": {
+      "boundary": [],
+      "degenerate": [],
+      "failed": [],
+      "note": "Every step is closed form (exact rational ANOVA, closed-form REML, deterministic quantile functions), so no fit can fail to converge. An empty `failed` list means none occurred, not that none were looked for (D-066). A design the evidence checks refuse is not a failed fit: refusal is a successful outcome.",
+      "boundary_count": 0,
+      "degenerate_count": 0,
+      "failed_count": 0
+    },
+    "notes": [
+      "etch_time is applied to whole wafers, so the only replication it has is the 3 wafers per level: it is tested on (3, 8) df against whole-plot error, and the denominator df count a(r - 1) = 4 x (3 - 1) = 8.",
+      "position and etch_time x position vary inside a whole plot, so every whole plot contributes its own comparison: they are tested against subplot error on a(r - 1)(b - 1) = 4 x (3 - 1) x (4 - 1) = 24 df.",
+      "That is why the two factors have different denominator degrees of freedom even though they come from the same 48 readings: they are replicated at different levels of the design.",
+      "The naive single-error analysis is reported beside the correct one and is labelled wrong for this design (brief Section 5.3)."
+    ],
+    "labels": {
+      "template": "T3: balanced split-plot",
+      "A": "etch_time",
+      "B": "position",
+      "whole_plot_level": "wafer",
+      "subplot_level": "position"
+    }
+  },
+  "allocation": {
+    "status": "available",
+    "basis": "the WP3 analysis's stratum mean squares",
+    "components": [
+      {
+        "component": "wholeplot",
+        "label": "whole plots within etch_time",
+        "levels": [
+          "wholeplot"
+        ],
+        "merged": false,
+        "df": 8,
+        "estimable": true,
+        "estimate": 0.10579027777777777,
+        "estimate_exact": "76169/720000",
+        "ms": 0.5343104166666667,
+        "lambda_hat": 0.5343104166666667
+      },
+      {
+        "component": "residual",
+        "label": "subplot error",
+        "levels": [
+          "residual"
+        ],
+        "merged": false,
+        "df": 24,
+        "estimable": true,
+        "estimate": 0.11114930555555555,
+        "estimate_exact": "32011/288000",
+        "ms": 0.11114930555555555,
+        "lambda_hat": 0.11114930555555555
+      }
+    ],
+    "components_method": "closed-form REML (D-064); equal to the method-of-moments estimates whenever those are all >= 0 (D-078)",
+    "plausible_values": {
+      "method": "generalized pivotal quantities: lambda* = nu MS / U, U ~ chi-square(nu), then the same pooling and inversion as the point estimate (Weerahandi 1993; D-079)",
+      "draws": 20000,
+      "seed_text": "stratum-wp4-plausible-values-v1",
+      "seed": 10763399368363203454,
+      "percentiles": "2.5, 50, 97.5 (statistics.quantiles, n = 40, inclusive)",
+      "label": "approximate; not validated in the WP6 grid"
+    },
+    "comparisons": [
+      {
+        "comparison_of": "the difference between two etch_time level means",
+        "factor": "etch_time",
+        "formula": "(2 / r) * (sigma2[whole plot] + sigma2[subplot] / b)",
+        "scenarios": [
+          {
+            "id": "current",
+            "label": "current design",
+            "design": {
+              "wafer_per_level": 3,
+              "position_per_wafer": 4
+            },
+            "added_units": "none",
+            "added_measurements": 0,
+            "error_df": 8,
+            "balanced": true,
+            "status": "identified",
+            "note": "",
+            "candidate": false,
+            "se": 0.29841537512519545,
+            "variance": 0.08905173611111111,
+            "plausible_se": {
+              "p2_5": 0.201159,
+              "p50": 0.311606,
+              "p97_5": 0.577283
+            }
+          },
+          {
+            "id": "add_unit",
+            "label": "one more wafer per whole-plot level",
+            "design": {
+              "wafer_per_level": 4,
+              "position_per_wafer": 4
+            },
+            "added_units": "4 wafers",
+            "added_measurements": 16,
+            "error_df": 12,
+            "balanced": true,
+            "status": "identified",
+            "note": "",
+            "candidate": true,
+            "se": 0.2584352957382821,
+            "variance": 0.06678880208333333,
+            "plausible_se": {
+              "p2_5": 0.174209,
+              "p50": 0.269858,
+              "p97_5": 0.499941
+            }
+          },
+          {
+            "id": "add_position",
+            "label": "one more position reading per wafer",
+            "design": {
+              "wafer_per_level": 3,
+              "position_per_wafer": 5
+            },
+            "added_units": "12 readings",
+            "added_measurements": 12,
+            "error_df": 8,
+            "balanced": true,
+            "status": "identified",
+            "note": "a new reading per whole plot is a new level of the subplot factor, which changes the subplot factor itself; it is shown only to make the floor visible (D-078)",
+            "candidate": true,
+            "se": 0.2921416766900253,
+            "variance": 0.08534675925925926,
+            "plausible_se": {
+              "p2_5": 0.190604,
+              "p50": 0.305259,
+              "p97_5": 0.572518
+            }
+          },
+          {
+            "id": "floor",
+            "label": "the floor: unlimited position readings per wafer",
+            "design": {
+              "wafer_per_level": 3,
+              "position_per_wafer": "unlimited"
+            },
+            "added_units": "unlimited",
+            "added_measurements": 0,
+            "error_df": 8,
+            "balanced": true,
+            "status": "identified",
+            "note": "2 sigma^2[whole plot] / r",
+            "candidate": false,
+            "se": 0.2655689210955451,
+            "variance": 0.07052685185185185,
+            "plausible_se": {
+              "p2_5": 0.135495,
+              "p50": 0.277926,
+              "p97_5": 0.558824
+            }
+          }
+        ],
+        "ranking": {
+          "candidates": [
+            "add_unit",
+            "add_position"
+          ],
+          "candidate_labels": {
+            "add_unit": "one more wafer per whole-plot level",
+            "add_position": "one more position reading per wafer"
+          },
+          "draws": 20000,
+          "robust_threshold_wins": 19000,
+          "seed_text": "stratum-wp4-plausible-values-v1",
+          "assessed": true,
+          "wins": {
+            "add_unit": 20000,
+            "add_position": 0
+          },
+          "ties": 0,
+          "shares": {
+            "add_unit": 1.0,
+            "add_position": 0.0
+          },
+          "shares_percent": {
+            "add_unit": 100.0,
+            "add_position": 0.0
+          },
+          "best": "add_unit",
+          "best_label": "one more wafer per whole-plot level",
+          "best_share": 1.0,
+          "robust": true
+        },
+        "floor_statement": "No number of additional position readings can bring the standard error below the floor; only additional wafers lower it.",
+        "robust_conclusion": "Robust conclusion: only additional wafers lower the floor."
+      },
+      {
+        "comparison_of": "the difference between two position level means",
+        "factor": "position",
+        "formula": "2 * sigma2[subplot] / (a * r)",
+        "scenarios": [
+          {
+            "id": "current",
+            "label": "current design",
+            "design": {
+              "wafer_per_level": 3
+            },
+            "added_units": "none",
+            "added_measurements": 0,
+            "error_df": 24,
+            "balanced": true,
+            "status": "identified",
+            "note": "",
+            "candidate": false,
+            "se": 0.1361061507032627,
+            "variance": 0.01852488425925926,
+            "plausible_se": {
+              "p2_5": 0.106531,
+              "p50": 0.137945,
+              "p97_5": 0.19029
+            }
+          },
+          {
+            "id": "add_unit",
+            "label": "one more wafer per whole-plot level",
+            "design": {
+              "wafer_per_level": 4
+            },
+            "added_units": "4 wafers",
+            "added_measurements": 16,
+            "error_df": 36,
+            "balanced": true,
+            "status": "identified",
+            "note": "the number of subplot levels does not enter this variance",
+            "candidate": true,
+            "se": 0.11787138412033873,
+            "variance": 0.013893663194444444,
+            "plausible_se": {
+              "p2_5": 0.092259,
+              "p50": 0.119463,
+              "p97_5": 0.164796
+            }
+          }
+        ],
+        "ranking": {
+          "candidates": [
+            "add_unit"
+          ],
+          "candidate_labels": {
+            "add_unit": "one more wafer per whole-plot level"
+          },
+          "draws": 20000,
+          "robust_threshold_wins": 19000,
+          "seed_text": "stratum-wp4-plausible-values-v1",
+          "assessed": false,
+          "reason": "fewer than two single additions to compare"
+        }
+      },
+      {
+        "comparison_of": "a 2 x 2 etch_time x position interaction contrast",
+        "factor": "etch_time x position",
+        "formula": "4 * sigma2[subplot] / r",
+        "scenarios": [
+          {
+            "id": "current",
+            "label": "current design",
+            "design": {
+              "wafer_per_level": 3
+            },
+            "added_units": "none",
+            "added_measurements": 0,
+            "error_df": 24,
+            "balanced": true,
+            "status": "identified",
+            "note": "",
+            "candidate": false,
+            "se": 0.38496632849390094,
+            "variance": 0.14819907407407407,
+            "plausible_se": {
+              "p2_5": 0.301317,
+              "p50": 0.390166,
+              "p97_5": 0.538222
+            }
+          },
+          {
+            "id": "add_unit",
+            "label": "one more wafer per whole-plot level",
+            "design": {
+              "wafer_per_level": 4
+            },
+            "added_units": "4 wafers",
+            "added_measurements": 16,
+            "error_df": 36,
+            "balanced": true,
+            "status": "identified",
+            "note": "the number of subplot levels does not enter this variance",
+            "candidate": true,
+            "se": 0.33339062007734344,
+            "variance": 0.11114930555555555,
+            "plausible_se": {
+              "p2_5": 0.260948,
+              "p50": 0.337894,
+              "p97_5": 0.466114
+            }
+          }
+        ],
+        "ranking": {
+          "candidates": [
+            "add_unit"
+          ],
+          "candidate_labels": {
+            "add_unit": "one more wafer per whole-plot level"
+          },
+          "draws": 20000,
+          "robust_threshold_wins": 19000,
+          "seed_text": "stratum-wp4-plausible-values-v1",
+          "assessed": false,
+          "reason": "fewer than two single additions to compare"
+        }
+      }
+    ],
+    "not_implemented": "cost-weighted versions and cost-optimal subsample sizes (optional in brief Section 5.5; D-078)",
+    "current_vs_analysis": "REML pooled nothing, so the allocation's current standard error equals the comparison's reported standard error exactly (D-078)."
+  },
+  "reassignment": {
+    "status": "not_applicable",
+    "reason": "no complete confounding was found, so no reassignment is needed"
+  },
+  "planning": {
+    "eligible": false,
+    "reason": "the design was analyzed"
+  },
+  "explanations": {
+    "required": 47,
+    "required_written": 47,
+    "required_pending": [],
+    "optional": 2,
+    "optional_written": 2,
+    "file": "resources/explanations.yaml",
+    "policy": "D-075 (verbatim insertion, pending marked)"
+  },
+  "summary": {
+    "decision": "WARN",
+    "analyzed": true,
+    "analyzed_comparisons": [
+      "etch_time_overall",
+      "position_overall",
+      "etch_time_by_position"
+    ],
+    "refused_comparisons": [],
+    "refusal_codes": [],
+    "warning_codes": [
+      "sd_ratio"
+    ],
+    "note_codes": [],
+    "caveat_codes": [
+      "assignment_not_randomized"
+    ],
+    "next_steps": [
+      {
+        "kind": "allocation",
+        "factor": "etch_time",
+        "text": "Robust conclusion: only additional wafers lower the floor."
+      },
+      {
+        "kind": "allocation",
+        "factor": "etch_time",
+        "text": "No number of additional position readings can bring the standard error below the floor; only additional wafers lower it."
+      }
+    ],
+    "pending_in_report": []
+  }
+}

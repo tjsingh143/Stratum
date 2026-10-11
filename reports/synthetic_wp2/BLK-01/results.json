@@ -1,0 +1,1381 @@
+{
+  "schema": "stratum-results/1",
+  "generated_by": "stratum 1.0.0 (stratum.results.build); never hand-edited",
+  "synthetic": true,
+  "data_label": "labelled synthetic data; results show software behavior, not process realism (brief Section 3.3)",
+  "provenance": {
+    "inputs": {
+      "declaration": {
+        "path": "fixtures/synthetic_wp2/BLK-01/declaration_synthetic.yaml",
+        "sha256": "c6fc49a1fe46d74f693cdcda05b9850e9441545382ab1ba0fb6cea5cddb079c3",
+        "bytes": 1020
+      },
+      "data": {
+        "path": "fixtures/synthetic_wp2/BLK-01/data_synthetic.csv",
+        "sha256": "318dbb685add66c27e46eefc6e43771bd11434a6c3a19ff66da6fbea4cae3ab2",
+        "bytes": 1632
+      },
+      "explanations": {
+        "path": "resources/explanations.yaml",
+        "sha256": "45923fbd6faf9e13bd694316bc407fca02bb7a819226dce39f5bd3bfd2dcc5e3",
+        "bytes": 22437
+      }
+    },
+    "code": {
+      "package": "stratum",
+      "version": "1.0.0",
+      "source_sha256": "ada12f7b897c7d9984c6300a1c86c9ac23e1db099ffa5a24a39aa6a5c81cb860",
+      "source_files": 17,
+      "method": "SHA-256 over the sorted lines '<relative path> <file SHA-256>' of every file in the stratum package (D-077)"
+    },
+    "git": null,
+    "environment": null,
+    "omitted": "omitted from committed reports so that they regenerate byte for byte: a commit hash written into a committed file is always the parent of the commit that contains it. source_sha256 identifies the code (D-077)."
+  },
+  "declaration": {
+    "claimed_template": "T2",
+    "description": "SYNTHETIC FIXTURE BLK-01: balanced 3-chamber block crossed with the treatment, 2 runs per cell",
+    "response": {
+      "column": "y",
+      "units": "a.u. (synthetic)"
+    },
+    "hierarchy": [
+      {
+        "name": "run",
+        "count": 12,
+        "per_parent": false,
+        "exchangeable": null,
+        "exchangeable_declared": false
+      },
+      {
+        "name": "wafer",
+        "count": 2,
+        "per_parent": true,
+        "exchangeable": false,
+        "exchangeable_declared": false
+      },
+      {
+        "name": "site",
+        "count": 3,
+        "per_parent": true,
+        "exchangeable": false,
+        "exchangeable_declared": false
+      }
+    ],
+    "treatments": [
+      {
+        "name": "temp",
+        "levels": [
+          "low",
+          "high"
+        ],
+        "applied_to": "run",
+        "replicates_per_level": 6,
+        "assignment": "systematic"
+      }
+    ],
+    "nuisance_factors": [
+      {
+        "name": "chamber",
+        "role": "block",
+        "recorded_at": "run"
+      }
+    ]
+  },
+  "decision": {
+    "evidence_decision": "ANALYZE",
+    "analyzed": true,
+    "template": "T2"
+  },
+  "comparisons": [
+    {
+      "id": "high_vs_low",
+      "kind": "pairwise",
+      "factors": [
+        "temp"
+      ],
+      "levels": [
+        "high",
+        "low"
+      ],
+      "description": null,
+      "role": "treatment",
+      "experimental_unit": "run",
+      "status": "analyzed",
+      "test": {
+        "source": "temp",
+        "F": 128.0,
+        "num_df": 1,
+        "den_df": 8,
+        "p": 3.35386632648864e-06,
+        "error_term": "units within treatment and block",
+        "note": "the treatment is tested against the variation among units treated alike (brief Section 5.2)"
+      },
+      "estimates": [
+        {
+          "estimate_of": "high - low",
+          "estimate": 4.0,
+          "se": 0.3535533905932738,
+          "df": 8.0,
+          "error_term": "units within treatment and block",
+          "independent_units": 12,
+          "lower": 3.184704419276457,
+          "upper": 4.815295580723543,
+          "t_critical": 2.3060041352041662,
+          "interval_method": "exact under the model for balanced data",
+          "approximate": false,
+          "t": 11.31370849898476,
+          "p": 3.3538663264886463e-06,
+          "comparison": "high_vs_low",
+          "contrast": "high - low",
+          "factor": "temp",
+          "key": "high_vs_low: high - low",
+          "half_width": 0.8152955807235431,
+          "interval_includes_zero": false
+        }
+      ],
+      "independent_units": {
+        "per_level": {
+          "low": 6,
+          "high": 6
+        },
+        "level": "run"
+      }
+    }
+  ],
+  "findings": [],
+  "caveats": [
+    {
+      "code": "assignment_not_randomized",
+      "severity": "caveat",
+      "message": "Factor 'temp': assignment.method is 'systematic' in the declaration (Synthetic fixture: levels are assigned by construction.). The tests and intervals are computed the same way for every assignment method; the caveat concerns attributing a difference to the factor (D-039).",
+      "details": {
+        "factor": "temp",
+        "method": "systematic"
+      },
+      "explanation": {
+        "category": "assignment_not_randomized",
+        "kind": "caveat",
+        "status": "written",
+        "text": "The declaration says this factor's levels were not assigned at random: they were assigned systematically, the method was not stated, or the factor is an inherent property such as a position on the wafer. The test and intervals are computed the same way regardless. What changes is the interpretation: without randomization, a difference may partly reflect something else that varied along with the factor, so it should not automatically be read as caused by it.",
+        "same_as": null
+      }
+    }
+  ],
+  "stages": [
+    {
+      "id": "S0",
+      "title": "declaration matches the claimed template",
+      "status": "pass",
+      "reason": null
+    },
+    {
+      "id": "S1",
+      "title": "declared columns present",
+      "status": "pass",
+      "reason": null
+    },
+    {
+      "id": "S2",
+      "title": "labels and response values",
+      "status": "pass",
+      "reason": null
+    },
+    {
+      "id": "S3",
+      "title": "unit identity and ownership",
+      "status": "pass",
+      "reason": null
+    },
+    {
+      "id": "S4",
+      "title": "declaration-data consistency",
+      "status": "pass",
+      "reason": null
+    },
+    {
+      "id": "S5",
+      "title": "balance, replication and missing data",
+      "status": "pass",
+      "reason": null
+    },
+    {
+      "id": "S6",
+      "title": "confounding",
+      "status": "pass",
+      "reason": null
+    },
+    {
+      "id": "S7",
+      "title": "aliasing",
+      "status": "pass",
+      "reason": null
+    },
+    {
+      "id": "S8",
+      "title": "diagnostics",
+      "status": "pass",
+      "reason": null
+    }
+  ],
+  "assumptions": [
+    {
+      "assumption": "balance at the experimental-unit level",
+      "handling": "checked from the data; imbalance is refused (S5)",
+      "status": "pass"
+    },
+    {
+      "assumption": "equal variance across treatment levels",
+      "handling": "diagnosed: Brown-Forsythe test and largest-to-smallest SD ratio of unit means; warnings only (D-044)",
+      "status": "no warning triggered; assumption not verified"
+    },
+    {
+      "assumption": "normally distributed random effects and errors",
+      "handling": "diagnosed: normal quantile plot and externally studentized residuals beyond +-3; warnings only (D-044)",
+      "status": "no warning triggered; assumption not verified"
+    },
+    {
+      "assumption": "independent experimental units",
+      "handling": "not checkable from the data; it rests on how the units were run and assigned (the declared assignment method)",
+      "status": "not_checkable"
+    },
+    {
+      "assumption": "no treatment x block interaction",
+      "handling": "not tested; the additive error term contains any interaction, which makes the treatment test conservative (D-063)",
+      "status": "not_checked"
+    }
+  ],
+  "diagnostics": {
+    "run": {
+      "brown_forsythe": {
+        "diagnostic": "brown_forsythe",
+        "available": true,
+        "warn": false,
+        "F": 0.0,
+        "df": [
+          1,
+          10
+        ],
+        "p": 1.0,
+        "threshold": "p < 0.05",
+        "groups": [
+          "low",
+          "high"
+        ]
+      },
+      "sd_ratio": {
+        "diagnostic": "sd_ratio",
+        "available": true,
+        "sds": {
+          "low": 1.0488088481701516,
+          "high": 1.0488088481701516
+        },
+        "threshold": ">= 2 (pragmatic v1 threshold, not a universal law)",
+        "warn": false,
+        "ratio": 1.0
+      },
+      "studentized_residuals": {
+        "diagnostic": "studentized_residuals",
+        "available": true,
+        "warn": false,
+        "model": "temp + chamber (additive; provisional until WP3, D-044)",
+        "residual_df": 8,
+        "max_abs_external": 1.0,
+        "undefined_units": [],
+        "threshold": "|externally studentized residual| > 3",
+        "units": [
+          {
+            "unit": "R01",
+            "residual": -0.5,
+            "leverage": 0.3333333333333333,
+            "internal": -1.0,
+            "external": -1.0,
+            "flagged": false
+          },
+          {
+            "unit": "R02",
+            "residual": 0.5,
+            "leverage": 0.3333333333333333,
+            "internal": 1.0,
+            "external": 1.0,
+            "flagged": false
+          },
+          {
+            "unit": "R03",
+            "residual": -0.5,
+            "leverage": 0.3333333333333333,
+            "internal": -1.0,
+            "external": -1.0,
+            "flagged": false
+          },
+          {
+            "unit": "R04",
+            "residual": 0.5,
+            "leverage": 0.3333333333333333,
+            "internal": 1.0,
+            "external": 1.0,
+            "flagged": false
+          },
+          {
+            "unit": "R05",
+            "residual": -0.5,
+            "leverage": 0.3333333333333333,
+            "internal": -1.0,
+            "external": -1.0,
+            "flagged": false
+          },
+          {
+            "unit": "R06",
+            "residual": 0.5,
+            "leverage": 0.3333333333333333,
+            "internal": 1.0,
+            "external": 1.0,
+            "flagged": false
+          },
+          {
+            "unit": "R07",
+            "residual": -0.5,
+            "leverage": 0.3333333333333333,
+            "internal": -1.0,
+            "external": -1.0,
+            "flagged": false
+          },
+          {
+            "unit": "R08",
+            "residual": 0.5,
+            "leverage": 0.3333333333333333,
+            "internal": 1.0,
+            "external": 1.0,
+            "flagged": false
+          },
+          {
+            "unit": "R09",
+            "residual": -0.5,
+            "leverage": 0.3333333333333333,
+            "internal": -1.0,
+            "external": -1.0,
+            "flagged": false
+          },
+          {
+            "unit": "R10",
+            "residual": 0.5,
+            "leverage": 0.3333333333333333,
+            "internal": 1.0,
+            "external": 1.0,
+            "flagged": false
+          },
+          {
+            "unit": "R11",
+            "residual": -0.5,
+            "leverage": 0.3333333333333333,
+            "internal": -1.0,
+            "external": -1.0,
+            "flagged": false
+          },
+          {
+            "unit": "R12",
+            "residual": 0.5,
+            "leverage": 0.3333333333333333,
+            "internal": 1.0,
+            "external": 1.0,
+            "flagged": false
+          }
+        ],
+        "normal_quantiles": {
+          "positions": "Blom (i - 3/8) / (n + 1/4)",
+          "theoretical": [
+            -1.6350392668017106,
+            -1.113937215356688,
+            -0.7916386077433745,
+            -0.5361762663658063,
+            -0.3119190548203253,
+            -0.1024905076914514,
+            0.10249050769145156,
+            0.3119190548203253,
+            0.5361762663658063,
+            0.7916386077433745,
+            1.113937215356688,
+            1.6350392668017109
+          ],
+          "internally_studentized_sorted": [
+            -1.0,
+            -1.0,
+            -1.0,
+            -1.0,
+            -1.0,
+            -1.0,
+            1.0,
+            1.0,
+            1.0,
+            1.0,
+            1.0,
+            1.0
+          ]
+        }
+      }
+    }
+  },
+  "diagnostics_display": {
+    "run": {
+      "n": 12,
+      "x_min": -1.6350392668017106,
+      "x_max": 1.6350392668017109,
+      "y_min": -1.0,
+      "y_max": 1.0
+    }
+  },
+  "evidence": {
+    "structure": {
+      "rows": 72,
+      "observed_responses": 72,
+      "missing_responses": 0,
+      "levels": [
+        {
+          "level": "run",
+          "declared_total": 12,
+          "present": 12
+        },
+        {
+          "level": "wafer",
+          "declared_per_parent": 2,
+          "present_per_parent": [
+            2
+          ]
+        },
+        {
+          "level": "site",
+          "declared_per_parent": 3,
+          "present_per_parent": [
+            3
+          ]
+        }
+      ]
+    },
+    "replication": {
+      "factor": "temp",
+      "applied_to": "run",
+      "declared_per_level": 6,
+      "present_per_level": {
+        "low": 6,
+        "high": 6
+      }
+    },
+    "block_table": {
+      "rows": [
+        "low",
+        "high"
+      ],
+      "columns": [
+        "A",
+        "B",
+        "C"
+      ],
+      "counts": [
+        [
+          2,
+          2,
+          2
+        ],
+        [
+          2,
+          2,
+          2
+        ]
+      ]
+    },
+    "confounding": [
+      {
+        "comparison": "high_vs_low",
+        "effect": "temp",
+        "nuisance": "chamber",
+        "rows_are": "run",
+        "levels": [
+          "low",
+          "high"
+        ],
+        "nuisance_levels": [
+          "A",
+          "B",
+          "C"
+        ],
+        "table": [
+          [
+            2,
+            2,
+            2
+          ],
+          [
+            2,
+            2,
+            2
+          ]
+        ],
+        "n_rows": 12,
+        "proportional": true,
+        "cramers_v": 0.0,
+        "cramers_v_squared": {
+          "exact": "0",
+          "value": 0.0
+        },
+        "contrasts": [
+          {
+            "contrast": "high - low",
+            "estimable": true,
+            "variance_ratio": {
+              "exact": "1",
+              "value": 1.0
+            },
+            "se_inflation": 1.0,
+            "var_with_nuisance_over_sigma2": {
+              "exact": "1/3",
+              "value": 0.3333333333333333
+            },
+            "var_treatment_only_over_sigma2": {
+              "exact": "1/3",
+              "value": 0.3333333333333333
+            }
+          }
+        ],
+        "status": "none"
+      }
+    ],
+    "aliasing": {
+      "groupings": [
+        "level 'run'",
+        "level 'wafer'",
+        "level 'site'",
+        "block 'chamber'"
+      ],
+      "aliased_pairs": [],
+      "excluded_unit_unique": []
+    },
+    "diagnostics": {
+      "run": {
+        "brown_forsythe": {
+          "diagnostic": "brown_forsythe",
+          "available": true,
+          "warn": false,
+          "F": 0.0,
+          "df": [
+            1,
+            10
+          ],
+          "p": 1.0,
+          "threshold": "p < 0.05",
+          "groups": [
+            "low",
+            "high"
+          ]
+        },
+        "sd_ratio": {
+          "diagnostic": "sd_ratio",
+          "available": true,
+          "sds": {
+            "low": 1.0488088481701516,
+            "high": 1.0488088481701516
+          },
+          "threshold": ">= 2 (pragmatic v1 threshold, not a universal law)",
+          "warn": false,
+          "ratio": 1.0
+        },
+        "studentized_residuals": {
+          "diagnostic": "studentized_residuals",
+          "available": true,
+          "warn": false,
+          "model": "temp + chamber (additive; provisional until WP3, D-044)",
+          "residual_df": 8,
+          "max_abs_external": 1.0,
+          "undefined_units": [],
+          "threshold": "|externally studentized residual| > 3",
+          "units": [
+            {
+              "unit": "R01",
+              "residual": -0.5,
+              "leverage": 0.3333333333333333,
+              "internal": -1.0,
+              "external": -1.0,
+              "flagged": false
+            },
+            {
+              "unit": "R02",
+              "residual": 0.5,
+              "leverage": 0.3333333333333333,
+              "internal": 1.0,
+              "external": 1.0,
+              "flagged": false
+            },
+            {
+              "unit": "R03",
+              "residual": -0.5,
+              "leverage": 0.3333333333333333,
+              "internal": -1.0,
+              "external": -1.0,
+              "flagged": false
+            },
+            {
+              "unit": "R04",
+              "residual": 0.5,
+              "leverage": 0.3333333333333333,
+              "internal": 1.0,
+              "external": 1.0,
+              "flagged": false
+            },
+            {
+              "unit": "R05",
+              "residual": -0.5,
+              "leverage": 0.3333333333333333,
+              "internal": -1.0,
+              "external": -1.0,
+              "flagged": false
+            },
+            {
+              "unit": "R06",
+              "residual": 0.5,
+              "leverage": 0.3333333333333333,
+              "internal": 1.0,
+              "external": 1.0,
+              "flagged": false
+            },
+            {
+              "unit": "R07",
+              "residual": -0.5,
+              "leverage": 0.3333333333333333,
+              "internal": -1.0,
+              "external": -1.0,
+              "flagged": false
+            },
+            {
+              "unit": "R08",
+              "residual": 0.5,
+              "leverage": 0.3333333333333333,
+              "internal": 1.0,
+              "external": 1.0,
+              "flagged": false
+            },
+            {
+              "unit": "R09",
+              "residual": -0.5,
+              "leverage": 0.3333333333333333,
+              "internal": -1.0,
+              "external": -1.0,
+              "flagged": false
+            },
+            {
+              "unit": "R10",
+              "residual": 0.5,
+              "leverage": 0.3333333333333333,
+              "internal": 1.0,
+              "external": 1.0,
+              "flagged": false
+            },
+            {
+              "unit": "R11",
+              "residual": -0.5,
+              "leverage": 0.3333333333333333,
+              "internal": -1.0,
+              "external": -1.0,
+              "flagged": false
+            },
+            {
+              "unit": "R12",
+              "residual": 0.5,
+              "leverage": 0.3333333333333333,
+              "internal": 1.0,
+              "external": 1.0,
+              "flagged": false
+            }
+          ],
+          "normal_quantiles": {
+            "positions": "Blom (i - 3/8) / (n + 1/4)",
+            "theoretical": [
+              -1.6350392668017106,
+              -1.113937215356688,
+              -0.7916386077433745,
+              -0.5361762663658063,
+              -0.3119190548203253,
+              -0.1024905076914514,
+              0.10249050769145156,
+              0.3119190548203253,
+              0.5361762663658063,
+              0.7916386077433745,
+              1.113937215356688,
+              1.6350392668017109
+            ],
+            "internally_studentized_sorted": [
+              -1.0,
+              -1.0,
+              -1.0,
+              -1.0,
+              -1.0,
+              -1.0,
+              1.0,
+              1.0,
+              1.0,
+              1.0,
+              1.0,
+              1.0
+            ]
+          }
+        }
+      }
+    }
+  },
+  "analysis": {
+    "template": "T2",
+    "decision": "ANALYZE",
+    "analyzed": true,
+    "design": {
+      "levels": [
+        "run",
+        "wafer",
+        "site"
+      ],
+      "units_per_level": [
+        12,
+        24,
+        72
+      ],
+      "observations_per_unit": [
+        6,
+        3,
+        1
+      ],
+      "n_observations": 72,
+      "treatment": "temp",
+      "treatment_levels": [
+        "low",
+        "high"
+      ],
+      "replicates_per_level": {
+        "low": 6,
+        "high": 6
+      },
+      "block": "chamber",
+      "block_levels": [
+        "A",
+        "B",
+        "C"
+      ],
+      "collapsed_strata": []
+    },
+    "anova": {
+      "treatment": {
+        "source": "temp",
+        "key": "treatment",
+        "df": 1,
+        "ss": 288.0,
+        "ss_exact": "288",
+        "ms": 288.0,
+        "error_term": "units within treatment and block",
+        "F": 128.0,
+        "p": 3.35386632648864e-06,
+        "num_df": 1,
+        "den_df": 8,
+        "note": "the treatment is tested against the variation among units treated alike (brief Section 5.2)",
+        "ems_coefficients": {
+          "unit": 6,
+          "sub1": 3,
+          "sub2": 1
+        },
+        "ems": "6*sigma2[units within treatment and block] + 3*sigma2[wafer] + 1*sigma2[site] + (36 * sum of squared temp effects) / 1",
+        "ems_by_key": "6*sigma2[unit] + 3*sigma2[sub1] + 1*sigma2[sub2]"
+      },
+      "block": {
+        "source": "block",
+        "key": "block",
+        "df": 2,
+        "ss": 48.0,
+        "ss_exact": "48",
+        "ms": 24.0,
+        "error_term": "units within treatment and block",
+        "F": 10.666666666666666,
+        "p": 0.005532408988457065,
+        "num_df": 2,
+        "den_df": 8,
+        "note": "descriptive only: the block was recorded, not randomised, so a block difference is not a causal comparison (D-063)",
+        "ems_coefficients": {
+          "unit": 6,
+          "sub1": 3,
+          "sub2": 1
+        },
+        "ems": "6*sigma2[units within treatment and block] + 3*sigma2[wafer] + 1*sigma2[site]",
+        "ems_by_key": "6*sigma2[unit] + 3*sigma2[sub1] + 1*sigma2[sub2]"
+      },
+      "unit": {
+        "source": "units within treatment and block",
+        "key": "unit",
+        "df": 8,
+        "ss": 18.0,
+        "ss_exact": "18",
+        "ms": 2.25,
+        "error_term": "wafer",
+        "F": 24.0,
+        "p": 2.9802793543481567e-06,
+        "num_df": 8,
+        "den_df": 12,
+        "note": "the experimental-unit error stratum for the treatment test",
+        "ems_coefficients": {
+          "unit": 6,
+          "sub1": 3,
+          "sub2": 1
+        },
+        "ems": "6*sigma2[units within treatment and block] + 3*sigma2[wafer] + 1*sigma2[site]",
+        "ems_by_key": "6*sigma2[unit] + 3*sigma2[sub1] + 1*sigma2[sub2]"
+      },
+      "sub1": {
+        "source": "wafer",
+        "key": "sub1",
+        "df": 12,
+        "ss": 1.125,
+        "ss_exact": "9/8",
+        "ms": 0.09375,
+        "error_term": "site",
+        "F": 9.375,
+        "p": 5.7456064027331405e-09,
+        "num_df": 12,
+        "den_df": 48,
+        "note": "",
+        "ems_coefficients": {
+          "sub1": 3,
+          "sub2": 1
+        },
+        "ems": "3*sigma2[wafer] + 1*sigma2[site]",
+        "ems_by_key": "3*sigma2[sub1] + 1*sigma2[sub2]"
+      },
+      "sub2": {
+        "source": "site",
+        "key": "sub2",
+        "df": 48,
+        "ss": 0.48,
+        "ss_exact": "12/25",
+        "ms": 0.01,
+        "error_term": null,
+        "F": null,
+        "p": null,
+        "num_df": null,
+        "den_df": null,
+        "note": "",
+        "ems_coefficients": {
+          "sub2": 1
+        },
+        "ems": "1*sigma2[site]",
+        "ems_by_key": "1*sigma2[sub2]"
+      },
+      "total": {
+        "source": "total",
+        "key": "total",
+        "df": 71,
+        "ss": 355.605,
+        "ss_exact": "71121/200",
+        "ms": 5.008521126760564,
+        "error_term": null,
+        "F": null,
+        "p": null,
+        "num_df": null,
+        "den_df": null,
+        "note": ""
+      }
+    },
+    "naive_anova": {},
+    "variance_components": {
+      "unit": {
+        "component": "unit",
+        "label": "units within treatment and block",
+        "merged": false,
+        "coefficient": 6,
+        "estimator": "(MS[unit] - MS[sub1]) / 6",
+        "estimator_display": "(MS[units within treatment and block] - MS[wafer]) / 6",
+        "mom": 0.359375,
+        "mom_exact": "23/64",
+        "mom_truncated": 0.359375,
+        "negative": false,
+        "sd_mom": 0.5994789404140899,
+        "reml": 0.359375,
+        "sd_reml": 0.5994789404140899,
+        "reml_equals_mom": true,
+        "interval_method": "approximate (Satterthwaite)",
+        "exact": false,
+        "interval_available": true,
+        "nu_eff": 7.338728323699422,
+        "interval_lower": 0.15952616401632552,
+        "interval_upper": 1.4240683097343272,
+        "truncated_at_zero": false,
+        "sd_interval_lower": 0.3994072658531959,
+        "sd_interval_upper": 1.1933433327145744,
+        "percent_of_total": 90.45621394861038
+      },
+      "sub1": {
+        "component": "sub1",
+        "label": "wafer",
+        "merged": false,
+        "coefficient": 3,
+        "estimator": "(MS[sub1] - MS[sub2]) / 3",
+        "estimator_display": "(MS[wafer] - MS[site]) / 3",
+        "mom": 0.027916666666666666,
+        "mom_exact": "67/2400",
+        "mom_truncated": 0.027916666666666666,
+        "negative": false,
+        "sd_mom": 0.1670828137980285,
+        "reml": 0.027916666666666666,
+        "sd_reml": 0.1670828137980285,
+        "reml_equals_mom": true,
+        "interval_method": "approximate (Satterthwaite)",
+        "exact": false,
+        "interval_available": true,
+        "nu_eff": 9.549370678957633,
+        "interval_lower": 0.013444810066117937,
+        "interval_upper": 0.08892985314048632,
+        "truncated_at_zero": false,
+        "sd_interval_lower": 0.11595175749473545,
+        "sd_interval_upper": 0.29821108822524744,
+        "percent_of_total": 7.02674357629785
+      },
+      "sub2": {
+        "component": "sub2",
+        "label": "site",
+        "merged": false,
+        "coefficient": 1,
+        "estimator": "MS[sub2]",
+        "estimator_display": "MS[site]",
+        "mom": 0.01,
+        "mom_exact": "1/100",
+        "mom_truncated": 0.01,
+        "negative": false,
+        "sd_mom": 0.1,
+        "reml": 0.01,
+        "sd_reml": 0.1,
+        "reml_equals_mom": true,
+        "interval_method": "exact under the model for balanced data",
+        "exact": true,
+        "interval_available": true,
+        "nu_eff": 48.0,
+        "interval_lower": 0.0069542454040002815,
+        "interval_upper": 0.015607469179831837,
+        "truncated_at_zero": false,
+        "sd_interval_lower": 0.0833921183565946,
+        "sd_interval_upper": 0.12492985703918755,
+        "percent_of_total": 2.5170424750917673
+      }
+    },
+    "stratum_expectations": {
+      "unit": {
+        "stratum": "unit",
+        "label": "units within treatment and block",
+        "df": 8,
+        "ms": 2.25,
+        "lower": 1.0265449619746496,
+        "upper": 8.257900670845402,
+        "exact": true,
+        "interval_method": "exact under the model for balanced data",
+        "definition": "E[MS] = 6*sigma2[units within treatment and block] + 3*sigma2[wafer] + 1*sigma2[site]"
+      },
+      "sub1": {
+        "stratum": "sub1",
+        "label": "wafer",
+        "df": 12,
+        "ms": 0.09375,
+        "lower": 0.04820740412391934,
+        "upper": 0.25546185930964693,
+        "exact": true,
+        "interval_method": "exact under the model for balanced data",
+        "definition": "E[MS] = 3*sigma2[wafer] + 1*sigma2[site]"
+      },
+      "sub2": {
+        "stratum": "sub2",
+        "label": "site",
+        "df": 48,
+        "ms": 0.01,
+        "lower": 0.0069542454040002815,
+        "upper": 0.015607469179831837,
+        "exact": true,
+        "interval_method": "exact under the model for balanced data",
+        "definition": "E[MS] = 1*sigma2[site]"
+      }
+    },
+    "estimates": {
+      "mean[low]": {
+        "estimate_of": "mean response at low",
+        "estimate": 100.0,
+        "se": 0.25,
+        "df": 8.0,
+        "error_term": "units within treatment and block",
+        "independent_units": 6,
+        "lower": 99.42349896619896,
+        "upper": 100.57650103380104,
+        "t_critical": 2.3060041352041662,
+        "interval_method": "exact under the model for balanced data",
+        "approximate": false
+      },
+      "mean[high]": {
+        "estimate_of": "mean response at high",
+        "estimate": 104.0,
+        "se": 0.25,
+        "df": 8.0,
+        "error_term": "units within treatment and block",
+        "independent_units": 6,
+        "lower": 103.42349896619896,
+        "upper": 104.57650103380104,
+        "t_critical": 2.3060041352041662,
+        "interval_method": "exact under the model for balanced data",
+        "approximate": false
+      },
+      "high_vs_low: high - low": {
+        "estimate_of": "high - low",
+        "estimate": 4.0,
+        "se": 0.3535533905932738,
+        "df": 8.0,
+        "error_term": "units within treatment and block",
+        "independent_units": 12,
+        "lower": 3.184704419276457,
+        "upper": 4.815295580723543,
+        "t_critical": 2.3060041352041662,
+        "interval_method": "exact under the model for balanced data",
+        "approximate": false,
+        "t": 11.31370849898476,
+        "p": 3.3538663264886463e-06,
+        "comparison": "high_vs_low",
+        "contrast": "high - low",
+        "factor": "temp"
+      }
+    },
+    "reml": {
+      "fit": {
+        "method": "closed-form order-restricted (pool-adjacent-violators) REML for balanced designs; no optimizer, so no convergence failure (D-064)",
+        "lambda_hat": {
+          "unit": 2.25,
+          "sub1": 0.09375,
+          "sub2": 0.01
+        },
+        "mean_squares": {
+          "unit": 2.25,
+          "sub1": 0.09375,
+          "sub2": 0.01
+        },
+        "pooled": [],
+        "boundary": false,
+        "error_contrast_df": 68,
+        "n_fixed_parameters": 4,
+        "minus2_restricted_loglik_error_contrasts": -49.99057005144168,
+        "restricted_loglik_error_contrasts": 24.99528502572084,
+        "log_det_xtx": 12.424533248940001,
+        "fixed_parameterization": "cell means: one indicator per treatment level, plus block indicators with the first block level dropped",
+        "minus2_restricted_loglik": -37.56603680250168,
+        "restricted_loglik": 18.78301840125084,
+        "convention": "-2 log L_R = (N - p) log(2 pi) + sum_k [ df_k log lambda_k + SS_k / lambda_k ] + log det(X'X), the standard restricted log-likelihood (Harville 1977). The last term is an additive constant that depends on how the fixed effects are parameterised, so a REML log-likelihood is comparable only between fits that share one. X here is the full-rank indicator parameterisation named in `fixed_parameterization`. The form without that term is also reported, and any offset against a package's printed value is reported rather than absorbed (D-064)."
+      }
+    },
+    "fits": {
+      "boundary": [],
+      "degenerate": [],
+      "failed": [],
+      "note": "Every step is closed form (exact rational ANOVA, closed-form REML, deterministic quantile functions), so no fit can fail to converge. An empty `failed` list means none occurred, not that none were looked for (D-066). A design the evidence checks refuse is not a failed fit: refusal is a successful outcome.",
+      "boundary_count": 0,
+      "degenerate_count": 0,
+      "failed_count": 0
+    },
+    "notes": [
+      "The treatment is judged against 6 independent run units per level; more lower-level measurements cannot replace them.",
+      "With a block in the model, sigma2[unit] is run-to-run variation within a block, and the block is fixed (D-063). The additive error term contains any treatment-by-block interaction, so the treatment test is conservative if that interaction is real."
+    ],
+    "labels": {
+      "template": "T2: one treatment on the top level, with balanced subsampling",
+      "treatment": "temp",
+      "applied_to": "run",
+      "levels": {
+        "0": "run",
+        "1": "wafer",
+        "2": "site"
+      },
+      "block": "chamber"
+    }
+  },
+  "allocation": {
+    "status": "available",
+    "basis": "the WP3 analysis's stratum mean squares",
+    "components": [
+      {
+        "component": "unit",
+        "label": "units within treatment and block",
+        "levels": [
+          "unit"
+        ],
+        "merged": false,
+        "df": 8,
+        "estimable": true,
+        "estimate": 0.359375,
+        "estimate_exact": "23/64",
+        "ms": 2.25,
+        "lambda_hat": 2.25
+      },
+      {
+        "component": "sub1",
+        "label": "wafer",
+        "levels": [
+          "sub1"
+        ],
+        "merged": false,
+        "df": 12,
+        "estimable": true,
+        "estimate": 0.027916666666666666,
+        "estimate_exact": "67/2400",
+        "ms": 0.09375,
+        "lambda_hat": 0.09375
+      },
+      {
+        "component": "sub2",
+        "label": "site",
+        "levels": [
+          "sub2"
+        ],
+        "merged": false,
+        "df": 48,
+        "estimable": true,
+        "estimate": 0.01,
+        "estimate_exact": "1/100",
+        "ms": 0.01,
+        "lambda_hat": 0.01
+      }
+    ],
+    "components_method": "closed-form REML (D-064); equal to the method-of-moments estimates whenever those are all >= 0 (D-078)",
+    "plausible_values": {
+      "method": "generalized pivotal quantities: lambda* = nu MS / U, U ~ chi-square(nu), then the same pooling and inversion as the point estimate (Weerahandi 1993; D-079)",
+      "draws": 20000,
+      "seed_text": "stratum-wp4-plausible-values-v1",
+      "seed": 10763399368363203454,
+      "percentiles": "2.5, 50, 97.5 (statistics.quantiles, n = 40, inclusive)",
+      "label": "approximate; not validated in the WP6 grid"
+    },
+    "comparisons": [
+      {
+        "comparison_of": "the difference between two temp level means",
+        "factor": "temp",
+        "formula": "(2 / r) * (sigma2[run] + sigma2[wafer] / n_wafer + sigma2[site] / (n_wafer * n_site)); r = runs per treatment level, n_wafer = wafers per run, n_site = sites per wafer",
+        "scenarios": [
+          {
+            "id": "current",
+            "label": "current design",
+            "design": {
+              "run_per_level": 6,
+              "wafer_per_parent": 2,
+              "site_per_parent": 3
+            },
+            "added_units": "none",
+            "added_measurements": 0,
+            "error_df": 8,
+            "balanced": true,
+            "status": "identified",
+            "note": "",
+            "candidate": false,
+            "se": 0.3535533905932738,
+            "variance": 0.125,
+            "plausible_se": {
+              "p2_5": 0.238021,
+              "p50": 0.368087,
+              "p97_5": 0.679741
+            }
+          },
+          {
+            "id": "add_unit",
+            "label": "one more run per treatment level",
+            "design": {
+              "run_per_level": 7,
+              "wafer_per_parent": 2,
+              "site_per_parent": 3
+            },
+            "added_units": "2 runs (one per treatment level)",
+            "added_measurements": 12,
+            "error_df": 10,
+            "balanced": false,
+            "status": "identified",
+            "note": "this breaks the balanced crossing with the block unless r + 1 is a multiple of the number of block levels",
+            "candidate": true,
+            "se": 0.32732683535398854,
+            "variance": 0.10714285714285714,
+            "plausible_se": {
+              "p2_5": 0.220365,
+              "p50": 0.340783,
+              "p97_5": 0.629318
+            }
+          },
+          {
+            "id": "add_unit_balanced",
+            "label": "3 more runs per treatment level (one per block level, the next balanced crossing)",
+            "design": {
+              "run_per_level": 9,
+              "wafer_per_parent": 2,
+              "site_per_parent": 3
+            },
+            "added_units": "6 runs",
+            "added_measurements": 36,
+            "error_df": 14,
+            "balanced": true,
+            "status": "identified",
+            "note": "",
+            "candidate": false,
+            "se": 0.28867513459481287,
+            "variance": 0.08333333333333333,
+            "plausible_se": {
+              "p2_5": 0.194344,
+              "p50": 0.300542,
+              "p97_5": 0.555006
+            }
+          },
+          {
+            "id": "add_wafer",
+            "label": "one more wafer per run",
+            "design": {
+              "run_per_level": 6,
+              "wafer_per_parent": 3,
+              "site_per_parent": 3
+            },
+            "added_units": "12 wafers (one per run)",
+            "added_measurements": 36,
+            "error_df": 8,
+            "balanced": true,
+            "status": "identified",
+            "note": "",
+            "candidate": true,
+            "se": 0.3510895738823483,
+            "variance": 0.1232638888888889,
+            "plausible_se": {
+              "p2_5": 0.233516,
+              "p50": 0.365271,
+              "p97_5": 0.678421
+            }
+          },
+          {
+            "id": "add_site",
+            "label": "one more site per wafer",
+            "design": {
+              "run_per_level": 6,
+              "wafer_per_parent": 2,
+              "site_per_parent": 4
+            },
+            "added_units": "24 sites (one per wafer)",
+            "added_measurements": 24,
+            "error_df": 8,
+            "balanced": true,
+            "status": "identified",
+            "note": "",
+            "candidate": true,
+            "se": 0.3533569174519032,
+            "variance": 0.12486111111111112,
+            "plausible_se": {
+              "p2_5": 0.237736,
+              "p50": 0.367917,
+              "p97_5": 0.679653
+            }
+          },
+          {
+            "id": "floor",
+            "label": "the floor: unlimited wafers and sites",
+            "design": {
+              "run_per_level": 6,
+              "wafer_per_parent": "unlimited",
+              "site_per_parent": "unlimited"
+            },
+            "added_units": "unlimited",
+            "added_measurements": 0,
+            "error_df": 8,
+            "balanced": true,
+            "status": "identified",
+            "note": "2 sigma^2[run] / r: the limit as every lower count grows",
+            "candidate": false,
+            "se": 0.34610932762158647,
+            "variance": 0.11979166666666667,
+            "plausible_se": {
+              "p2_5": 0.22348,
+              "p50": 0.359586,
+              "p97_5": 0.674944
+            }
+          }
+        ],
+        "ranking": {
+          "candidates": [
+            "add_unit",
+            "add_wafer",
+            "add_site"
+          ],
+          "candidate_labels": {
+            "add_unit": "one more run per treatment level",
+            "add_wafer": "one more wafer per run",
+            "add_site": "one more site per wafer"
+          },
+          "draws": 20000,
+          "robust_threshold_wins": 19000,
+          "seed_text": "stratum-wp4-plausible-values-v1",
+          "assessed": true,
+          "wins": {
+            "add_unit": 19998,
+            "add_wafer": 2,
+            "add_site": 0
+          },
+          "ties": 0,
+          "shares": {
+            "add_unit": 0.9999,
+            "add_wafer": 0.0001,
+            "add_site": 0.0
+          },
+          "shares_percent": {
+            "add_unit": 99.99,
+            "add_wafer": 0.01,
+            "add_site": 0.0
+          },
+          "best": "add_unit",
+          "best_label": "one more run per treatment level",
+          "best_share": 0.9999,
+          "robust": true
+        },
+        "floor_statement": "No number of additional wafers or sites can bring the standard error below the floor; only additional runs lower it.",
+        "robust_conclusion": "Robust conclusion: only additional runs lower the floor."
+      }
+    ],
+    "not_implemented": "cost-weighted versions and cost-optimal subsample sizes (optional in brief Section 5.5; D-078)",
+    "block_note": "With a block, sigma2[run] is run-to-run variation within a block (D-063).",
+    "current_vs_analysis": "REML pooled nothing, so the allocation's current standard error equals the comparison's reported standard error exactly (D-078)."
+  },
+  "reassignment": {
+    "status": "not_applicable",
+    "reason": "no complete confounding was found, so no reassignment is needed"
+  },
+  "planning": {
+    "eligible": false,
+    "reason": "the design was analyzed"
+  },
+  "explanations": {
+    "required": 47,
+    "required_written": 47,
+    "required_pending": [],
+    "optional": 2,
+    "optional_written": 2,
+    "file": "resources/explanations.yaml",
+    "policy": "D-075 (verbatim insertion, pending marked)"
+  },
+  "summary": {
+    "decision": "ANALYZE",
+    "analyzed": true,
+    "analyzed_comparisons": [
+      "high_vs_low"
+    ],
+    "refused_comparisons": [],
+    "refusal_codes": [],
+    "warning_codes": [],
+    "note_codes": [],
+    "caveat_codes": [
+      "assignment_not_randomized"
+    ],
+    "next_steps": [
+      {
+        "kind": "allocation",
+        "factor": "temp",
+        "text": "Robust conclusion: only additional runs lower the floor."
+      },
+      {
+        "kind": "allocation",
+        "factor": "temp",
+        "text": "No number of additional wafers or sites can bring the standard error below the floor; only additional runs lower it."
+      }
+    ],
+    "pending_in_report": []
+  }
+}

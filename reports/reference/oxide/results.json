@@ -1,0 +1,746 @@
+{
+  "schema": "stratum-results/1",
+  "generated_by": "stratum 1.0.0 (stratum.results.build); never hand-edited",
+  "synthetic": false,
+  "data_label": "Published textbook / NIST-SEMATECH dataset, not synthetic and not fab data: MEMSS Oxide, the canonical T1 reproduction without Source (D-014)",
+  "provenance": {
+    "inputs": {
+      "declaration": {
+        "path": "declarations/examples/t1_memss_oxide.yaml",
+        "sha256": "d46e9784cf75beccb6620b186308442f674d885c93712e1e058adb3d38d4092d",
+        "bytes": 1430
+      },
+      "data": {
+        "path": "reference/_fetched/derived/oxide.csv",
+        "sha256": "268958d6ea1880a704e45558836f9dd8ff2c13dcb4b7f4c644c246f1a93a3843",
+        "bytes": 1554
+      },
+      "explanations": {
+        "path": "resources/explanations.yaml",
+        "sha256": "45923fbd6faf9e13bd694316bc407fca02bb7a819226dce39f5bd3bfd2dcc5e3",
+        "bytes": 22437
+      }
+    },
+    "code": {
+      "package": "stratum",
+      "version": "1.0.0",
+      "source_sha256": "ada12f7b897c7d9984c6300a1c86c9ac23e1db099ffa5a24a39aa6a5c81cb860",
+      "source_files": 17,
+      "method": "SHA-256 over the sorted lines '<relative path> <file SHA-256>' of every file in the stratum package (D-077)"
+    },
+    "git": null,
+    "environment": null,
+    "omitted": "omitted from committed reports so that they regenerate byte for byte: a commit hash written into a committed file is always the parent of the commit that contains it. source_sha256 identifies the code (D-077)."
+  },
+  "declaration": {
+    "claimed_template": "T1",
+    "description": "MEMSS Oxide, a passive data collection study (Littell et al. 1996, p. 155, as quoted in the MEMSS documentation). Published textbook data, not synthetic, not fab data.\n",
+    "response": {
+      "column": "Thickness",
+      "units": null
+    },
+    "hierarchy": [
+      {
+        "name": "lot",
+        "count": 8,
+        "per_parent": false,
+        "exchangeable": null,
+        "exchangeable_declared": false
+      },
+      {
+        "name": "wafer",
+        "count": 3,
+        "per_parent": true,
+        "exchangeable": false,
+        "exchangeable_declared": false
+      },
+      {
+        "name": "site",
+        "count": 3,
+        "per_parent": true,
+        "exchangeable": false,
+        "exchangeable_declared": false
+      }
+    ],
+    "treatments": [],
+    "nuisance_factors": [
+      {
+        "name": "source",
+        "role": "recorded",
+        "recorded_at": "lot"
+      }
+    ]
+  },
+  "decision": {
+    "evidence_decision": "ANALYZE",
+    "analyzed": true,
+    "template": "T1"
+  },
+  "comparisons": [],
+  "findings": [],
+  "caveats": [],
+  "stages": [
+    {
+      "id": "S0",
+      "title": "declaration matches the claimed template",
+      "status": "pass",
+      "reason": null
+    },
+    {
+      "id": "S1",
+      "title": "declared columns present",
+      "status": "pass",
+      "reason": null
+    },
+    {
+      "id": "S2",
+      "title": "labels and response values",
+      "status": "pass",
+      "reason": null
+    },
+    {
+      "id": "S3",
+      "title": "unit identity and ownership",
+      "status": "pass",
+      "reason": null
+    },
+    {
+      "id": "S4",
+      "title": "declaration-data consistency",
+      "status": "pass",
+      "reason": null
+    },
+    {
+      "id": "S5",
+      "title": "balance, replication and missing data",
+      "status": "pass",
+      "reason": null
+    },
+    {
+      "id": "S6",
+      "title": "confounding",
+      "status": "pass",
+      "reason": null
+    },
+    {
+      "id": "S7",
+      "title": "aliasing",
+      "status": "pass",
+      "reason": null
+    },
+    {
+      "id": "S8",
+      "title": "diagnostics",
+      "status": "pass",
+      "reason": null
+    }
+  ],
+  "assumptions": [
+    {
+      "assumption": "balance at the experimental-unit level",
+      "handling": "checked from the data; imbalance is refused (S5)",
+      "status": "pass"
+    },
+    {
+      "assumption": "normally distributed random effects and errors",
+      "handling": "diagnosed: normal quantile plot and externally studentized residuals beyond +-3; warnings only (D-044)",
+      "status": "no warning triggered; assumption not verified"
+    },
+    {
+      "assumption": "independent experimental units",
+      "handling": "not checkable from the data; it rests on how the units were run and assigned (the declared assignment method)",
+      "status": "not_checkable"
+    }
+  ],
+  "diagnostics": {
+    "top_units": {
+      "brown_forsythe": {
+        "available": false,
+        "warn": false,
+        "not_applicable": true,
+        "reason": "no treatment groups in this stratum"
+      },
+      "sd_ratio": {
+        "available": false,
+        "warn": false,
+        "not_applicable": true,
+        "reason": "no treatment groups in this stratum"
+      },
+      "studentized_residuals": {
+        "diagnostic": "studentized_residuals",
+        "available": true,
+        "warn": false,
+        "model": "intercept only",
+        "residual_df": 7,
+        "max_abs_external": 2.5600031723169003,
+        "undefined_units": [],
+        "threshold": "|externally studentized residual| > 3",
+        "units": [
+          {
+            "unit": "1",
+            "residual": -3.8194444444444446,
+            "leverage": 0.125,
+            "internal": -0.34114197107422284,
+            "external": -0.31849474254767135,
+            "flagged": false
+          },
+          {
+            "unit": "2",
+            "residual": -12.375,
+            "leverage": 0.125,
+            "internal": -1.105299986280482,
+            "external": -1.1263031484336121,
+            "flagged": false
+          },
+          {
+            "unit": "3",
+            "residual": 0.9583333333333334,
+            "leverage": 0.125,
+            "internal": 0.08559562183316864,
+            "external": 0.079287651561519,
+            "flagged": false
+          },
+          {
+            "unit": "4",
+            "residual": -4.930555555555555,
+            "leverage": 0.125,
+            "internal": -0.4403832717503604,
+            "external": -0.41348377254011337,
+            "flagged": false
+          },
+          {
+            "unit": "5",
+            "residual": 14.847222222222221,
+            "leverage": 0.125,
+            "internal": 1.326111880284888,
+            "external": 1.4188321101048953,
+            "flagged": false
+          },
+          {
+            "unit": "6",
+            "residual": 21.40277777777778,
+            "leverage": 0.125,
+            "internal": 1.9116355542740997,
+            "external": 2.5600031723169003,
+            "flagged": false
+          },
+          {
+            "unit": "7",
+            "residual": -9.041666666666666,
+            "leverage": 0.125,
+            "internal": -0.8075760842520693,
+            "external": -0.7851393480259578,
+            "flagged": false
+          },
+          {
+            "unit": "8",
+            "residual": -7.041666666666667,
+            "leverage": 0.125,
+            "internal": -0.6289417430350217,
+            "external": -0.5994711667045394,
+            "flagged": false
+          }
+        ],
+        "normal_quantiles": {
+          "positions": "Blom (i - 3/8) / (n + 1/4)",
+          "theoretical": [
+            -1.4342001596863796,
+            -0.8524950342746942,
+            -0.47278912099226733,
+            -0.15250597424624437,
+            0.15250597424624424,
+            0.4727891209922672,
+            0.8524950342746939,
+            1.4342001596863792
+          ],
+          "internally_studentized_sorted": [
+            -1.105299986280482,
+            -0.8075760842520693,
+            -0.6289417430350217,
+            -0.4403832717503604,
+            -0.34114197107422284,
+            0.08559562183316864,
+            1.326111880284888,
+            1.9116355542740997
+          ]
+        }
+      }
+    }
+  },
+  "diagnostics_display": {
+    "top_units": {
+      "n": 8,
+      "x_min": -1.4342001596863796,
+      "x_max": 1.4342001596863792,
+      "y_min": -1.105299986280482,
+      "y_max": 1.9116355542740997
+    }
+  },
+  "evidence": {
+    "structure": {
+      "rows": 72,
+      "observed_responses": 72,
+      "missing_responses": 0,
+      "levels": [
+        {
+          "level": "lot",
+          "declared_total": 8,
+          "present": 8
+        },
+        {
+          "level": "wafer",
+          "declared_per_parent": 3,
+          "present_per_parent": [
+            3
+          ]
+        },
+        {
+          "level": "site",
+          "declared_per_parent": 3,
+          "present_per_parent": [
+            3
+          ]
+        }
+      ]
+    },
+    "confounding": [],
+    "confounding_note": "T1 has no treatment: confounding is not applicable.",
+    "aliasing": {
+      "groupings": [
+        "level 'lot'",
+        "level 'wafer'",
+        "level 'site'",
+        "recorded factor 'source'"
+      ],
+      "aliased_pairs": [],
+      "excluded_unit_unique": []
+    },
+    "diagnostics": {
+      "top_units": {
+        "brown_forsythe": {
+          "available": false,
+          "warn": false,
+          "not_applicable": true,
+          "reason": "no treatment groups in this stratum"
+        },
+        "sd_ratio": {
+          "available": false,
+          "warn": false,
+          "not_applicable": true,
+          "reason": "no treatment groups in this stratum"
+        },
+        "studentized_residuals": {
+          "diagnostic": "studentized_residuals",
+          "available": true,
+          "warn": false,
+          "model": "intercept only",
+          "residual_df": 7,
+          "max_abs_external": 2.5600031723169003,
+          "undefined_units": [],
+          "threshold": "|externally studentized residual| > 3",
+          "units": [
+            {
+              "unit": "1",
+              "residual": -3.8194444444444446,
+              "leverage": 0.125,
+              "internal": -0.34114197107422284,
+              "external": -0.31849474254767135,
+              "flagged": false
+            },
+            {
+              "unit": "2",
+              "residual": -12.375,
+              "leverage": 0.125,
+              "internal": -1.105299986280482,
+              "external": -1.1263031484336121,
+              "flagged": false
+            },
+            {
+              "unit": "3",
+              "residual": 0.9583333333333334,
+              "leverage": 0.125,
+              "internal": 0.08559562183316864,
+              "external": 0.079287651561519,
+              "flagged": false
+            },
+            {
+              "unit": "4",
+              "residual": -4.930555555555555,
+              "leverage": 0.125,
+              "internal": -0.4403832717503604,
+              "external": -0.41348377254011337,
+              "flagged": false
+            },
+            {
+              "unit": "5",
+              "residual": 14.847222222222221,
+              "leverage": 0.125,
+              "internal": 1.326111880284888,
+              "external": 1.4188321101048953,
+              "flagged": false
+            },
+            {
+              "unit": "6",
+              "residual": 21.40277777777778,
+              "leverage": 0.125,
+              "internal": 1.9116355542740997,
+              "external": 2.5600031723169003,
+              "flagged": false
+            },
+            {
+              "unit": "7",
+              "residual": -9.041666666666666,
+              "leverage": 0.125,
+              "internal": -0.8075760842520693,
+              "external": -0.7851393480259578,
+              "flagged": false
+            },
+            {
+              "unit": "8",
+              "residual": -7.041666666666667,
+              "leverage": 0.125,
+              "internal": -0.6289417430350217,
+              "external": -0.5994711667045394,
+              "flagged": false
+            }
+          ],
+          "normal_quantiles": {
+            "positions": "Blom (i - 3/8) / (n + 1/4)",
+            "theoretical": [
+              -1.4342001596863796,
+              -0.8524950342746942,
+              -0.47278912099226733,
+              -0.15250597424624437,
+              0.15250597424624424,
+              0.4727891209922672,
+              0.8524950342746939,
+              1.4342001596863792
+            ],
+            "internally_studentized_sorted": [
+              -1.105299986280482,
+              -0.8075760842520693,
+              -0.6289417430350217,
+              -0.4403832717503604,
+              -0.34114197107422284,
+              0.08559562183316864,
+              1.326111880284888,
+              1.9116355542740997
+            ]
+          }
+        }
+      }
+    }
+  },
+  "analysis": {
+    "template": "T1",
+    "decision": "ANALYZE",
+    "analyzed": true,
+    "design": {
+      "levels": [
+        "lot",
+        "wafer",
+        "site"
+      ],
+      "units_per_level": [
+        8,
+        24,
+        72
+      ],
+      "observations_per_unit": [
+        9,
+        3,
+        1
+      ],
+      "n_observations": 72,
+      "treatment": null
+    },
+    "anova": {
+      "A": {
+        "source": "lot",
+        "key": "A",
+        "df": 7,
+        "ss": 9025.319444444445,
+        "ss_exact": "649823/72",
+        "ms": 1289.3313492063492,
+        "error_term": "wafer",
+        "F": 10.729525790898883,
+        "p": 5.2608744540996085e-05,
+        "num_df": 7,
+        "den_df": 16,
+        "note": "tests sigma2[A] = 0 against the stratum below it",
+        "ems_coefficients": {
+          "A": 9,
+          "B": 3,
+          "residual": 1
+        },
+        "ems": "9*sigma2[lot] + 3*sigma2[wafer] + 1*sigma2[site]",
+        "ems_by_key": "9*sigma2[A] + 3*sigma2[B] + 1*sigma2[residual]"
+      },
+      "B": {
+        "source": "wafer",
+        "key": "B",
+        "df": 16,
+        "ss": 1922.6666666666667,
+        "ss_exact": "5768/3",
+        "ms": 120.16666666666667,
+        "error_term": "site",
+        "F": 9.560220994475138,
+        "p": 5.063098271925288e-10,
+        "num_df": 16,
+        "den_df": 48,
+        "note": "tests sigma2[B] = 0 against the residual stratum",
+        "ems_coefficients": {
+          "B": 3,
+          "residual": 1
+        },
+        "ems": "3*sigma2[wafer] + 1*sigma2[site]",
+        "ems_by_key": "3*sigma2[B] + 1*sigma2[residual]"
+      },
+      "residual": {
+        "source": "site",
+        "key": "residual",
+        "df": 48,
+        "ss": 603.3333333333334,
+        "ss_exact": "1810/3",
+        "ms": 12.569444444444445,
+        "error_term": null,
+        "F": null,
+        "p": null,
+        "num_df": null,
+        "den_df": null,
+        "note": "",
+        "ems_coefficients": {
+          "residual": 1
+        },
+        "ems": "1*sigma2[site]",
+        "ems_by_key": "1*sigma2[residual]"
+      },
+      "total": {
+        "source": "total",
+        "key": "total",
+        "df": 71,
+        "ss": 11551.319444444445,
+        "ss_exact": "831695/72",
+        "ms": 162.6946400625978,
+        "error_term": null,
+        "F": null,
+        "p": null,
+        "num_df": null,
+        "den_df": null,
+        "note": ""
+      }
+    },
+    "naive_anova": {},
+    "variance_components": {
+      "A": {
+        "component": "A",
+        "label": "lot",
+        "merged": false,
+        "coefficient": 9,
+        "estimator": "(MS[A] - MS[B]) / 9",
+        "estimator_display": "(MS[lot] - MS[wafer]) / 9",
+        "mom": 129.90718694885362,
+        "mom_exact": "589259/4536",
+        "mom_truncated": 129.90718694885362,
+        "negative": false,
+        "sd_mom": 11.397683402729417,
+        "reml": 129.90718694885362,
+        "sd_reml": 11.397683402729417,
+        "reml_equals_mom": true,
+        "interval_method": "approximate (Satterthwaite)",
+        "exact": false,
+        "interval_available": true,
+        "nu_eff": 5.734202337169176,
+        "interval_lower": 53.111608845960305,
+        "interval_upper": 662.4880447185682,
+        "truncated_at_zero": false,
+        "sd_interval_lower": 7.287771185071627,
+        "sd_interval_upper": 25.738843111503055,
+        "percent_of_total": 72.84145960064824
+      },
+      "B": {
+        "component": "B",
+        "label": "wafer",
+        "merged": false,
+        "coefficient": 3,
+        "estimator": "(MS[B] - MS[residual]) / 3",
+        "estimator_display": "(MS[wafer] - MS[site]) / 3",
+        "mom": 35.86574074074074,
+        "mom_exact": "7747/216",
+        "mom_truncated": 35.86574074074074,
+        "negative": false,
+        "sd_mom": 5.988801277446159,
+        "reml": 35.86574074074074,
+        "sd_reml": 5.988801277446159,
+        "reml_equals_mom": true,
+        "interval_method": "approximate (Satterthwaite)",
+        "exact": false,
+        "interval_available": true,
+        "nu_eff": 12.781241957147435,
+        "interval_lower": 18.76342367210291,
+        "interval_upper": 94.03126852643159,
+        "truncated_at_zero": false,
+        "sd_interval_lower": 4.331676773733575,
+        "sd_interval_upper": 9.696972131878672,
+        "percent_of_total": 20.110611018330918
+      },
+      "residual": {
+        "component": "residual",
+        "label": "site",
+        "merged": false,
+        "coefficient": 1,
+        "estimator": "MS[residual]",
+        "estimator_display": "MS[site]",
+        "mom": 12.569444444444445,
+        "mom_exact": "905/72",
+        "mom_truncated": 12.569444444444445,
+        "negative": false,
+        "sd_mom": 3.545341231030441,
+        "reml": 12.569444444444445,
+        "sd_reml": 3.545341231030441,
+        "reml_equals_mom": true,
+        "interval_method": "exact under the model for balanced data",
+        "exact": true,
+        "interval_available": true,
+        "nu_eff": 48.0,
+        "interval_lower": 8.741100125861466,
+        "interval_upper": 19.617721677427518,
+        "truncated_at_zero": false,
+        "sd_interval_lower": 2.9565351555260535,
+        "sd_interval_upper": 4.4291897314777025,
+        "percent_of_total": 7.0479293810208405
+      }
+    },
+    "stratum_expectations": {
+      "A": {
+        "stratum": "A",
+        "label": "lot",
+        "df": 7,
+        "ms": 1289.3313492063492,
+        "lower": 563.6328175232176,
+        "upper": 5340.839129823528,
+        "exact": true,
+        "interval_method": "exact under the model for balanced data",
+        "definition": "E[MS] = 9*sigma2[lot] + 3*sigma2[wafer] + 1*sigma2[site]"
+      },
+      "B": {
+        "stratum": "B",
+        "label": "wafer",
+        "df": 16,
+        "ms": 120.16666666666667,
+        "lower": 66.65430020605153,
+        "upper": 278.3381716706194,
+        "exact": true,
+        "interval_method": "exact under the model for balanced data",
+        "definition": "E[MS] = 3*sigma2[wafer] + 1*sigma2[site]"
+      },
+      "residual": {
+        "stratum": "residual",
+        "label": "site",
+        "df": 48,
+        "ms": 12.569444444444445,
+        "lower": 8.741100125861466,
+        "upper": 19.617721677427518,
+        "exact": true,
+        "interval_method": "exact under the model for balanced data",
+        "definition": "E[MS] = 1*sigma2[site]"
+      }
+    },
+    "estimates": {
+      "grand_mean": {
+        "estimate_of": "the overall mean of Thickness",
+        "estimate": 2000.1527777777778,
+        "se": 4.231711220072582,
+        "df": 7.0,
+        "error_term": "lot",
+        "independent_units": 8,
+        "lower": 1990.146370801057,
+        "upper": 2010.1591847544987,
+        "t_critical": 2.364624251592784,
+        "interval_method": "exact under the model for balanced data",
+        "approximate": false,
+        "note": "Var(mean) = E[MS lot] / N, so the interval rests on the top-level units, not on the observations"
+      }
+    },
+    "reml": {
+      "fit": {
+        "method": "closed-form order-restricted (pool-adjacent-violators) REML for balanced designs; no optimizer, so no convergence failure (D-064)",
+        "lambda_hat": {
+          "A": 1289.3313492063492,
+          "B": 120.16666666666667,
+          "residual": 12.569444444444445
+        },
+        "mean_squares": {
+          "A": 1289.3313492063492,
+          "B": 120.16666666666667,
+          "residual": 12.569444444444445
+        },
+        "pooled": [],
+        "boundary": false,
+        "error_contrast_df": 71,
+        "n_fixed_parameters": 1,
+        "minus2_restricted_loglik_error_contrasts": 449.74540319197934,
+        "restricted_loglik_error_contrasts": -224.87270159598967,
+        "log_det_xtx": 4.276666119016055,
+        "fixed_parameterization": "intercept only",
+        "minus2_restricted_loglik": 454.0220693109954,
+        "restricted_loglik": -227.0110346554977,
+        "convention": "-2 log L_R = (N - p) log(2 pi) + sum_k [ df_k log lambda_k + SS_k / lambda_k ] + log det(X'X), the standard restricted log-likelihood (Harville 1977). The last term is an additive constant that depends on how the fixed effects are parameterised, so a REML log-likelihood is comparable only between fits that share one. X here is the full-rank indicator parameterisation named in `fixed_parameterization`. The form without that term is also reported, and any offset against a package's printed value is reported rather than absorbed (D-064)."
+      }
+    },
+    "fits": {
+      "boundary": [],
+      "degenerate": [],
+      "failed": [],
+      "note": "Every step is closed form (exact rational ANOVA, closed-form REML, deterministic quantile functions), so no fit can fail to converge. An empty `failed` list means none occurred, not that none were looked for (D-066). A design the evidence checks refuse is not a failed fit: refusal is a successful outcome.",
+      "boundary_count": 0,
+      "degenerate_count": 0,
+      "failed_count": 0
+    },
+    "notes": [
+      "T1 has no treatment, so there is no treatment comparison. The two F tests test whether each variance component is zero.",
+      "Variance-component intervals are Satterthwaite except where marked exact (D-060); every one is a per-component 95% interval, not a simultaneous band."
+    ],
+    "labels": {
+      "template": "T1: balanced nested variance components, no treatment",
+      "levels": {
+        "A": "lot",
+        "B": "wafer",
+        "residual": "site"
+      }
+    }
+  },
+  "allocation": {
+    "status": "not_applicable",
+    "reason": "T1 has no treatment comparison, so there is no allocation analysis (brief Section 5.5 covers T2 and T3)."
+  },
+  "reassignment": {
+    "status": "not_applicable",
+    "reason": "no complete confounding was found, so no reassignment is needed"
+  },
+  "planning": {
+    "eligible": false,
+    "reason": "the design was analyzed"
+  },
+  "explanations": {
+    "required": 47,
+    "required_written": 47,
+    "required_pending": [],
+    "optional": 2,
+    "optional_written": 2,
+    "file": "resources/explanations.yaml",
+    "policy": "D-075 (verbatim insertion, pending marked)"
+  },
+  "summary": {
+    "decision": "ANALYZE",
+    "analyzed": true,
+    "analyzed_comparisons": [],
+    "refused_comparisons": [],
+    "refusal_codes": [],
+    "warning_codes": [],
+    "note_codes": [],
+    "caveat_codes": [],
+    "next_steps": [],
+    "pending_in_report": []
+  }
+}

@@ -1,0 +1,404 @@
+# Plain-language explanations of the refusal and warning categories.
+#
+# Used by the WP4 report; DECISIONS.md D-075 describes how they are used.
+#
+# The report inserts each `text` verbatim, unchanged, wherever the category occurs, beside
+# the technical detail. A `null` text is shown as pending. `same_as: <category>` reuses
+# another entry's text. Technical facts per category: resources/EXPLANATIONS_GUIDE.md.
+# Check this file with:  .venv/bin/python -m stratum explanations --check
+
+format: stratum-explanations/1
+entries:
+  # --- WP1 refusal category (refusal) ---
+  yaml_syntax:
+    kind: refusal
+    text: >-
+      Stratum could not read the declaration file: it is not valid YAML, or the same field
+      name appears twice in one place (a repeated name is refused rather than letting the
+      second value silently win). Nothing about the experiment has been judged yet. Fix
+      the file at the position given in the technical detail and run again.
+  schema:
+    kind: refusal
+    text: >-
+      The declaration is missing a required field, contains a field Stratum does not
+      recognise, or gives a value of the wrong kind, such as text where a whole number is
+      needed. Stratum does not guess what was meant, so the design has not been checked
+      yet. Correct the field named in the technical detail.
+  inconsistent_declaration:
+    kind: refusal
+    text: >-
+      Two parts of the declaration do not agree. For example, a comparison names a
+      treatment that was never declared, a treatment is said to be applied to a level that
+      is not in the unit hierarchy, or a treatment's column is the same column that
+      identifies the units. Stratum cannot tell which part is right, so it stops before
+      looking at the data. Make the names and columns consistent.
+  unknown_template:
+    kind: refusal
+    text: >-
+      The declaration claims a template other than T1, T2 or T3. Stratum supports only
+      those three narrow designs and does not guess which one was meant. If the experiment
+      matches one of them, claim it exactly; if it matches none, it is outside what
+      Stratum analyzes, and a general mixed-model tool such as lme4 is the place to fit
+      it.
+  hierarchy:
+    kind: refusal
+    text: >-
+      The way the units are nested (for example run, then wafer, then site) does not have
+      the shape the claimed template requires: the wrong number of levels, or levels that
+      do not form a single chain. The error terms Stratum uses depend on that structure,
+      so it will not analyze a different one. The technical detail states the shape the
+      template needs.
+  treatment_structure:
+    kind: refusal
+    text: >-
+      The number or kind of treatments does not fit the claimed template. T1 has no
+      treatment, T2 has exactly one treatment with at least two levels, and T3 has exactly
+      two, in split-plot roles. Stratum does not reinterpret the design as a different
+      template; declare the treatments as they were actually applied and claim the
+      template that matches.
+  application_level:
+    kind: refusal
+    text: >-
+      A treatment is declared as applied to a level where the claimed template does not
+      allow it, for example a T2 treatment applied to wafers inside runs instead of to the
+      runs themselves. The level a treatment is applied to decides what it has to be
+      compared against, so this is a different design with a different error term. Stratum
+      refuses rather than test it against the wrong one.
+  assignment:
+    kind: refusal
+    text: >-
+      A factor declared as 'inherent' (a property the units already had, such as the
+      source a lot came from) has been placed in a role that needs a treatment someone
+      assigned to the units. Groups that were not assigned can differ in many other ways,
+      so Stratum does not test such a factor as if it were an applied treatment. It can
+      still be recorded as a nuisance factor.
+  replication:
+    kind: refusal
+    text: >-
+      The declaration has too few units at some level for the claimed template, most often
+      a single run (or other experimental unit) per treatment level. With one unit per
+      level there is no way to see how much units treated alike differ from each other, so
+      there is nothing to judge a treatment difference against. Measuring more wafers or
+      sites inside that unit does not help, because they all share it. More independent
+      units per treatment level are needed.
+  balance:
+    kind: refusal
+    text: >-
+      The declared counts do not form the balanced layout the template needs: for example,
+      the number of runs is not the number of treatment levels times the runs per level,
+      or a split-plot does not have every subplot level on every whole unit (a split-plot
+      with fewer than two subplot levels is not a split-plot at all). Stratum analyzes
+      only balanced designs, because only then are its tests exact. Correct the counts if
+      they were mistyped; a genuinely unbalanced design needs a tool such as lme4 or
+      lmerTest.
+  blocking:
+    kind: refusal
+    text: >-
+      A blocking factor is declared in a form Stratum does not support. The only supported
+      block is one factor, such as chamber, recorded per experimental unit and crossed
+      with a T2 treatment so that every treatment level appears equally often in every
+      block. Other blocking arrangements change the error structure, so Stratum refuses
+      rather than approximate. A factor that was only recorded can be declared with role
+      'recorded', so it is still checked for confounding.
+  split_plot:
+    kind: refusal
+    text: >-
+      The split-plot roles are missing or malformed, or they are declared on a design that
+      does not claim T3. A split-plot is judged with two separate error terms, one for the
+      factor applied to whole units and one for the factor applied inside them, so Stratum
+      must know exactly which factor plays which role. It does not turn a malformed
+      split-plot into a different template.
+  exchangeability:
+    kind: refusal
+    text: >-
+      The declaration says the subplot units of a T3 design are interchangeable random
+      samples, but in a split-plot each subplot unit carries a specific level of the
+      subplot factor, such as a position. Both cannot be true, so Stratum stops rather
+      than choose. Remove the exchangeable claim from the subplot level, or declare the
+      design differently.
+  comparison:
+    kind: refusal
+    text: >-
+      The intended comparisons do not fit the template. T1 has no treatment and so takes
+      no comparison; T2 and T3 need at least one comparison of their treatments; and T2
+      cannot estimate an interaction. Stratum analyzes only comparisons the declared
+      design can answer, so declare the one that matches the question being asked.
+  # --- WP2 evidence code (refusal) ---
+  declaration_refused:
+    kind: refusal
+    text: >-
+      The declaration does not describe a design Stratum supports, so the data are not
+      checked or analyzed for this decision. This is a judgment about the declared design,
+      not a crash or a data error. The specific reasons are listed underneath, each with
+      what would have to change. (When the only reason is a single unit per treatment
+      level, the data are still read to plan a better design; that planning cannot change
+      the decision.)
+  missing_column:
+    kind: refusal
+    text: >-
+      A column the declaration refers to (the response, a unit ID, a treatment or a
+      nuisance factor) is not in the data file. Without it the measurements cannot be
+      placed in the design, so nothing further was checked. Make the column names in the
+      declaration match the file exactly.
+  missing_label:
+    kind: refusal
+    text: >-
+      Some rows have an empty or NA value in a unit ID, treatment or nuisance column, so
+      Stratum cannot tell which unit or treatment they belong to. It does not guess the
+      label or drop the rows quietly. Fill in the labels, or remove those rows
+      deliberately, and run again.
+  invalid_response:
+    kind: refusal
+    text: >-
+      Some response values are not numbers. Only an empty cell or NA counts as a missing
+      measurement; anything else is treated as an entry error rather than silently
+      ignored, because ignoring it could hide a problem with the data. Correct the listed
+      values.
+  multiple_parents:
+    kind: refusal
+    text: >-
+      A unit whose label is declared unique across the whole dataset appears under more
+      than one parent, for example the same wafer ID in two different runs. A wafer can
+      belong to only one run, so either the labels are not unique or the records are mixed
+      up. Stratum stops until the hierarchy is consistent.
+  duplicate_observation:
+    kind: refusal
+    text: >-
+      Two or more rows describe the same measurement position, for example the same run,
+      wafer and site. Stratum does not average them or keep just one, because it cannot
+      know which is correct or whether they are genuine repeat readings that the
+      declaration does not describe. Resolve the duplicates in the data.
+  undeclared_level:
+    kind: refusal
+    text: >-
+      The data contain a treatment or nuisance level that the declaration does not list.
+      That is usually a typing error or an out-of-date declaration, and analyzing anyway
+      could add or merge groups without anyone noticing. Add the level to the declaration
+      or correct the data.
+  treatment_not_constant:
+    kind: refusal
+    text: >-
+      The treatment changes inside a unit it was declared to be applied to, for example
+      two recipes recorded within one run that was meant to receive a single recipe. It is
+      then unclear what that unit received, so the treatment comparison is undefined.
+      Correct the data, or declare the level at which the treatment was really applied.
+  nuisance_not_constant:
+    kind: refusal
+    text: >-
+      A nuisance factor declared to be constant within a unit (for example one chamber per
+      run) varies inside some of those units. Its place in the design is then not what was
+      declared, and it cannot be checked for confounding correctly. Correct the data, or
+      declare the factor at the level where it actually varies.
+  subplot_structure:
+    kind: refusal
+    text: >-
+      In a split-plot, every whole unit should contain each level of the subplot factor
+      exactly once, but some whole units repeat a level instead, for example the same
+      position recorded for every reading on a wafer. The declared split-plot layout is
+      not present in the data, so its two error terms would not mean what they should.
+      Check how the subplot factor was recorded.
+  count_exceeds_declaration:
+    kind: refusal
+    text: >-
+      The data contain more units than the declaration states, for example more runs in
+      total or more wafers under a run than declared. Stratum checks the data against the
+      declared design and never rewrites the declaration to fit the data. Either the
+      declaration is wrong or extra data were included; correct whichever it is.
+  missing_top_unit:
+    kind: refusal
+    text: >-
+      Fewer experimental units (for example runs) have data than the declaration says, so
+      at least one whole unit is missing. That unbalances the comparison, and why a unit
+      is missing can itself matter. Stratum does not approximate around missing units;
+      such data can be fitted with a tool for unbalanced designs, such as lme4 or
+      lmerTest.
+  missing_intermediate_unit:
+    kind: refusal
+    text: >-
+      A whole intermediate unit, typically an entire wafer within a run, has no data. That
+      is imbalance among the units themselves, not a few lost sites, so the narrow
+      missing-site exception does not apply and Stratum refuses rather than approximate.
+  missing_observation:
+    kind: refusal
+    text: >-
+      Some observations are missing from a T1 nested design. T1 splits the variation among
+      the levels using the balanced layout, and with gaps those calculations are no longer
+      exact. If the same positions were never measured anywhere by design, declare that
+      smaller balanced layout; otherwise the data need a tool for unbalanced designs.
+  missing_sites_not_exchangeable:
+    kind: refusal
+    text: >-
+      Sites are missing, and the declaration does not establish that the sites are
+      interchangeable random samples: they are declared as fixed positions, or the
+      declaration does not say. When positions are fixed, losing different positions on
+      different units changes what each unit's average represents, which can shift the
+      comparison rather than only make it less precise. If the sites really are
+      interchangeable, the declaration can say so.
+  missing_subplot_cell:
+    kind: refusal
+    text: >-
+      Some whole units of a split-plot lack readings for particular subplot levels. Each
+      missing reading removes part of the subplot and interaction comparisons and
+      unbalances the design, so Stratum refuses. Such data can be fitted with lme4 or
+      lmerTest.
+  subplot_level_absent_everywhere:
+    kind: refusal
+    text: >-
+      The same subplot level is missing from every whole unit, although the declaration
+      lists it. What remains may still be a balanced, smaller split-plot, but Stratum does
+      not change the declaration on the user's behalf. If those levels were never run,
+      declare the reduced design; if only one subplot level would remain, the design is no
+      longer a split-plot.
+  positional_labels_inconsistent:
+    kind: refusal
+    text: >-
+      The sites are treated as fixed positions (they are not declared interchangeable),
+      and every unit has the declared number of them, but different units carry different
+      position labels. Matching counts are not enough when the positions themselves
+      differ, because the units are then averaging different places. If the labels are
+      arbitrary, declare the level exchangeable.
+  insufficient_replication:
+    kind: refusal
+    text: >-
+      The treatment was applied to whole units, such as runs, and at least one treatment
+      level has fewer than two of those units in the data. Units treated alike are the
+      only yardstick for judging a treatment difference, and with one per level that
+      yardstick does not exist. Wafers and sites measured inside a run cannot stand in for
+      more runs, because they all share that run's conditions. More units per treatment
+      level are needed.
+  unbalanced_units:
+    kind: refusal
+    text: >-
+      The treatment levels have different numbers of independent units in the data.
+      Stratum analyzes only balanced designs, where its tests are exact, and does not
+      apply approximate corrections. Such data can be analyzed with lme4 or lmerTest.
+  block_imbalance:
+    kind: refusal
+    text: >-
+      A block such as chamber was declared crossed with the treatment, meaning every
+      treatment level appears equally often in every block, but the data do not show that
+      balance. Without it, block differences no longer cancel out of the treatment
+      comparison, so Stratum refuses. The counts are given in the technical detail.
+  complete_confounding:
+    kind: refusal
+    text: >-
+      Every unit given one treatment level also shares a recorded nuisance level, such as
+      a chamber, with no unit of the other treatment level; for example, all runs of one
+      recipe were in one chamber and all runs of the other recipe in another. A treatment
+      difference and a chamber difference would then produce exactly the same data, so no
+      analysis can separate them. (For a numbered factor such as run order, the same
+      happens when the treatment lines up exactly with a straight-line trend in it.)
+      Measuring more wafers or sites does not help, because it adds no comparison of the
+      treatments within a chamber. The design has to change so that every treatment level
+      runs at every level of that factor, as in the reassignment suggestion when one is
+      given.
+  partial_confounding:
+    kind: refusal
+    text: >-
+      The treatment comparison can still be estimated, but the treatment levels are
+      unevenly spread over a recorded nuisance factor; for example, one recipe ran mostly
+      in one chamber. Separating the two costs precision (the technical detail gives how
+      much), and the uneven spread makes the design unbalanced, which Stratum refuses.
+      Running every treatment level equally often at every level of that factor avoids
+      both problems.
+  aliased_components_required:
+    kind: refusal
+    text: >-
+      Two levels of the hierarchy group the measurements in exactly the same way, for
+      example one site per wafer, so 'wafer' and 'site' cannot be told apart. A T1
+      analysis exists to estimate a separate amount of variation for each level, and here
+      two of them are inseparable. Stratum will not pretend to split them; more units at
+      the collapsed level are needed.
+  # --- WP2 evidence code (warning) ---
+  missing_sites_exception:
+    kind: warning
+    text: >-
+      A few sites are missing inside otherwise complete units, and the sites were declared
+      interchangeable, so the narrow missing-site exception applies and the comparison is
+      still made. It uses each unit's average, but units that lost sites have slightly
+      less precise averages, so the test and intervals are approximate rather than exact.
+      Variance components and the allocation analysis are not computed for this case. The
+      site-count table shows how much each unit lost.
+  aliased_components:
+    kind: warning
+    text: >-
+      Two levels of the hierarchy group the measurements identically, for example one
+      wafer per run, so the variation at those two levels cannot be measured separately;
+      only their combined amount is reported, and no separate estimate of either is
+      claimed. The comparison itself does not need them separated, because it rests on the
+      replicated experimental units. What is limited is the allocation analysis: it cannot
+      say how much adding units at the collapsed level would help, so those lines are
+      shown as bounds or as unavailable.
+  nuisance_unit_unique:
+    kind: warning
+    text: >-
+      Each value of a recorded factor occurs inside a single experimental unit, for
+      example a different day for every run, or a different metrology tool for every
+      wafer. As a category it cannot be separated from ordinary unit-to-unit variation, so
+      Stratum neither adjusts for it nor calls it confounding: its effect, if any, is
+      already part of the variation the treatment is judged against. If drift over time is
+      a concern, record a factor that several units share, such as a period, or the run
+      order as a number.
+  brown_forsythe:
+    kind: warning
+    text: >-
+      A test of spread (Brown-Forsythe) suggests that the unit averages vary more within
+      some treatment levels than within others. The analysis assumes a similar spread at
+      every level, so its tests and intervals may be less reliable than stated. This is a
+      warning, not a refusal: look at the units in the more variable level, and consider
+      whether the treatment itself changes the variability.
+  sd_ratio:
+    kind: warning
+    text: >-
+      The largest spread of unit averages within a treatment level is at least twice the
+      smallest. The analysis assumes a similar spread at every level, so read its results
+      with some caution. The factor of two is a practical rule of thumb, and with few
+      units per level the spread itself is poorly known, so this is a prompt to look, not
+      a verdict.
+  studentized_residual:
+    kind: warning
+    text: >-
+      One unit or reading lies unusually far from what the fitted model predicts, more
+      than three standardized units away. It may be a recording error, a genuinely unusual
+      event, or chance. Stratum keeps the value and does not change the analysis; check
+      the record of the flagged unit before relying on the result.
+  # --- WP2 evidence code (note, optional) ---
+  aliased_partition:
+    kind: note
+    text: >-
+      Two recorded factors, or a recorded factor and a level of the hierarchy, group the
+      measurements in exactly the same way, even though their labels differ. Their effects
+      cannot be told apart. This does not change the decision, because no separate
+      estimate of either was requested.
+  diagnostic_unavailable:
+    kind: note
+    text: >-
+      One of the diagnostic checks could not be computed for these data; for example, with
+      exactly two units in every treatment level the Brown-Forsythe test has nothing to
+      work with. Nothing was substituted for it, and the other diagnostics are still
+      reported.
+  # --- WP4 report caveat (caveat) ---
+  assignment_not_randomized:
+    kind: caveat
+    text: >-
+      The declaration says this factor's levels were not assigned at random: they were
+      assigned systematically, the method was not stated, or the factor is an inherent
+      property such as a position on the wafer. The test and intervals are computed the
+      same way regardless. What changes is the interpretation: without randomization, a
+      difference may partly reflect something else that varied along with the factor, so
+      it should not automatically be read as caused by it.
+  boundary_fit:
+    kind: caveat
+    text: >-
+      A variance component came out negative by the standard calculation, or the
+      cross-check estimated it as exactly zero. A variance cannot be negative; this
+      usually means the component is small compared with the variation below it. It is
+      reported as calculated, then set to zero, and no interval is given for it. Treat
+      that component as not distinguishable from zero with these data.
+  degenerate_fit:
+    kind: caveat
+    text: >-
+      An error term is exactly zero, so the F test that would use it cannot be computed.
+      This happens, for example, when all the values it is based on are identical. Stratum
+      reports everything else and leaves that test blank rather than invent a number;
+      check how the data were recorded.

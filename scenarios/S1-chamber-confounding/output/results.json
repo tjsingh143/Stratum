@@ -1,0 +1,637 @@
+{
+  "schema": "stratum-results/1",
+  "generated_by": "stratum 1.0.0 (stratum.results.build); never hand-edited",
+  "synthetic": true,
+  "data_label": "SYNTHETIC demonstration scenario S1 (Chamber confounding); results show software behaviour, not process realism",
+  "provenance": {
+    "inputs": {
+      "declaration": {
+        "path": "scenarios/S1-chamber-confounding/declaration_synthetic.yaml",
+        "sha256": "3ef415e725f76ca24e945e1d1f3a07a73d5b3e43a190541576a56527da7df389",
+        "bytes": 1290
+      },
+      "data": {
+        "path": "scenarios/S1-chamber-confounding/data_synthetic.csv",
+        "sha256": "943b2c6056480458a471e20689492b82dcd7a65dbe7cfdbbb5fa8b045ed33a9f",
+        "bytes": 2113
+      },
+      "explanations": {
+        "path": "resources/explanations.yaml",
+        "sha256": "45923fbd6faf9e13bd694316bc407fca02bb7a819226dce39f5bd3bfd2dcc5e3",
+        "bytes": 22437
+      }
+    },
+    "code": {
+      "package": "stratum",
+      "version": "1.0.0",
+      "source_sha256": "ada12f7b897c7d9984c6300a1c86c9ac23e1db099ffa5a24a39aa6a5c81cb860",
+      "source_files": 17,
+      "method": "SHA-256 over the sorted lines '<relative path> <file SHA-256>' of every file in the stratum package (D-077)"
+    },
+    "git": null,
+    "environment": null,
+    "omitted": "omitted from committed reports so that they regenerate byte for byte: a commit hash written into a committed file is always the parent of the commit that contains it. source_sha256 identifies the code (D-077)."
+  },
+  "declaration": {
+    "claimed_template": "T2",
+    "description": "SYNTHETIC SCENARIO S1. Two recipes applied to whole runs, 3 runs per recipe, 3 wafers per run, 5 sites per wafer. Every 'standard' run was processed in chamber A and every 'modified' run in chamber B.\n",
+    "response": {
+      "column": "y",
+      "units": "a.u. (synthetic)"
+    },
+    "hierarchy": [
+      {
+        "name": "run",
+        "count": 6,
+        "per_parent": false,
+        "exchangeable": null,
+        "exchangeable_declared": false
+      },
+      {
+        "name": "wafer",
+        "count": 3,
+        "per_parent": true,
+        "exchangeable": false,
+        "exchangeable_declared": false
+      },
+      {
+        "name": "site",
+        "count": 5,
+        "per_parent": true,
+        "exchangeable": true,
+        "exchangeable_declared": true
+      }
+    ],
+    "treatments": [
+      {
+        "name": "recipe",
+        "levels": [
+          "standard",
+          "modified"
+        ],
+        "applied_to": "run",
+        "replicates_per_level": 3,
+        "assignment": "systematic"
+      }
+    ],
+    "nuisance_factors": [
+      {
+        "name": "chamber",
+        "role": "recorded",
+        "recorded_at": "run"
+      }
+    ]
+  },
+  "decision": {
+    "evidence_decision": "REFUSE",
+    "analyzed": false,
+    "template": "T2"
+  },
+  "comparisons": [
+    {
+      "id": "modified_vs_standard",
+      "kind": "pairwise",
+      "factors": [
+        "recipe"
+      ],
+      "levels": [
+        "modified",
+        "standard"
+      ],
+      "description": "Mean response, modified minus standard.",
+      "role": "treatment",
+      "experimental_unit": "run",
+      "status": "refused",
+      "test": null,
+      "estimates": [],
+      "independent_units": {
+        "per_level": {
+          "standard": 3,
+          "modified": 3
+        },
+        "level": "run"
+      },
+      "refusal_codes": [
+        "complete_confounding"
+      ],
+      "specific_refusal_codes": [
+        "complete_confounding"
+      ]
+    }
+  ],
+  "findings": [
+    {
+      "code": "complete_confounding",
+      "severity": "refuse",
+      "stage": "S6",
+      "message": "Comparison 'modified_vs_standard' is not estimable once 'chamber' is included: modified - standard cannot be separated from 'chamber' differences (design-matrix rank; table [[3, 0], [0, 3]]). The data contain no recipe comparison made within a level of 'chamber'. More measurements below the 'run' level cannot restore that missing independent information. A crossed, randomized assignment of recipe levels to chamber levels is needed.",
+      "details": {
+        "comparison": "modified_vs_standard",
+        "nuisance": "chamber",
+        "table": [
+          [
+            3,
+            0
+          ],
+          [
+            0,
+            3
+          ]
+        ],
+        "nonestimable": [
+          "modified - standard"
+        ]
+      },
+      "explanation": {
+        "category": "complete_confounding",
+        "kind": "refusal",
+        "status": "written",
+        "text": "Every unit given one treatment level also shares a recorded nuisance level, such as a chamber, with no unit of the other treatment level; for example, all runs of one recipe were in one chamber and all runs of the other recipe in another. A treatment difference and a chamber difference would then produce exactly the same data, so no analysis can separate them. (For a numbered factor such as run order, the same happens when the treatment lines up exactly with a straight-line trend in it.) Measuring more wafers or sites does not help, because it adds no comparison of the treatments within a chamber. The design has to change so that every treatment level runs at every level of that factor, as in the reassignment suggestion when one is given.",
+        "same_as": null
+      }
+    }
+  ],
+  "caveats": [],
+  "stages": [
+    {
+      "id": "S0",
+      "title": "declaration matches the claimed template",
+      "status": "pass",
+      "reason": null
+    },
+    {
+      "id": "S1",
+      "title": "declared columns present",
+      "status": "pass",
+      "reason": null
+    },
+    {
+      "id": "S2",
+      "title": "labels and response values",
+      "status": "pass",
+      "reason": null
+    },
+    {
+      "id": "S3",
+      "title": "unit identity and ownership",
+      "status": "pass",
+      "reason": null
+    },
+    {
+      "id": "S4",
+      "title": "declaration-data consistency",
+      "status": "pass",
+      "reason": null
+    },
+    {
+      "id": "S5",
+      "title": "balance, replication and missing data",
+      "status": "pass",
+      "reason": null
+    },
+    {
+      "id": "S6",
+      "title": "confounding",
+      "status": "fail",
+      "reason": null
+    },
+    {
+      "id": "S7",
+      "title": "aliasing",
+      "status": "pass",
+      "reason": null
+    },
+    {
+      "id": "S8",
+      "title": "diagnostics",
+      "status": "not_evaluated",
+      "reason": "a refusal was found; diagnostics are not computed for a structure that cannot be analyzed"
+    }
+  ],
+  "assumptions": [
+    {
+      "assumption": "balance at the experimental-unit level",
+      "handling": "checked from the data; imbalance is refused (S5)",
+      "status": "pass"
+    },
+    {
+      "assumption": "equal variance across treatment levels",
+      "handling": "diagnosed: Brown-Forsythe test and largest-to-smallest SD ratio of unit means; warnings only (D-044)",
+      "status": "not_evaluated"
+    },
+    {
+      "assumption": "normally distributed random effects and errors",
+      "handling": "diagnosed: normal quantile plot and externally studentized residuals beyond +-3; warnings only (D-044)",
+      "status": "not_evaluated"
+    },
+    {
+      "assumption": "independent experimental units",
+      "handling": "not checkable from the data; it rests on how the units were run and assigned (the declared assignment method)",
+      "status": "not_checkable"
+    }
+  ],
+  "diagnostics": null,
+  "diagnostics_display": {},
+  "evidence": {
+    "structure": {
+      "rows": 90,
+      "observed_responses": 90,
+      "missing_responses": 0,
+      "levels": [
+        {
+          "level": "run",
+          "declared_total": 6,
+          "present": 6
+        },
+        {
+          "level": "wafer",
+          "declared_per_parent": 3,
+          "present_per_parent": [
+            3
+          ]
+        },
+        {
+          "level": "site",
+          "declared_per_parent": 5,
+          "present_per_parent": [
+            5
+          ]
+        }
+      ]
+    },
+    "replication": {
+      "factor": "recipe",
+      "applied_to": "run",
+      "declared_per_level": 3,
+      "present_per_level": {
+        "standard": 3,
+        "modified": 3
+      }
+    },
+    "confounding": [
+      {
+        "comparison": "modified_vs_standard",
+        "effect": "recipe",
+        "nuisance": "chamber",
+        "rows_are": "run",
+        "levels": [
+          "standard",
+          "modified"
+        ],
+        "nuisance_levels": [
+          "A",
+          "B"
+        ],
+        "table": [
+          [
+            3,
+            0
+          ],
+          [
+            0,
+            3
+          ]
+        ],
+        "n_rows": 6,
+        "proportional": false,
+        "cramers_v": 1.0,
+        "cramers_v_squared": {
+          "exact": "1",
+          "value": 1.0
+        },
+        "contrasts": [
+          {
+            "contrast": "modified - standard",
+            "estimable": false
+          }
+        ],
+        "status": "complete"
+      }
+    ],
+    "aliasing": {
+      "groupings": [
+        "level 'run'",
+        "level 'wafer'",
+        "level 'site'",
+        "recorded factor 'chamber'"
+      ],
+      "aliased_pairs": [],
+      "excluded_unit_unique": []
+    }
+  },
+  "analysis": {
+    "template": "T2",
+    "decision": "REFUSE",
+    "analyzed": false,
+    "design": {},
+    "anova": {},
+    "naive_anova": {},
+    "variance_components": {},
+    "stratum_expectations": {},
+    "estimates": {},
+    "reml": {},
+    "fits": {},
+    "notes": [
+      "No analysis was produced. The evidence checks refused this design, and refusal is a successful outcome (brief Section 8): Stratum does not estimate anything a declared design cannot support.",
+      "Reasons: [complete_confounding] Comparison 'modified_vs_standard' is not estimable once 'chamber' is included: modified - standard cannot be separated from 'chamber' differences (design-matrix rank; table [[3, 0], [0, 3]]). The data contain no recipe comparison made within a level of 'chamber'. More measurements below the 'run' level cannot restore that missing independent information. A crossed, randomized assignment of recipe levels to chamber levels is needed."
+    ],
+    "labels": {}
+  },
+  "allocation": {
+    "status": "not_applicable",
+    "reason": "the comparison is not estimable (complete confounding), so no allocation of it exists; the reassignment suggestion gives the precision of a design that removes the confounding (D-078, D-080)."
+  },
+  "reassignment": {
+    "status": "produced",
+    "suggestions": [
+      {
+        "factor": "chamber",
+        "status": "produced",
+        "comparisons": [
+          "modified_vs_standard"
+        ],
+        "treatment": "recipe",
+        "treatment_levels": [
+          "standard",
+          "modified"
+        ],
+        "factor_levels": [
+          "A",
+          "B"
+        ],
+        "declared_replicates_per_level": 3,
+        "replicates_per_level": 4,
+        "extra_units_per_level": 1,
+        "units_per_cell": 2,
+        "total_units": 8,
+        "seed": 12472918351267462778,
+        "seed_text": "stratum-wp4-reassignment-v1|<declaration sha256>|<data sha256>|chamber",
+        "plan": [
+          {
+            "planned_unit": "P001",
+            "factor_level": "A",
+            "slot": 1,
+            "treatment": "standard"
+          },
+          {
+            "planned_unit": "P002",
+            "factor_level": "A",
+            "slot": 2,
+            "treatment": "standard"
+          },
+          {
+            "planned_unit": "P003",
+            "factor_level": "A",
+            "slot": 3,
+            "treatment": "modified"
+          },
+          {
+            "planned_unit": "P004",
+            "factor_level": "A",
+            "slot": 4,
+            "treatment": "modified"
+          },
+          {
+            "planned_unit": "P005",
+            "factor_level": "B",
+            "slot": 1,
+            "treatment": "standard"
+          },
+          {
+            "planned_unit": "P006",
+            "factor_level": "B",
+            "slot": 2,
+            "treatment": "standard"
+          },
+          {
+            "planned_unit": "P007",
+            "factor_level": "B",
+            "slot": 3,
+            "treatment": "modified"
+          },
+          {
+            "planned_unit": "P008",
+            "factor_level": "B",
+            "slot": 4,
+            "treatment": "modified"
+          }
+        ],
+        "plan_note": "Planned runs are new runs, not relabelled existing ones. Lower levels keep their declared counts.",
+        "revised_declaration": {
+          "stratum_declaration": 1,
+          "claimed_template": "T2",
+          "description": "Revised design suggested by Stratum (D-080): recipe crossed with chamber, 4 runs per treatment level, 2 in every cell, randomized within each chamber level.",
+          "response": {
+            "column": "y",
+            "units": "a.u. (synthetic)"
+          },
+          "hierarchy": [
+            {
+              "name": "run",
+              "id_column": "run",
+              "count": 8
+            },
+            {
+              "name": "wafer",
+              "id_column": "wafer",
+              "nested_in": "run",
+              "count_per_parent": 3,
+              "id_scope": "parent"
+            },
+            {
+              "name": "site",
+              "id_column": "site",
+              "nested_in": "wafer",
+              "count_per_parent": 5,
+              "id_scope": "parent",
+              "exchangeable": true
+            }
+          ],
+          "treatments": [
+            {
+              "name": "recipe",
+              "column": "recipe",
+              "levels": [
+                "standard",
+                "modified"
+              ],
+              "applied_to": "run",
+              "replicates_per_level": 4,
+              "assignment": {
+                "method": "randomized",
+                "description": "Randomized within each chamber level by the reassignment plan (seed 12472918351267462778)."
+              }
+            }
+          ],
+          "nuisance_factors": [
+            {
+              "name": "chamber",
+              "column": "chamber",
+              "recorded_at": "run",
+              "role": "block",
+              "levels": [
+                "A",
+                "B"
+              ],
+              "crossed_with": "recipe"
+            }
+          ],
+          "comparisons": [
+            {
+              "id": "modified_vs_standard",
+              "kind": "pairwise",
+              "factors": [
+                "recipe"
+              ],
+              "levels": [
+                "modified",
+                "standard"
+              ],
+              "description": "Mean response, modified minus standard."
+            }
+          ]
+        },
+        "revised_match": {
+          "matched": true,
+          "template": "T2",
+          "refusals": []
+        },
+        "layout_check": {
+          "table": [
+            [
+              2,
+              2
+            ],
+            [
+              2,
+              2
+            ]
+          ],
+          "rows": [
+            "standard",
+            "modified"
+          ],
+          "columns": [
+            "A",
+            "B"
+          ],
+          "contrasts": [
+            {
+              "comparison": "modified_vs_standard",
+              "contrast": "modified - standard",
+              "estimable": true,
+              "variance_ratio": {
+                "exact": "1",
+                "value": 1.0
+              }
+            }
+          ],
+          "proportional": true,
+          "verified": true
+        },
+        "estimates": {
+          "contrasts": [
+            "modified - standard"
+          ],
+          "error_term": "units within treatment and block (D-063)",
+          "num_df": 1,
+          "den_df": 5,
+          "block": "chamber level differences, descriptively only",
+          "unit_variation": "run-to-run variation within a chamber level"
+        },
+        "removed_factors": [],
+        "removed_note": null,
+        "assumption": "no recipe x chamber interaction; if one exists, the revised design's additive error term is inflated (D-063)",
+        "precision": {
+          "status": "identified",
+          "label": "planning quantities, not results (D-081)",
+          "unit_stratum": {
+            "label": "runs within treatment x chamber cells",
+            "df": 4,
+            "n_cells": 2,
+            "n_units": 6
+          },
+          "m": 15,
+          "replicates_per_level": 4,
+          "error_df": 5,
+          "components": [
+            {
+              "component": "unit",
+              "label": "runs within treatment x chamber cells",
+              "estimable": true,
+              "estimate": 0.9166666666666666
+            },
+            {
+              "component": "sub1",
+              "label": "wafer",
+              "estimable": true,
+              "estimate": 0.245
+            },
+            {
+              "component": "sub2",
+              "label": "site",
+              "estimable": true,
+              "estimate": 0.025
+            }
+          ],
+          "lambda_unit": 15.0,
+          "lambda_unit_df": 4,
+          "lambda_unit_interval": [
+            5.384407776130951,
+            123.8598297321401
+          ],
+          "se": 0.7071067811865476,
+          "se_interval": [
+            0.4236511055153344,
+            2.031910674973518
+          ],
+          "se_interval_method": "exact chi-square interval for lambda_U under the model (D-060 item 3, D-080)",
+          "t_critical": 2.5705818356363124,
+          "expected_half_width": 1.8176758475733998,
+          "se_from_components": 0.7071067811865476,
+          "formula": "SE' = sqrt(2 lambda_U / (r' m)) = sqrt((2/r') * (sum of components divided by the units below them))"
+        }
+      }
+    ],
+    "note": null
+  },
+  "planning": {
+    "eligible": true,
+    "mode": "evidence",
+    "planning_only_findings": [],
+    "codes": [
+      "complete_confounding"
+    ],
+    "reason": "the refusal reasons are within the planning pathway (D-081)"
+  },
+  "explanations": {
+    "required": 47,
+    "required_written": 47,
+    "required_pending": [],
+    "optional": 2,
+    "optional_written": 2,
+    "file": "resources/explanations.yaml",
+    "policy": "D-075 (verbatim insertion, pending marked)"
+  },
+  "summary": {
+    "decision": "REFUSE",
+    "analyzed": false,
+    "analyzed_comparisons": [],
+    "refused_comparisons": [
+      "modified_vs_standard"
+    ],
+    "refusal_codes": [
+      "complete_confounding"
+    ],
+    "warning_codes": [],
+    "note_codes": [],
+    "caveat_codes": [],
+    "next_steps": [
+      {
+        "kind": "reassignment",
+        "text": "A crossed, randomized reassignment is proposed in the reassignment section."
+      }
+    ],
+    "pending_in_report": []
+  }
+}

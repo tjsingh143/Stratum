@@ -1,0 +1,17 @@
+{
+  "r_version": "R version 4.6.1 (2026-06-24)",
+  "platform": "aarch64-unknown-linux-gnu",
+  "packages": {
+    "lme4": "2.0.6",
+    "lmerTest": "3.2.1",
+    "pbkrtest": "0.5.5",
+    "nlme": "3.1.171",
+    "Matrix": "1.7.5",
+    "MEMSS": "0.9.4",
+    "SASmixed": "1.0.5",
+    "jsonlite": "2.0.0"
+  },
+  "cran_snapshot": "https://p3m.dev/cran/__linux__/noble/2026-09-29",
+  "blas": "/usr/lib/aarch64-linux-gnu/openblas-pthread/libblas.so.3",
+  "lapack": "/usr/lib/aarch64-linux-gnu/openblas-pthread/libopenblasp-r0.3.26.so"
+}

@@ -1,0 +1,234 @@
+{
+  "dataset": "MEMSS Oxide",
+  "design": {
+    "a_lots": 8,
+    "b_wafers_per_lot": 3,
+    "n_sites_per_wafer": 3,
+    "source_levels": 2,
+    "lots_per_source": 4
+  },
+  "without_source": {
+    "aov_error_strata": [
+      {
+        "stratum": "Error: Lot",
+        "term": "Residuals",
+        "df": 7,
+        "ss": 9025.31944444438,
+        "ms": 1289.33134920634,
+        "F": null,
+        "p": null
+      },
+      {
+        "stratum": "Error: Lot:Wafer",
+        "term": "Residuals",
+        "df": 16,
+        "ss": 1922.6666666668,
+        "ms": 120.166666666675,
+        "F": null,
+        "p": null
+      },
+      {
+        "stratum": "Error: Within",
+        "term": "Residuals",
+        "df": 48,
+        "ss": 603.333333333369,
+        "ms": 12.5694444444452,
+        "F": null,
+        "p": null
+      }
+    ],
+    "mom_variance_components": {
+      "lot": 129.907186948852,
+      "wafer": 35.8657407407434,
+      "site": 12.5694444444452
+    },
+    "mom_sd": {
+      "lot": 11.3976834027293,
+      "wafer": 5.98880127744638,
+      "site": 3.54534123103055
+    },
+    "lmer_reml": {
+      "vc": {
+        "Wafer:Lot": {
+          "variance": 35.8657568601703,
+          "sd": 5.98880262324367
+        },
+        "Lot": {
+          "variance": 129.91360037513,
+          "sd": 11.3979647470559
+        },
+        "Residual": {
+          "variance": 12.5693635669206,
+          "sd": 3.5453298248429
+        }
+      },
+      "intercept": 2000.15277777766,
+      "singular": false,
+      "profile_sd_ci": [
+        {
+          "parameter": "sd_(Intercept)|Wafer:Lot",
+          "lower": 4.14766778502956,
+          "upper": 9.13675061698353
+        },
+        {
+          "parameter": "sd_(Intercept)|Lot",
+          "lower": 6.2642819705627,
+          "upper": 19.7609840296349
+        },
+        {
+          "parameter": "sigma",
+          "lower": 2.93906511553093,
+          "upper": 4.39272182283699
+        }
+      ]
+    },
+    "nlme_reml": {
+      "vc": {
+        "Wafer": {
+          "variance": 35.8657454032183,
+          "sd": 5.98880166671249
+        },
+        "Lot": {
+          "variance": 129.907190248915,
+          "sd": 11.3976835474983
+        },
+        "Residual": {
+          "variance": 12.5694439138903,
+          "sd": 3.54534115620631
+        }
+      },
+      "intercept": 2000.15277777778,
+      "logLik": -227.011034655497,
+      "sd_intervals": {
+        "Lot": {
+          "lower": 6.39018883965111,
+          "est.": 11.3976835474983,
+          "upper": 20.3291629572573
+        },
+        "Wafer": {
+          "lower": 4.06467125399659,
+          "est.": 5.98880166671249,
+          "upper": 8.82377519902829
+        },
+        "residual": {
+          "lower": 2.9026067999928,
+          "est.": 3.54534115620631,
+          "upper": 4.33039842458906
+        }
+      }
+    }
+  },
+  "with_source_fixed": {
+    "aov_error_strata": [
+      {
+        "stratum": "Error: Lot",
+        "term": "Source",
+        "df": 1,
+        "ss": 1830.12499999991,
+        "ms": 1830.12499999991,
+        "F": 1.52612275940338,
+        "p": 0.262869992227237
+      },
+      {
+        "stratum": "Error: Lot",
+        "term": "Residuals",
+        "df": 6,
+        "ss": 7195.19444444447,
+        "ms": 1199.19907407408,
+        "F": null,
+        "p": null
+      },
+      {
+        "stratum": "Error: Lot:Wafer",
+        "term": "Residuals",
+        "df": 16,
+        "ss": 1922.6666666668,
+        "ms": 120.166666666675,
+        "F": null,
+        "p": null
+      },
+      {
+        "stratum": "Error: Within",
+        "term": "Residuals",
+        "df": 48,
+        "ss": 603.333333333369,
+        "ms": 12.5694444444452,
+        "F": null,
+        "p": null
+      }
+    ],
+    "lmer_reml": {
+      "vc": {
+        "Wafer:Lot": {
+          "variance": 35.8657389331544,
+          "sd": 5.98880112653229
+        },
+        "Lot": {
+          "variance": 119.892552126982,
+          "sd": 10.9495457498008
+        },
+        "Residual": {
+          "variance": 12.5694439234889,
+          "sd": 3.54534115756
+        }
+      },
+      "fixef": {
+        "(Intercept)": 2000.15277777768,
+        "Source1": -5.04166666667548
+      },
+      "singular": false
+    },
+    "lmertest_type3_satterthwaite": [
+      {
+        "term": "Source",
+        "num_df": 1,
+        "den_df": 5.99999599517346,
+        "F": 1.52612205209852,
+        "p": 0.26287012070434
+      }
+    ],
+    "lmertest_type3_kenward_roger": [
+      {
+        "term": "Source",
+        "num_df": 1,
+        "den_df": 6.00000000000108,
+        "F": 1.52612205209842,
+        "p": 0.26287009136464
+      }
+    ],
+    "nlme_reml_contr_sas": {
+      "vc": {
+        "Wafer": {
+          "variance": 35.8657290369702,
+          "sd": 5.98880030030809
+        },
+        "Lot": {
+          "variance": 119.892475768216,
+          "sd": 10.949542262954
+        },
+        "Residual": {
+          "variance": 12.5694458289947,
+          "sd": 3.54534142629376
+        }
+      },
+      "ttable": [
+        {
+          "term": "(Intercept)",
+          "Value": 2005.19444444444,
+          "Std.Error": 5.77157525881474,
+          "DF": 48,
+          "t.value": 347.425850747069,
+          "p.value": 2.77590084247305e-83
+        },
+        {
+          "term": "Source1",
+          "Value": -10.0833333333333,
+          "Std.Error": 8.16224000727281,
+          "DF": 6,
+          "t.value": -1.23536349388755,
+          "p.value": 0.262869963826648
+        }
+      ]
+    }
+  }
+}

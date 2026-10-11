@@ -1,0 +1,68 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1100" height="615" viewBox="0 0 1100 615" role="img" aria-labelledby="title desc">
+<title id="title">Experimental units and subsampling</title><desc id="desc">Three schematic runs receiving the same treatment contain wafer and site observations. Run-level assignment requires replication by runs.</desc>
+<defs><marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M 0 0 L 10 5 L 0 10 z" fill="#64748b"/></marker></defs>
+<rect width="1100" height="615" fill="#f8fafc"/>
+<text x="48" y="57" font-family="Arial, Helvetica, sans-serif" font-size="30" font-weight="700" fill="#0f172a">More sites do not create more runs</text>
+<text x="48" y="90" font-family="Arial, Helvetica, sans-serif" font-size="18" font-weight="400" fill="#334155">Run-level treatment · schematic replication within one treatment level</text>
+<rect x="48" y="140" width="302" height="95" rx="12" fill="#0f172a" stroke="#0f172a" stroke-width="1.5"/>
+<text x="68" y="171" font-family="Arial, Helvetica, sans-serif" font-size="19" font-weight="700" fill="#f8fafc">Run 1</text>
+<text x="68" y="198" font-family="Arial, Helvetica, sans-serif" font-size="16" font-weight="400" fill="#cbd5e1">Experimental unit</text>
+<text x="68" y="221" font-family="Arial, Helvetica, sans-serif" font-size="16" font-weight="400" fill="#cbd5e1">Treatment assigned here</text>
+<rect x="62" y="285" width="132" height="125" rx="10" fill="#ecfdf5" stroke="#6ee7b7"/>
+<text x="78" y="318" font-family="Arial, Helvetica, sans-serif" font-size="17" font-weight="700" fill="#0f172a">Wafer 1</text>
+<text x="78" y="343" font-family="Arial, Helvetica, sans-serif" font-size="14" font-weight="400" fill="#334155">Subsampling</text>
+<circle cx="89" cy="375" r="7" fill="#0f766e"/>
+<circle cx="121" cy="375" r="7" fill="#0f766e"/>
+<circle cx="153" cy="375" r="7" fill="#0f766e"/>
+<path d="M199 235 V259 H128 V285" fill="none" stroke="#64748b" stroke-width="2" marker-end="url(#arrow)"/>
+<rect x="204" y="285" width="132" height="125" rx="10" fill="#ecfdf5" stroke="#6ee7b7"/>
+<text x="220" y="318" font-family="Arial, Helvetica, sans-serif" font-size="17" font-weight="700" fill="#0f172a">Wafer 2</text>
+<text x="220" y="343" font-family="Arial, Helvetica, sans-serif" font-size="14" font-weight="400" fill="#334155">Subsampling</text>
+<circle cx="231" cy="375" r="7" fill="#0f766e"/>
+<circle cx="263" cy="375" r="7" fill="#0f766e"/>
+<circle cx="295" cy="375" r="7" fill="#0f766e"/>
+<path d="M199 235 V259 H270 V285" fill="none" stroke="#64748b" stroke-width="2" marker-end="url(#arrow)"/>
+<text x="66" y="441" font-family="Arial, Helvetica, sans-serif" font-size="15" font-weight="400" fill="#334155">Dots = site observations</text>
+<rect x="398" y="140" width="302" height="95" rx="12" fill="#0f172a" stroke="#0f172a" stroke-width="1.5"/>
+<text x="418" y="171" font-family="Arial, Helvetica, sans-serif" font-size="19" font-weight="700" fill="#f8fafc">Run 2</text>
+<text x="418" y="198" font-family="Arial, Helvetica, sans-serif" font-size="16" font-weight="400" fill="#cbd5e1">Experimental unit</text>
+<text x="418" y="221" font-family="Arial, Helvetica, sans-serif" font-size="16" font-weight="400" fill="#cbd5e1">Treatment assigned here</text>
+<rect x="412" y="285" width="132" height="125" rx="10" fill="#ecfdf5" stroke="#6ee7b7"/>
+<text x="428" y="318" font-family="Arial, Helvetica, sans-serif" font-size="17" font-weight="700" fill="#0f172a">Wafer 1</text>
+<text x="428" y="343" font-family="Arial, Helvetica, sans-serif" font-size="14" font-weight="400" fill="#334155">Subsampling</text>
+<circle cx="439" cy="375" r="7" fill="#0f766e"/>
+<circle cx="471" cy="375" r="7" fill="#0f766e"/>
+<circle cx="503" cy="375" r="7" fill="#0f766e"/>
+<path d="M549 235 V259 H478 V285" fill="none" stroke="#64748b" stroke-width="2" marker-end="url(#arrow)"/>
+<rect x="554" y="285" width="132" height="125" rx="10" fill="#ecfdf5" stroke="#6ee7b7"/>
+<text x="570" y="318" font-family="Arial, Helvetica, sans-serif" font-size="17" font-weight="700" fill="#0f172a">Wafer 2</text>
+<text x="570" y="343" font-family="Arial, Helvetica, sans-serif" font-size="14" font-weight="400" fill="#334155">Subsampling</text>
+<circle cx="581" cy="375" r="7" fill="#0f766e"/>
+<circle cx="613" cy="375" r="7" fill="#0f766e"/>
+<circle cx="645" cy="375" r="7" fill="#0f766e"/>
+<path d="M549 235 V259 H620 V285" fill="none" stroke="#64748b" stroke-width="2" marker-end="url(#arrow)"/>
+<text x="416" y="441" font-family="Arial, Helvetica, sans-serif" font-size="15" font-weight="400" fill="#334155">Dots = site observations</text>
+<rect x="748" y="140" width="302" height="95" rx="12" fill="#0f172a" stroke="#0f172a" stroke-width="1.5"/>
+<text x="768" y="171" font-family="Arial, Helvetica, sans-serif" font-size="19" font-weight="700" fill="#f8fafc">Run 3</text>
+<text x="768" y="198" font-family="Arial, Helvetica, sans-serif" font-size="16" font-weight="400" fill="#cbd5e1">Experimental unit</text>
+<text x="768" y="221" font-family="Arial, Helvetica, sans-serif" font-size="16" font-weight="400" fill="#cbd5e1">Treatment assigned here</text>
+<rect x="762" y="285" width="132" height="125" rx="10" fill="#ecfdf5" stroke="#6ee7b7"/>
+<text x="778" y="318" font-family="Arial, Helvetica, sans-serif" font-size="17" font-weight="700" fill="#0f172a">Wafer 1</text>
+<text x="778" y="343" font-family="Arial, Helvetica, sans-serif" font-size="14" font-weight="400" fill="#334155">Subsampling</text>
+<circle cx="789" cy="375" r="7" fill="#0f766e"/>
+<circle cx="821" cy="375" r="7" fill="#0f766e"/>
+<circle cx="853" cy="375" r="7" fill="#0f766e"/>
+<path d="M899 235 V259 H828 V285" fill="none" stroke="#64748b" stroke-width="2" marker-end="url(#arrow)"/>
+<rect x="904" y="285" width="132" height="125" rx="10" fill="#ecfdf5" stroke="#6ee7b7"/>
+<text x="920" y="318" font-family="Arial, Helvetica, sans-serif" font-size="17" font-weight="700" fill="#0f172a">Wafer 2</text>
+<text x="920" y="343" font-family="Arial, Helvetica, sans-serif" font-size="14" font-weight="400" fill="#334155">Subsampling</text>
+<circle cx="931" cy="375" r="7" fill="#0f766e"/>
+<circle cx="963" cy="375" r="7" fill="#0f766e"/>
+<circle cx="995" cy="375" r="7" fill="#0f766e"/>
+<path d="M899 235 V259 H970 V285" fill="none" stroke="#64748b" stroke-width="2" marker-end="url(#arrow)"/>
+<text x="766" y="441" font-family="Arial, Helvetica, sans-serif" font-size="15" font-weight="400" fill="#334155">Dots = site observations</text>
+<rect x="48" y="478" width="1002" height="95" rx="12" fill="#fffbeb" stroke="#fcd34d" stroke-width="1.5"/>
+<text x="68" y="509" font-family="Arial, Helvetica, sans-serif" font-size="19" font-weight="700" fill="#0f172a">What determines treatment uncertainty?</text>
+<text x="68" y="536" font-family="Arial, Helvetica, sans-serif" font-size="16" font-weight="400" fill="#475569">Within-run measurements share a run effect. Independent run replication supplies treatment error.</text>
+<text x="68" y="559" font-family="Arial, Helvetica, sans-serif" font-size="16" font-weight="400" fill="#475569">The other treatment needs its own replicated runs; balance alone cannot establish independence.</text>
+</svg>

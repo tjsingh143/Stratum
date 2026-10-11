@@ -1,0 +1,134 @@
+{
+  "description": "Pinned WP0 reference sources. Fetched by reference/fetch.py into reference/_fetched/<id>; never vendored (DECISIONS.md D-003). sha256 is of the saved bytes (after normalization, if any). First retrieved 2026-09-30 (rdrr/ entry: 2026-10-03).",
+  "sources": [
+    {
+      "id": "nist/FURNACE.DAT",
+      "role": "dataset: NIST/SEMATECH furnace case study",
+      "urls": [
+        "https://www.itl.nist.gov/div898/handbook/datasets/FURNACE.DAT",
+        "https://web.archive.org/web/20250714220513id_/https://www.itl.nist.gov/div898/handbook//datasets/FURNACE.DAT"
+      ],
+      "sha256": "e2725a7b153956077258a1af3c192f3bddf9322cac8ff10be6b1a6e17efe34cd",
+      "normalize": null
+    },
+    {
+      "id": "nist/LITHOGRA.DAT",
+      "role": "dataset: NIST/SEMATECH lithography case study (optional in brief)",
+      "urls": [
+        "https://www.itl.nist.gov/div898/handbook/datasets/LITHOGRA.DAT",
+        "https://web.archive.org/web/20250714220609id_/https://www.itl.nist.gov/div898/handbook//datasets/LITHOGRA.DAT"
+      ],
+      "sha256": "777cd68453b8ff18b89d02f312259cdfdbd7980215b75687b156d248d7d0f1fc",
+      "normalize": null
+    },
+    {
+      "id": "nist/ppc511.txt",
+      "role": "published source: furnace background, sampling plan, data listing (handbook 3.5.1.1)",
+      "urls": [
+        "https://www.itl.nist.gov/div898/handbook/ppc/section5/ppc511.htm"
+      ],
+      "sha256": "2e9779c77629cdbe705189a199475618fb6787b1a8845078ca61b03b9d3d9496",
+      "normalize": "html_text"
+    },
+    {
+      "id": "nist/ppc514.txt",
+      "role": "published source: furnace ANOVA table and variance components (handbook 3.5.1.4)",
+      "urls": [
+        "https://www.itl.nist.gov/div898/handbook/ppc/section5/ppc514.htm"
+      ],
+      "sha256": "e8998e5e7922cdc6725d449134655a295ee8fd6ffa8a94dd17681170985cdfeb",
+      "normalize": "html_text"
+    },
+    {
+      "id": "nist/ppc511.r",
+      "role": "published source: NIST's R code and printed output for the furnace case study",
+      "urls": [
+        "https://www.itl.nist.gov/div898/handbook/ppc/section5/ppc511.r"
+      ],
+      "sha256": "9b8590c7b163eb87a0c95fdb657a9fb4b0410ed2bbf364e10c091fbff72ec4d1",
+      "normalize": null
+    },
+    {
+      "id": "nist/pmc611.txt",
+      "role": "published source: lithography background and data listing (handbook 6.6.1.1)",
+      "urls": [
+        "https://www.itl.nist.gov/div898/handbook/pmc/section6/pmc611.htm"
+      ],
+      "sha256": "7d12c570064583aeb1996f1c9c4f7bbebc70771690d2363bb5b2822e902b16db",
+      "normalize": "html_text"
+    },
+    {
+      "id": "nist/pmc613.txt",
+      "role": "published source: lithography nested ANOVA and variance components (handbook 6.6.1.3)",
+      "urls": [
+        "https://www.itl.nist.gov/div898/handbook/pmc/section6/pmc613.htm"
+      ],
+      "sha256": "aeba97128fb66bca7670ec7ead74d2fb7befe9e4725176dbce4ed5e5666c450a",
+      "normalize": "html_text"
+    },
+    {
+      "id": "nist/pmc613.r",
+      "role": "published source: NIST's R code and printed output for handbook 6.6.1.3",
+      "urls": [
+        "https://www.itl.nist.gov/div898/handbook/pmc/section6/pmc613.r"
+      ],
+      "sha256": "60fe4a6692d52cc0bfdc526701190a13152521f393eb66723f5336e6f4564ed4",
+      "normalize": null
+    },
+    {
+      "id": "nist/index2.txt",
+      "role": "published source: handbook citation form and DOI",
+      "urls": [
+        "https://www.itl.nist.gov/div898/handbook/index2.htm"
+      ],
+      "sha256": "2db05db68b459ca37cf64dda376f185caff946dd1a5899f6101dab85b2a7efa5",
+      "normalize": "html_text"
+    },
+    {
+      "id": "cran/MEMSS_0.9-4.tar.gz",
+      "role": "dataset: MEMSS Oxide (package source; data/Oxide.rda, man/Oxide.Rd)",
+      "urls": [
+        "https://cran.r-project.org/src/contrib/MEMSS_0.9-4.tar.gz",
+        "https://cran.r-project.org/src/contrib/Archive/MEMSS/MEMSS_0.9-4.tar.gz"
+      ],
+      "sha256": "7b093f3c47e07bd8c99dbb9942cc29e5f078d4de02c55257f7fb3450921a1d65",
+      "normalize": null
+    },
+    {
+      "id": "cran/SASmixed_1.0-5.tar.gz",
+      "role": "dataset: SASmixed Semiconductor and Semi2; S transcripts inst/transcripts/*.St",
+      "urls": [
+        "https://cran.r-project.org/src/contrib/SASmixed_1.0-5.tar.gz",
+        "https://cran.r-project.org/src/contrib/Archive/SASmixed/SASmixed_1.0-5.tar.gz"
+      ],
+      "sha256": "ba71d2ef7f14b4cf6b6d499436622e66ebb76a2b98ea4842d5b33959fdffdb78",
+      "normalize": null
+    },
+    {
+      "id": "cran/nlme_3.1-171.tar.gz",
+      "role": "package-distributed reproduction of Pinheiro & Bates (2000) ch. 4 Oxide analysis: inst/scripts/ch04.R, tests/extras/scripts.Rout.save",
+      "urls": [
+        "https://cran.r-project.org/src/contrib/nlme_3.1-171.tar.gz",
+        "https://cran.r-project.org/src/contrib/Archive/nlme/nlme_3.1-171.tar.gz"
+      ],
+      "sha256": "481dc8277dd0e0f2717ffb36edfb08141621470de173894fb1153464383ba0d3",
+      "normalize": null
+    },
+    {
+      "id": "rdrr/SASmixed_Semiconductor.txt",
+      "role": "third-party rendering (rdrr.io, built 2019-05-01) of the SASmixed Semiconductor help page and its example output; cited in the brief's reference reading",
+      "urls": [
+        "https://rdrr.io/cran/SASmixed/man/Semiconductor.html"
+      ],
+      "sha256": "a3762b8121dea4b6280e06172d2ed1df769bd0832fdb5c39ecf818438551c641",
+      "normalize": "html_text"
+    }
+  ],
+  "derived": {
+    "derived/furnace.csv": "1c6d5bbb710c1c2fd7bf6ee4f95c742ee4864346361a50c80efbaa49dfff4293",
+    "derived/lithography.csv": "70179f63a753d73f34d6aadca4d6aaeaef400198c082ef43a798963cc55eb96b",
+    "derived/oxide.csv": "268958d6ea1880a704e45558836f9dd8ff2c13dcb4b7f4c644c246f1a93a3843",
+    "derived/semiconductor.csv": "1b34dd59bf25d8b1e3ce4dc77f35d5ad9a5aaf0acbb149bcd47464f0795785a8"
+  },
+  "derived_note": "CSV exports written by r/00_export.R from the verified sources; not vendored."
+}

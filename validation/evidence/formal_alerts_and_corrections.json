@@ -1,0 +1,302 @@
+{
+  "schema": "stratum-evidence/1",
+  "synthetic": true,
+  "source": {
+    "path": "validation/synthetic_wp6_investigations.json",
+    "release": "Stratum v1.0.0",
+    "sha256": "fdee38dacdfbd83ef736ba22583cf6920456c8c316dc9de3433480d8a3e27aa5",
+    "selection": "All 21 formal alerts with frozen bands and observed counts, the expectation corrections (none) and the two implementation corrections; values unchanged. The freeze-commit pointer is omitted."
+  },
+  "values": {
+    "purpose": "Post-result investigation record, not a replacement acceptance criterion",
+    "synthetic": true,
+    "formal_alerts": [
+      {
+        "cell_id": "T1-g2-w2-s5",
+        "decision": "D-097",
+        "disposition": "method_limitation",
+        "evidence": "validation/synthetic_wp6_interval_investigation.json",
+        "family_id": "T1-vccov-run",
+        "frozen_band": [
+          1871,
+          1927
+        ],
+        "n": 2000,
+        "observed_count": 1164
+      },
+      {
+        "cell_id": "T1-g2-w2-s9",
+        "decision": "D-097",
+        "disposition": "method_limitation",
+        "evidence": "validation/synthetic_wp6_interval_investigation.json",
+        "family_id": "T1-vccov-run",
+        "frozen_band": [
+          1871,
+          1927
+        ],
+        "n": 2000,
+        "observed_count": 1218
+      },
+      {
+        "cell_id": "T1-g2-w4-s5",
+        "decision": "D-097",
+        "disposition": "method_limitation",
+        "evidence": "validation/synthetic_wp6_interval_investigation.json",
+        "family_id": "T1-vccov-run",
+        "frozen_band": [
+          1871,
+          1927
+        ],
+        "n": 2000,
+        "observed_count": 1282
+      },
+      {
+        "cell_id": "T1-g2-w4-s9",
+        "decision": "D-097",
+        "disposition": "method_limitation",
+        "evidence": "validation/synthetic_wp6_interval_investigation.json",
+        "family_id": "T1-vccov-run",
+        "frozen_band": [
+          1871,
+          1927
+        ],
+        "n": 2000,
+        "observed_count": 1326
+      },
+      {
+        "cell_id": "T1-g3-w2-s5",
+        "decision": "D-097",
+        "disposition": "method_limitation",
+        "evidence": "validation/synthetic_wp6_interval_investigation.json",
+        "family_id": "T1-vccov-run",
+        "frozen_band": [
+          1871,
+          1927
+        ],
+        "n": 2000,
+        "observed_count": 1422
+      },
+      {
+        "cell_id": "T1-g3-w2-s9",
+        "decision": "D-097",
+        "disposition": "method_limitation",
+        "evidence": "validation/synthetic_wp6_interval_investigation.json",
+        "family_id": "T1-vccov-run",
+        "frozen_band": [
+          1871,
+          1927
+        ],
+        "n": 2000,
+        "observed_count": 1421
+      },
+      {
+        "cell_id": "T1-g3-w4-s5",
+        "decision": "D-097",
+        "disposition": "method_limitation",
+        "evidence": "validation/synthetic_wp6_interval_investigation.json",
+        "family_id": "T1-vccov-run",
+        "frozen_band": [
+          1871,
+          1927
+        ],
+        "n": 2000,
+        "observed_count": 1618
+      },
+      {
+        "cell_id": "T1-g3-w4-s9",
+        "decision": "D-097",
+        "disposition": "method_limitation",
+        "evidence": "validation/synthetic_wp6_interval_investigation.json",
+        "family_id": "T1-vccov-run",
+        "frozen_band": [
+          1871,
+          1927
+        ],
+        "n": 2000,
+        "observed_count": 1632
+      },
+      {
+        "cell_id": "T1-g5-w2-s5",
+        "decision": "D-097",
+        "disposition": "method_limitation",
+        "evidence": "validation/synthetic_wp6_interval_investigation.json",
+        "family_id": "T1-vccov-run",
+        "frozen_band": [
+          1871,
+          1927
+        ],
+        "n": 2000,
+        "observed_count": 1645
+      },
+      {
+        "cell_id": "T1-g5-w2-s9",
+        "decision": "D-097",
+        "disposition": "method_limitation",
+        "evidence": "validation/synthetic_wp6_interval_investigation.json",
+        "family_id": "T1-vccov-run",
+        "frozen_band": [
+          1871,
+          1927
+        ],
+        "n": 2000,
+        "observed_count": 1656
+      },
+      {
+        "cell_id": "T1-g5-w4-s5",
+        "decision": "D-097",
+        "disposition": "method_limitation",
+        "evidence": "validation/synthetic_wp6_interval_investigation.json",
+        "family_id": "T1-vccov-run",
+        "frozen_band": [
+          1871,
+          1927
+        ],
+        "n": 2000,
+        "observed_count": 1822
+      },
+      {
+        "cell_id": "T1-g5-w4-s9",
+        "decision": "D-097",
+        "disposition": "method_limitation",
+        "evidence": "validation/synthetic_wp6_interval_investigation.json",
+        "family_id": "T1-vccov-run",
+        "frozen_band": [
+          1871,
+          1927
+        ],
+        "n": 2000,
+        "observed_count": 1833
+      },
+      {
+        "cell_id": "T1-g2-w2-s5",
+        "decision": "D-097",
+        "disposition": "method_limitation",
+        "evidence": "validation/synthetic_wp6_interval_investigation.json",
+        "family_id": "T1-vccov-wafer",
+        "frozen_band": [
+          1871,
+          1927
+        ],
+        "n": 2000,
+        "observed_count": 1746
+      },
+      {
+        "cell_id": "T1-g2-w2-s9",
+        "decision": "D-097",
+        "disposition": "method_limitation",
+        "evidence": "validation/synthetic_wp6_interval_investigation.json",
+        "family_id": "T1-vccov-wafer",
+        "frozen_band": [
+          1871,
+          1927
+        ],
+        "n": 2000,
+        "observed_count": 1823
+      },
+      {
+        "cell_id": "T1-g2-w4-s5",
+        "decision": "D-097",
+        "disposition": "method_limitation",
+        "evidence": "validation/synthetic_wp6_interval_investigation.json",
+        "family_id": "T1-vccov-wafer",
+        "frozen_band": [
+          1871,
+          1927
+        ],
+        "n": 2000,
+        "observed_count": 1950
+      },
+      {
+        "cell_id": "T1-g2-w4-s9",
+        "decision": "D-097",
+        "disposition": "method_limitation",
+        "evidence": "validation/synthetic_wp6_interval_investigation.json",
+        "family_id": "T1-vccov-wafer",
+        "frozen_band": [
+          1871,
+          1927
+        ],
+        "n": 2000,
+        "observed_count": 1941
+      },
+      {
+        "cell_id": "T1-g3-w4-s5",
+        "decision": "D-097",
+        "disposition": "method_limitation",
+        "evidence": "validation/synthetic_wp6_interval_investigation.json",
+        "family_id": "T1-vccov-wafer",
+        "frozen_band": [
+          1871,
+          1927
+        ],
+        "n": 2000,
+        "observed_count": 1957
+      },
+      {
+        "cell_id": "T1-g3-w4-s9",
+        "decision": "D-097",
+        "disposition": "method_limitation",
+        "evidence": "validation/synthetic_wp6_interval_investigation.json",
+        "family_id": "T1-vccov-wafer",
+        "frozen_band": [
+          1871,
+          1927
+        ],
+        "n": 2000,
+        "observed_count": 1945
+      },
+      {
+        "cell_id": "T1-g5-w2-s9",
+        "decision": "D-097",
+        "disposition": "method_limitation",
+        "evidence": "validation/synthetic_wp6_interval_investigation.json",
+        "family_id": "T1-vccov-wafer",
+        "frozen_band": [
+          1871,
+          1927
+        ],
+        "n": 2000,
+        "observed_count": 1953
+      },
+      {
+        "cell_id": "T1-g5-w4-s5",
+        "decision": "D-097",
+        "disposition": "method_limitation",
+        "evidence": "validation/synthetic_wp6_interval_investigation.json",
+        "family_id": "T1-vccov-wafer",
+        "frozen_band": [
+          1871,
+          1927
+        ],
+        "n": 2000,
+        "observed_count": 1938
+      },
+      {
+        "cell_id": "T1-g5-w4-s9",
+        "decision": "D-097",
+        "disposition": "method_limitation",
+        "evidence": "validation/synthetic_wp6_interval_investigation.json",
+        "family_id": "T1-vccov-wafer",
+        "frozen_band": [
+          1871,
+          1927
+        ],
+        "n": 2000,
+        "observed_count": 1930
+      }
+    ],
+    "expectation_corrections": [],
+    "implementation_corrections": [
+      {
+        "decision": "D-096",
+        "observed": "Three deterministic T3 batch-label layouts refused before random execution",
+        "resolution": "Repair within-plot cancellation check; preserve frozen WARN"
+      },
+      {
+        "decision": "D-098",
+        "observed": "11933 first-run Fraction serialization exceptions",
+        "resolution": "Repair audit fingerprint; preserve full old run; identical-input rerun and full replay"
+      }
+    ]
+  }
+}

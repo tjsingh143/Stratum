@@ -1,0 +1,111 @@
+{
+  "dataset": "NIST lithography (LITHOGRA.DAT), raw width",
+  "design": {
+    "a_cassettes": 30,
+    "b_wafers_per_cassette": 3,
+    "n_sites_per_wafer": 5
+  },
+  "aov_error_strata": [
+    {
+      "stratum": "Error: cassette",
+      "term": "Residuals",
+      "df": 29,
+      "ss": 127.402931708879,
+      "ms": 4.39320454168549,
+      "F": null,
+      "p": null
+    },
+    {
+      "stratum": "Error: cassette:wafer",
+      "term": "Residuals",
+      "df": 60,
+      "ss": 25.5208902961857,
+      "ms": 0.425348171603095,
+      "F": null,
+      "p": null
+    },
+    {
+      "stratum": "Error: Within",
+      "term": "Residuals",
+      "df": 360,
+      "ss": 63.1786451118748,
+      "ms": 0.175496236421874,
+      "F": null,
+      "p": null
+    }
+  ],
+  "mom_variance_components": {
+    "cassette": 0.264523758005493,
+    "wafer": 0.0499703870362442,
+    "site": 0.175496236421874
+  },
+  "lmer_reml": {
+    "vc": {
+      "wafer:cassette": {
+        "variance": 0.0499703315088396,
+        "sd": 0.223540447142882
+      },
+      "cassette": {
+        "variance": 0.264524090612502,
+        "sd": 0.514319055268713
+      },
+      "Residual": {
+        "variance": 0.175496240088515,
+        "sd": 0.418922713741467
+      }
+    },
+    "singular": false
+  },
+  "nlme_reml": {
+    "wafer": {
+      "variance": 0.0499708974161168,
+      "sd": 0.223541712922033
+    },
+    "cassette": {
+      "variance": 0.264521449155228,
+      "sd": 0.514316487345319
+    },
+    "Residual": {
+      "variance": 0.175496169026995,
+      "sd": 0.418922628926864
+    }
+  },
+  "supplementary_site_fixed": [
+    {
+      "stratum": "Error: cassette",
+      "term": "Residuals",
+      "df": 29,
+      "ss": 127.402931708879,
+      "ms": 4.39320454168549,
+      "F": null,
+      "p": null
+    },
+    {
+      "stratum": "Error: cassette:wafer",
+      "term": "Residuals",
+      "df": 60,
+      "ss": 25.5208902961857,
+      "ms": 0.425348171603095,
+      "F": null,
+      "p": null
+    },
+    {
+      "stratum": "Error: Within",
+      "term": "site",
+      "df": 4,
+      "ss": 47.1699734361292,
+      "ms": 11.7924933590323,
+      "F": 262.240848013394,
+      "p": 1.00114999177739e-104
+    },
+    {
+      "stratum": "Error: Within",
+      "term": "Residuals",
+      "df": 356,
+      "ss": 16.0086716757455,
+      "ms": 0.0449681788644537,
+      "F": null,
+      "p": null
+    }
+  ]
+}

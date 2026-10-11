@@ -1,0 +1,3281 @@
+{
+  "schema": "stratum-evidence/1",
+  "synthetic": true,
+  "source": {
+    "path": "validation/synthetic_wp6_summary.json",
+    "release": "Stratum v1.0.0",
+    "sha256": "11dcaadba2d3dc68b642a2391a75e66795734bb6ec427feacf78e28bbf1ac3fc",
+    "selection": "Unchanged totals, families, all conditions, focused groups and flags. additional_accounting sums per-cell counts: decisions.WARN over all cells, components.*.endpoint_overflow over all cells, and missing_patterns over the six T2 missing-site cells."
+  },
+  "values": {
+    "synthetic": true,
+    "totals": {
+      "attempts": 418000,
+      "boundary_fits": 38773,
+      "cells": 209,
+      "code_counts": {
+        "aliased_components": 60000,
+        "brown_forsythe": 1371,
+        "complete_confounding": 18000,
+        "declaration_refused": 38000,
+        "diagnostic_unavailable": 112000,
+        "missing_observation": 6000,
+        "missing_sites_exception": 11933,
+        "missing_subplot_cell": 6000,
+        "nuisance_unit_unique": 24000,
+        "partial_confounding": 12000,
+        "sd_ratio": 142420,
+        "studentized_residual": 121015
+      },
+      "degenerate_fits": 0,
+      "diagnostic_counts": {
+        "position/brown_forsythe:not_applicable": 66000,
+        "position/sd_ratio:not_applicable": 66000,
+        "position/studentized_residuals:available": 66000,
+        "run/brown_forsythe:available": 152000,
+        "run/brown_forsythe:unavailable": 72000,
+        "run/sd_ratio:available": 224000,
+        "run/studentized_residuals:available": 220000,
+        "run/studentized_residuals:unavailable": 4000,
+        "top_units/brown_forsythe:not_applicable": 54000,
+        "top_units/sd_ratio:not_applicable": 54000,
+        "top_units/studentized_residuals:available": 36000,
+        "top_units/studentized_residuals:unavailable": 18000,
+        "wafer/brown_forsythe:available": 44000,
+        "wafer/brown_forsythe:unavailable": 22000,
+        "wafer/sd_ratio:available": 66000,
+        "wafer/studentized_residuals:available": 66000
+      },
+      "exceptions": 0,
+      "fit_event_counts": {
+        "boundary:negative_moment_estimate:A": 11817,
+        "boundary:negative_moment_estimate:B": 1978,
+        "boundary:negative_moment_estimate:sub1": 937,
+        "boundary:negative_moment_estimate:unit": 21938,
+        "boundary:negative_moment_estimate:unit+sub1": 319,
+        "boundary:negative_moment_estimate:wholeplot": 1953,
+        "boundary:reml_on_boundary:A": 11880,
+        "boundary:reml_on_boundary:B": 2052,
+        "boundary:reml_on_boundary:sub1": 959,
+        "boundary:reml_on_boundary:unit": 21943,
+        "boundary:reml_on_boundary:unit+sub1": 319,
+        "boundary:reml_on_boundary:wholeplot": 1953
+      },
+      "metrics": {
+        "AB_test_false_positive_rate": {
+          "count": 2924,
+          "mcse_empirical": 0.0008789993890361505,
+          "mcse_nominal": 0.0008897565210026092,
+          "n": 60000,
+          "rate": 0.04873333333333333,
+          "unavailable": 0
+        },
+        "AB_test_rejection_rate": {
+          "count": 446,
+          "mcse_empirical": 0.003386440827990574,
+          "mcse_nominal": null,
+          "n": 6000,
+          "rate": 0.07433333333333333,
+          "unavailable": 0
+        },
+        "A_contrast_interval_coverage": {
+          "count": 62177,
+          "mcse_empirical": 0.0009092873046964428,
+          "mcse_nominal": 0.0008483495563132985,
+          "n": 66000,
+          "rate": 0.9420757575757576,
+          "unavailable": 0
+        },
+        "A_test_false_positive_rate": {
+          "count": 4182,
+          "mcse_empirical": 0.0010395664961896376,
+          "mcse_nominal": 0.0008897565210026092,
+          "n": 60000,
+          "rate": 0.0697,
+          "unavailable": 0
+        },
+        "A_test_rejection_rate": {
+          "count": 829,
+          "mcse_empirical": 0.00445489691030909,
+          "mcse_nominal": null,
+          "n": 6000,
+          "rate": 0.13816666666666666,
+          "unavailable": 0
+        },
+        "B_contrast_interval_coverage": {
+          "count": 62808,
+          "mcse_empirical": 0.0008350702659722381,
+          "mcse_nominal": 0.0008483495563132985,
+          "n": 66000,
+          "rate": 0.9516363636363636,
+          "unavailable": 0
+        },
+        "B_test_false_positive_rate": {
+          "count": 2914,
+          "mcse_empirical": 0.0008775718921694826,
+          "mcse_nominal": 0.0008897565210026092,
+          "n": 60000,
+          "rate": 0.04856666666666667,
+          "unavailable": 0
+        },
+        "B_test_rejection_rate": {
+          "count": 3841,
+          "mcse_empirical": 0.006196145381815423,
+          "mcse_nominal": null,
+          "n": 6000,
+          "rate": 0.6401666666666667,
+          "unavailable": 0
+        },
+        "naive_A_test_false_positive_rate": {
+          "count": 23203,
+          "mcse_empirical": 0.001988160315420971,
+          "mcse_nominal": 0.0008897565210026092,
+          "n": 60000,
+          "rate": 0.38671666666666665,
+          "unavailable": 0
+        },
+        "naive_A_test_rejection_rate": {
+          "count": 3412,
+          "mcse_empirical": 0.006393810664604858,
+          "mcse_nominal": null,
+          "n": 6000,
+          "rate": 0.5686666666666667,
+          "unavailable": 0
+        },
+        "naive_site_level_false_positive_rate": {
+          "count": 53939,
+          "mcse_empirical": 0.0014930235809379687,
+          "mcse_nominal": 0.0006512350903146596,
+          "n": 112000,
+          "rate": 0.4815982142857143,
+          "unavailable": 0
+        },
+        "naive_site_level_rejection_rate": {
+          "count": 70543,
+          "mcse_empirical": 0.0014427758502239306,
+          "mcse_nominal": null,
+          "n": 112000,
+          "rate": 0.6298482142857142,
+          "unavailable": 0
+        },
+        "treatment_false_positive_rate": {
+          "count": 6380,
+          "mcse_empirical": 0.0006925583772928133,
+          "mcse_nominal": 0.0006512350903146596,
+          "n": 112000,
+          "rate": 0.05696428571428572,
+          "unavailable": 0
+        },
+        "treatment_interval_coverage": {
+          "count": 211395,
+          "mcse_empirical": 0.000486907823804662,
+          "mcse_nominal": 0.0004604927485081297,
+          "n": 224000,
+          "rate": 0.9437276785714286,
+          "unavailable": 0
+        },
+        "treatment_rejection_rate": {
+          "count": 14823,
+          "mcse_empirical": 0.0010125646560533138,
+          "mcse_nominal": null,
+          "n": 112000,
+          "rate": 0.13234821428571428,
+          "unavailable": 0
+        },
+        "vc_interval_coverage_run": {
+          "count": 38406,
+          "mcse_empirical": 0.0019502382230531536,
+          "mcse_nominal": 0.0009378857231185634,
+          "n": 54000,
+          "rate": 0.7112222222222222,
+          "unavailable": 11817
+        },
+        "vc_interval_coverage_site": {
+          "count": 47083,
+          "mcse_empirical": 0.001438137171608162,
+          "mcse_nominal": 0.0009378857231185634,
+          "n": 54000,
+          "rate": 0.8719074074074074,
+          "unavailable": 0
+        },
+        "vc_interval_coverage_wafer": {
+          "count": 50324,
+          "mcse_empirical": 0.0010838886996386151,
+          "mcse_nominal": 0.0009378857231185634,
+          "n": 54000,
+          "rate": 0.9319259259259259,
+          "unavailable": 1978
+        }
+      },
+      "mismatches": 0,
+      "outcomes": {
+        "analyzed_boundary": 38773,
+        "analyzed_interior": 305227,
+        "refused": 74000
+      },
+      "refusal_performance": {
+        "count": 74000,
+        "exact_95_interval": [
+          0.9999501515201239,
+          1.0
+        ],
+        "mcse_empirical": 0.0,
+        "mcse_nominal": null,
+        "n": 74000,
+        "rate": 1.0,
+        "unexpected_refusals": 0
+      }
+    },
+    "families": [
+      {
+        "K": 12,
+        "diagnostic_flags": [
+          "T1-g2-w2-s5",
+          "T1-g2-w2-s9",
+          "T1-g2-w4-s5",
+          "T1-g2-w4-s9",
+          "T1-g3-w2-s5",
+          "T1-g3-w2-s9",
+          "T1-g3-w4-s5",
+          "T1-g3-w4-s9",
+          "T1-g5-w2-s5",
+          "T1-g5-w2-s9",
+          "T1-g5-w4-s5",
+          "T1-g5-w4-s9"
+        ],
+        "family_id": "T1-vccov-run",
+        "formal_alerts": [
+          {
+            "band": [
+              1871,
+              1927
+            ],
+            "cell_id": "T1-g2-w2-s5",
+            "count": 1164,
+            "n": 2000
+          },
+          {
+            "band": [
+              1871,
+              1927
+            ],
+            "cell_id": "T1-g2-w2-s9",
+            "count": 1218,
+            "n": 2000
+          },
+          {
+            "band": [
+              1871,
+              1927
+            ],
+            "cell_id": "T1-g2-w4-s5",
+            "count": 1282,
+            "n": 2000
+          },
+          {
+            "band": [
+              1871,
+              1927
+            ],
+            "cell_id": "T1-g2-w4-s9",
+            "count": 1326,
+            "n": 2000
+          },
+          {
+            "band": [
+              1871,
+              1927
+            ],
+            "cell_id": "T1-g3-w2-s5",
+            "count": 1422,
+            "n": 2000
+          },
+          {
+            "band": [
+              1871,
+              1927
+            ],
+            "cell_id": "T1-g3-w2-s9",
+            "count": 1421,
+            "n": 2000
+          },
+          {
+            "band": [
+              1871,
+              1927
+            ],
+            "cell_id": "T1-g3-w4-s5",
+            "count": 1618,
+            "n": 2000
+          },
+          {
+            "band": [
+              1871,
+              1927
+            ],
+            "cell_id": "T1-g3-w4-s9",
+            "count": 1632,
+            "n": 2000
+          },
+          {
+            "band": [
+              1871,
+              1927
+            ],
+            "cell_id": "T1-g5-w2-s5",
+            "count": 1645,
+            "n": 2000
+          },
+          {
+            "band": [
+              1871,
+              1927
+            ],
+            "cell_id": "T1-g5-w2-s9",
+            "count": 1656,
+            "n": 2000
+          },
+          {
+            "band": [
+              1871,
+              1927
+            ],
+            "cell_id": "T1-g5-w4-s5",
+            "count": 1822,
+            "n": 2000
+          },
+          {
+            "band": [
+              1871,
+              1927
+            ],
+            "cell_id": "T1-g5-w4-s9",
+            "count": 1833,
+            "n": 2000
+          }
+        ],
+        "frozen_hard_counts": [
+          1871,
+          1927
+        ],
+        "metric": "vc_interval_coverage_run",
+        "pooled": {
+          "count": 18039,
+          "mcse_empirical": 0.0027890026545867013,
+          "mcse_nominal": 0.001406828584677845,
+          "n": 24000,
+          "rate": 0.751625
+        },
+        "pooled_diagnostic_flag": true,
+        "unavailable": 4755
+      },
+      {
+        "K": 12,
+        "diagnostic_flags": [
+          "T1-g2-w2-s5",
+          "T1-g2-w2-s9",
+          "T1-g2-w4-s5",
+          "T1-g2-w4-s9",
+          "T1-g3-w2-s5",
+          "T1-g3-w4-s5",
+          "T1-g3-w4-s9",
+          "T1-g5-w2-s5",
+          "T1-g5-w2-s9",
+          "T1-g5-w4-s5",
+          "T1-g5-w4-s9"
+        ],
+        "family_id": "T1-vccov-wafer",
+        "formal_alerts": [
+          {
+            "band": [
+              1871,
+              1927
+            ],
+            "cell_id": "T1-g2-w2-s5",
+            "count": 1746,
+            "n": 2000
+          },
+          {
+            "band": [
+              1871,
+              1927
+            ],
+            "cell_id": "T1-g2-w2-s9",
+            "count": 1823,
+            "n": 2000
+          },
+          {
+            "band": [
+              1871,
+              1927
+            ],
+            "cell_id": "T1-g2-w4-s5",
+            "count": 1950,
+            "n": 2000
+          },
+          {
+            "band": [
+              1871,
+              1927
+            ],
+            "cell_id": "T1-g2-w4-s9",
+            "count": 1941,
+            "n": 2000
+          },
+          {
+            "band": [
+              1871,
+              1927
+            ],
+            "cell_id": "T1-g3-w4-s5",
+            "count": 1957,
+            "n": 2000
+          },
+          {
+            "band": [
+              1871,
+              1927
+            ],
+            "cell_id": "T1-g3-w4-s9",
+            "count": 1945,
+            "n": 2000
+          },
+          {
+            "band": [
+              1871,
+              1927
+            ],
+            "cell_id": "T1-g5-w2-s9",
+            "count": 1953,
+            "n": 2000
+          },
+          {
+            "band": [
+              1871,
+              1927
+            ],
+            "cell_id": "T1-g5-w4-s5",
+            "count": 1938,
+            "n": 2000
+          },
+          {
+            "band": [
+              1871,
+              1927
+            ],
+            "cell_id": "T1-g5-w4-s9",
+            "count": 1930,
+            "n": 2000
+          }
+        ],
+        "frozen_hard_counts": [
+          1871,
+          1927
+        ],
+        "metric": "vc_interval_coverage_wafer",
+        "pooled": {
+          "count": 22881,
+          "mcse_empirical": 0.0013609296665484472,
+          "mcse_nominal": 0.001406828584677845,
+          "n": 24000,
+          "rate": 0.953375
+        },
+        "pooled_diagnostic_flag": true,
+        "unavailable": 434
+      },
+      {
+        "K": 12,
+        "diagnostic_flags": [],
+        "family_id": "T1-vccov-site",
+        "formal_alerts": [],
+        "frozen_hard_counts": [
+          1871,
+          1927
+        ],
+        "metric": "vc_interval_coverage_site",
+        "pooled": {
+          "count": 22777,
+          "mcse_empirical": 0.0014195301687122605,
+          "mcse_nominal": 0.001406828584677845,
+          "n": 24000,
+          "rate": 0.9490416666666667
+        },
+        "pooled_diagnostic_flag": false,
+        "unavailable": 0
+      },
+      {
+        "K": 54,
+        "diagnostic_flags": [
+          "T2-r3-w1-s9-null",
+          "T2-r5-w2-s1-null"
+        ],
+        "family_id": "T2-cov",
+        "formal_alerts": [],
+        "frozen_hard_counts": [
+          1866,
+          1931
+        ],
+        "metric": "treatment_interval_coverage",
+        "pooled": {
+          "count": 102546,
+          "mcse_empirical": 0.0006663176169565581,
+          "mcse_nominal": 0.0006631853547951848,
+          "n": 108000,
+          "rate": 0.9495
+        },
+        "pooled_diagnostic_flag": false,
+        "unavailable": 0
+      },
+      {
+        "K": 27,
+        "diagnostic_flags": [
+          "T2-r3-w1-s9-null",
+          "T2-r5-w2-s1-null"
+        ],
+        "family_id": "T2-fpr",
+        "formal_alerts": [],
+        "frozen_hard_counts": [
+          71,
+          132
+        ],
+        "metric": "treatment_false_positive_rate",
+        "pooled": {
+          "count": 2739,
+          "mcse_empirical": 0.000944275916941631,
+          "mcse_nominal": 0.0009378857231185629,
+          "n": 54000,
+          "rate": 0.050722222222222224
+        },
+        "pooled_diagnostic_flag": false,
+        "unavailable": 0
+      },
+      {
+        "K": 12,
+        "diagnostic_flags": [],
+        "family_id": "T3-covA",
+        "formal_alerts": [],
+        "frozen_hard_counts": [
+          1871,
+          1927
+        ],
+        "metric": "A_contrast_interval_coverage",
+        "pooled": {
+          "count": 22828,
+          "mcse_empirical": 0.001391172150994873,
+          "mcse_nominal": 0.001406828584677845,
+          "n": 24000,
+          "rate": 0.9511666666666667
+        },
+        "pooled_diagnostic_flag": false,
+        "unavailable": 0
+      },
+      {
+        "K": 12,
+        "diagnostic_flags": [
+          "T3-a4-b4-r5-null"
+        ],
+        "family_id": "T3-covB",
+        "formal_alerts": [],
+        "frozen_hard_counts": [
+          1871,
+          1927
+        ],
+        "metric": "B_contrast_interval_coverage",
+        "pooled": {
+          "count": 22827,
+          "mcse_empirical": 0.0013917350438541335,
+          "mcse_nominal": 0.001406828584677845,
+          "n": 24000,
+          "rate": 0.951125
+        },
+        "pooled_diagnostic_flag": false,
+        "unavailable": 0
+      },
+      {
+        "K": 9,
+        "diagnostic_flags": [],
+        "family_id": "T3-fprA",
+        "formal_alerts": [],
+        "frozen_hard_counts": [
+          74,
+          128
+        ],
+        "metric": "A_test_false_positive_rate",
+        "pooled": {
+          "count": 902,
+          "mcse_empirical": 0.0016261745781352593,
+          "mcse_nominal": 0.0016244657241348273,
+          "n": 18000,
+          "rate": 0.05011111111111111
+        },
+        "pooled_diagnostic_flag": false,
+        "unavailable": 0
+      },
+      {
+        "K": 9,
+        "diagnostic_flags": [],
+        "family_id": "T3-fprB",
+        "formal_alerts": [],
+        "frozen_hard_counts": [
+          74,
+          128
+        ],
+        "metric": "B_test_false_positive_rate",
+        "pooled": {
+          "count": 929,
+          "mcse_empirical": 0.0016490300907063126,
+          "mcse_nominal": 0.0016244657241348273,
+          "n": 18000,
+          "rate": 0.051611111111111115
+        },
+        "pooled_diagnostic_flag": false,
+        "unavailable": 0
+      },
+      {
+        "K": 9,
+        "diagnostic_flags": [
+          "T3-a4-b4-r2-A_only",
+          "T3-a4-b4-r5-A_only"
+        ],
+        "family_id": "T3-fprAB",
+        "formal_alerts": [],
+        "frozen_hard_counts": [
+          74,
+          128
+        ],
+        "metric": "AB_test_false_positive_rate",
+        "pooled": {
+          "count": 884,
+          "mcse_empirical": 0.0016107142976632587,
+          "mcse_nominal": 0.0016244657241348273,
+          "n": 18000,
+          "rate": 0.04911111111111111
+        },
+        "pooled_diagnostic_flag": false,
+        "unavailable": 0
+      },
+      {
+        "K": 8,
+        "diagnostic_flags": [
+          "T2-blocked-k5-r5-w2-s5-null"
+        ],
+        "family_id": "T2-blocked-cov",
+        "formal_alerts": [],
+        "frozen_hard_counts": [
+          1872,
+          1926
+        ],
+        "metric": "treatment_interval_coverage",
+        "pooled": {
+          "count": 15185,
+          "mcse_empirical": 0.0017382259471539865,
+          "mcse_nominal": 0.0017230060940112786,
+          "n": 16000,
+          "rate": 0.9490625
+        },
+        "pooled_diagnostic_flag": false,
+        "unavailable": 0
+      },
+      {
+        "K": 4,
+        "diagnostic_flags": [
+          "T2-blocked-k5-r5-w2-s5-null"
+        ],
+        "family_id": "T2-blocked-fpr",
+        "formal_alerts": [],
+        "frozen_hard_counts": [
+          76,
+          125
+        ],
+        "metric": "treatment_false_positive_rate",
+        "pooled": {
+          "count": 422,
+          "mcse_empirical": 0.0024991858049172736,
+          "mcse_nominal": 0.002436698586202241,
+          "n": 8000,
+          "rate": 0.05275
+        },
+        "pooled_diagnostic_flag": false,
+        "unavailable": 0
+      }
+    ],
+    "conditions": {
+      "T1/aliased_grouping_steps": {
+        "attempts": 6000,
+        "boundary_fits": 1749,
+        "cells": 3,
+        "code_counts": {
+          "diagnostic_unavailable": 2000,
+          "nuisance_unit_unique": 6000,
+          "studentized_residual": 1771
+        },
+        "degenerate_fits": 0,
+        "diagnostic_counts": {
+          "top_units/brown_forsythe:not_applicable": 6000,
+          "top_units/sd_ratio:not_applicable": 6000,
+          "top_units/studentized_residuals:available": 4000,
+          "top_units/studentized_residuals:unavailable": 2000
+        },
+        "exceptions": 0,
+        "fit_event_counts": {
+          "boundary:negative_moment_estimate:A": 1476,
+          "boundary:negative_moment_estimate:B": 289,
+          "boundary:reml_on_boundary:A": 1486,
+          "boundary:reml_on_boundary:B": 299
+        },
+        "metrics": {
+          "vc_interval_coverage_run": {
+            "count": 4179,
+            "mcse_empirical": 0.005935595308531964,
+            "mcse_nominal": 0.00281365716935569,
+            "n": 6000,
+            "rate": 0.6965,
+            "unavailable": 1476
+          },
+          "vc_interval_coverage_site": {
+            "count": 5696,
+            "mcse_empirical": 0.002831358789096251,
+            "mcse_nominal": 0.00281365716935569,
+            "n": 6000,
+            "rate": 0.9493333333333334,
+            "unavailable": 0
+          },
+          "vc_interval_coverage_wafer": {
+            "count": 5493,
+            "mcse_empirical": 0.0035907230005483115,
+            "mcse_nominal": 0.00281365716935569,
+            "n": 6000,
+            "rate": 0.9155,
+            "unavailable": 289
+          }
+        },
+        "mismatches": 0,
+        "outcomes": {
+          "analyzed_boundary": 1749,
+          "analyzed_interior": 4251
+        },
+        "refusal_performance": {
+          "count": 0,
+          "exact_95_interval": null,
+          "mcse_empirical": null,
+          "mcse_nominal": null,
+          "n": 0,
+          "rate": null,
+          "unexpected_refusals": 0
+        }
+      },
+      "T1/conforming": {
+        "attempts": 24000,
+        "boundary_fits": 5157,
+        "cells": 12,
+        "code_counts": {
+          "diagnostic_unavailable": 8000,
+          "studentized_residual": 7399
+        },
+        "degenerate_fits": 0,
+        "diagnostic_counts": {
+          "top_units/brown_forsythe:not_applicable": 24000,
+          "top_units/sd_ratio:not_applicable": 24000,
+          "top_units/studentized_residuals:available": 16000,
+          "top_units/studentized_residuals:unavailable": 8000
+        },
+        "exceptions": 0,
+        "fit_event_counts": {
+          "boundary:negative_moment_estimate:A": 4755,
+          "boundary:negative_moment_estimate:B": 434,
+          "boundary:reml_on_boundary:A": 4763,
+          "boundary:reml_on_boundary:B": 442
+        },
+        "metrics": {
+          "vc_interval_coverage_run": {
+            "count": 18039,
+            "mcse_empirical": 0.0027890026545867013,
+            "mcse_nominal": 0.001406828584677845,
+            "n": 24000,
+            "rate": 0.751625,
+            "unavailable": 4755
+          },
+          "vc_interval_coverage_site": {
+            "count": 22777,
+            "mcse_empirical": 0.0014195301687122605,
+            "mcse_nominal": 0.001406828584677845,
+            "n": 24000,
+            "rate": 0.9490416666666667,
+            "unavailable": 0
+          },
+          "vc_interval_coverage_wafer": {
+            "count": 22881,
+            "mcse_empirical": 0.0013609296665484472,
+            "mcse_nominal": 0.001406828584677845,
+            "n": 24000,
+            "rate": 0.953375,
+            "unavailable": 434
+          }
+        },
+        "mismatches": 0,
+        "outcomes": {
+          "analyzed_boundary": 5157,
+          "analyzed_interior": 18843
+        },
+        "refusal_performance": {
+          "count": 0,
+          "exact_95_interval": null,
+          "mcse_empirical": null,
+          "mcse_nominal": null,
+          "n": 0,
+          "rate": null,
+          "unexpected_refusals": 0
+        }
+      },
+      "T1/drift_in_run_order/ordered": {
+        "attempts": 6000,
+        "boundary_fits": 993,
+        "cells": 3,
+        "code_counts": {
+          "diagnostic_unavailable": 2000,
+          "studentized_residual": 1797
+        },
+        "degenerate_fits": 0,
+        "diagnostic_counts": {
+          "top_units/brown_forsythe:not_applicable": 6000,
+          "top_units/sd_ratio:not_applicable": 6000,
+          "top_units/studentized_residuals:available": 4000,
+          "top_units/studentized_residuals:unavailable": 2000
+        },
+        "exceptions": 0,
+        "fit_event_counts": {
+          "boundary:negative_moment_estimate:A": 722,
+          "boundary:negative_moment_estimate:B": 283,
+          "boundary:reml_on_boundary:A": 728,
+          "boundary:reml_on_boundary:B": 290
+        },
+        "metrics": {
+          "vc_interval_coverage_run": {
+            "count": 4147,
+            "mcse_empirical": 0.005964552310044674,
+            "mcse_nominal": 0.00281365716935569,
+            "n": 6000,
+            "rate": 0.6911666666666667,
+            "unavailable": 722
+          },
+          "vc_interval_coverage_site": {
+            "count": 5694,
+            "mcse_empirical": 0.0028401584462842927,
+            "mcse_nominal": 0.00281365716935569,
+            "n": 6000,
+            "rate": 0.949,
+            "unavailable": 0
+          },
+          "vc_interval_coverage_wafer": {
+            "count": 5548,
+            "mcse_empirical": 0.0034073015281456537,
+            "mcse_nominal": 0.00281365716935569,
+            "n": 6000,
+            "rate": 0.9246666666666666,
+            "unavailable": 283
+          }
+        },
+        "mismatches": 0,
+        "outcomes": {
+          "analyzed_boundary": 993,
+          "analyzed_interior": 5007
+        },
+        "refusal_performance": {
+          "count": 0,
+          "exact_95_interval": null,
+          "mcse_empirical": null,
+          "mcse_nominal": null,
+          "n": 0,
+          "rate": null,
+          "unexpected_refusals": 0
+        }
+      },
+      "T1/heavy_tails/lowest": {
+        "attempts": 6000,
+        "boundary_fits": 1713,
+        "cells": 3,
+        "code_counts": {
+          "diagnostic_unavailable": 2000,
+          "studentized_residual": 1776
+        },
+        "degenerate_fits": 0,
+        "diagnostic_counts": {
+          "top_units/brown_forsythe:not_applicable": 6000,
+          "top_units/sd_ratio:not_applicable": 6000,
+          "top_units/studentized_residuals:available": 4000,
+          "top_units/studentized_residuals:unavailable": 2000
+        },
+        "exceptions": 0,
+        "fit_event_counts": {
+          "boundary:negative_moment_estimate:A": 1489,
+          "boundary:negative_moment_estimate:B": 240,
+          "boundary:reml_on_boundary:A": 1496,
+          "boundary:reml_on_boundary:B": 253
+        },
+        "metrics": {
+          "vc_interval_coverage_run": {
+            "count": 4163,
+            "mcse_empirical": 0.005950191017786584,
+            "mcse_nominal": 0.00281365716935569,
+            "n": 6000,
+            "rate": 0.6938333333333333,
+            "unavailable": 1489
+          },
+          "vc_interval_coverage_site": {
+            "count": 3894,
+            "mcse_empirical": 0.006161696195042401,
+            "mcse_nominal": 0.00281365716935569,
+            "n": 6000,
+            "rate": 0.649,
+            "unavailable": 0
+          },
+          "vc_interval_coverage_wafer": {
+            "count": 5558,
+            "mcse_empirical": 0.003372434553081025,
+            "mcse_nominal": 0.00281365716935569,
+            "n": 6000,
+            "rate": 0.9263333333333333,
+            "unavailable": 240
+          }
+        },
+        "mismatches": 0,
+        "outcomes": {
+          "analyzed_boundary": 1713,
+          "analyzed_interior": 4287
+        },
+        "refusal_performance": {
+          "count": 0,
+          "exact_95_interval": null,
+          "mcse_empirical": null,
+          "mcse_nominal": null,
+          "n": 0,
+          "rate": null,
+          "unexpected_refusals": 0
+        }
+      },
+      "T1/heavy_tails/top": {
+        "attempts": 6000,
+        "boundary_fits": 2070,
+        "cells": 3,
+        "code_counts": {
+          "diagnostic_unavailable": 2000,
+          "studentized_residual": 1867
+        },
+        "degenerate_fits": 0,
+        "diagnostic_counts": {
+          "top_units/brown_forsythe:not_applicable": 6000,
+          "top_units/sd_ratio:not_applicable": 6000,
+          "top_units/studentized_residuals:available": 4000,
+          "top_units/studentized_residuals:unavailable": 2000
+        },
+        "exceptions": 0,
+        "fit_event_counts": {
+          "boundary:negative_moment_estimate:A": 1834,
+          "boundary:negative_moment_estimate:B": 254,
+          "boundary:reml_on_boundary:A": 1842,
+          "boundary:reml_on_boundary:B": 267
+        },
+        "metrics": {
+          "vc_interval_coverage_run": {
+            "count": 3783,
+            "mcse_empirical": 0.006231235163807146,
+            "mcse_nominal": 0.00281365716935569,
+            "n": 6000,
+            "rate": 0.6305,
+            "unavailable": 1834
+          },
+          "vc_interval_coverage_site": {
+            "count": 5694,
+            "mcse_empirical": 0.0028401584462842927,
+            "mcse_nominal": 0.00281365716935569,
+            "n": 6000,
+            "rate": 0.949,
+            "unavailable": 0
+          },
+          "vc_interval_coverage_wafer": {
+            "count": 5559,
+            "mcse_empirical": 0.0033689204502332796,
+            "mcse_nominal": 0.00281365716935569,
+            "n": 6000,
+            "rate": 0.9265,
+            "unavailable": 254
+          }
+        },
+        "mismatches": 0,
+        "outcomes": {
+          "analyzed_boundary": 2070,
+          "analyzed_interior": 3930
+        },
+        "refusal_performance": {
+          "count": 0,
+          "exact_95_interval": null,
+          "mcse_empirical": null,
+          "mcse_nominal": null,
+          "n": 0,
+          "rate": null,
+          "unexpected_refusals": 0
+        }
+      },
+      "T1/missing_sites": {
+        "attempts": 6000,
+        "boundary_fits": 0,
+        "cells": 3,
+        "code_counts": {
+          "missing_observation": 6000
+        },
+        "degenerate_fits": 0,
+        "diagnostic_counts": {},
+        "exceptions": 0,
+        "fit_event_counts": {},
+        "metrics": {},
+        "mismatches": 0,
+        "outcomes": {
+          "refused": 6000
+        },
+        "refusal_performance": {
+          "count": 6000,
+          "exact_95_interval": [
+            0.9993853757165824,
+            1.0
+          ],
+          "mcse_empirical": 0.0,
+          "mcse_nominal": null,
+          "n": 6000,
+          "rate": 1.0,
+          "unexpected_refusals": 0
+        }
+      },
+      "T1/no_replication_r1": {
+        "attempts": 2000,
+        "boundary_fits": 0,
+        "cells": 1,
+        "code_counts": {
+          "declaration_refused": 2000
+        },
+        "degenerate_fits": 0,
+        "diagnostic_counts": {},
+        "exceptions": 0,
+        "fit_event_counts": {},
+        "metrics": {},
+        "mismatches": 0,
+        "outcomes": {
+          "refused": 2000
+        },
+        "refusal_performance": {
+          "count": 2000,
+          "exact_95_interval": [
+            0.998157260206594,
+            1.0
+          ],
+          "mcse_empirical": 0.0,
+          "mcse_nominal": null,
+          "n": 2000,
+          "rate": 1.0,
+          "unexpected_refusals": 0
+        }
+      },
+      "T1/outliers": {
+        "attempts": 6000,
+        "boundary_fits": 1970,
+        "cells": 3,
+        "code_counts": {
+          "diagnostic_unavailable": 2000,
+          "studentized_residual": 1793
+        },
+        "degenerate_fits": 0,
+        "diagnostic_counts": {
+          "top_units/brown_forsythe:not_applicable": 6000,
+          "top_units/sd_ratio:not_applicable": 6000,
+          "top_units/studentized_residuals:available": 4000,
+          "top_units/studentized_residuals:unavailable": 2000
+        },
+        "exceptions": 0,
+        "fit_event_counts": {
+          "boundary:negative_moment_estimate:A": 1541,
+          "boundary:negative_moment_estimate:B": 478,
+          "boundary:reml_on_boundary:A": 1565,
+          "boundary:reml_on_boundary:B": 501
+        },
+        "metrics": {
+          "vc_interval_coverage_run": {
+            "count": 4095,
+            "mcse_empirical": 0.006009627692295089,
+            "mcse_nominal": 0.00281365716935569,
+            "n": 6000,
+            "rate": 0.6825,
+            "unavailable": 1541
+          },
+          "vc_interval_coverage_site": {
+            "count": 3328,
+            "mcse_empirical": 0.006416275601358828,
+            "mcse_nominal": 0.00281365716935569,
+            "n": 6000,
+            "rate": 0.5546666666666666,
+            "unavailable": 0
+          },
+          "vc_interval_coverage_wafer": {
+            "count": 5285,
+            "mcse_empirical": 0.004182622228184575,
+            "mcse_nominal": 0.00281365716935569,
+            "n": 6000,
+            "rate": 0.8808333333333334,
+            "unavailable": 478
+          }
+        },
+        "mismatches": 0,
+        "outcomes": {
+          "analyzed_boundary": 1970,
+          "analyzed_interior": 4030
+        },
+        "refusal_performance": {
+          "count": 0,
+          "exact_95_interval": null,
+          "mcse_empirical": null,
+          "mcse_nominal": null,
+          "n": 0,
+          "rate": null,
+          "unexpected_refusals": 0
+        }
+      },
+      "T1/unidentified": {
+        "attempts": 30000,
+        "boundary_fits": 0,
+        "cells": 15,
+        "code_counts": {
+          "declaration_refused": 30000
+        },
+        "degenerate_fits": 0,
+        "diagnostic_counts": {},
+        "exceptions": 0,
+        "fit_event_counts": {},
+        "metrics": {},
+        "mismatches": 0,
+        "outcomes": {
+          "refused": 30000
+        },
+        "refusal_performance": {
+          "count": 30000,
+          "exact_95_interval": [
+            0.9998770449111262,
+            1.0
+          ],
+          "mcse_empirical": 0.0,
+          "mcse_nominal": null,
+          "n": 30000,
+          "rate": 1.0,
+          "unexpected_refusals": 0
+        }
+      },
+      "T2/aliased_grouping_steps": {
+        "attempts": 12000,
+        "boundary_fits": 1752,
+        "cells": 6,
+        "code_counts": {
+          "brown_forsythe": 25,
+          "diagnostic_unavailable": 4000,
+          "nuisance_unit_unique": 12000,
+          "sd_ratio": 4794,
+          "studentized_residual": 3857
+        },
+        "degenerate_fits": 0,
+        "diagnostic_counts": {
+          "run/brown_forsythe:available": 8000,
+          "run/brown_forsythe:unavailable": 4000,
+          "run/sd_ratio:available": 12000,
+          "run/studentized_residuals:available": 12000
+        },
+        "exceptions": 0,
+        "fit_event_counts": {
+          "boundary:negative_moment_estimate:sub1": 80,
+          "boundary:negative_moment_estimate:unit": 1675,
+          "boundary:reml_on_boundary:sub1": 82,
+          "boundary:reml_on_boundary:unit": 1675
+        },
+        "metrics": {
+          "naive_site_level_false_positive_rate": {
+            "count": 2991,
+            "mcse_empirical": 0.006454943196238575,
+            "mcse_nominal": 0.0028136571693556886,
+            "n": 6000,
+            "rate": 0.4985,
+            "unavailable": 0
+          },
+          "naive_site_level_rejection_rate": {
+            "count": 4142,
+            "mcse_empirical": 0.00596899240830229,
+            "mcse_nominal": null,
+            "n": 6000,
+            "rate": 0.6903333333333334,
+            "unavailable": 0
+          },
+          "treatment_false_positive_rate": {
+            "count": 322,
+            "mcse_empirical": 0.002909368647305791,
+            "mcse_nominal": 0.0028136571693556886,
+            "n": 6000,
+            "rate": 0.05366666666666667,
+            "unavailable": 0
+          },
+          "treatment_interval_coverage": {
+            "count": 11399,
+            "mcse_empirical": 0.0019911260016959326,
+            "mcse_nominal": 0.0019895560643855546,
+            "n": 12000,
+            "rate": 0.9499166666666666,
+            "unavailable": 0
+          },
+          "treatment_rejection_rate": {
+            "count": 804,
+            "mcse_empirical": 0.004397802481543102,
+            "mcse_nominal": null,
+            "n": 6000,
+            "rate": 0.134,
+            "unavailable": 0
+          }
+        },
+        "mismatches": 0,
+        "outcomes": {
+          "analyzed_boundary": 1752,
+          "analyzed_interior": 10248
+        },
+        "refusal_performance": {
+          "count": 0,
+          "exact_95_interval": null,
+          "mcse_empirical": null,
+          "mcse_nominal": null,
+          "n": 0,
+          "rate": null,
+          "unexpected_refusals": 0
+        }
+      },
+      "T2/block_interaction": {
+        "attempts": 4000,
+        "boundary_fits": 338,
+        "cells": 2,
+        "code_counts": {
+          "brown_forsythe": 441,
+          "sd_ratio": 1071,
+          "studentized_residual": 1195
+        },
+        "degenerate_fits": 0,
+        "diagnostic_counts": {
+          "run/brown_forsythe:available": 4000,
+          "run/sd_ratio:available": 4000,
+          "run/studentized_residuals:available": 4000
+        },
+        "exceptions": 0,
+        "fit_event_counts": {
+          "boundary:negative_moment_estimate:sub1": 1,
+          "boundary:negative_moment_estimate:unit": 337,
+          "boundary:reml_on_boundary:sub1": 1,
+          "boundary:reml_on_boundary:unit": 337
+        },
+        "metrics": {
+          "naive_site_level_false_positive_rate": {
+            "count": 987,
+            "mcse_empirical": 0.01117939510885987,
+            "mcse_nominal": 0.004873397172404482,
+            "n": 2000,
+            "rate": 0.4935,
+            "unavailable": 0
+          },
+          "naive_site_level_rejection_rate": {
+            "count": 1443,
+            "mcse_empirical": 0.010023416333765649,
+            "mcse_nominal": null,
+            "n": 2000,
+            "rate": 0.7215,
+            "unavailable": 0
+          },
+          "treatment_false_positive_rate": {
+            "count": 95,
+            "mcse_empirical": 0.004756245893559331,
+            "mcse_nominal": 0.004873397172404482,
+            "n": 2000,
+            "rate": 0.0475,
+            "unavailable": 0
+          },
+          "treatment_interval_coverage": {
+            "count": 3801,
+            "mcse_empirical": 0.003437838619685338,
+            "mcse_nominal": 0.003446012188022557,
+            "n": 4000,
+            "rate": 0.95025,
+            "unavailable": 0
+          },
+          "treatment_rejection_rate": {
+            "count": 333,
+            "mcse_empirical": 0.008329998499399626,
+            "mcse_nominal": null,
+            "n": 2000,
+            "rate": 0.1665,
+            "unavailable": 0
+          }
+        },
+        "mismatches": 0,
+        "outcomes": {
+          "analyzed_boundary": 338,
+          "analyzed_interior": 3662
+        },
+        "refusal_performance": {
+          "count": 0,
+          "exact_95_interval": null,
+          "mcse_empirical": null,
+          "mcse_nominal": null,
+          "n": 0,
+          "rate": null,
+          "unexpected_refusals": 0
+        }
+      },
+      "T2/complete_confounding": {
+        "attempts": 12000,
+        "boundary_fits": 0,
+        "cells": 6,
+        "code_counts": {
+          "complete_confounding": 12000
+        },
+        "degenerate_fits": 0,
+        "diagnostic_counts": {},
+        "exceptions": 0,
+        "fit_event_counts": {},
+        "metrics": {},
+        "mismatches": 0,
+        "outcomes": {
+          "refused": 12000
+        },
+        "refusal_performance": {
+          "count": 12000,
+          "exact_95_interval": [
+            0.999692640623398,
+            1.0
+          ],
+          "mcse_empirical": 0.0,
+          "mcse_nominal": null,
+          "n": 12000,
+          "rate": 1.0,
+          "unexpected_refusals": 0
+        }
+      },
+      "T2/conforming": {
+        "attempts": 124000,
+        "boundary_fits": 11717,
+        "cells": 62,
+        "code_counts": {
+          "aliased_components": 60000,
+          "brown_forsythe": 529,
+          "diagnostic_unavailable": 40000,
+          "sd_ratio": 48285,
+          "studentized_residual": 39062
+        },
+        "degenerate_fits": 0,
+        "diagnostic_counts": {
+          "run/brown_forsythe:available": 84000,
+          "run/brown_forsythe:unavailable": 40000,
+          "run/sd_ratio:available": 124000,
+          "run/studentized_residuals:available": 120000,
+          "run/studentized_residuals:unavailable": 4000
+        },
+        "exceptions": 0,
+        "fit_event_counts": {
+          "boundary:negative_moment_estimate:sub1": 179,
+          "boundary:negative_moment_estimate:unit": 11228,
+          "boundary:negative_moment_estimate:unit+sub1": 319,
+          "boundary:reml_on_boundary:sub1": 187,
+          "boundary:reml_on_boundary:unit": 11231,
+          "boundary:reml_on_boundary:unit+sub1": 319
+        },
+        "metrics": {
+          "naive_site_level_false_positive_rate": {
+            "count": 27275,
+            "mcse_empirical": 0.0019934987725305216,
+            "mcse_nominal": 0.0008752879710461378,
+            "n": 62000,
+            "rate": 0.4399193548387097,
+            "unavailable": 0
+          },
+          "naive_site_level_rejection_rate": {
+            "count": 37417,
+            "mcse_empirical": 0.001964555888415923,
+            "mcse_nominal": null,
+            "n": 62000,
+            "rate": 0.6035,
+            "unavailable": 0
+          },
+          "treatment_false_positive_rate": {
+            "count": 3161,
+            "mcse_empirical": 0.0008833999191986074,
+            "mcse_nominal": 0.0008752879710461378,
+            "n": 62000,
+            "rate": 0.050983870967741936,
+            "unavailable": 0
+          },
+          "treatment_interval_coverage": {
+            "count": 117731,
+            "mcse_empirical": 0.0006221742366505842,
+            "mcse_nominal": 0.0006189220598177388,
+            "n": 124000,
+            "rate": 0.9494435483870968,
+            "unavailable": 0
+          },
+          "treatment_rejection_rate": {
+            "count": 8577,
+            "mcse_empirical": 0.0013865780056823464,
+            "mcse_nominal": null,
+            "n": 62000,
+            "rate": 0.13833870967741935,
+            "unavailable": 0
+          }
+        },
+        "mismatches": 0,
+        "outcomes": {
+          "analyzed_boundary": 11717,
+          "analyzed_interior": 112283
+        },
+        "refusal_performance": {
+          "count": 0,
+          "exact_95_interval": null,
+          "mcse_empirical": null,
+          "mcse_nominal": null,
+          "n": 0,
+          "rate": null,
+          "unexpected_refusals": 0
+        }
+      },
+      "T2/drift_in_run_order/randomized": {
+        "attempts": 12000,
+        "boundary_fits": 1041,
+        "cells": 6,
+        "code_counts": {
+          "brown_forsythe": 23,
+          "diagnostic_unavailable": 4000,
+          "sd_ratio": 4787,
+          "studentized_residual": 3794
+        },
+        "degenerate_fits": 0,
+        "diagnostic_counts": {
+          "run/brown_forsythe:available": 8000,
+          "run/brown_forsythe:unavailable": 4000,
+          "run/sd_ratio:available": 12000,
+          "run/studentized_residuals:available": 12000
+        },
+        "exceptions": 0,
+        "fit_event_counts": {
+          "boundary:negative_moment_estimate:sub1": 82,
+          "boundary:negative_moment_estimate:unit": 961,
+          "boundary:reml_on_boundary:sub1": 83,
+          "boundary:reml_on_boundary:unit": 961
+        },
+        "metrics": {
+          "naive_site_level_false_positive_rate": {
+            "count": 3245,
+            "mcse_empirical": 0.0064334106932596915,
+            "mcse_nominal": 0.0028136571693556886,
+            "n": 6000,
+            "rate": 0.5408333333333334,
+            "unavailable": 0
+          },
+          "naive_site_level_rejection_rate": {
+            "count": 4059,
+            "mcse_empirical": 0.006039422571736473,
+            "mcse_nominal": null,
+            "n": 6000,
+            "rate": 0.6765,
+            "unavailable": 0
+          },
+          "treatment_false_positive_rate": {
+            "count": 307,
+            "mcse_empirical": 0.0028445456253705643,
+            "mcse_nominal": 0.0028136571693556886,
+            "n": 6000,
+            "rate": 0.051166666666666666,
+            "unavailable": 0
+          },
+          "treatment_interval_coverage": {
+            "count": 11376,
+            "mcse_empirical": 0.002026820169625318,
+            "mcse_nominal": 0.0019895560643855546,
+            "n": 12000,
+            "rate": 0.948,
+            "unavailable": 0
+          },
+          "treatment_rejection_rate": {
+            "count": 737,
+            "mcse_empirical": 0.0042376350628535635,
+            "mcse_nominal": null,
+            "n": 6000,
+            "rate": 0.12283333333333334,
+            "unavailable": 0
+          }
+        },
+        "mismatches": 0,
+        "outcomes": {
+          "analyzed_boundary": 1041,
+          "analyzed_interior": 10959
+        },
+        "refusal_performance": {
+          "count": 0,
+          "exact_95_interval": null,
+          "mcse_empirical": null,
+          "mcse_nominal": null,
+          "n": 0,
+          "rate": null,
+          "unexpected_refusals": 0
+        }
+      },
+      "T2/drift_in_run_order/systematic": {
+        "attempts": 12000,
+        "boundary_fits": 1407,
+        "cells": 6,
+        "code_counts": {
+          "brown_forsythe": 30,
+          "diagnostic_unavailable": 4000,
+          "sd_ratio": 4801,
+          "studentized_residual": 3818
+        },
+        "degenerate_fits": 0,
+        "diagnostic_counts": {
+          "run/brown_forsythe:available": 8000,
+          "run/brown_forsythe:unavailable": 4000,
+          "run/sd_ratio:available": 12000,
+          "run/studentized_residuals:available": 12000
+        },
+        "exceptions": 0,
+        "fit_event_counts": {
+          "boundary:negative_moment_estimate:sub1": 88,
+          "boundary:negative_moment_estimate:unit": 1319,
+          "boundary:reml_on_boundary:sub1": 88,
+          "boundary:reml_on_boundary:unit": 1319
+        },
+        "metrics": {
+          "naive_site_level_false_positive_rate": {
+            "count": 4490,
+            "mcse_empirical": 0.00560253745421893,
+            "mcse_nominal": 0.0028136571693556886,
+            "n": 6000,
+            "rate": 0.7483333333333333,
+            "unavailable": 0
+          },
+          "naive_site_level_rejection_rate": {
+            "count": 2919,
+            "mcse_empirical": 0.006452618977335224,
+            "mcse_nominal": null,
+            "n": 6000,
+            "rate": 0.4865,
+            "unavailable": 0
+          },
+          "treatment_false_positive_rate": {
+            "count": 940,
+            "mcse_empirical": 0.004692586746174264,
+            "mcse_nominal": 0.0028136571693556886,
+            "n": 6000,
+            "rate": 0.15666666666666668,
+            "unavailable": 0
+          },
+          "treatment_interval_coverage": {
+            "count": 10155,
+            "mcse_empirical": 0.0032928070282055707,
+            "mcse_nominal": 0.0019895560643855546,
+            "n": 12000,
+            "rate": 0.84625,
+            "unavailable": 0
+          },
+          "treatment_rejection_rate": {
+            "count": 258,
+            "mcse_empirical": 0.0026188738037561106,
+            "mcse_nominal": null,
+            "n": 6000,
+            "rate": 0.043,
+            "unavailable": 0
+          }
+        },
+        "mismatches": 0,
+        "outcomes": {
+          "analyzed_boundary": 1407,
+          "analyzed_interior": 10593
+        },
+        "refusal_performance": {
+          "count": 0,
+          "exact_95_interval": null,
+          "mcse_empirical": null,
+          "mcse_nominal": null,
+          "n": 0,
+          "rate": null,
+          "unexpected_refusals": 0
+        }
+      },
+      "T2/heavy_tails/lowest": {
+        "attempts": 12000,
+        "boundary_fits": 1685,
+        "cells": 6,
+        "code_counts": {
+          "brown_forsythe": 27,
+          "diagnostic_unavailable": 4000,
+          "sd_ratio": 4764,
+          "studentized_residual": 3766
+        },
+        "degenerate_fits": 0,
+        "diagnostic_counts": {
+          "run/brown_forsythe:available": 8000,
+          "run/brown_forsythe:unavailable": 4000,
+          "run/sd_ratio:available": 12000,
+          "run/studentized_residuals:available": 12000
+        },
+        "exceptions": 0,
+        "fit_event_counts": {
+          "boundary:negative_moment_estimate:sub1": 107,
+          "boundary:negative_moment_estimate:unit": 1581,
+          "boundary:reml_on_boundary:sub1": 109,
+          "boundary:reml_on_boundary:unit": 1581
+        },
+        "metrics": {
+          "naive_site_level_false_positive_rate": {
+            "count": 3034,
+            "mcse_empirical": 0.0064545576777045545,
+            "mcse_nominal": 0.0028136571693556886,
+            "n": 6000,
+            "rate": 0.5056666666666667,
+            "unavailable": 0
+          },
+          "naive_site_level_rejection_rate": {
+            "count": 4203,
+            "mcse_empirical": 0.0059132584080183745,
+            "mcse_nominal": null,
+            "n": 6000,
+            "rate": 0.7005,
+            "unavailable": 0
+          },
+          "treatment_false_positive_rate": {
+            "count": 323,
+            "mcse_empirical": 0.0029136261930097678,
+            "mcse_nominal": 0.0028136571693556886,
+            "n": 6000,
+            "rate": 0.05383333333333333,
+            "unavailable": 0
+          },
+          "treatment_interval_coverage": {
+            "count": 11391,
+            "mcse_empirical": 0.0020036308188719123,
+            "mcse_nominal": 0.0019895560643855546,
+            "n": 12000,
+            "rate": 0.94925,
+            "unavailable": 0
+          },
+          "treatment_rejection_rate": {
+            "count": 838,
+            "mcse_empirical": 0.004475114316768696,
+            "mcse_nominal": null,
+            "n": 6000,
+            "rate": 0.13966666666666666,
+            "unavailable": 0
+          }
+        },
+        "mismatches": 0,
+        "outcomes": {
+          "analyzed_boundary": 1685,
+          "analyzed_interior": 10315
+        },
+        "refusal_performance": {
+          "count": 0,
+          "exact_95_interval": null,
+          "mcse_empirical": null,
+          "mcse_nominal": null,
+          "n": 0,
+          "rate": null,
+          "unexpected_refusals": 0
+        }
+      },
+      "T2/heavy_tails/top": {
+        "attempts": 12000,
+        "boundary_fits": 2459,
+        "cells": 6,
+        "code_counts": {
+          "brown_forsythe": 24,
+          "diagnostic_unavailable": 4000,
+          "sd_ratio": 5261,
+          "studentized_residual": 4429
+        },
+        "degenerate_fits": 0,
+        "diagnostic_counts": {
+          "run/brown_forsythe:available": 8000,
+          "run/brown_forsythe:unavailable": 4000,
+          "run/sd_ratio:available": 12000,
+          "run/studentized_residuals:available": 12000
+        },
+        "exceptions": 0,
+        "fit_event_counts": {
+          "boundary:negative_moment_estimate:sub1": 115,
+          "boundary:negative_moment_estimate:unit": 2348,
+          "boundary:reml_on_boundary:sub1": 118,
+          "boundary:reml_on_boundary:unit": 2350
+        },
+        "metrics": {
+          "naive_site_level_false_positive_rate": {
+            "count": 2875,
+            "mcse_empirical": 0.006449366535071774,
+            "mcse_nominal": 0.0028136571693556886,
+            "n": 6000,
+            "rate": 0.4791666666666667,
+            "unavailable": 0
+          },
+          "naive_site_level_rejection_rate": {
+            "count": 4344,
+            "mcse_empirical": 0.0057709617915907225,
+            "mcse_nominal": null,
+            "n": 6000,
+            "rate": 0.724,
+            "unavailable": 0
+          },
+          "treatment_false_positive_rate": {
+            "count": 276,
+            "mcse_empirical": 0.0027044407924744812,
+            "mcse_nominal": 0.0028136571693556886,
+            "n": 6000,
+            "rate": 0.046,
+            "unavailable": 0
+          },
+          "treatment_interval_coverage": {
+            "count": 11457,
+            "mcse_empirical": 0.0018974201234834632,
+            "mcse_nominal": 0.0019895560643855546,
+            "n": 12000,
+            "rate": 0.95475,
+            "unavailable": 0
+          },
+          "treatment_rejection_rate": {
+            "count": 1028,
+            "mcse_empirical": 0.004864466778284855,
+            "mcse_nominal": null,
+            "n": 6000,
+            "rate": 0.17133333333333334,
+            "unavailable": 0
+          }
+        },
+        "mismatches": 0,
+        "outcomes": {
+          "analyzed_boundary": 2459,
+          "analyzed_interior": 9541
+        },
+        "refusal_performance": {
+          "count": 0,
+          "exact_95_interval": null,
+          "mcse_empirical": null,
+          "mcse_nominal": null,
+          "n": 0,
+          "rate": null,
+          "unexpected_refusals": 0
+        }
+      },
+      "T2/missing_sites": {
+        "attempts": 12000,
+        "boundary_fits": 14,
+        "cells": 6,
+        "code_counts": {
+          "brown_forsythe": 34,
+          "diagnostic_unavailable": 4000,
+          "missing_sites_exception": 11933,
+          "sd_ratio": 4751,
+          "studentized_residual": 3715
+        },
+        "degenerate_fits": 0,
+        "diagnostic_counts": {
+          "run/brown_forsythe:available": 8000,
+          "run/brown_forsythe:unavailable": 4000,
+          "run/sd_ratio:available": 12000,
+          "run/studentized_residuals:available": 12000
+        },
+        "exceptions": 0,
+        "fit_event_counts": {
+          "boundary:negative_moment_estimate:unit": 14,
+          "boundary:reml_on_boundary:unit": 14
+        },
+        "metrics": {
+          "naive_site_level_false_positive_rate": {
+            "count": 2848,
+            "mcse_empirical": 0.006446681604027277,
+            "mcse_nominal": 0.0028136571693556886,
+            "n": 6000,
+            "rate": 0.4746666666666667,
+            "unavailable": 0
+          },
+          "naive_site_level_rejection_rate": {
+            "count": 4066,
+            "mcse_empirical": 0.006033718526684789,
+            "mcse_nominal": null,
+            "n": 6000,
+            "rate": 0.6776666666666666,
+            "unavailable": 0
+          },
+          "treatment_false_positive_rate": {
+            "count": 300,
+            "mcse_empirical": 0.0028136571693556886,
+            "mcse_nominal": 0.0028136571693556886,
+            "n": 6000,
+            "rate": 0.05,
+            "unavailable": 0
+          },
+          "treatment_interval_coverage": {
+            "count": 11388,
+            "mcse_empirical": 0.002008295297011872,
+            "mcse_nominal": 0.0019895560643855546,
+            "n": 12000,
+            "rate": 0.949,
+            "unavailable": 0
+          },
+          "treatment_rejection_rate": {
+            "count": 834,
+            "mcse_empirical": 0.004466150467684671,
+            "mcse_nominal": null,
+            "n": 6000,
+            "rate": 0.139,
+            "unavailable": 0
+          }
+        },
+        "mismatches": 0,
+        "outcomes": {
+          "analyzed_boundary": 14,
+          "analyzed_interior": 11986
+        },
+        "refusal_performance": {
+          "count": 0,
+          "exact_95_interval": null,
+          "mcse_empirical": null,
+          "mcse_nominal": null,
+          "n": 0,
+          "rate": null,
+          "unexpected_refusals": 0
+        }
+      },
+      "T2/no_replication_r1": {
+        "attempts": 4000,
+        "boundary_fits": 0,
+        "cells": 2,
+        "code_counts": {
+          "declaration_refused": 4000
+        },
+        "degenerate_fits": 0,
+        "diagnostic_counts": {},
+        "exceptions": 0,
+        "fit_event_counts": {},
+        "metrics": {},
+        "mismatches": 0,
+        "outcomes": {
+          "refused": 4000
+        },
+        "refusal_performance": {
+          "count": 4000,
+          "exact_95_interval": [
+            0.9990782052505169,
+            1.0
+          ],
+          "mcse_empirical": 0.0,
+          "mcse_nominal": null,
+          "n": 4000,
+          "rate": 1.0,
+          "unexpected_refusals": 0
+        }
+      },
+      "T2/outliers": {
+        "attempts": 12000,
+        "boundary_fits": 1923,
+        "cells": 6,
+        "code_counts": {
+          "brown_forsythe": 34,
+          "diagnostic_unavailable": 4000,
+          "sd_ratio": 4850,
+          "studentized_residual": 3778
+        },
+        "degenerate_fits": 0,
+        "diagnostic_counts": {
+          "run/brown_forsythe:available": 8000,
+          "run/brown_forsythe:unavailable": 4000,
+          "run/sd_ratio:available": 12000,
+          "run/studentized_residuals:available": 12000
+        },
+        "exceptions": 0,
+        "fit_event_counts": {
+          "boundary:negative_moment_estimate:sub1": 212,
+          "boundary:negative_moment_estimate:unit": 1715,
+          "boundary:reml_on_boundary:sub1": 218,
+          "boundary:reml_on_boundary:unit": 1715
+        },
+        "metrics": {
+          "naive_site_level_false_positive_rate": {
+            "count": 2795,
+            "mcse_empirical": 0.0064398840425493285,
+            "mcse_nominal": 0.0028136571693556886,
+            "n": 6000,
+            "rate": 0.4658333333333333,
+            "unavailable": 0
+          },
+          "naive_site_level_rejection_rate": {
+            "count": 3998,
+            "mcse_empirical": 0.00608732593484504,
+            "mcse_nominal": null,
+            "n": 6000,
+            "rate": 0.6663333333333333,
+            "unavailable": 0
+          },
+          "treatment_false_positive_rate": {
+            "count": 295,
+            "mcse_empirical": 0.0027913349720028093,
+            "mcse_nominal": 0.0028136571693556886,
+            "n": 6000,
+            "rate": 0.049166666666666664,
+            "unavailable": 0
+          },
+          "treatment_interval_coverage": {
+            "count": 11389,
+            "mcse_empirical": 0.0020067419640265633,
+            "mcse_nominal": 0.0019895560643855546,
+            "n": 12000,
+            "rate": 0.9490833333333333,
+            "unavailable": 0
+          },
+          "treatment_rejection_rate": {
+            "count": 826,
+            "mcse_empirical": 0.004448118620187558,
+            "mcse_nominal": null,
+            "n": 6000,
+            "rate": 0.13766666666666666,
+            "unavailable": 0
+          }
+        },
+        "mismatches": 0,
+        "outcomes": {
+          "analyzed_boundary": 1923,
+          "analyzed_interior": 10077
+        },
+        "refusal_performance": {
+          "count": 0,
+          "exact_95_interval": null,
+          "mcse_empirical": null,
+          "mcse_nominal": null,
+          "n": 0,
+          "rate": null,
+          "unexpected_refusals": 0
+        }
+      },
+      "T2/partial_confounding": {
+        "attempts": 4000,
+        "boundary_fits": 0,
+        "cells": 2,
+        "code_counts": {
+          "partial_confounding": 4000
+        },
+        "degenerate_fits": 0,
+        "diagnostic_counts": {},
+        "exceptions": 0,
+        "fit_event_counts": {},
+        "metrics": {},
+        "mismatches": 0,
+        "outcomes": {
+          "refused": 4000
+        },
+        "refusal_performance": {
+          "count": 4000,
+          "exact_95_interval": [
+            0.9990782052505169,
+            1.0
+          ],
+          "mcse_empirical": 0.0,
+          "mcse_nominal": null,
+          "n": 4000,
+          "rate": 1.0,
+          "unexpected_refusals": 0
+        }
+      },
+      "T2/unequal_variances_4to1": {
+        "attempts": 12000,
+        "boundary_fits": 832,
+        "cells": 6,
+        "code_counts": {
+          "brown_forsythe": 80,
+          "diagnostic_unavailable": 4000,
+          "sd_ratio": 6434,
+          "studentized_residual": 4912
+        },
+        "degenerate_fits": 0,
+        "diagnostic_counts": {
+          "run/brown_forsythe:available": 8000,
+          "run/brown_forsythe:unavailable": 4000,
+          "run/sd_ratio:available": 12000,
+          "run/studentized_residuals:available": 12000
+        },
+        "exceptions": 0,
+        "fit_event_counts": {
+          "boundary:negative_moment_estimate:sub1": 73,
+          "boundary:negative_moment_estimate:unit": 760,
+          "boundary:reml_on_boundary:sub1": 73,
+          "boundary:reml_on_boundary:unit": 760
+        },
+        "metrics": {
+          "naive_site_level_false_positive_rate": {
+            "count": 3399,
+            "mcse_empirical": 0.006397626513012462,
+            "mcse_nominal": 0.0028136571693556886,
+            "n": 6000,
+            "rate": 0.5665,
+            "unavailable": 0
+          },
+          "naive_site_level_rejection_rate": {
+            "count": 3952,
+            "mcse_empirical": 0.0061213409327380884,
+            "mcse_nominal": null,
+            "n": 6000,
+            "rate": 0.6586666666666666,
+            "unavailable": 0
+          },
+          "treatment_false_positive_rate": {
+            "count": 361,
+            "mcse_empirical": 0.0030699250503578774,
+            "mcse_nominal": 0.0028136571693556886,
+            "n": 6000,
+            "rate": 0.06016666666666667,
+            "unavailable": 0
+          },
+          "treatment_interval_coverage": {
+            "count": 11308,
+            "mcse_empirical": 0.0021280120265602786,
+            "mcse_nominal": 0.0019895560643855546,
+            "n": 12000,
+            "rate": 0.9423333333333334,
+            "unavailable": 0
+          },
+          "treatment_rejection_rate": {
+            "count": 588,
+            "mcse_empirical": 0.003838315602795928,
+            "mcse_nominal": null,
+            "n": 6000,
+            "rate": 0.098,
+            "unavailable": 0
+          }
+        },
+        "mismatches": 0,
+        "outcomes": {
+          "analyzed_boundary": 832,
+          "analyzed_interior": 11168
+        },
+        "refusal_performance": {
+          "count": 0,
+          "exact_95_interval": null,
+          "mcse_empirical": null,
+          "mcse_nominal": null,
+          "n": 0,
+          "rate": null,
+          "unexpected_refusals": 0
+        }
+      },
+      "T3/aliased_grouping_steps": {
+        "attempts": 6000,
+        "boundary_fits": 150,
+        "cells": 3,
+        "code_counts": {
+          "brown_forsythe": 5,
+          "diagnostic_unavailable": 2000,
+          "nuisance_unit_unique": 6000,
+          "sd_ratio": 4660,
+          "studentized_residual": 2547
+        },
+        "degenerate_fits": 0,
+        "diagnostic_counts": {
+          "position/brown_forsythe:not_applicable": 6000,
+          "position/sd_ratio:not_applicable": 6000,
+          "position/studentized_residuals:available": 6000,
+          "wafer/brown_forsythe:available": 4000,
+          "wafer/brown_forsythe:unavailable": 2000,
+          "wafer/sd_ratio:available": 6000,
+          "wafer/studentized_residuals:available": 6000
+        },
+        "exceptions": 0,
+        "fit_event_counts": {
+          "boundary:negative_moment_estimate:wholeplot": 150,
+          "boundary:reml_on_boundary:wholeplot": 150
+        },
+        "metrics": {
+          "AB_test_false_positive_rate": {
+            "count": 324,
+            "mcse_empirical": 0.002917875939789079,
+            "mcse_nominal": 0.0028136571693556886,
+            "n": 6000,
+            "rate": 0.054,
+            "unavailable": 0
+          },
+          "A_contrast_interval_coverage": {
+            "count": 5665,
+            "mcse_empirical": 0.0029641179751100266,
+            "mcse_nominal": 0.00281365716935569,
+            "n": 6000,
+            "rate": 0.9441666666666667,
+            "unavailable": 0
+          },
+          "A_test_false_positive_rate": {
+            "count": 335,
+            "mcse_empirical": 0.0029641179751100275,
+            "mcse_nominal": 0.0028136571693556886,
+            "n": 6000,
+            "rate": 0.05583333333333333,
+            "unavailable": 0
+          },
+          "B_contrast_interval_coverage": {
+            "count": 5654,
+            "mcse_empirical": 0.0030094634688546005,
+            "mcse_nominal": 0.00281365716935569,
+            "n": 6000,
+            "rate": 0.9423333333333334,
+            "unavailable": 0
+          },
+          "B_test_false_positive_rate": {
+            "count": 302,
+            "mcse_empirical": 0.0028225251368496525,
+            "mcse_nominal": 0.0028136571693556886,
+            "n": 6000,
+            "rate": 0.050333333333333334,
+            "unavailable": 0
+          },
+          "naive_A_test_false_positive_rate": {
+            "count": 2048,
+            "mcse_empirical": 0.0061213409327380884,
+            "mcse_nominal": 0.0028136571693556886,
+            "n": 6000,
+            "rate": 0.3413333333333333,
+            "unavailable": 0
+          }
+        },
+        "mismatches": 0,
+        "outcomes": {
+          "analyzed_boundary": 150,
+          "analyzed_interior": 5850
+        },
+        "refusal_performance": {
+          "count": 0,
+          "exact_95_interval": null,
+          "mcse_empirical": null,
+          "mcse_nominal": null,
+          "n": 0,
+          "rate": null,
+          "unexpected_refusals": 0
+        }
+      },
+      "T3/complete_confounding": {
+        "attempts": 6000,
+        "boundary_fits": 0,
+        "cells": 3,
+        "code_counts": {
+          "complete_confounding": 6000,
+          "partial_confounding": 6000
+        },
+        "degenerate_fits": 0,
+        "diagnostic_counts": {},
+        "exceptions": 0,
+        "fit_event_counts": {},
+        "metrics": {},
+        "mismatches": 0,
+        "outcomes": {
+          "refused": 6000
+        },
+        "refusal_performance": {
+          "count": 6000,
+          "exact_95_interval": [
+            0.9993853757165824,
+            1.0
+          ],
+          "mcse_empirical": 0.0,
+          "mcse_nominal": null,
+          "n": 6000,
+          "rate": 1.0,
+          "unexpected_refusals": 0
+        }
+      },
+      "T3/conforming": {
+        "attempts": 24000,
+        "boundary_fits": 644,
+        "cells": 12,
+        "code_counts": {
+          "brown_forsythe": 29,
+          "diagnostic_unavailable": 8000,
+          "sd_ratio": 18815,
+          "studentized_residual": 10001
+        },
+        "degenerate_fits": 0,
+        "diagnostic_counts": {
+          "position/brown_forsythe:not_applicable": 24000,
+          "position/sd_ratio:not_applicable": 24000,
+          "position/studentized_residuals:available": 24000,
+          "wafer/brown_forsythe:available": 16000,
+          "wafer/brown_forsythe:unavailable": 8000,
+          "wafer/sd_ratio:available": 24000,
+          "wafer/studentized_residuals:available": 24000
+        },
+        "exceptions": 0,
+        "fit_event_counts": {
+          "boundary:negative_moment_estimate:wholeplot": 644,
+          "boundary:reml_on_boundary:wholeplot": 644
+        },
+        "metrics": {
+          "AB_test_false_positive_rate": {
+            "count": 884,
+            "mcse_empirical": 0.0016107142976632587,
+            "mcse_nominal": 0.0016244657241348273,
+            "n": 18000,
+            "rate": 0.04911111111111111,
+            "unavailable": 0
+          },
+          "AB_test_rejection_rate": {
+            "count": 446,
+            "mcse_empirical": 0.003386440827990574,
+            "mcse_nominal": null,
+            "n": 6000,
+            "rate": 0.07433333333333333,
+            "unavailable": 0
+          },
+          "A_contrast_interval_coverage": {
+            "count": 22828,
+            "mcse_empirical": 0.001391172150994873,
+            "mcse_nominal": 0.001406828584677845,
+            "n": 24000,
+            "rate": 0.9511666666666667,
+            "unavailable": 0
+          },
+          "A_test_false_positive_rate": {
+            "count": 902,
+            "mcse_empirical": 0.0016261745781352593,
+            "mcse_nominal": 0.0016244657241348273,
+            "n": 18000,
+            "rate": 0.05011111111111111,
+            "unavailable": 0
+          },
+          "A_test_rejection_rate": {
+            "count": 829,
+            "mcse_empirical": 0.00445489691030909,
+            "mcse_nominal": null,
+            "n": 6000,
+            "rate": 0.13816666666666666,
+            "unavailable": 0
+          },
+          "B_contrast_interval_coverage": {
+            "count": 22827,
+            "mcse_empirical": 0.0013917350438541335,
+            "mcse_nominal": 0.001406828584677845,
+            "n": 24000,
+            "rate": 0.951125,
+            "unavailable": 0
+          },
+          "B_test_false_positive_rate": {
+            "count": 929,
+            "mcse_empirical": 0.0016490300907063126,
+            "mcse_nominal": 0.0016244657241348273,
+            "n": 18000,
+            "rate": 0.051611111111111115,
+            "unavailable": 0
+          },
+          "B_test_rejection_rate": {
+            "count": 3841,
+            "mcse_empirical": 0.006196145381815423,
+            "mcse_nominal": null,
+            "n": 6000,
+            "rate": 0.6401666666666667,
+            "unavailable": 0
+          },
+          "naive_A_test_false_positive_rate": {
+            "count": 6238,
+            "mcse_empirical": 0.003546945497099784,
+            "mcse_nominal": 0.0016244657241348273,
+            "n": 18000,
+            "rate": 0.34655555555555556,
+            "unavailable": 0
+          },
+          "naive_A_test_rejection_rate": {
+            "count": 3412,
+            "mcse_empirical": 0.006393810664604858,
+            "mcse_nominal": null,
+            "n": 6000,
+            "rate": 0.5686666666666667,
+            "unavailable": 0
+          }
+        },
+        "mismatches": 0,
+        "outcomes": {
+          "analyzed_boundary": 644,
+          "analyzed_interior": 23356
+        },
+        "refusal_performance": {
+          "count": 0,
+          "exact_95_interval": null,
+          "mcse_empirical": null,
+          "mcse_nominal": null,
+          "n": 0,
+          "rate": null,
+          "unexpected_refusals": 0
+        }
+      },
+      "T3/drift_in_run_order/randomized": {
+        "attempts": 6000,
+        "boundary_fits": 105,
+        "cells": 3,
+        "code_counts": {
+          "brown_forsythe": 9,
+          "diagnostic_unavailable": 2000,
+          "sd_ratio": 4624,
+          "studentized_residual": 2548
+        },
+        "degenerate_fits": 0,
+        "diagnostic_counts": {
+          "position/brown_forsythe:not_applicable": 6000,
+          "position/sd_ratio:not_applicable": 6000,
+          "position/studentized_residuals:available": 6000,
+          "wafer/brown_forsythe:available": 4000,
+          "wafer/brown_forsythe:unavailable": 2000,
+          "wafer/sd_ratio:available": 6000,
+          "wafer/studentized_residuals:available": 6000
+        },
+        "exceptions": 0,
+        "fit_event_counts": {
+          "boundary:negative_moment_estimate:wholeplot": 105,
+          "boundary:reml_on_boundary:wholeplot": 105
+        },
+        "metrics": {
+          "AB_test_false_positive_rate": {
+            "count": 298,
+            "mcse_empirical": 0.002804754561124404,
+            "mcse_nominal": 0.0028136571693556886,
+            "n": 6000,
+            "rate": 0.049666666666666665,
+            "unavailable": 0
+          },
+          "A_contrast_interval_coverage": {
+            "count": 5679,
+            "mcse_empirical": 0.002905103268388234,
+            "mcse_nominal": 0.00281365716935569,
+            "n": 6000,
+            "rate": 0.9465,
+            "unavailable": 0
+          },
+          "A_test_false_positive_rate": {
+            "count": 297,
+            "mcse_empirical": 0.0028002901635366287,
+            "mcse_nominal": 0.0028136571693556886,
+            "n": 6000,
+            "rate": 0.0495,
+            "unavailable": 0
+          },
+          "B_contrast_interval_coverage": {
+            "count": 5733,
+            "mcse_empirical": 0.0026620715617728984,
+            "mcse_nominal": 0.00281365716935569,
+            "n": 6000,
+            "rate": 0.9555,
+            "unavailable": 0
+          },
+          "B_test_false_positive_rate": {
+            "count": 278,
+            "mcse_empirical": 0.002713747579625991,
+            "mcse_nominal": 0.0028136571693556886,
+            "n": 6000,
+            "rate": 0.04633333333333333,
+            "unavailable": 0
+          },
+          "naive_A_test_false_positive_rate": {
+            "count": 2310,
+            "mcse_empirical": 0.00628191849676514,
+            "mcse_nominal": 0.0028136571693556886,
+            "n": 6000,
+            "rate": 0.385,
+            "unavailable": 0
+          }
+        },
+        "mismatches": 0,
+        "outcomes": {
+          "analyzed_boundary": 105,
+          "analyzed_interior": 5895
+        },
+        "refusal_performance": {
+          "count": 0,
+          "exact_95_interval": null,
+          "mcse_empirical": null,
+          "mcse_nominal": null,
+          "n": 0,
+          "rate": null,
+          "unexpected_refusals": 0
+        }
+      },
+      "T3/drift_in_run_order/systematic": {
+        "attempts": 6000,
+        "boundary_fits": 157,
+        "cells": 3,
+        "code_counts": {
+          "brown_forsythe": 14,
+          "diagnostic_unavailable": 2000,
+          "sd_ratio": 4635,
+          "studentized_residual": 2542
+        },
+        "degenerate_fits": 0,
+        "diagnostic_counts": {
+          "position/brown_forsythe:not_applicable": 6000,
+          "position/sd_ratio:not_applicable": 6000,
+          "position/studentized_residuals:available": 6000,
+          "wafer/brown_forsythe:available": 4000,
+          "wafer/brown_forsythe:unavailable": 2000,
+          "wafer/sd_ratio:available": 6000,
+          "wafer/studentized_residuals:available": 6000
+        },
+        "exceptions": 0,
+        "fit_event_counts": {
+          "boundary:negative_moment_estimate:wholeplot": 157,
+          "boundary:reml_on_boundary:wholeplot": 157
+        },
+        "metrics": {
+          "AB_test_false_positive_rate": {
+            "count": 298,
+            "mcse_empirical": 0.002804754561124404,
+            "mcse_nominal": 0.0028136571693556886,
+            "n": 6000,
+            "rate": 0.049666666666666665,
+            "unavailable": 0
+          },
+          "A_contrast_interval_coverage": {
+            "count": 5511,
+            "mcse_empirical": 0.003532179449952489,
+            "mcse_nominal": 0.00281365716935569,
+            "n": 6000,
+            "rate": 0.9185,
+            "unavailable": 0
+          },
+          "A_test_false_positive_rate": {
+            "count": 1430,
+            "mcse_empirical": 0.005500462943479631,
+            "mcse_nominal": 0.0028136571693556886,
+            "n": 6000,
+            "rate": 0.23833333333333334,
+            "unavailable": 0
+          },
+          "B_contrast_interval_coverage": {
+            "count": 5725,
+            "mcse_empirical": 0.002699772795653023,
+            "mcse_nominal": 0.00281365716935569,
+            "n": 6000,
+            "rate": 0.9541666666666667,
+            "unavailable": 0
+          },
+          "B_test_false_positive_rate": {
+            "count": 289,
+            "mcse_empirical": 0.0027642551404458817,
+            "mcse_nominal": 0.0028136571693556886,
+            "n": 6000,
+            "rate": 0.04816666666666667,
+            "unavailable": 0
+          },
+          "naive_A_test_false_positive_rate": {
+            "count": 4330,
+            "mcse_empirical": 0.005785958417999114,
+            "mcse_nominal": 0.0028136571693556886,
+            "n": 6000,
+            "rate": 0.7216666666666667,
+            "unavailable": 0
+          }
+        },
+        "mismatches": 0,
+        "outcomes": {
+          "analyzed_boundary": 157,
+          "analyzed_interior": 5843
+        },
+        "refusal_performance": {
+          "count": 0,
+          "exact_95_interval": null,
+          "mcse_empirical": null,
+          "mcse_nominal": null,
+          "n": 0,
+          "rate": null,
+          "unexpected_refusals": 0
+        }
+      },
+      "T3/heavy_tails/lowest": {
+        "attempts": 6000,
+        "boundary_fits": 162,
+        "cells": 3,
+        "code_counts": {
+          "brown_forsythe": 6,
+          "diagnostic_unavailable": 2000,
+          "sd_ratio": 4749,
+          "studentized_residual": 4132
+        },
+        "degenerate_fits": 0,
+        "diagnostic_counts": {
+          "position/brown_forsythe:not_applicable": 6000,
+          "position/sd_ratio:not_applicable": 6000,
+          "position/studentized_residuals:available": 6000,
+          "wafer/brown_forsythe:available": 4000,
+          "wafer/brown_forsythe:unavailable": 2000,
+          "wafer/sd_ratio:available": 6000,
+          "wafer/studentized_residuals:available": 6000
+        },
+        "exceptions": 0,
+        "fit_event_counts": {
+          "boundary:negative_moment_estimate:wholeplot": 162,
+          "boundary:reml_on_boundary:wholeplot": 162
+        },
+        "metrics": {
+          "AB_test_false_positive_rate": {
+            "count": 284,
+            "mcse_empirical": 0.002741437849283015,
+            "mcse_nominal": 0.0028136571693556886,
+            "n": 6000,
+            "rate": 0.04733333333333333,
+            "unavailable": 0
+          },
+          "A_contrast_interval_coverage": {
+            "count": 5692,
+            "mcse_empirical": 0.0028489244234219994,
+            "mcse_nominal": 0.00281365716935569,
+            "n": 6000,
+            "rate": 0.9486666666666667,
+            "unavailable": 0
+          },
+          "A_test_false_positive_rate": {
+            "count": 297,
+            "mcse_empirical": 0.0028002901635366287,
+            "mcse_nominal": 0.0028136571693556886,
+            "n": 6000,
+            "rate": 0.0495,
+            "unavailable": 0
+          },
+          "B_contrast_interval_coverage": {
+            "count": 5716,
+            "mcse_empirical": 0.002741437849283015,
+            "mcse_nominal": 0.00281365716935569,
+            "n": 6000,
+            "rate": 0.9526666666666667,
+            "unavailable": 0
+          },
+          "B_test_false_positive_rate": {
+            "count": 256,
+            "mcse_empirical": 0.0026091576617183762,
+            "mcse_nominal": 0.0028136571693556886,
+            "n": 6000,
+            "rate": 0.042666666666666665,
+            "unavailable": 0
+          },
+          "naive_A_test_false_positive_rate": {
+            "count": 2195,
+            "mcse_empirical": 0.006218243395519825,
+            "mcse_nominal": 0.0028136571693556886,
+            "n": 6000,
+            "rate": 0.36583333333333334,
+            "unavailable": 0
+          }
+        },
+        "mismatches": 0,
+        "outcomes": {
+          "analyzed_boundary": 162,
+          "analyzed_interior": 5838
+        },
+        "refusal_performance": {
+          "count": 0,
+          "exact_95_interval": null,
+          "mcse_empirical": null,
+          "mcse_nominal": null,
+          "n": 0,
+          "rate": null,
+          "unexpected_refusals": 0
+        }
+      },
+      "T3/heavy_tails/top": {
+        "attempts": 6000,
+        "boundary_fits": 351,
+        "cells": 3,
+        "code_counts": {
+          "brown_forsythe": 7,
+          "diagnostic_unavailable": 2000,
+          "sd_ratio": 5078,
+          "studentized_residual": 3094
+        },
+        "degenerate_fits": 0,
+        "diagnostic_counts": {
+          "position/brown_forsythe:not_applicable": 6000,
+          "position/sd_ratio:not_applicable": 6000,
+          "position/studentized_residuals:available": 6000,
+          "wafer/brown_forsythe:available": 4000,
+          "wafer/brown_forsythe:unavailable": 2000,
+          "wafer/sd_ratio:available": 6000,
+          "wafer/studentized_residuals:available": 6000
+        },
+        "exceptions": 0,
+        "fit_event_counts": {
+          "boundary:negative_moment_estimate:wholeplot": 351,
+          "boundary:reml_on_boundary:wholeplot": 351
+        },
+        "metrics": {
+          "AB_test_false_positive_rate": {
+            "count": 256,
+            "mcse_empirical": 0.0026091576617183762,
+            "mcse_nominal": 0.0028136571693556886,
+            "n": 6000,
+            "rate": 0.042666666666666665,
+            "unavailable": 0
+          },
+          "A_contrast_interval_coverage": {
+            "count": 5739,
+            "mcse_empirical": 0.002633367615810599,
+            "mcse_nominal": 0.00281365716935569,
+            "n": 6000,
+            "rate": 0.9565,
+            "unavailable": 0
+          },
+          "A_test_false_positive_rate": {
+            "count": 234,
+            "mcse_empirical": 0.0024992999019725504,
+            "mcse_nominal": 0.0028136571693556886,
+            "n": 6000,
+            "rate": 0.039,
+            "unavailable": 0
+          },
+          "B_contrast_interval_coverage": {
+            "count": 5727,
+            "mcse_empirical": 0.0026904073421448035,
+            "mcse_nominal": 0.00281365716935569,
+            "n": 6000,
+            "rate": 0.9545,
+            "unavailable": 0
+          },
+          "B_test_false_positive_rate": {
+            "count": 297,
+            "mcse_empirical": 0.0028002901635366287,
+            "mcse_nominal": 0.0028136571693556886,
+            "n": 6000,
+            "rate": 0.0495,
+            "unavailable": 0
+          },
+          "naive_A_test_false_positive_rate": {
+            "count": 1756,
+            "mcse_empirical": 0.005873852921902978,
+            "mcse_nominal": 0.0028136571693556886,
+            "n": 6000,
+            "rate": 0.2926666666666667,
+            "unavailable": 0
+          }
+        },
+        "mismatches": 0,
+        "outcomes": {
+          "analyzed_boundary": 351,
+          "analyzed_interior": 5649
+        },
+        "refusal_performance": {
+          "count": 0,
+          "exact_95_interval": null,
+          "mcse_empirical": null,
+          "mcse_nominal": null,
+          "n": 0,
+          "rate": null,
+          "unexpected_refusals": 0
+        }
+      },
+      "T3/missing_sites": {
+        "attempts": 6000,
+        "boundary_fits": 0,
+        "cells": 3,
+        "code_counts": {
+          "missing_subplot_cell": 6000
+        },
+        "degenerate_fits": 0,
+        "diagnostic_counts": {},
+        "exceptions": 0,
+        "fit_event_counts": {},
+        "metrics": {},
+        "mismatches": 0,
+        "outcomes": {
+          "refused": 6000
+        },
+        "refusal_performance": {
+          "count": 6000,
+          "exact_95_interval": [
+            0.9993853757165824,
+            1.0
+          ],
+          "mcse_empirical": 0.0,
+          "mcse_nominal": null,
+          "n": 6000,
+          "rate": 1.0,
+          "unexpected_refusals": 0
+        }
+      },
+      "T3/no_replication_r1": {
+        "attempts": 2000,
+        "boundary_fits": 0,
+        "cells": 1,
+        "code_counts": {
+          "declaration_refused": 2000
+        },
+        "degenerate_fits": 0,
+        "diagnostic_counts": {},
+        "exceptions": 0,
+        "fit_event_counts": {},
+        "metrics": {},
+        "mismatches": 0,
+        "outcomes": {
+          "refused": 2000
+        },
+        "refusal_performance": {
+          "count": 2000,
+          "exact_95_interval": [
+            0.998157260206594,
+            1.0
+          ],
+          "mcse_empirical": 0.0,
+          "mcse_nominal": null,
+          "n": 2000,
+          "rate": 1.0,
+          "unexpected_refusals": 0
+        }
+      },
+      "T3/outliers": {
+        "attempts": 6000,
+        "boundary_fits": 325,
+        "cells": 3,
+        "code_counts": {
+          "brown_forsythe": 8,
+          "diagnostic_unavailable": 2000,
+          "sd_ratio": 4737,
+          "studentized_residual": 4357
+        },
+        "degenerate_fits": 0,
+        "diagnostic_counts": {
+          "position/brown_forsythe:not_applicable": 6000,
+          "position/sd_ratio:not_applicable": 6000,
+          "position/studentized_residuals:available": 6000,
+          "wafer/brown_forsythe:available": 4000,
+          "wafer/brown_forsythe:unavailable": 2000,
+          "wafer/sd_ratio:available": 6000,
+          "wafer/studentized_residuals:available": 6000
+        },
+        "exceptions": 0,
+        "fit_event_counts": {
+          "boundary:negative_moment_estimate:wholeplot": 325,
+          "boundary:reml_on_boundary:wholeplot": 325
+        },
+        "metrics": {
+          "AB_test_false_positive_rate": {
+            "count": 272,
+            "mcse_empirical": 0.0026857097827272846,
+            "mcse_nominal": 0.0028136571693556886,
+            "n": 6000,
+            "rate": 0.04533333333333334,
+            "unavailable": 0
+          },
+          "A_contrast_interval_coverage": {
+            "count": 5730,
+            "mcse_empirical": 0.0026762847382145283,
+            "mcse_nominal": 0.00281365716935569,
+            "n": 6000,
+            "rate": 0.955,
+            "unavailable": 0
+          },
+          "A_test_false_positive_rate": {
+            "count": 304,
+            "mcse_empirical": 0.0028313587890962514,
+            "mcse_nominal": 0.0028136571693556886,
+            "n": 6000,
+            "rate": 0.050666666666666665,
+            "unavailable": 0
+          },
+          "B_contrast_interval_coverage": {
+            "count": 5723,
+            "mcse_empirical": 0.0027090990370587406,
+            "mcse_nominal": 0.00281365716935569,
+            "n": 6000,
+            "rate": 0.9538333333333333,
+            "unavailable": 0
+          },
+          "B_test_false_positive_rate": {
+            "count": 271,
+            "mcse_empirical": 0.0026810022655992197,
+            "mcse_nominal": 0.0028136571693556886,
+            "n": 6000,
+            "rate": 0.04516666666666667,
+            "unavailable": 0
+          },
+          "naive_A_test_false_positive_rate": {
+            "count": 1651,
+            "mcse_empirical": 0.005765558258923158,
+            "mcse_nominal": 0.0028136571693556886,
+            "n": 6000,
+            "rate": 0.27516666666666667,
+            "unavailable": 0
+          }
+        },
+        "mismatches": 0,
+        "outcomes": {
+          "analyzed_boundary": 325,
+          "analyzed_interior": 5675
+        },
+        "refusal_performance": {
+          "count": 0,
+          "exact_95_interval": null,
+          "mcse_empirical": null,
+          "mcse_nominal": null,
+          "n": 0,
+          "rate": null,
+          "unexpected_refusals": 0
+        }
+      },
+      "T3/partial_confounding": {
+        "attempts": 2000,
+        "boundary_fits": 0,
+        "cells": 1,
+        "code_counts": {
+          "partial_confounding": 2000
+        },
+        "degenerate_fits": 0,
+        "diagnostic_counts": {},
+        "exceptions": 0,
+        "fit_event_counts": {},
+        "metrics": {},
+        "mismatches": 0,
+        "outcomes": {
+          "refused": 2000
+        },
+        "refusal_performance": {
+          "count": 2000,
+          "exact_95_interval": [
+            0.998157260206594,
+            1.0
+          ],
+          "mcse_empirical": 0.0,
+          "mcse_nominal": null,
+          "n": 2000,
+          "rate": 1.0,
+          "unexpected_refusals": 0
+        }
+      },
+      "T3/unequal_variances_4to1": {
+        "attempts": 6000,
+        "boundary_fits": 59,
+        "cells": 3,
+        "code_counts": {
+          "brown_forsythe": 46,
+          "diagnostic_unavailable": 2000,
+          "sd_ratio": 5324,
+          "studentized_residual": 3065
+        },
+        "degenerate_fits": 0,
+        "diagnostic_counts": {
+          "position/brown_forsythe:not_applicable": 6000,
+          "position/sd_ratio:not_applicable": 6000,
+          "position/studentized_residuals:available": 6000,
+          "wafer/brown_forsythe:available": 4000,
+          "wafer/brown_forsythe:unavailable": 2000,
+          "wafer/sd_ratio:available": 6000,
+          "wafer/studentized_residuals:available": 6000
+        },
+        "exceptions": 0,
+        "fit_event_counts": {
+          "boundary:negative_moment_estimate:wholeplot": 59,
+          "boundary:reml_on_boundary:wholeplot": 59
+        },
+        "metrics": {
+          "AB_test_false_positive_rate": {
+            "count": 308,
+            "mcse_empirical": 0.0028489244234219994,
+            "mcse_nominal": 0.0028136571693556886,
+            "n": 6000,
+            "rate": 0.051333333333333335,
+            "unavailable": 0
+          },
+          "A_contrast_interval_coverage": {
+            "count": 5333,
+            "mcse_empirical": 0.00405809148264076,
+            "mcse_nominal": 0.00281365716935569,
+            "n": 6000,
+            "rate": 0.8888333333333334,
+            "unavailable": 0
+          },
+          "A_test_false_positive_rate": {
+            "count": 383,
+            "mcse_empirical": 0.003155910827027302,
+            "mcse_nominal": 0.0028136571693556886,
+            "n": 6000,
+            "rate": 0.06383333333333334,
+            "unavailable": 0
+          },
+          "B_contrast_interval_coverage": {
+            "count": 5703,
+            "mcse_empirical": 0.0028002901635366287,
+            "mcse_nominal": 0.00281365716935569,
+            "n": 6000,
+            "rate": 0.9505,
+            "unavailable": 0
+          },
+          "B_test_false_positive_rate": {
+            "count": 292,
+            "mcse_empirical": 0.002777835554954679,
+            "mcse_nominal": 0.0028136571693556886,
+            "n": 6000,
+            "rate": 0.048666666666666664,
+            "unavailable": 0
+          },
+          "naive_A_test_false_positive_rate": {
+            "count": 2675,
+            "mcse_empirical": 0.0064169823154686225,
+            "mcse_nominal": 0.0028136571693556886,
+            "n": 6000,
+            "rate": 0.44583333333333336,
+            "unavailable": 0
+          }
+        },
+        "mismatches": 0,
+        "outcomes": {
+          "analyzed_boundary": 59,
+          "analyzed_interior": 5941
+        },
+        "refusal_performance": {
+          "count": 0,
+          "exact_95_interval": null,
+          "mcse_empirical": null,
+          "mcse_nominal": null,
+          "n": 0,
+          "rate": null,
+          "unexpected_refusals": 0
+        }
+      }
+    },
+    "focused_groups": {
+      "T2_blocked": {
+        "attempts": 16000,
+        "boundary_fits": 3460,
+        "cells": 8,
+        "code_counts": {
+          "brown_forsythe": 332,
+          "diagnostic_unavailable": 4000,
+          "sd_ratio": 5329,
+          "studentized_residual": 4845
+        },
+        "degenerate_fits": 0,
+        "diagnostic_counts": {
+          "run/brown_forsythe:available": 12000,
+          "run/brown_forsythe:unavailable": 4000,
+          "run/sd_ratio:available": 16000,
+          "run/studentized_residuals:available": 12000,
+          "run/studentized_residuals:unavailable": 4000
+        },
+        "exceptions": 0,
+        "fit_event_counts": {
+          "boundary:negative_moment_estimate:sub1": 68,
+          "boundary:negative_moment_estimate:unit": 3401,
+          "boundary:reml_on_boundary:sub1": 75,
+          "boundary:reml_on_boundary:unit": 3404
+        },
+        "metrics": {
+          "naive_site_level_false_positive_rate": {
+            "count": 4377,
+            "mcse_empirical": 0.005565285643781009,
+            "mcse_nominal": 0.002436698586202241,
+            "n": 8000,
+            "rate": 0.547125,
+            "unavailable": 0
+          },
+          "naive_site_level_rejection_rate": {
+            "count": 5882,
+            "mcse_empirical": 0.004932765926688596,
+            "mcse_nominal": null,
+            "n": 8000,
+            "rate": 0.73525,
+            "unavailable": 0
+          },
+          "treatment_false_positive_rate": {
+            "count": 422,
+            "mcse_empirical": 0.0024991858049172736,
+            "mcse_nominal": 0.002436698586202241,
+            "n": 8000,
+            "rate": 0.05275,
+            "unavailable": 0
+          },
+          "treatment_interval_coverage": {
+            "count": 15185,
+            "mcse_empirical": 0.0017382259471539865,
+            "mcse_nominal": 0.0017230060940112786,
+            "n": 16000,
+            "rate": 0.9490625,
+            "unavailable": 0
+          },
+          "treatment_rejection_rate": {
+            "count": 1047,
+            "mcse_empirical": 0.0037707216546537877,
+            "mcse_nominal": null,
+            "n": 8000,
+            "rate": 0.130875,
+            "unavailable": 0
+          }
+        },
+        "mismatches": 0,
+        "outcomes": {
+          "analyzed_boundary": 3460,
+          "analyzed_interior": 12540
+        },
+        "refusal_performance": {
+          "count": 0,
+          "exact_95_interval": null,
+          "mcse_empirical": null,
+          "mcse_nominal": null,
+          "n": 0,
+          "rate": null,
+          "unexpected_refusals": 0
+        }
+      },
+      "T2_r2": {
+        "attempts": 40000,
+        "boundary_fits": 6774,
+        "cells": 20,
+        "code_counts": {
+          "aliased_components": 20000,
+          "diagnostic_unavailable": 40000,
+          "sd_ratio": 23279,
+          "studentized_residual": 14722
+        },
+        "degenerate_fits": 0,
+        "diagnostic_counts": {
+          "run/brown_forsythe:unavailable": 40000,
+          "run/sd_ratio:available": 40000,
+          "run/studentized_residuals:available": 36000,
+          "run/studentized_residuals:unavailable": 4000
+        },
+        "exceptions": 0,
+        "fit_event_counts": {
+          "boundary:negative_moment_estimate:sub1": 157,
+          "boundary:negative_moment_estimate:unit": 6335,
+          "boundary:negative_moment_estimate:unit+sub1": 291,
+          "boundary:reml_on_boundary:sub1": 165,
+          "boundary:reml_on_boundary:unit": 6338,
+          "boundary:reml_on_boundary:unit+sub1": 291
+        },
+        "metrics": {
+          "naive_site_level_false_positive_rate": {
+            "count": 9151,
+            "mcse_empirical": 0.0035227687796674932,
+            "mcse_nominal": 0.0015411035007422442,
+            "n": 20000,
+            "rate": 0.45755,
+            "unavailable": 0
+          },
+          "naive_site_level_rejection_rate": {
+            "count": 11023,
+            "mcse_empirical": 0.003516985054702394,
+            "mcse_nominal": null,
+            "n": 20000,
+            "rate": 0.55115,
+            "unavailable": 0
+          },
+          "treatment_false_positive_rate": {
+            "count": 1000,
+            "mcse_empirical": 0.0015411035007422442,
+            "mcse_nominal": 0.0015411035007422442,
+            "n": 20000,
+            "rate": 0.05,
+            "unavailable": 0
+          },
+          "treatment_interval_coverage": {
+            "count": 38017,
+            "mcse_empirical": 0.0010853262110421,
+            "mcse_nominal": 0.0010897247358851688,
+            "n": 40000,
+            "rate": 0.950425,
+            "unavailable": 0
+          },
+          "treatment_rejection_rate": {
+            "count": 1591,
+            "mcse_empirical": 0.0019133974691631635,
+            "mcse_nominal": null,
+            "n": 20000,
+            "rate": 0.07955,
+            "unavailable": 0
+          }
+        },
+        "mismatches": 0,
+        "outcomes": {
+          "analyzed_boundary": 6774,
+          "analyzed_interior": 33226
+        },
+        "refusal_performance": {
+          "count": 0,
+          "exact_95_interval": null,
+          "mcse_empirical": null,
+          "mcse_nominal": null,
+          "n": 0,
+          "rate": null,
+          "unexpected_refusals": 0
+        }
+      },
+      "T2_s1": {
+        "attempts": 36000,
+        "boundary_fits": 3296,
+        "cells": 18,
+        "code_counts": {
+          "aliased_components": 36000,
+          "brown_forsythe": 65,
+          "diagnostic_unavailable": 12000,
+          "sd_ratio": 14237,
+          "studentized_residual": 11320
+        },
+        "degenerate_fits": 0,
+        "diagnostic_counts": {
+          "run/brown_forsythe:available": 24000,
+          "run/brown_forsythe:unavailable": 12000,
+          "run/sd_ratio:available": 36000,
+          "run/studentized_residuals:available": 36000
+        },
+        "exceptions": 0,
+        "fit_event_counts": {
+          "boundary:negative_moment_estimate:unit": 3296,
+          "boundary:reml_on_boundary:unit": 3296
+        },
+        "metrics": {
+          "naive_site_level_false_positive_rate": {
+            "count": 2461,
+            "mcse_empirical": 0.002560699298725074,
+            "mcse_nominal": 0.0016244657241348273,
+            "n": 18000,
+            "rate": 0.13672222222222222,
+            "unavailable": 0
+          },
+          "naive_site_level_rejection_rate": {
+            "count": 5167,
+            "mcse_empirical": 0.0033718990987625856,
+            "mcse_nominal": null,
+            "n": 18000,
+            "rate": 0.28705555555555556,
+            "unavailable": 0
+          },
+          "treatment_false_positive_rate": {
+            "count": 920,
+            "mcse_empirical": 0.0016414554082699964,
+            "mcse_nominal": 0.0016244657241348273,
+            "n": 18000,
+            "rate": 0.051111111111111114,
+            "unavailable": 0
+          },
+          "treatment_interval_coverage": {
+            "count": 34127,
+            "mcse_empirical": 0.0011704805294939999,
+            "mcse_nominal": 0.0011486707293408523,
+            "n": 36000,
+            "rate": 0.9479722222222222,
+            "unavailable": 0
+          },
+          "treatment_rejection_rate": {
+            "count": 2386,
+            "mcse_empirical": 0.0025274556842682016,
+            "mcse_nominal": null,
+            "n": 18000,
+            "rate": 0.13255555555555557,
+            "unavailable": 0
+          }
+        },
+        "mismatches": 0,
+        "outcomes": {
+          "analyzed_boundary": 3296,
+          "analyzed_interior": 32704
+        },
+        "refusal_performance": {
+          "count": 0,
+          "exact_95_interval": null,
+          "mcse_empirical": null,
+          "mcse_nominal": null,
+          "n": 0,
+          "rate": null,
+          "unexpected_refusals": 0
+        }
+      },
+      "T2_w1": {
+        "attempts": 36000,
+        "boundary_fits": 319,
+        "cells": 18,
+        "code_counts": {
+          "aliased_components": 36000,
+          "brown_forsythe": 67,
+          "diagnostic_unavailable": 12000,
+          "sd_ratio": 14348,
+          "studentized_residual": 11467
+        },
+        "degenerate_fits": 0,
+        "diagnostic_counts": {
+          "run/brown_forsythe:available": 24000,
+          "run/brown_forsythe:unavailable": 12000,
+          "run/sd_ratio:available": 36000,
+          "run/studentized_residuals:available": 36000
+        },
+        "exceptions": 0,
+        "fit_event_counts": {
+          "boundary:negative_moment_estimate:unit+sub1": 319,
+          "boundary:reml_on_boundary:unit+sub1": 319
+        },
+        "metrics": {
+          "naive_site_level_false_positive_rate": {
+            "count": 6271,
+            "mcse_empirical": 0.003551322687766836,
+            "mcse_nominal": 0.0016244657241348273,
+            "n": 18000,
+            "rate": 0.3483888888888889,
+            "unavailable": 0
+          },
+          "naive_site_level_rejection_rate": {
+            "count": 8429,
+            "mcse_empirical": 0.003719271886757795,
+            "mcse_nominal": null,
+            "n": 18000,
+            "rate": 0.4682777777777778,
+            "unavailable": 0
+          },
+          "treatment_false_positive_rate": {
+            "count": 941,
+            "mcse_empirical": 0.0016590628500651782,
+            "mcse_nominal": 0.0016244657241348273,
+            "n": 18000,
+            "rate": 0.05227777777777778,
+            "unavailable": 0
+          },
+          "treatment_interval_coverage": {
+            "count": 34180,
+            "mcse_empirical": 0.001154696825987294,
+            "mcse_nominal": 0.0011486707293408523,
+            "n": 36000,
+            "rate": 0.9494444444444444,
+            "unavailable": 0
+          },
+          "treatment_rejection_rate": {
+            "count": 2137,
+            "mcse_empirical": 0.002410938685021983,
+            "mcse_nominal": null,
+            "n": 18000,
+            "rate": 0.11872222222222223,
+            "unavailable": 0
+          }
+        },
+        "mismatches": 0,
+        "outcomes": {
+          "analyzed_boundary": 319,
+          "analyzed_interior": 35681
+        },
+        "refusal_performance": {
+          "count": 0,
+          "exact_95_interval": null,
+          "mcse_empirical": null,
+          "mcse_nominal": null,
+          "n": 0,
+          "rate": null,
+          "unexpected_refusals": 0
+        }
+      }
+    },
+    "formal_alert_count": 21,
+    "diagnostic_flag_count": 32,
+    "pooled_diagnostic_flags": [
+      "T1-vccov-run",
+      "T1-vccov-wafer"
+    ],
+    "additional_accounting": {
+      "warn_attempts": 229041,
+      "component_interval_endpoint_overflows": 3153,
+      "T2_missing_patterns": {
+        "no_loss": 67,
+        "site_loss": 11933
+      }
+    }
+  }
+}

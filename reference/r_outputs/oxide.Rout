@@ -1,0 +1,241 @@
+
+> source("r/common.R")
+
+> d <- read.csv(file.path(DERIVED, "oxide.csv"))
+
+> stopifnot(nrow(d) == 72)
+
+> d$Source <- factor(d$Source)
+
+> d$Lot <- factor(d$Lot)
+
+> d$Wafer <- factor(d$Wafer)
+
+> a <- nlevels(d$Lot)
+
+> b <- 3
+
+> n <- 3
+
+> fit_aov <- aov(Thickness ~ 1 + Error(Lot/Wafer), data = d)
+
+> summary(fit_aov)
+
+Error: Lot
+          Df Sum Sq Mean Sq F value Pr(>F)
+Residuals  7   9025    1289               
+
+Error: Lot:Wafer
+          Df Sum Sq Mean Sq F value Pr(>F)
+Residuals 16   1923   120.2               
+
+Error: Within
+          Df Sum Sq Mean Sq F value Pr(>F)
+Residuals 48  603.3   12.57               
+
+> strata <- aov_strata(fit_aov)
+
+> ms <- setNames(strata$ms, c("lot", "wafer", "site"))
+
+> mom <- c(lot = unname(ms["lot"] - ms["wafer"])/(b * 
++     n), wafer = unname(ms["wafer"] - ms["site"])/n, site = unname(ms["site"]))
+
+> mom
+      lot     wafer      site 
+129.90719  35.86574  12.56944 
+
+> fit_lmer <- lmer(Thickness ~ 1 + (1 | Lot/Wafer), 
++     data = d, REML = TRUE)
+
+> summary(fit_lmer)
+Linear mixed model fit by REML. t-tests use Satterthwaite's method ['lmerModLmerTest']
+Formula: Thickness ~ 1 + (1 | Lot/Wafer)
+   Data: d
+
+REML criterion at convergence: 454
+
+Scaled residuals: 
+    Min      1Q  Median      3Q     Max 
+-1.8746 -0.4991  0.1047  0.5510  1.7922 
+
+Random effects:
+ Groups    Name        Variance Std.Dev.
+ Wafer:Lot (Intercept)  35.87    5.989  
+ Lot       (Intercept) 129.91   11.398  
+ Residual               12.57    3.545  
+Number of obs: 72, groups:  Wafer:Lot, 24; Lot, 8
+
+Fixed effects:
+            Estimate Std. Error       df t value Pr(>|t|)    
+(Intercept) 2000.153      4.232    7.000   472.6   <2e-16 ***
+---
+Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
+
+> ci <- profile_sd_ci(fit_lmer)
+
+> ci
+                 parameter    lower     upper
+1 sd_(Intercept)|Wafer:Lot 4.147668  9.136751
+2       sd_(Intercept)|Lot 6.264282 19.760984
+3                    sigma 2.939065  4.392722
+
+> fit_lme <- nlme::lme(Thickness ~ 1, random = ~1 | 
++     Lot/Wafer, data = d, method = "REML")
+
+> fit_lme
+Linear mixed-effects model fit by REML
+  Data: d 
+  Log-restricted-likelihood: -227.011
+  Fixed: Thickness ~ 1 
+(Intercept) 
+   2000.153 
+
+Random effects:
+ Formula: ~1 | Lot
+        (Intercept)
+StdDev:    11.39768
+
+ Formula: ~1 | Wafer %in% Lot
+        (Intercept) Residual
+StdDev:    5.988802 3.545341
+
+Number of Observations: 72
+Number of Groups: 
+           Lot Wafer %in% Lot 
+             8             24 
+
+> lme_int <- nlme::intervals(fit_lme, which = "var-cov")
+
+> lme_int
+Approximate 95% confidence intervals
+
+ Random Effects:
+  Level: Lot 
+                   lower     est.    upper
+sd((Intercept)) 6.390189 11.39768 20.32916
+  Level: Wafer 
+                   lower     est.    upper
+sd((Intercept)) 4.064671 5.988802 8.823775
+
+ Within-group standard error:
+   lower     est.    upper 
+2.902607 3.545341 4.330398 
+
+> fit_aov_src <- aov(Thickness ~ Source + Error(Lot/Wafer), 
++     data = d)
+
+> summary(fit_aov_src)
+
+Error: Lot
+          Df Sum Sq Mean Sq F value Pr(>F)
+Source     1   1830    1830   1.526  0.263
+Residuals  6   7195    1199               
+
+Error: Lot:Wafer
+          Df Sum Sq Mean Sq F value Pr(>F)
+Residuals 16   1923   120.2               
+
+Error: Within
+          Df Sum Sq Mean Sq F value Pr(>F)
+Residuals 48  603.3   12.57               
+
+> fit_lmer_src <- lmer(Thickness ~ Source + (1 | Lot/Wafer), 
++     data = d, REML = TRUE)
+
+> summary(fit_lmer_src)
+Linear mixed model fit by REML. t-tests use Satterthwaite's method ['lmerModLmerTest']
+Formula: Thickness ~ Source + (1 | Lot/Wafer)
+   Data: d
+
+REML criterion at convergence: 447.9
+
+Scaled residuals: 
+    Min      1Q  Median      3Q     Max 
+-1.8864 -0.5140  0.1178  0.5347  1.7804 
+
+Random effects:
+ Groups    Name        Variance Std.Dev.
+ Wafer:Lot (Intercept)  35.87    5.989  
+ Lot       (Intercept) 119.89   10.950  
+ Residual               12.57    3.545  
+Number of obs: 72, groups:  Wafer:Lot, 24; Lot, 8
+
+Fixed effects:
+            Estimate Std. Error       df t value Pr(>|t|)    
+(Intercept) 2000.153      4.081    6.000 490.099 4.87e-15 ***
+Source1       -5.042      4.081    6.000  -1.235    0.263    
+---
+Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
+
+Correlation of Fixed Effects:
+        (Intr)
+Source1 0.000 
+
+> an_sat <- lmertest_anova(fit_lmer_src, "Satterthwaite")
+
+> an_kr <- lmertest_anova(fit_lmer_src, "Kenward-Roger")
+
+> an_sat
+    term num_df   den_df        F         p
+1 Source      1 5.999996 1.526122 0.2628701
+
+> an_kr
+    term num_df den_df        F         p
+1 Source      1      6 1.526122 0.2628701
+
+> op <- options(contrasts = c("contr.SAS", "contr.poly"))
+
+> fit_lme_src <- nlme::lme(Thickness ~ Source, random = ~1 | 
++     Lot/Wafer, data = d, method = "REML")
+
+> summary(fit_lme_src)
+Linear mixed-effects model fit by REML
+  Data: d 
+       AIC      BIC    logLik
+  456.4779 467.7203 -223.2389
+
+Random effects:
+ Formula: ~1 | Lot
+        (Intercept)
+StdDev:    10.94954
+
+ Formula: ~1 | Wafer %in% Lot
+        (Intercept) Residual
+StdDev:      5.9888 3.545341
+
+Fixed effects:  Thickness ~ Source 
+                Value Std.Error DF  t-value p-value
+(Intercept) 2005.1944  5.771575 48 347.4259  0.0000
+Source1      -10.0833  8.162240  6  -1.2354  0.2629
+ Correlation: 
+        (Intr)
+Source1 -0.707
+
+Standardized Within-Group Residuals:
+       Min         Q1        Med         Q3        Max 
+-1.8864255 -0.5139735  0.1177649  0.5346573  1.7803582 
+
+Number of Observations: 72
+Number of Groups: 
+           Lot Wafer %in% Lot 
+             8             24 
+
+> lme_src_tt <- summary(fit_lme_src)$tTable
+
+> options(op)
+
+> write_result(list(dataset = "MEMSS Oxide", design = list(a_lots = a, 
++     b_wafers_per_lot = b, n_sites_per_wafer = n, source_levels = nlevels(d$Source), 
++     lots_per_source = 4), without_source = list(aov_error_strata = strata, 
++     mom_variance_components = as.list(mom), mom_sd = as.list(sqrt(mom)), 
++     lmer_reml = list(vc = lmer_vc(fit_lmer), intercept = unname(fixef(fit_lmer)), 
++         singular = isSingular(fit_lmer), profile_sd_ci = ci), 
++     nlme_reml = list(vc = nlme_vc(fit_lme), intercept = unname(nlme::fixef(fit_lme)), 
++         logLik = as.numeric(logLik(fit_lme)), sd_intervals = list(Lot = as.list(lme_int$reStruct$Lot[1, 
++             ]), Wafer = as.list(lme_int$reStruct$Wafer[1, ]), 
++             residual = as.list(lme_int$sigma)))), with_source_fixed = list(aov_error_strata = aov_strata(fit_aov_src), 
++     lmer_reml = list(vc = lmer_vc(fit_lmer_src), fixef = as.list(fixef(fit_lmer_src)), 
++         singular = isSingular(fit_lmer_src)), lmertest_type3_satterthwaite = an_sat, 
++     lmertest_type3_kenward_roger = an_kr, nlme_reml_contr_sas = list(vc = nlme_vc(fit_lme_src), 
++         ttable = data.frame(term = rownames(lme_src_tt), lme_src_tt, 
++             row.names = NULL, check.names = TRUE)))), "oxide.json")

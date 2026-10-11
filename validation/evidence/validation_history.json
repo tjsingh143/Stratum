@@ -1,0 +1,17 @@
+{
+  "schema": "stratum-evidence/1",
+  "synthetic": true,
+  "source": {
+    "path": "validation/synthetic_wp6_history_comparison.json",
+    "release": "Stratum v1.0.0",
+    "sha256": "5beee5fb209bb8c223a9f7511064e225721ca5a4632771fb2521fa544ea7f381",
+    "selection": "Top-level reconciliation fields, values unchanged."
+  },
+  "values": {
+    "synthetic": true,
+    "archived_bytes_verified": true,
+    "same_input_fingerprints": 418000,
+    "serialization_failures_repaired": 11933,
+    "unchanged_attempt_records": 406067
+  }
+}

@@ -1,0 +1,1109 @@
+{
+  "schema": "stratum-results/1",
+  "generated_by": "stratum 1.0.0 (stratum.results.build); never hand-edited",
+  "synthetic": true,
+  "data_label": "labelled synthetic data; results show software behavior, not process realism (brief Section 3.3)",
+  "provenance": {
+    "inputs": {
+      "declaration": {
+        "path": "fixtures/synthetic_wp2/ALIAS-03/declaration_synthetic.yaml",
+        "sha256": "297721740215fa4586cc78915aaf6d9b0b6c8563699ac4d47b5df41086b4e3e5",
+        "bytes": 925
+      },
+      "data": {
+        "path": "fixtures/synthetic_wp2/ALIAS-03/data_synthetic.csv",
+        "sha256": "41eb00f8ab91481066fa503a471228603b895c403d5ad370b0766e0a92946867",
+        "bytes": 460
+      },
+      "explanations": {
+        "path": "resources/explanations.yaml",
+        "sha256": "45923fbd6faf9e13bd694316bc407fca02bb7a819226dce39f5bd3bfd2dcc5e3",
+        "bytes": 22437
+      }
+    },
+    "code": {
+      "package": "stratum",
+      "version": "1.0.0",
+      "source_sha256": "ada12f7b897c7d9984c6300a1c86c9ac23e1db099ffa5a24a39aa6a5c81cb860",
+      "source_files": 17,
+      "method": "SHA-256 over the sorted lines '<relative path> <file SHA-256>' of every file in the stratum package (D-077)"
+    },
+    "git": null,
+    "environment": null,
+    "omitted": "omitted from committed reports so that they regenerate byte for byte: a commit hash written into a committed file is always the parent of the commit that contains it. source_sha256 identifies the code (D-077)."
+  },
+  "declaration": {
+    "claimed_template": "T2",
+    "description": "SYNTHETIC FIXTURE ALIAS-03: T2 with one wafer per run (w = 1): run and wafer group the observations identically",
+    "response": {
+      "column": "y",
+      "units": "a.u. (synthetic)"
+    },
+    "hierarchy": [
+      {
+        "name": "run",
+        "count": 8,
+        "per_parent": false,
+        "exchangeable": null,
+        "exchangeable_declared": false
+      },
+      {
+        "name": "wafer",
+        "count": 1,
+        "per_parent": true,
+        "exchangeable": false,
+        "exchangeable_declared": false
+      },
+      {
+        "name": "site",
+        "count": 3,
+        "per_parent": true,
+        "exchangeable": false,
+        "exchangeable_declared": false
+      }
+    ],
+    "treatments": [
+      {
+        "name": "temp",
+        "levels": [
+          "low",
+          "high"
+        ],
+        "applied_to": "run",
+        "replicates_per_level": 4,
+        "assignment": "systematic"
+      }
+    ],
+    "nuisance_factors": []
+  },
+  "decision": {
+    "evidence_decision": "WARN",
+    "analyzed": true,
+    "template": "T2"
+  },
+  "comparisons": [
+    {
+      "id": "high_vs_low",
+      "kind": "pairwise",
+      "factors": [
+        "temp"
+      ],
+      "levels": [
+        "high",
+        "low"
+      ],
+      "description": null,
+      "role": "treatment",
+      "experimental_unit": "run",
+      "status": "analyzed",
+      "test": {
+        "source": "temp",
+        "F": 19.2,
+        "num_df": 1,
+        "den_df": 6,
+        "p": 0.004659214943993942,
+        "error_term": "units within treatment",
+        "note": "the treatment is tested against the variation among units treated alike (brief Section 5.2)"
+      },
+      "estimates": [
+        {
+          "estimate_of": "high - low",
+          "estimate": 4.0,
+          "se": 0.9128709291752769,
+          "df": 6.0,
+          "error_term": "units within treatment",
+          "independent_units": 8,
+          "lower": 1.766285304835296,
+          "upper": 6.233714695164704,
+          "t_critical": 2.4469118511449683,
+          "interval_method": "exact under the model for balanced data",
+          "approximate": false,
+          "t": 4.381780460041329,
+          "p": 0.004659214943993942,
+          "comparison": "high_vs_low",
+          "contrast": "high - low",
+          "factor": "temp",
+          "key": "high_vs_low: high - low",
+          "half_width": 2.233714695164704,
+          "interval_includes_zero": false
+        }
+      ],
+      "independent_units": {
+        "per_level": {
+          "low": 4,
+          "high": 4
+        },
+        "level": "run"
+      }
+    }
+  ],
+  "findings": [
+    {
+      "code": "aliased_components",
+      "severity": "warn",
+      "stage": "S7",
+      "message": "level 'run' and level 'wafer' group the observations identically, so the 'run' and 'wafer' variance components cannot be separately estimated: only their combined component is identifiable, and no separate estimate of either is reported. Allocation outputs that need them separately are unavailable or limited. The treatment comparison rests on replicated independent 'run' units and does not need them separated (D-054).",
+      "details": {
+        "pair": [
+          "level 'run'",
+          "level 'wafer'"
+        ],
+        "unidentified": [
+          "'run'",
+          "'wafer'"
+        ]
+      },
+      "explanation": {
+        "category": "aliased_components",
+        "kind": "warning",
+        "status": "written",
+        "text": "Two levels of the hierarchy group the measurements identically, for example one wafer per run, so the variation at those two levels cannot be measured separately; only their combined amount is reported, and no separate estimate of either is claimed. The comparison itself does not need them separated, because it rests on the replicated experimental units. What is limited is the allocation analysis: it cannot say how much adding units at the collapsed level would help, so those lines are shown as bounds or as unavailable.",
+        "same_as": null
+      }
+    }
+  ],
+  "caveats": [
+    {
+      "code": "assignment_not_randomized",
+      "severity": "caveat",
+      "message": "Factor 'temp': assignment.method is 'systematic' in the declaration (Synthetic fixture: levels are assigned by construction.). The tests and intervals are computed the same way for every assignment method; the caveat concerns attributing a difference to the factor (D-039).",
+      "details": {
+        "factor": "temp",
+        "method": "systematic"
+      },
+      "explanation": {
+        "category": "assignment_not_randomized",
+        "kind": "caveat",
+        "status": "written",
+        "text": "The declaration says this factor's levels were not assigned at random: they were assigned systematically, the method was not stated, or the factor is an inherent property such as a position on the wafer. The test and intervals are computed the same way regardless. What changes is the interpretation: without randomization, a difference may partly reflect something else that varied along with the factor, so it should not automatically be read as caused by it.",
+        "same_as": null
+      }
+    }
+  ],
+  "stages": [
+    {
+      "id": "S0",
+      "title": "declaration matches the claimed template",
+      "status": "pass",
+      "reason": null
+    },
+    {
+      "id": "S1",
+      "title": "declared columns present",
+      "status": "pass",
+      "reason": null
+    },
+    {
+      "id": "S2",
+      "title": "labels and response values",
+      "status": "pass",
+      "reason": null
+    },
+    {
+      "id": "S3",
+      "title": "unit identity and ownership",
+      "status": "pass",
+      "reason": null
+    },
+    {
+      "id": "S4",
+      "title": "declaration-data consistency",
+      "status": "pass",
+      "reason": null
+    },
+    {
+      "id": "S5",
+      "title": "balance, replication and missing data",
+      "status": "pass",
+      "reason": null
+    },
+    {
+      "id": "S6",
+      "title": "confounding",
+      "status": "pass",
+      "reason": null
+    },
+    {
+      "id": "S7",
+      "title": "aliasing",
+      "status": "warn",
+      "reason": null
+    },
+    {
+      "id": "S8",
+      "title": "diagnostics",
+      "status": "pass",
+      "reason": null
+    }
+  ],
+  "assumptions": [
+    {
+      "assumption": "balance at the experimental-unit level",
+      "handling": "checked from the data; imbalance is refused (S5)",
+      "status": "pass"
+    },
+    {
+      "assumption": "equal variance across treatment levels",
+      "handling": "diagnosed: Brown-Forsythe test and largest-to-smallest SD ratio of unit means; warnings only (D-044)",
+      "status": "no warning triggered; assumption not verified"
+    },
+    {
+      "assumption": "normally distributed random effects and errors",
+      "handling": "diagnosed: normal quantile plot and externally studentized residuals beyond +-3; warnings only (D-044)",
+      "status": "no warning triggered; assumption not verified"
+    },
+    {
+      "assumption": "independent experimental units",
+      "handling": "not checkable from the data; it rests on how the units were run and assigned (the declared assignment method)",
+      "status": "not_checkable"
+    }
+  ],
+  "diagnostics": {
+    "run": {
+      "brown_forsythe": {
+        "diagnostic": "brown_forsythe",
+        "available": true,
+        "warn": false,
+        "F": 0.0,
+        "df": [
+          1,
+          6
+        ],
+        "p": 1.0,
+        "threshold": "p < 0.05",
+        "groups": [
+          "low",
+          "high"
+        ]
+      },
+      "sd_ratio": {
+        "diagnostic": "sd_ratio",
+        "available": true,
+        "sds": {
+          "low": 1.2909944487358056,
+          "high": 1.2909944487358056
+        },
+        "threshold": ">= 2 (pragmatic v1 threshold, not a universal law)",
+        "warn": false,
+        "ratio": 1.0
+      },
+      "studentized_residuals": {
+        "diagnostic": "studentized_residuals",
+        "available": true,
+        "warn": false,
+        "model": "temp",
+        "residual_df": 6,
+        "max_abs_external": 1.4638501094227998,
+        "undefined_units": [],
+        "threshold": "|externally studentized residual| > 3",
+        "units": [
+          {
+            "unit": "R01",
+            "residual": -1.5,
+            "leverage": 0.25,
+            "internal": -1.3416407864998738,
+            "external": -1.4638501094227998,
+            "flagged": false
+          },
+          {
+            "unit": "R02",
+            "residual": -0.5,
+            "leverage": 0.25,
+            "internal": -0.4472135954999579,
+            "external": -0.41522739926869984,
+            "flagged": false
+          },
+          {
+            "unit": "R03",
+            "residual": 0.5,
+            "leverage": 0.25,
+            "internal": 0.4472135954999579,
+            "external": 0.41522739926869984,
+            "flagged": false
+          },
+          {
+            "unit": "R04",
+            "residual": 1.5,
+            "leverage": 0.25,
+            "internal": 1.3416407864998738,
+            "external": 1.4638501094227998,
+            "flagged": false
+          },
+          {
+            "unit": "R05",
+            "residual": -1.5,
+            "leverage": 0.25,
+            "internal": -1.3416407864998738,
+            "external": -1.4638501094227998,
+            "flagged": false
+          },
+          {
+            "unit": "R06",
+            "residual": -0.5,
+            "leverage": 0.25,
+            "internal": -0.4472135954999579,
+            "external": -0.41522739926869984,
+            "flagged": false
+          },
+          {
+            "unit": "R07",
+            "residual": 0.5,
+            "leverage": 0.25,
+            "internal": 0.4472135954999579,
+            "external": 0.41522739926869984,
+            "flagged": false
+          },
+          {
+            "unit": "R08",
+            "residual": 1.5,
+            "leverage": 0.25,
+            "internal": 1.3416407864998738,
+            "external": 1.4638501094227998,
+            "flagged": false
+          }
+        ],
+        "normal_quantiles": {
+          "positions": "Blom (i - 3/8) / (n + 1/4)",
+          "theoretical": [
+            -1.4342001596863796,
+            -0.8524950342746942,
+            -0.47278912099226733,
+            -0.15250597424624437,
+            0.15250597424624424,
+            0.4727891209922672,
+            0.8524950342746939,
+            1.4342001596863792
+          ],
+          "internally_studentized_sorted": [
+            -1.3416407864998738,
+            -1.3416407864998738,
+            -0.4472135954999579,
+            -0.4472135954999579,
+            0.4472135954999579,
+            0.4472135954999579,
+            1.3416407864998738,
+            1.3416407864998738
+          ]
+        }
+      }
+    }
+  },
+  "diagnostics_display": {
+    "run": {
+      "n": 8,
+      "x_min": -1.4342001596863796,
+      "x_max": 1.4342001596863792,
+      "y_min": -1.3416407864998738,
+      "y_max": 1.3416407864998738
+    }
+  },
+  "evidence": {
+    "structure": {
+      "rows": 24,
+      "observed_responses": 24,
+      "missing_responses": 0,
+      "levels": [
+        {
+          "level": "run",
+          "declared_total": 8,
+          "present": 8
+        },
+        {
+          "level": "wafer",
+          "declared_per_parent": 1,
+          "present_per_parent": [
+            1
+          ]
+        },
+        {
+          "level": "site",
+          "declared_per_parent": 3,
+          "present_per_parent": [
+            3
+          ]
+        }
+      ]
+    },
+    "replication": {
+      "factor": "temp",
+      "applied_to": "run",
+      "declared_per_level": 4,
+      "present_per_level": {
+        "low": 4,
+        "high": 4
+      }
+    },
+    "confounding": [],
+    "aliasing": {
+      "groupings": [
+        "level 'run'",
+        "level 'wafer'",
+        "level 'site'"
+      ],
+      "aliased_pairs": [
+        [
+          "level 'run'",
+          "level 'wafer'"
+        ]
+      ],
+      "excluded_unit_unique": []
+    },
+    "diagnostics": {
+      "run": {
+        "brown_forsythe": {
+          "diagnostic": "brown_forsythe",
+          "available": true,
+          "warn": false,
+          "F": 0.0,
+          "df": [
+            1,
+            6
+          ],
+          "p": 1.0,
+          "threshold": "p < 0.05",
+          "groups": [
+            "low",
+            "high"
+          ]
+        },
+        "sd_ratio": {
+          "diagnostic": "sd_ratio",
+          "available": true,
+          "sds": {
+            "low": 1.2909944487358056,
+            "high": 1.2909944487358056
+          },
+          "threshold": ">= 2 (pragmatic v1 threshold, not a universal law)",
+          "warn": false,
+          "ratio": 1.0
+        },
+        "studentized_residuals": {
+          "diagnostic": "studentized_residuals",
+          "available": true,
+          "warn": false,
+          "model": "temp",
+          "residual_df": 6,
+          "max_abs_external": 1.4638501094227998,
+          "undefined_units": [],
+          "threshold": "|externally studentized residual| > 3",
+          "units": [
+            {
+              "unit": "R01",
+              "residual": -1.5,
+              "leverage": 0.25,
+              "internal": -1.3416407864998738,
+              "external": -1.4638501094227998,
+              "flagged": false
+            },
+            {
+              "unit": "R02",
+              "residual": -0.5,
+              "leverage": 0.25,
+              "internal": -0.4472135954999579,
+              "external": -0.41522739926869984,
+              "flagged": false
+            },
+            {
+              "unit": "R03",
+              "residual": 0.5,
+              "leverage": 0.25,
+              "internal": 0.4472135954999579,
+              "external": 0.41522739926869984,
+              "flagged": false
+            },
+            {
+              "unit": "R04",
+              "residual": 1.5,
+              "leverage": 0.25,
+              "internal": 1.3416407864998738,
+              "external": 1.4638501094227998,
+              "flagged": false
+            },
+            {
+              "unit": "R05",
+              "residual": -1.5,
+              "leverage": 0.25,
+              "internal": -1.3416407864998738,
+              "external": -1.4638501094227998,
+              "flagged": false
+            },
+            {
+              "unit": "R06",
+              "residual": -0.5,
+              "leverage": 0.25,
+              "internal": -0.4472135954999579,
+              "external": -0.41522739926869984,
+              "flagged": false
+            },
+            {
+              "unit": "R07",
+              "residual": 0.5,
+              "leverage": 0.25,
+              "internal": 0.4472135954999579,
+              "external": 0.41522739926869984,
+              "flagged": false
+            },
+            {
+              "unit": "R08",
+              "residual": 1.5,
+              "leverage": 0.25,
+              "internal": 1.3416407864998738,
+              "external": 1.4638501094227998,
+              "flagged": false
+            }
+          ],
+          "normal_quantiles": {
+            "positions": "Blom (i - 3/8) / (n + 1/4)",
+            "theoretical": [
+              -1.4342001596863796,
+              -0.8524950342746942,
+              -0.47278912099226733,
+              -0.15250597424624437,
+              0.15250597424624424,
+              0.4727891209922672,
+              0.8524950342746939,
+              1.4342001596863792
+            ],
+            "internally_studentized_sorted": [
+              -1.3416407864998738,
+              -1.3416407864998738,
+              -0.4472135954999579,
+              -0.4472135954999579,
+              0.4472135954999579,
+              0.4472135954999579,
+              1.3416407864998738,
+              1.3416407864998738
+            ]
+          }
+        }
+      }
+    }
+  },
+  "analysis": {
+    "template": "T2",
+    "decision": "WARN",
+    "analyzed": true,
+    "design": {
+      "levels": [
+        "run",
+        "wafer",
+        "site"
+      ],
+      "units_per_level": [
+        8,
+        8,
+        24
+      ],
+      "observations_per_unit": [
+        3,
+        3,
+        1
+      ],
+      "n_observations": 24,
+      "treatment": "temp",
+      "treatment_levels": [
+        "low",
+        "high"
+      ],
+      "replicates_per_level": {
+        "low": 4,
+        "high": 4
+      },
+      "block": null,
+      "block_levels": null,
+      "collapsed_strata": [
+        "sub1"
+      ]
+    },
+    "anova": {
+      "treatment": {
+        "source": "temp",
+        "key": "treatment",
+        "df": 1,
+        "ss": 96.0,
+        "ss_exact": "96",
+        "ms": 96.0,
+        "error_term": "units within treatment",
+        "F": 19.2,
+        "p": 0.004659214943993942,
+        "num_df": 1,
+        "den_df": 6,
+        "note": "the treatment is tested against the variation among units treated alike (brief Section 5.2)",
+        "ems_coefficients": {
+          "unit+sub1": 3,
+          "sub2": 1
+        },
+        "ems": "3*sigma2[units within treatment + wafer] + 1*sigma2[site] + (12 * sum of squared temp effects) / 1",
+        "ems_by_key": "3*sigma2[unit+sub1] + 1*sigma2[sub2]"
+      },
+      "unit": {
+        "source": "units within treatment",
+        "key": "unit",
+        "df": 6,
+        "ss": 30.0,
+        "ss_exact": "30",
+        "ms": 5.0,
+        "error_term": "site",
+        "F": 500.0,
+        "p": 2.796508870757674e-17,
+        "num_df": 6,
+        "den_df": 16,
+        "note": "the experimental-unit error stratum for the treatment test",
+        "ems_coefficients": {
+          "unit+sub1": 3,
+          "sub2": 1
+        },
+        "ems": "3*sigma2[units within treatment + wafer] + 1*sigma2[site]",
+        "ems_by_key": "3*sigma2[unit+sub1] + 1*sigma2[sub2]"
+      },
+      "sub2": {
+        "source": "site",
+        "key": "sub2",
+        "df": 16,
+        "ss": 0.16,
+        "ss_exact": "4/25",
+        "ms": 0.01,
+        "error_term": null,
+        "F": null,
+        "p": null,
+        "num_df": null,
+        "den_df": null,
+        "note": "",
+        "ems_coefficients": {
+          "sub2": 1
+        },
+        "ems": "1*sigma2[site]",
+        "ems_by_key": "1*sigma2[sub2]"
+      },
+      "total": {
+        "source": "total",
+        "key": "total",
+        "df": 23,
+        "ss": 126.16,
+        "ss_exact": "3154/25",
+        "ms": 5.485217391304348,
+        "error_term": null,
+        "F": null,
+        "p": null,
+        "num_df": null,
+        "den_df": null,
+        "note": ""
+      }
+    },
+    "naive_anova": {},
+    "variance_components": {
+      "unit+sub1": {
+        "component": "unit+sub1",
+        "label": "units within treatment + wafer",
+        "merged": true,
+        "coefficient": 3,
+        "estimator": "(MS[unit+sub1] - MS[sub2]) / 3",
+        "estimator_display": "(MS[units within treatment + wafer] - MS[site]) / 3",
+        "mom": 1.6633333333333333,
+        "mom_exact": "499/300",
+        "mom_truncated": 1.6633333333333333,
+        "negative": false,
+        "sd_mom": 1.2897028081435402,
+        "reml": 1.6633333333333333,
+        "sd_reml": 1.2897028081435402,
+        "reml_equals_mom": true,
+        "interval_method": "approximate (Satterthwaite)",
+        "exact": false,
+        "interval_available": true,
+        "nu_eff": 5.976015035977446,
+        "interval_lower": 0.6897448299576457,
+        "interval_upper": 8.10102971067142,
+        "truncated_at_zero": false,
+        "sd_interval_lower": 0.8305087777727853,
+        "sd_interval_upper": 2.8462307901277826,
+        "percent_of_total": 99.40239043824701
+      },
+      "sub2": {
+        "component": "sub2",
+        "label": "site",
+        "merged": false,
+        "coefficient": 1,
+        "estimator": "MS[sub2]",
+        "estimator_display": "MS[site]",
+        "mom": 0.01,
+        "mom_exact": "1/100",
+        "mom_truncated": 0.01,
+        "negative": false,
+        "sd_mom": 0.1,
+        "reml": 0.01,
+        "sd_reml": 0.1,
+        "reml_equals_mom": true,
+        "interval_method": "exact under the model for balanced data",
+        "exact": true,
+        "interval_available": true,
+        "nu_eff": 16.0,
+        "interval_lower": 0.005546821098977936,
+        "interval_upper": 0.02316267725414308,
+        "truncated_at_zero": false,
+        "sd_interval_lower": 0.0744769836860888,
+        "sd_interval_upper": 0.1521928948871894,
+        "percent_of_total": 0.5976095617529881
+      }
+    },
+    "stratum_expectations": {
+      "unit+sub1": {
+        "stratum": "unit+sub1",
+        "label": "units within treatment + wafer",
+        "df": 6,
+        "ms": 5.0,
+        "lower": 2.076214320933483,
+        "upper": 24.24547582618524,
+        "exact": true,
+        "interval_method": "exact under the model for balanced data",
+        "definition": "E[MS] = 3*sigma2[units within treatment + wafer] + 1*sigma2[site]"
+      },
+      "sub2": {
+        "stratum": "sub2",
+        "label": "site",
+        "df": 16,
+        "ms": 0.01,
+        "lower": 0.005546821098977936,
+        "upper": 0.02316267725414308,
+        "exact": true,
+        "interval_method": "exact under the model for balanced data",
+        "definition": "E[MS] = 1*sigma2[site]"
+      }
+    },
+    "estimates": {
+      "mean[low]": {
+        "estimate_of": "mean response at low",
+        "estimate": 100.0,
+        "se": 0.6454972243679028,
+        "df": 6.0,
+        "error_term": "units within treatment",
+        "independent_units": 4,
+        "lower": 98.420525191813,
+        "upper": 101.579474808187,
+        "t_critical": 2.4469118511449683,
+        "interval_method": "exact under the model for balanced data",
+        "approximate": false
+      },
+      "mean[high]": {
+        "estimate_of": "mean response at high",
+        "estimate": 104.0,
+        "se": 0.6454972243679028,
+        "df": 6.0,
+        "error_term": "units within treatment",
+        "independent_units": 4,
+        "lower": 102.420525191813,
+        "upper": 105.579474808187,
+        "t_critical": 2.4469118511449683,
+        "interval_method": "exact under the model for balanced data",
+        "approximate": false
+      },
+      "high_vs_low: high - low": {
+        "estimate_of": "high - low",
+        "estimate": 4.0,
+        "se": 0.9128709291752769,
+        "df": 6.0,
+        "error_term": "units within treatment",
+        "independent_units": 8,
+        "lower": 1.766285304835296,
+        "upper": 6.233714695164704,
+        "t_critical": 2.4469118511449683,
+        "interval_method": "exact under the model for balanced data",
+        "approximate": false,
+        "t": 4.381780460041329,
+        "p": 0.004659214943993942,
+        "comparison": "high_vs_low",
+        "contrast": "high - low",
+        "factor": "temp"
+      }
+    },
+    "reml": {
+      "fit": {
+        "method": "closed-form order-restricted (pool-adjacent-violators) REML for balanced designs; no optimizer, so no convergence failure (D-064)",
+        "lambda_hat": {
+          "unit+sub1": 5.0,
+          "sub2": 0.01
+        },
+        "mean_squares": {
+          "unit+sub1": 5.0,
+          "sub2": 0.01
+        },
+        "pooled": [],
+        "boundary": false,
+        "error_contrast_df": 22,
+        "n_fixed_parameters": 2,
+        "minus2_restricted_loglik_error_contrasts": -1.5928000401992506,
+        "restricted_loglik_error_contrasts": 0.7964000200996253,
+        "log_det_xtx": 4.969813299576001,
+        "fixed_parameterization": "cell means: one indicator per treatment level",
+        "minus2_restricted_loglik": 3.37701325937675,
+        "restricted_loglik": -1.688506629688375,
+        "convention": "-2 log L_R = (N - p) log(2 pi) + sum_k [ df_k log lambda_k + SS_k / lambda_k ] + log det(X'X), the standard restricted log-likelihood (Harville 1977). The last term is an additive constant that depends on how the fixed effects are parameterised, so a REML log-likelihood is comparable only between fits that share one. X here is the full-rank indicator parameterisation named in `fixed_parameterization`. The form without that term is also reported, and any offset against a package's printed value is reported rather than absorbed (D-064)."
+      }
+    },
+    "fits": {
+      "boundary": [],
+      "degenerate": [],
+      "failed": [],
+      "note": "Every step is closed form (exact rational ANOVA, closed-form REML, deterministic quantile functions), so no fit can fail to converge. An empty `failed` list means none occurred, not that none were looked for (D-066). A design the evidence checks refuse is not a failed fit: refusal is a successful outcome.",
+      "boundary_count": 0,
+      "degenerate_count": 0,
+      "failed_count": 0
+    },
+    "notes": [
+      "The treatment is judged against 4 independent run units per level; more lower-level measurements cannot replace them.",
+      "Components unit+sub1 are not separately identifiable, because a level has one unit per parent; only their combined component is reported, and the stratum that would have separated them (sub1) has no degrees of freedom and is omitted from the table (D-054, D-062)."
+    ],
+    "labels": {
+      "template": "T2: one treatment on the top level, with balanced subsampling",
+      "treatment": "temp",
+      "applied_to": "run",
+      "levels": {
+        "0": "run",
+        "1": "wafer",
+        "2": "site"
+      }
+    }
+  },
+  "allocation": {
+    "status": "available",
+    "basis": "the WP3 analysis's stratum mean squares",
+    "components": [
+      {
+        "component": "unit+sub1",
+        "label": "units within treatment + wafer",
+        "levels": [
+          "unit",
+          "sub1"
+        ],
+        "merged": true,
+        "df": 6,
+        "estimable": true,
+        "estimate": 1.6633333333333333,
+        "estimate_exact": "499/300",
+        "ms": 5.0,
+        "lambda_hat": 5.0
+      },
+      {
+        "component": "sub2",
+        "label": "site",
+        "levels": [
+          "sub2"
+        ],
+        "merged": false,
+        "df": 16,
+        "estimable": true,
+        "estimate": 0.01,
+        "estimate_exact": "1/100",
+        "ms": 0.01,
+        "lambda_hat": 0.01
+      }
+    ],
+    "components_method": "closed-form REML (D-064); equal to the method-of-moments estimates whenever those are all >= 0 (D-078)",
+    "plausible_values": {
+      "method": "generalized pivotal quantities: lambda* = nu MS / U, U ~ chi-square(nu), then the same pooling and inversion as the point estimate (Weerahandi 1993; D-079)",
+      "draws": 20000,
+      "seed_text": "stratum-wp4-plausible-values-v1",
+      "seed": 10763399368363203454,
+      "percentiles": "2.5, 50, 97.5 (statistics.quantiles, n = 40, inclusive)",
+      "label": "approximate; not validated in the WP6 grid"
+    },
+    "comparisons": [
+      {
+        "comparison_of": "the difference between two temp level means",
+        "factor": "temp",
+        "formula": "(2 / r) * (sigma2[run] + sigma2[wafer] / n_wafer + sigma2[site] / (n_wafer * n_site)); r = runs per treatment level, n_wafer = wafers per run, n_site = sites per wafer",
+        "scenarios": [
+          {
+            "id": "current",
+            "label": "current design",
+            "design": {
+              "run_per_level": 4,
+              "wafer_per_parent": 1,
+              "site_per_parent": 3
+            },
+            "added_units": "none",
+            "added_measurements": 0,
+            "error_df": 6,
+            "balanced": true,
+            "status": "identified",
+            "note": "",
+            "candidate": false,
+            "se": 0.9128709291752769,
+            "variance": 0.8333333333333334,
+            "plausible_se": {
+              "p2_5": 0.585455,
+              "p50": 0.968915,
+              "p97_5": 2.04275
+            }
+          },
+          {
+            "id": "add_unit",
+            "label": "one more run per treatment level",
+            "design": {
+              "run_per_level": 5,
+              "wafer_per_parent": 1,
+              "site_per_parent": 3
+            },
+            "added_units": "2 runs (one per treatment level)",
+            "added_measurements": 6,
+            "error_df": 8,
+            "balanced": true,
+            "status": "identified",
+            "note": "",
+            "candidate": true,
+            "se": 0.816496580927726,
+            "variance": 0.6666666666666666,
+            "plausible_se": {
+              "p2_5": 0.523647,
+              "p50": 0.866624,
+              "p97_5": 1.82709
+            }
+          },
+          {
+            "id": "add_wafer",
+            "label": "one more wafer per run",
+            "design": {
+              "run_per_level": 4,
+              "wafer_per_parent": 2,
+              "site_per_parent": 3
+            },
+            "added_units": "8 wafers (one per run)",
+            "added_measurements": 24,
+            "error_df": 6,
+            "balanced": true,
+            "status": "limited",
+            "note": "",
+            "candidate": true,
+            "se": null,
+            "se_lower": 0.6454972243679028,
+            "se_upper": 0.9124143795447329,
+            "bounds_note": "identifiability bounds at the point estimate, not an interval estimate: the data identify only a combined component, and both of its parts are >= 0",
+            "plausible_se_lower": {
+              "p2_5": 0.413979,
+              "p50": 0.685126,
+              "p97_5": 1.44444
+            },
+            "plausible_se_upper": {
+              "p2_5": 0.584573,
+              "p50": 0.968376,
+              "p97_5": 2.04254
+            }
+          },
+          {
+            "id": "add_site",
+            "label": "one more site per wafer",
+            "design": {
+              "run_per_level": 4,
+              "wafer_per_parent": 1,
+              "site_per_parent": 4
+            },
+            "added_units": "8 sites (one per wafer)",
+            "added_measurements": 8,
+            "error_df": 6,
+            "balanced": true,
+            "status": "identified",
+            "note": "",
+            "candidate": true,
+            "se": 0.9126426829086325,
+            "variance": 0.8329166666666666,
+            "plausible_se": {
+              "p2_5": 0.585042,
+              "p50": 0.968656,
+              "p97_5": 2.04264
+            }
+          },
+          {
+            "id": "floor",
+            "label": "the floor: unlimited wafers and sites",
+            "design": {
+              "run_per_level": 4,
+              "wafer_per_parent": "unlimited",
+              "site_per_parent": "unlimited"
+            },
+            "added_units": "unlimited",
+            "added_measurements": 0,
+            "error_df": 6,
+            "balanced": true,
+            "status": "limited",
+            "note": "2 sigma^2[run] / r: the limit as every lower count grows",
+            "candidate": false,
+            "se": null,
+            "se_lower": 0.0,
+            "se_upper": 0.9119576013536301,
+            "bounds_note": "identifiability bounds at the point estimate, not an interval estimate: the data identify only a combined component, and both of its parts are >= 0",
+            "plausible_se_lower": {
+              "p2_5": 0.0,
+              "p50": 0.0,
+              "p97_5": 0.0
+            },
+            "plausible_se_upper": {
+              "p2_5": 0.583726,
+              "p50": 0.967862,
+              "p97_5": 2.04233
+            }
+          }
+        ],
+        "ranking": {
+          "candidates": [
+            "add_unit",
+            "add_wafer",
+            "add_site"
+          ],
+          "candidate_labels": {
+            "add_unit": "one more run per treatment level",
+            "add_wafer": "one more wafer per run",
+            "add_site": "one more site per wafer"
+          },
+          "draws": 20000,
+          "robust_threshold_wins": 19000,
+          "seed_text": "stratum-wp4-plausible-values-v1",
+          "assessed": false,
+          "reason": "not assessed: one more wafer per run is not identified (limited or a lower bound), so the order of the standard errors is not determined by the data"
+        },
+        "floor_statement": "No number of additional wafers or sites can bring the standard error below the floor; only additional runs lower it."
+      }
+    ],
+    "not_implemented": "cost-weighted versions and cost-optimal subsample sizes (optional in brief Section 5.5; D-078)",
+    "current_vs_analysis": "REML pooled nothing, so the allocation's current standard error equals the comparison's reported standard error exactly (D-078)."
+  },
+  "reassignment": {
+    "status": "not_applicable",
+    "reason": "no complete confounding was found, so no reassignment is needed"
+  },
+  "planning": {
+    "eligible": false,
+    "reason": "the design was analyzed"
+  },
+  "explanations": {
+    "required": 47,
+    "required_written": 47,
+    "required_pending": [],
+    "optional": 2,
+    "optional_written": 2,
+    "file": "resources/explanations.yaml",
+    "policy": "D-075 (verbatim insertion, pending marked)"
+  },
+  "summary": {
+    "decision": "WARN",
+    "analyzed": true,
+    "analyzed_comparisons": [
+      "high_vs_low"
+    ],
+    "refused_comparisons": [],
+    "refusal_codes": [],
+    "warning_codes": [
+      "aliased_components"
+    ],
+    "note_codes": [],
+    "caveat_codes": [
+      "assignment_not_randomized"
+    ],
+    "next_steps": [
+      {
+        "kind": "allocation",
+        "factor": "temp",
+        "text": "No number of additional wafers or sites can bring the standard error below the floor; only additional runs lower it."
+      }
+    ],
+    "pending_in_report": []
+  }
+}

@@ -1,0 +1,60 @@
+{
+  "furnace": {
+    "rows": 168,
+    "columns": ["run", "zone", "wafer", "thickness"],
+    "incomplete_rows": 0,
+    "runs": ["1", "10", "11", "12", "13", "14", "15", "16", "17", "18", "19", "2", "20", "21", "3", "4", "5", "6", "7", "8", "9"],
+    "zones": ["1", "2", "3", "4"],
+    "wafers": ["1", "2"],
+    "obs_per_run_zone": 2,
+    "obs_per_run_zone_wafer": 1,
+    "thickness_range": [487, 634],
+    "thickness_all_integer": true
+  },
+  "lithography": {
+    "rows": 450,
+    "columns": ["cassette", "wafer", "site", "width_raw", "run_seq", "width_cleaned"],
+    "incomplete_rows": 0,
+    "cassettes": 30,
+    "wafers": ["1", "2", "3"],
+    "sites": ["1", "2", "3", "4", "5"],
+    "obs_per_cassette_wafer": 5,
+    "obs_per_cassette_wafer_site": 1,
+    "run_seq_is_row_order": true,
+    "raw_minus_cleaned_range": [0.00200000000000022, 0.9]
+  },
+  "oxide": {
+    "rows": 72,
+    "columns": ["Source", "Lot", "Wafer", "Site", "Thickness"],
+    "incomplete_rows": 0,
+    "column_classes": ["factor", "factor", "factor", "factor", "numeric"],
+    "sources": ["1", "2"],
+    "lots": ["1", "2", "3", "4", "5", "6", "7", "8"],
+    "wafer_labels": ["1", "2", "3"],
+    "sites": ["1", "2", "3"],
+    "obs_per_lot_wafer": 3,
+    "obs_per_lot_wafer_site": 1,
+    "sources_per_lot": 1,
+    "lots_by_source": {
+      "1": ["1", "2", "3", "4"],
+      "2": ["5", "6", "7", "8"]
+    },
+    "identical_to_SASmixed_Semi2": true,
+    "identical_to_nlme_Oxide": true,
+    "thickness_range": [1980, 2036]
+  },
+  "semiconductor": {
+    "rows": 48,
+    "columns": ["resistance", "ET", "Wafer", "position", "Grp"],
+    "incomplete_rows": 0,
+    "column_classes": ["numeric", "factor", "factor", "factor", "factor"],
+    "et_levels": ["1", "2", "3", "4"],
+    "wafer_labels": ["1", "2", "3"],
+    "positions": ["1", "2", "3", "4"],
+    "grp_levels": 12,
+    "wafers_per_et": 3,
+    "obs_per_grp_position": 1,
+    "grp_equals_et_slash_wafer": true,
+    "resistance_range": [4.6, 6.97]
+  }
+}
