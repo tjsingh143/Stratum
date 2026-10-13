@@ -53,6 +53,14 @@ python3 scenarios/generate.py --check
 .venv/bin/python scenarios/run.py --all --check
 ```
 
+The current `--check` mode verifies numerical scenario agreement with a `1e-12`
+relative allowance for finite JSON floats, no absolute allowance, and exact
+structure, counts, decisions, labels and provenance. Each report must render from
+its own results. Add `--strict-bytes` to `--check` to require literal replay; the
+recorded cross-platform S3 byte difference remains visible in that mode. All 142
+preregistered statistical assertions run in either mode.
+
+
 For an ordinary direct CLI call on the same synthetic S3 inputs:
 
 ```sh

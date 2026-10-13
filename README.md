@@ -193,3 +193,5 @@ redistribution caveats are listed in [reference/README.md](reference/README.md).
 [Project portfolio](https://drive.google.com/drive/folders/1EQ2aAESu1FGiKtMuqSR7MYFVn54Xh8mG) contains the project overview, architecture,
 code examples, testing notes, and supporting evidence. Portfolio measurements
 retain their stated snapshot and verification boundaries.
+
+[Review entry point](https://drive.google.com/file/d/1KuzKIEz3MjISgRvMFh1BXCNYw9X4qL9-/view?usp=drivesdk) · [Overview](https://drive.google.com/file/d/1VKmRXVDobR79CUpORpUHV5KbvzTNEZij/view?usp=drivesdk) · [Testing](https://drive.google.com/file/d/1gKUnnnKccnI-LflV3ivVTFpL8cyzr2v7/view?usp=drivesdk) · [Code samples](https://drive.google.com/file/d/1kCYGL4s-PQ5hfoNab3VC1DMv0fUDr2eW/view?usp=drivesdk)
