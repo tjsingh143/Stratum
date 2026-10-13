@@ -57,6 +57,8 @@ def main() -> int:
     ap = argparse.ArgumentParser(description=__doc__.splitlines()[0])
     ap.add_argument("--python", default=None, help="interpreter used for every check")
     ap.add_argument("--verbose", action="store_true", help="print the output of every check")
+    ap.add_argument("--strict-bytes", action="store_true",
+                    help="require byte-identical scenario outputs; default checks finite-float agreement")
     args = ap.parse_args()
     venv = ROOT / ".venv" / "bin" / "python"
     python = args.python or (str(venv) if venv.exists() else sys.executable)
@@ -70,13 +72,18 @@ def main() -> int:
     have_data = reference_data_present()
     print("Python %s, PyYAML %s; reference data %s" % (version, pyyaml,
           "present" if have_data else "absent (data-dependent checks are skipped)"))
-    env = dict(os.environ, PYTHONPATH=str(ROOT), PYTHONDONTWRITEBYTECODE="1")
+    print("Scenario verification: %s" % ("strict byte identity" if args.strict_bytes else
+          "finite JSON floats within 1e-12 relative; exact structure, decisions and provenance"))
+    env = dict(os.environ, PYTHONPATH=str(ROOT), PYTHONDONTWRITEBYTECODE="1",
+               STRATUM_STRICT_BYTES="1" if args.strict_bytes else "0")
     results = []
     for label, cmd, needs_data in CHECKS:
         if needs_data and not have_data:
             results.append((label, "SKIPPED", "needs reference/_fetched/ (see reference/README.md)"))
             continue
         t0 = time.time()
+        if args.strict_bytes and cmd[0] == "scenarios/run.py":
+            cmd = cmd + ["--strict-bytes"]
         proc = subprocess.run([python] + cmd, cwd=ROOT, env=env, capture_output=True, text=True)
         output = (proc.stdout + proc.stderr).strip()
         status = "PASS" if proc.returncode == 0 else "FAIL (exit %d)" % proc.returncode

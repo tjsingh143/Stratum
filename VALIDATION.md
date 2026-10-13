@@ -1,5 +1,12 @@
 # Stratum validation
 
+**Portable-verification follow-up:** scenario replay now distinguishes finite-float
+agreement from byte identity; see [the policy](REPRODUCIBILITY.md#portable-scenario-verification).
+Ten new regression tests protect exact decisions, provenance, artifact structure and
+report/write-up content. This update changes no calculation, frozen assertion, stored
+scientific result or simulation evidence. The measurements below retain their recorded
+environment and dates; strict-byte mode still exposes the documented S3 difference.
+
 **The software checks pass while statistical limitations remain.** This document reports
 two kinds of evidence and keeps them separate:
 
@@ -36,7 +43,7 @@ affected inference, and refused CLI designs still return a successful scientific
 
 ### Test changes
 
-The original suite had 466 tests. This repository runs 421: 419 of the original tests and
+The original suite had 466 tests. The October 10 snapshot ran 421: 419 of the original tests and
 two tests that each hold an assertion moved out of an original test. The 47 omitted tests
 check material that is not part of this repository:
 

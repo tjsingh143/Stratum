@@ -1,6 +1,7 @@
 """WP5 demonstration scenarios (DECISIONS.md D-086). All scenario data are SYNTHETIC."""
 import importlib.util
 import json
+import os
 import re
 import unittest
 from pathlib import Path
@@ -51,10 +52,11 @@ class Results(unittest.TestCase):
         self.assertEqual({k: v["comparison"]["assertions"] for k, v in self.out.items()},
                          {"S1": 45, "S2": 39, "S3": 58})
 
-    def test_stored_outputs_regenerate_byte_for_byte(self):
+    def test_stored_outputs_match_verification_mode(self):
         for sid, out in self.out.items():
-            for path, text in out["files"].items():
-                self.assertEqual(path.read_text(encoding="utf-8"), text, path)
+            errors = RUN.verify_outputs(out["files"], RUN.render,
+                                        strict_bytes=os.environ.get("STRATUM_STRICT_BYTES") == "1")
+            self.assertEqual(errors, [], sid)
 
     def test_synthetic_everywhere(self):
         for sid, out in self.out.items():

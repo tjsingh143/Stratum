@@ -34,6 +34,7 @@ sys.path.insert(0, str(ROOT))
 from stratum.dist import chi2_quantile, t_quantile  # noqa: E402
 from stratum.report import fmt, render  # noqa: E402
 from stratum.results import build, dumps  # noqa: E402
+from scenarios.verify import verify_outputs  # noqa: E402
 
 EXPECTATIONS = HERE / "expectations.json"
 
@@ -219,8 +220,12 @@ def main():
     ap.add_argument("scenario", nargs="?", help="S1, S2 or S3")
     ap.add_argument("--all", action="store_true")
     ap.add_argument("--check", action="store_true",
-                    help="verify stored outputs match and every assertion holds")
+                    help="verify numerical agreement, report provenance and every assertion")
+    ap.add_argument("--strict-bytes", action="store_true",
+                    help="with --check, require byte-identical outputs instead")
     args = ap.parse_args()
+    if args.strict_bytes and not args.check:
+        ap.error("--strict-bytes requires --check")
     reg = json.loads(EXPECTATIONS.read_text(encoding="utf-8"))
     chosen = [s for s in reg["scenarios"] if args.all or s["id"] == args.scenario]
     if not chosen:
@@ -229,12 +234,13 @@ def main():
     for scn in chosen:
         out = run(scn)
         cmp_ = out["comparison"]
+        if args.check:
+            errors = verify_outputs(out["files"], render, strict_bytes=args.strict_bytes)
+            for error in errors:
+                print("MISMATCH %s" % error)
+            bad |= bool(errors)
         for path, text in out["files"].items():
-            if args.check:
-                if not path.exists() or path.read_text(encoding="utf-8") != text:
-                    print("MISMATCH %s differs from the runner" % path.relative_to(ROOT))
-                    bad = 1
-            else:
+            if not args.check:
                 path.parent.mkdir(parents=True, exist_ok=True)
                 path.write_text(text, encoding="utf-8")
         print("%s %s: %s, %d of %d preregistered assertions match"

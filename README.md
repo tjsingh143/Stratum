@@ -81,11 +81,17 @@ the reference sources and numbers, the WP3 published reproduction and the commit
 reports; without that data those checks are reported as skipped, never as passed. See
 [REPRODUCIBILITY.md](REPRODUCIBILITY.md) for what this snapshot can and cannot regenerate.
 
-Stored-output equality is stricter than numerical agreement. The byte comparisons passed
-in the recorded Python 3.9.6 environment but are not certified across Python versions and
-platform math libraries. A Linux/Python 3.12.14 audit retained all 142 scenario assertion
-matches while exact S3 output comparisons failed on last-digit floating-point differences.
-See [verification portability](REPRODUCIBILITY.md#verification-portability).
+Scenario checks distinguish numerical agreement from byte identity. By default, finite
+JSON floats must agree within `1e-12` relative error, with no absolute-error allowance;
+structure, types, counts, decisions, provenance and write-ups stay exact. Each report must
+render from its own results document. All 142 preregistered assertions remain unchanged.
+Use `python3 run_checks.py --strict-bytes` to require byte-identical scenario outputs.
+The retained Linux/Python 3.12.14 byte mismatch and the verification policy are explained
+in [verification portability](REPRODUCIBILITY.md#verification-portability).
+
+[Hosted checks](https://github.com/tjsingh143/Stratum/actions/workflows/checks.yml)
+run the portable suite on Linux with Python 3.9, 3.12 and 3.14. Data-dependent checks
+remain explicitly skipped when the separately fetched reference data are absent.
 
 ## Data
 

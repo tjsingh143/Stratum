@@ -15,10 +15,19 @@ Stratum code ran on the inputs (D-086, freeze commit recorded in D-087).
 
 ```sh
 .venv/bin/python scenarios/run.py S1             # one scenario (S1, S2 or S3)
-.venv/bin/python scenarios/run.py --all --check  # verify every stored output and assertion
+.venv/bin/python scenarios/run.py --all --check  # portable verification and every assertion
+.venv/bin/python scenarios/run.py --all --check --strict-bytes  # exact byte reproduction
 python3 scenarios/generate.py --check            # verify the inputs
 ```
 
 Each scenario directory holds its inputs, `output/results.json`, `output/report.md`
 (rendered from results.json), `output/comparison.json` (every preregistered assertion with
 its actual value) and `WRITEUP.md`, whose numbers are filled from those files.
+
+Portable checks allow only finite JSON float differences within `1e-12` relative error,
+with no absolute allowance near zero. Object structure, value types, integer counts,
+decisions, provenance and write-ups remain exact. The stored report must render exactly
+from its stored results, and the fresh report must render exactly from the fresh results;
+tiny quantile differences can move a text-plot marker. `--strict-bytes` keeps the stronger
+byte comparison available and never rewrites a stored file. Neither mode changes the
+preregistered assertions or their tolerances.

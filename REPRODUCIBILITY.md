@@ -8,7 +8,8 @@ reported as retained evidence.
 
 ## Environment
 
-- Python 3.9 or later; the tested interpreter is Python 3.9.6.
+- Python 3.9 or later. Historical byte reproduction used Python 3.9.6;
+  the portable follow-up was also checked on Linux with Python 3.12.14.
 - `requirements.txt` pins PyYAML 6.0.3, the only runtime dependency. The reference fetch
   and verification tools use the standard library only.
 - Run commands from the repository root of a Git checkout. One test checks the Git
@@ -39,8 +40,8 @@ skipped too; nothing is reported as passed that was not run.
 Python 3.9+ is the runtime requirement; it is not a guarantee that stored floating-point
 outputs regenerate byte for byte on every interpreter and platform. Distribution routines
 use the platform's math library. Last-digit differences in probabilities and quantiles can
-also move a marker in a rendered diagnostic text plot. The strict checks retain these
-differences as failures rather than replacing the stored evidence or widening a tolerance.
+also move a marker in a rendered diagnostic text plot. Strict-byte mode retains these
+differences as failures rather than replacing the stored evidence.
 
 A fresh audit on Linux x86_64 with Python 3.12.14 and PyYAML 6.0.3 ran 421 unit tests:
 one stored-output equality test failed and 36 reference-data tests were skipped. All 142
@@ -50,6 +51,36 @@ skipped. Its S3 probability for the whole-plot test was `0.2250449535046472`, co
 the stored `0.22504495350464732`. This audit does not replace the recorded successful
 Python 3.9.6 verification or establish byte-identical portability. Matching the interpreter
 version alone may not reproduce a different platform's math-library results.
+
+### Portable scenario verification
+
+The follow-up separates artifact byte identity from numerical reproduction. Default
+scenario checks compare finite JSON floats with a relative limit of `1e-12` and an
+absolute limit of zero. This is a file-replay policy, not a change to any frozen
+scientific assertion or reference-comparison tolerance. Counts, types, object structure,
+list order, decisions, warnings, labels and input/source provenance must match exactly.
+Non-finite values and duplicate JSON keys are rejected.
+
+Reports are checked in two directions: the committed report must render exactly from
+its committed results, and the fresh report must render exactly from its fresh results.
+Write-ups and other text artifacts still require exact equality. The observed S3 replay
+differences affect only 204 finite float fields, with maximum relative change
+`8.041e-15`; the stored reports all render exactly from their own JSON. Ten additional
+regression tests reject changed values, decisions, provenance, structure, types, missing
+artifacts, corrupted reports/write-ups and ambiguous JSON.
+
+```sh
+python3 run_checks.py                         # portable scenarios; exact other checks
+python3 run_checks.py --strict-bytes          # require original byte identity as well
+python3 scenarios/run.py --all --check --strict-bytes
+```
+
+The strict scenario command still reports the known S3 byte differences on the checked
+Linux/Python 3.12.14 environment. The calculation package, scenario inputs, expectations
+and every committed scientific output are unchanged by this verification update.
+The [hosted workflow](https://github.com/tjsingh143/Stratum/actions/workflows/checks.yml)
+runs the portable suite with Python 3.9, 3.12 and 3.14 on Linux. Its separately
+fetched reference-data checks are reported as skipped when their inputs are unavailable.
 
 ## Reference data
 
@@ -86,7 +117,9 @@ derived files all matched their pinned checksums.
 | Explanation guide | `.venv/bin/python -m stratum explanations --guide` |
 
 Each of these has a `--check` mode, or a matching check in `run_checks.py`, that
-regenerates in memory and fails on any byte difference. Committed outputs omit timestamps,
+regenerates in memory. Scenario output checks use the portable policy above unless
+`--strict-bytes` is requested; the other generator checks require exact output text.
+Committed outputs omit timestamps,
 Git state and interpreter details. They record the SHA-256 of every input and a SHA-256 over
 the files of the `stratum` package, so any edit under `stratum/` requires regenerating the
 reports, the scenario outputs and the WP3 reproduction before their checks pass.
